@@ -52,3 +52,5 @@ Frozen file SHA-256 values:
 - `reserved.jsonl`: `34a870aa85b7fa99b4aaa7d6832119fa9b9899e2d031860373ca9a0ab861e3ce`
 
 Later inference reports should identify the corpus hash, selected IDs, model/adapter, code revision, mode, assistance setting, and failures. Results from different code revisions or filtered subsets must remain separate measurements. Record any change in the reserved split's use explicitly.
+
+Use the [human review rubric](REVIEW-RUBRIC.md) for matched base/current/candidate comparisons, critical-error review, and candidate release decisions.

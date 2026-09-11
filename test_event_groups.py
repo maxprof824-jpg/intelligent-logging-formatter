@@ -1,4 +1,5 @@
 import unittest
+import random
 
 from event_groups import MAX_GROUPS, MAX_LABEL_LENGTH, locate_evidence, split_events
 
@@ -164,6 +165,54 @@ class EventGroupTests(unittest.TestCase):
             locate_evidence(event, "")
         with self.assertRaises(TypeError):
             locate_evidence(event, None)
+
+    def test_repeated_occurrences_intersect_only_nearby_segments(self):
+        class CountedSegments(list):
+            accesses=0
+            def __iter__(self):
+                for value in super().__iter__():
+                    self.accesses+=1
+                    yield value
+            def __getitem__(self,index):
+                self.accesses+=1
+                return super().__getitem__(index)
+        count=200
+        event=split_events('EVENT: Status\nPending.\n'*count)[0]
+        segments=CountedSegments(event['source_segments'])
+        event['source_segments']=segments
+        found=locate_evidence(event,'Pending.')
+        self.assertEqual(len(found['candidates']),count)
+        self.assertLessEqual(segments.accesses,4*count)
+
+    def test_matches_equal_exhaustive_codepoint_mapping_for_disjoint_unicode_inputs(self):
+        rng=random.Random(47)
+        separators=['\n','\r','\r\n','\v','\f','\x1c','\x1d','\x1e','\x85','\u2028','\u2029']
+        source='🙂 Préambule.\r\n'
+        for index in range(18):
+            newline=separators[index%len(separators)]
+            source+='EVENT: '+['Réception','Dossier','Avis'][index%3]+newline
+            source+=['🙂 reçu.','échéance inconnue.','未確認.'][index%3]+newline
+        for event in split_events(source):
+            mapping={}
+            for segment in event['source_segments']:
+                for local in range(segment['local_start'],segment['local_end']):
+                    mapping[local]=segment['start']+local-segment['local_start']
+            for _ in range(35):
+                start=rng.randrange(len(event['source_text']))
+                quote=event['source_text'][start:start+rng.randint(1,20)]
+                expected=[];cursor=0
+                while True:
+                    position=event['source_text'].find(quote,cursor)
+                    if position<0:break
+                    spans=[]
+                    for local in range(position,position+len(quote)):
+                        if local not in mapping:continue
+                        original=mapping[local]
+                        if spans and spans[-1]['end']==original:spans[-1]['end']=original+1
+                        else:spans.append({'start':original,'end':original+1})
+                    if spans and {'segments':spans} not in expected:expected.append({'segments':spans})
+                    cursor=position+1
+                self.assertEqual(locate_evidence(event,quote),{'candidates':expected,'ambiguous':len(expected)>1})
 
 
 if __name__ == "__main__":

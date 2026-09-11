@@ -5,6 +5,7 @@ import coach
 from core import FIELDS
 from event_formatter import process_note, render_coached_log
 from app_v2 import evidence_rows
+from event_groups import locate_evidence
 
 
 def result(source,field='situation',suggestions=None):
@@ -135,6 +136,36 @@ class EventFormatterTests(unittest.TestCase):
         self.assertEqual(events[-1][0],1)
         self.assertTrue(all(0<=x[0]<=1 for x in events))
         self.assertEqual(sorted(x[0] for x in events),[x[0] for x in events])
+
+    def test_repeated_failure_passages_are_deduplicated_without_losing_locations(self):
+        count=200
+        source='EVENT: Status update\nPending.\n'*count
+        with patch('event_formatter.coach.process_note',side_effect=RuntimeError('Synthetic failure')), \
+             patch('event_formatter.locate_evidence',wraps=locate_evidence) as locate:
+            output=process_note(None,None,source,assist=False)
+        event=output['event_results'][0]
+        self.assertEqual(event['result']['review_excerpts'],[{'text':'Pending.','evidence':['Pending.']}])
+        self.assertEqual(len(event['source_evidence']),1)
+        quote=event['source_evidence'][0]['quotes'][0]
+        self.assertEqual(len(quote['candidates']),count)
+        self.assertTrue(quote['ambiguous'])
+        self.assertEqual(locate.call_count,1)
+        self.assertEqual([candidate['segments'][0]['line_start'] for candidate in quote['candidates']],list(range(2,2*count+1,2)))
+        self.assertEqual(output['status'],'incomplete_draft')
+
+    def test_quote_lookup_cache_is_shared_across_entry_kinds_and_scoped_by_event(self):
+        text='Pending.'
+        inner=result(text)
+        inner['suggestions']=[{'section':'plan','text':'Ask for an update.','basis':[text],'confirm':'Who will provide an update?'}]
+        inner['review_excerpts']=[{'text':text,'evidence':[text]}]
+        with patch('event_formatter.coach.process_note',side_effect=[inner,inner]), \
+             patch('event_formatter.locate_evidence',wraps=locate_evidence) as locate:
+            output=process_note(None,None,'EVENT: A\nPending.\nEVENT: B\nPending.')
+        self.assertEqual(locate.call_count,2)
+        for event,line in zip(output['event_results'],(2,4)):
+            self.assertEqual(len(event['source_evidence']),3)
+            for entry in event['source_evidence']:
+                self.assertEqual(entry['quotes'][0]['candidates'][0]['segments'][0]['line_start'],line)
 
 
 if __name__=='__main__':unittest.main()

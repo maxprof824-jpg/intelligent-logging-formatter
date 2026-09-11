@@ -1,0 +1,351 @@
+{
+  "synthetic_only": true,
+  "seed": 314159,
+  "base_tokenizer": "Qwen/Qwen3-4B-Instruct-2507",
+  "tokenizer_revision": "cdbee75f17c01a7cc42f958dc650907174af0554",
+  "max_training_chat_tokens": 4096,
+  "failed_target_checks": 0,
+  "source_overlap_count": 0,
+  "scenario_family_overlap_count": 0,
+  "splits": {
+    "train": {
+      "rows": 720,
+      "tasks": {
+        "main": 600,
+        "helper": 120
+      },
+      "modes": {
+        "review": 360,
+        "draft": 360
+      },
+      "families": 20,
+      "family_task_modes": {
+        "archive_accession_long": {
+          "main": {
+            "review": 15,
+            "draft": 15
+          },
+          "helper": {
+            "review": 3,
+            "draft": 3
+          }
+        },
+        "college_attendance_long": {
+          "main": {
+            "review": 15,
+            "draft": 15
+          },
+          "helper": {
+            "review": 3,
+            "draft": 3
+          }
+        },
+        "facilities_booking_long": {
+          "main": {
+            "review": 15,
+            "draft": 15
+          },
+          "helper": {
+            "review": 3,
+            "draft": 3
+          }
+        },
+        "facilities_contact_denial": {
+          "main": {
+            "review": 15,
+            "draft": 15
+          },
+          "helper": {
+            "draft": 3,
+            "review": 3
+          }
+        },
+        "forms_wrong_reference": {
+          "main": {
+            "draft": 15,
+            "review": 15
+          },
+          "helper": {
+            "review": 3,
+            "draft": 3
+          }
+        },
+        "helpdesk_reopened_record": {
+          "main": {
+            "review": 15,
+            "draft": 15
+          },
+          "helper": {
+            "review": 3,
+            "draft": 3
+          }
+        },
+        "lab_admin_question_not_action": {
+          "main": {
+            "review": 15,
+            "draft": 15
+          },
+          "helper": {
+            "review": 3,
+            "draft": 3
+          }
+        },
+        "library_duplicate_message": {
+          "main": {
+            "draft": 15,
+            "review": 15
+          },
+          "helper": {
+            "review": 3,
+            "draft": 3
+          }
+        },
+        "maintenance_paperwork_only": {
+          "main": {
+            "draft": 15,
+            "review": 15
+          },
+          "helper": {
+            "review": 3,
+            "draft": 3
+          }
+        },
+        "meeting_withdrawn_plan": {
+          "main": {
+            "review": 15,
+            "draft": 15
+          },
+          "helper": {
+            "draft": 3,
+            "review": 3
+          }
+        },
+        "museum_loan_long": {
+          "main": {
+            "draft": 15,
+            "review": 15
+          },
+          "helper": {
+            "review": 3,
+            "draft": 3
+          }
+        },
+        "office_unknown_impact": {
+          "main": {
+            "draft": 15,
+            "review": 15
+          },
+          "helper": {
+            "review": 3,
+            "draft": 3
+          }
+        },
+        "records_owner_unassigned": {
+          "main": {
+            "review": 15,
+            "draft": 15
+          },
+          "helper": {
+            "review": 3,
+            "draft": 3
+          }
+        },
+        "school_two_speakers": {
+          "main": {
+            "review": 15,
+            "draft": 15
+          },
+          "helper": {
+            "draft": 3,
+            "review": 3
+          }
+        },
+        "service_desk_promised_not_done": {
+          "main": {
+            "draft": 15,
+            "review": 15
+          },
+          "helper": {
+            "draft": 3,
+            "review": 3
+          }
+        },
+        "venue_competing_times": {
+          "main": {
+            "review": 15,
+            "draft": 15
+          },
+          "helper": {
+            "review": 3,
+            "draft": 3
+          }
+        },
+        "visitor_desk_actual_no_impact": {
+          "main": {
+            "review": 15,
+            "draft": 15
+          },
+          "helper": {
+            "review": 3,
+            "draft": 3
+          }
+        },
+        "volunteer_relayed_report": {
+          "main": {
+            "review": 15,
+            "draft": 15
+          },
+          "helper": {
+            "draft": 3,
+            "review": 3
+          }
+        },
+        "warehouse_count_correction": {
+          "main": {
+            "review": 15,
+            "draft": 15
+          },
+          "helper": {
+            "draft": 3,
+            "review": 3
+          }
+        },
+        "workshop_missing_context": {
+          "main": {
+            "draft": 15,
+            "review": 15
+          },
+          "helper": {
+            "draft": 3,
+            "review": 3
+          }
+        }
+      },
+      "full_chat_tokens": {
+        "min": 745,
+        "median": 1143,
+        "p95": 3513,
+        "max": 3527
+      },
+      "long_rows": 144,
+      "long_source_tokens": {
+        "min": 2161,
+        "max": 2184
+      },
+      "empty_helper_targets": 54
+    },
+    "validation": {
+      "rows": 144,
+      "tasks": {
+        "main": 120,
+        "helper": 24
+      },
+      "modes": {
+        "draft": 72,
+        "review": 72
+      },
+      "families": 6,
+      "family_task_modes": {
+        "library_request_long": {
+          "main": {
+            "draft": 10,
+            "review": 10
+          },
+          "helper": {
+            "review": 2,
+            "draft": 2
+          }
+        },
+        "parks_amendment_long": {
+          "main": {
+            "draft": 10,
+            "review": 10
+          },
+          "helper": {
+            "draft": 2,
+            "review": 2
+          }
+        },
+        "recreation_signoff_retracted": {
+          "main": {
+            "review": 10,
+            "draft": 10
+          },
+          "helper": {
+            "review": 2,
+            "draft": 2
+          }
+        },
+        "registrar_draft_misstates_outcome": {
+          "main": {
+            "review": 10,
+            "draft": 10
+          },
+          "helper": {
+            "review": 2,
+            "draft": 2
+          }
+        },
+        "stores_partial_acknowledgement": {
+          "main": {
+            "draft": 10,
+            "review": 10
+          },
+          "helper": {
+            "draft": 2,
+            "review": 2
+          }
+        },
+        "training_badge_wrong_recipient": {
+          "main": {
+            "draft": 10,
+            "review": 10
+          },
+          "helper": {
+            "draft": 2,
+            "review": 2
+          }
+        }
+      },
+      "full_chat_tokens": {
+        "min": 789,
+        "median": 1177,
+        "p95": 3446,
+        "max": 3451
+      },
+      "long_rows": 48,
+      "long_source_tokens": {
+        "min": 2168,
+        "max": 2185
+      },
+      "empty_helper_targets": 8
+    }
+  },
+  "sha256": {
+    "train.jsonl": "512442ccabdb9d0908c2b52344c086bf0027970bbcc401140f3f77a74ee7d1c0",
+    "validation.jsonl": "02fd5c323ded392367ef30b153be4f183ffbdce43dc7c7d83b4b4114cb5d3697"
+  },
+  "generator_sha256": "c36c96a23eb9ec28b5ae1cb86d7a8749e05aa3d18c07f5b7853db71f4d6fcdcd",
+  "main_system_sha256": "e9757a1f74876c4a56a5b5a2dc93e8d7b27ab87e43e60434a4a7ad54161fd975",
+  "helper_system_sha256": "43746966d245214b652b6d04e989f113aafa96434fac111b0bbaf53f485e51d9",
+  "overlap_diagnostics": {
+    "method": "Lowercase word trigrams after replacing dates, times, record IDs, initials and person names; full source including shared reference text.",
+    "unique_identity_stripped_sources": {
+      "train": 430,
+      "validation": 108
+    },
+    "exact_identity_stripped_cross_split_overlap": 0,
+    "validation_nearest_train_jaccard": {
+      "median": 0.121212,
+      "max": 0.811996,
+      "at_least_0_5": 48,
+      "at_least_0_8": 31
+    },
+    "most_similar_pair": {
+      "validation_id": "validation-v3-main-parks_amendment_long-017",
+      "training_id": "train-v3-main-museum_loan_long-017",
+      "jaccard": 0.811996
+    },
+    "interpretation": "Template and form-guide reuse are intentional and visible here. Distinct family names and zero exact overlap do not establish independent generalization."
+  }
+}

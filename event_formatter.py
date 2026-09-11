@@ -16,13 +16,16 @@ from event_groups import split_events, locate_evidence
 def _empty_result(source, error, partial=None):
     partial = partial or {}
     excerpts=[]
+    seen=set()
     for line in source.splitlines():
         line=line.strip()
         while line:
             cut=len(line) if len(line)<=1200 else line.rfind(' ',0,1200)
             if cut<=0:cut=min(1200,len(line))
             text=line[:cut].strip()
-            if text:excerpts.append({'text':text,'evidence':[text]})
+            if text and text not in seen:
+                excerpts.append({'text':text,'evidence':[text]})
+                seen.add(text)
             line=line[cut:].strip()
     return {'event_type':'other','sections':{field:[] for field in FIELDS},
             'suggestions':[],'review_excerpts':excerpts,'missing_fields':list(FIELDS),
@@ -39,9 +42,15 @@ def _source_evidence(event, result):
     ambiguity=False
     withheld=False
     previous_missing=set(result.get('missing_fields',[]))
+    quote_cache={}
+    def located(quote):
+        # Multiple facts or fallback rows can cite the same text. Locate it once
+        # per event while retaining every candidate original occurrence.
+        if quote not in quote_cache:quote_cache[quote]={'quote':quote,**locate_evidence(event,quote)}
+        return quote_cache[quote]
     def mapped(item, kind, field, index, key):
         nonlocal ambiguity,withheld
-        quotes=[{'quote':quote,**locate_evidence(event,quote)} for quote in item[key]]
+        quotes=[located(quote) for quote in item[key]]
         if any(not quote['candidates'] for quote in quotes):
             withheld=True
             result['issues'].append(f'{field.upper()}: a {kind} could not be linked to the original source and was withheld. Compare the original event notes.')
@@ -60,7 +69,7 @@ def _source_evidence(event, result):
     result['suggestions']=kept
     review=[]
     for item in result.get('review_excerpts',[]):
-        quotes=[{'quote':quote,**locate_evidence(event,quote)} for quote in item['evidence']]
+        quotes=[located(quote) for quote in item['evidence']]
         if any(not quote['candidates'] for quote in quotes):
             withheld=True
             result['issues'].append('An unassigned excerpt could not be linked to the original source and was replaced with original event passages for review.')
@@ -75,7 +84,7 @@ def _source_evidence(event, result):
     result['review_excerpts']=review
     for index,item in enumerate(review):
         # Review excerpts are visibly unassigned; never substitute a guessed match.
-        quotes=[{'quote':quote,**locate_evidence(event,quote)} for quote in item['evidence']]
+        quotes=[located(quote) for quote in item['evidence']]
         ambiguity |= any(quote['ambiguous'] for quote in quotes)
         entries.append({'kind':'review_excerpt','section':'unassigned','index':index,'text':item['text'],'quotes':quotes})
     if ambiguity:

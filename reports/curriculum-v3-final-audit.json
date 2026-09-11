@@ -1,0 +1,31 @@
+{
+  "audit_code_sha256": "3fa84a303e7f5eff374a28ab4a670fd7345b74300a353a373c1eaa70909e20d3",
+  "candidate_data_sha256": {
+    "train": "512442ccabdb9d0908c2b52344c086bf0027970bbcc401140f3f77a74ee7d1c0",
+    "validation": "02fd5c323ded392367ef30b153be4f183ffbdce43dc7c7d83b4b4114cb5d3697"
+  },
+  "candidate_rows": 864,
+  "target_contract_checks": "passed",
+  "runtime_screened_target_count": 0,
+  "runtime_screened_targets": [],
+  "evaluation_overlap": {
+    "development": {
+      "rows": 20,
+      "sha256": "2dea24c5016a739076b0d4e30829b3385e9c1097f55e00ef9b40c898dcd5672a",
+      "exact_source_overlap_ids": [],
+      "identity_stripped_exact_overlap_ids": [],
+      "maximum_nearest_training_trigram_jaccard": 0.019481,
+      "cases_at_or_above_0_5": 0
+    },
+    "reserved": {
+      "rows": 10,
+      "sha256": "34a870aa85b7fa99b4aaa7d6832119fa9b9899e2d031860373ca9a0ab861e3ce",
+      "exact_source_overlap_ids": [],
+      "identity_stripped_exact_overlap_ids": [],
+      "maximum_nearest_training_trigram_jaccard": 0.023256,
+      "cases_at_or_above_0_5": 0
+    }
+  },
+  "model_inference_performed": false,
+  "interpretation": "Construction and lexical overlap checks only. Runtime screens are heuristics, not a semantic teacher. A low overlap score does not prove independent reasoning patterns or useful trained behavior. Reserved source/targets were not exposed or used for training/inference."
+}

@@ -201,7 +201,8 @@ def build_demo(model, tokenizer, model_name):
                         'Line numbers refer to your original notes. '
                         'Multiple matches are shown when the wording repeats; the intended occurrence still needs confirmation.')
             evidence = gr.Dataframe(headers=['Event', 'Section', 'Generated entry', 'Quoted source', 'Source locations'],
-                                    datatype=['str']*5, type='array', interactive=False, wrap=True)
+                                    datatype=['str']*5, type='array', interactive=False, wrap=True,
+                                    column_widths=['15%','15%','28%','30%','12%'],show_fullscreen_button=True)
         gr.Markdown(
             "Add answers to your notes and prepare the draft again, or edit the draft above. "
             "Keep suggestions labeled until you confirm them."

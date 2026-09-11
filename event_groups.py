@@ -17,6 +17,7 @@ without choosing which occurrence the author meant. Locations establish text
 presence, not entailment, correct chronology, or correct event attribution.
 """
 import re
+from bisect import bisect_right
 
 
 MAX_GROUPS = 8
@@ -133,6 +134,11 @@ def locate_evidence(event, quote):
     if not quote:
         raise ValueError("Provide a nonempty evidence quote to locate.")
     text = event["source_text"]
+    mappings = event["source_segments"]
+    # End offsets are ordered because body slices are appended in source order.
+    # Find the first overlapping slice in logarithmic time for each occurrence;
+    # repeatedly scanning every earlier update makes repeated evidence costly.
+    segment_ends = [mapping["local_end"] for mapping in mappings]
     candidates, seen, search_start = [], set(), 0
     while True:
         local_start = text.find(quote, search_start)
@@ -140,7 +146,11 @@ def locate_evidence(event, quote):
             break
         local_end = local_start + len(quote)
         segments = []
-        for mapping in event["source_segments"]:
+        segment_index = bisect_right(segment_ends, local_start)
+        while segment_index < len(mappings):
+            mapping = mappings[segment_index]
+            if mapping["local_start"] >= local_end:
+                break
             left = max(local_start, mapping["local_start"])
             right = min(local_end, mapping["local_end"])
             if left < right:
@@ -148,6 +158,7 @@ def locate_evidence(event, quote):
                     "start": mapping["start"] + left - mapping["local_start"],
                     "end": mapping["start"] + right - mapping["local_start"],
                 })
+            segment_index += 1
         key = tuple((segment["start"], segment["end"]) for segment in segments)
         if segments and key not in seen:
             candidates.append({"segments": segments})
