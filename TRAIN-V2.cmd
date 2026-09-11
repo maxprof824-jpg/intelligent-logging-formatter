@@ -1,4 +1,6 @@
 @echo off
 cd /d "%~dp0"
-.venv\Scripts\python.exe -u train.py --data-dir data-v2 --max-length 4096 --output runs/adapter-v2
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File "%~dp0TRAIN-V2.ps1" %*
+set "trainResult=%ERRORLEVEL%"
 pause
+exit /b %trainResult%

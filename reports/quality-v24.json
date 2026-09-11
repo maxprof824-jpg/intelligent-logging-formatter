@@ -1,0 +1,688 @@
+{
+  "runtime": "2.4",
+  "weights_changed": false,
+  "created_utc": "2026-09-11T15:47:14.225397+00:00",
+  "code_sha256": {
+    "coach.py": "281ca91ab768da359ae2ab505c86b41d8b502e161d856025425a403d41d6912c",
+    "coaching_pass.py": "989cb218069bcfe462b851522b1b020a9f5763dc61f1cadb68012ba061fff966",
+    "evidence_checks.py": "e6f87b0e7c28b6c80a2ae4916f365f26d757e1929c004fc15f4103653c6e011c",
+    "source_coverage.py": "bdf40ca98629532f2a88c4620e64fd4f72b0b86e4b55588b85408b621b112584",
+    "core.py": "aee474c96d06c9d8fc8fe73e0a1d77b2d7c9c032491f2c1d30e8841721009530",
+    "quality_check_v24.py": "5efb9dea9f7fa6fefe538742743cc042331cc546444d7299d149b923b399a113"
+  },
+  "adapter_sha256": "08a0f0d7c2c93dacb84fcdef97f1c2952c7a70551d260921c9782fa4bfa6dc9d",
+  "limitations": "Small synthetic development smoke set authored for this review; not an untouched holdout or semantic accuracy score.",
+  "outputs": [
+    {
+      "id": "mixed-request-and-event",
+      "mode": "draft",
+      "assist": true,
+      "source": "Need a clear log; 2026-09-11 10:30Z Records Desk (KR) confirmed receipt of FORM-27. I saved the confirmation. No follow-up has been agreed.",
+      "review": "Preserve the event after the writing request. Do not invent an agreed plan.",
+      "variant": "adapter",
+      "result": {
+        "event_type": "other",
+        "sections": {
+          "situation": [
+            {
+              "text": "2026-09-11 10:30Z: The Records Desk (KR) confirmed receipt of FORM-27; the confirmation was saved.",
+              "evidence": [
+                "2026-09-11 10:30Z Records Desk (KR) confirmed receipt of FORM-27. I saved the confirmation."
+              ]
+            }
+          ],
+          "impact": [],
+          "agencies_contacted": [
+            {
+              "text": "Records Desk (KR)",
+              "evidence": [
+                "Records Desk (KR)"
+              ]
+            }
+          ],
+          "action": [],
+          "plan": [
+            {
+              "text": "No follow-up has been agreed.",
+              "evidence": [
+                "No follow-up has been agreed."
+              ]
+            }
+          ]
+        },
+        "suggestions": [
+          {
+            "section": "impact",
+            "text": "Possible administrative impact: the form may need review or processing after receipt.",
+            "basis": [
+              "2026-09-11 10:30Z Records Desk (KR) confirmed receipt of FORM-27. I saved the confirmation. No follow-up has been agreed."
+            ],
+            "confirm": "Has any administrative review or processing been initiated or is needed?"
+          },
+          {
+            "section": "action",
+            "text": "Consider asking the Records Desk (KR) whether a follow-up is needed or when the form should be reviewed.",
+            "basis": [
+              "2026-09-11 10:30Z Records Desk (KR) confirmed receipt of FORM-27. I saved the confirmation. No follow-up has been agreed."
+            ],
+            "confirm": "Has the author already asked the Records Desk (KR) about follow-up or review timing?"
+          }
+        ],
+        "missing_fields": [
+          "impact",
+          "action"
+        ],
+        "questions": [
+          "Has any administrative review or processing been initiated or is needed?",
+          "Has the author already asked the Records Desk (KR) about follow-up or review timing?"
+        ],
+        "issues": [
+          "Excluded 1 recognized author-request or embedded-instruction span(s) from log evidence."
+        ],
+        "status": "needs_confirmation",
+        "schema_version": "coached-five-sections-2.4",
+        "review_excerpts": [],
+        "human_approval_required": true,
+        "raw_outputs": [
+          "{\"event_type\": \"other\", \"sections\": {\"situation\": [{\"text\": \"2026-09-11 10:30Z: The Records Desk (KR) confirmed receipt of FORM-27; the confirmation was saved.\", \"evidence\": [\"2026-09-11 10:30Z Records Desk (KR) confirmed receipt of FORM-27. I saved the confirmation.\"]}], \"impact\": [], \"agencies_contacted\": [{\"text\": \"Records Desk (KR)\", \"evidence\": [\"Records Desk (KR)\"]}], \"action\": [], \"plan\": [{\"text\": \"No follow-up has been agreed.\", \"evidence\": [\"No follow-up has been agreed.\"]}]}, \"suggestions\": [{\"section\": \"plan\", \"text\": \"Proposed follow-up: identify who will confirm the form is complete and when the record owner will be notified.\", \"basis\": [\"2026-09-11 10:30Z Records Desk (KR) confirmed receipt of FORM-27. I saved the confirmation.\", \"No follow-up has been agreed.\"], \"confirm\": \"Who will confirm the form is complete, and when will the record owner be notified?\"}]}"
+        ],
+        "coaching_outputs": [
+          "{\"suggestions\": [{\"section\": \"impact\", \"text\": \"Possible administrative impact: the form may need review or processing after receipt.\", \"basis\": [\"2026-09-11 10:30Z Records Desk (KR) confirmed receipt of FORM-27. I saved the confirmation. No follow-up has been agreed.\"], \"confirm\": \"Has any administrative review or processing been initiated or is needed?\"}, {\"section\": \"action\", \"text\": \"Consider asking the Records Desk (KR) whether a follow-up is needed or when the form should be reviewed.\", \"basis\": [\"2026-09-11 10:30Z Records Desk (KR) confirmed receipt of FORM-27. I saved the confirmation. No follow-up has been agreed.\"], \"confirm\": \"Has the author already asked the Records Desk (KR) about follow-up or review timing?\"}]}"
+        ],
+        "chunk_count": 1,
+        "source_tokens": 43,
+        "mode": "draft",
+        "source_coverage": {
+          "source_characters": 122,
+          "characters_in_fact_evidence": 120,
+          "unquoted_spans": [],
+          "interpretation": "Literal quote coverage only. It does not establish correct meaning, field placement, or completeness."
+        }
+      },
+      "draft": "DRAFT — REVIEW FACTS AND CONFIRM SUGGESTIONS\n\nSITUATION (With times of particular events):\n- 2026-09-11 10:30Z: The Records Desk (KR) confirmed receipt of FORM-27; the confirmation was saved.\n\nIMPACT:\n[No confirmed detail supplied]\n\n[POSSIBLE IMPACT — CONFIRM]\nPossible administrative impact: the form may need review or processing after receipt.\n\nAGENCIES CONTACTED (W/Initials):\n- Records Desk (KR)\n\nACTION:\n[No confirmed detail supplied]\n\n[RECOMMENDED ACTION — NOT RECORDED AS DONE]\nConsider asking the Records Desk (KR) whether a follow-up is needed or when the form should be reviewed.\n\nPLAN:\n- No follow-up has been agreed.",
+      "error": null,
+      "seconds": 48.75
+    },
+    {
+      "id": "mixed-request-and-event",
+      "mode": "draft",
+      "assist": true,
+      "source": "Need a clear log; 2026-09-11 10:30Z Records Desk (KR) confirmed receipt of FORM-27. I saved the confirmation. No follow-up has been agreed.",
+      "review": "Preserve the event after the writing request. Do not invent an agreed plan.",
+      "variant": "base",
+      "result": {
+        "raw_outputs": [
+          "{\n  \"event_type\": \"launch_report\",\n  \"sections\": {\n    \"situation\": [\n      {\n        \"text\": \"Records Desk (KR) confirmed receipt of FORM-27 on 2026-09-11 at 10:30Z.\",\n        \"evidence\": [\n          \"Records Desk (KR) confirmed receipt of FORM-27. I saved the confirmation. No follow-up has been agreed.\"\n        ]\n      }\n    ],\n    \"impact\": [],\n    \"agencies_contacted\": [],\n    \"action\": [],\n    \"plan\": []\n  },\n  \"suggestions\": [\n    {\n      \"section\": \"impact\",\n      \"text\": \"If FORM-27 is a required form for a process, there may be a delay in workflow due to lack of follow-up.\",\n      \"basis\": [\n        \"Records Desk (KR) confirmed receipt of FORM-27. I saved the confirmation. No follow-up has been agreed.\"\n      ],\n      \"confirm\": \"Was a follow-up action expected or required after receipt of FORM-27?\"\n    },\n    {\n      \"section\": \"agencies_contacted\",\n      \"text\": \"It is unclear whether any agency was contacted beyond Records Desk (KR).\",\n      \"basis\": [\n        \"Records Desk (KR) confirmed receipt of FORM-27. I saved the confirmation. No follow-up has been agreed.\"\n      ],\n      \"confirm\": \"Was any other agency or individual involved in the follow-up process?\"\n    },\n    {\n      \"section\": \"action\",\n      \"text\": \"The author should confirm whether a follow-up action is required or expected after form receipt.\",\n      \"basis\": [\n        \"Records Desk (KR) confirmed receipt of FORM-27. I saved the confirmation. No follow-up has been agreed.\"\n      ],\n      \"confirm\": \"Is there a documented process or policy requiring follow-up after form receipt?\"\n    },\n    {\n      \"section\": \"plan\",\n      \"text\": \"The author should schedule a follow-up meeting or task to confirm next steps after form receipt.\",\n      \"basis\": [\n        \"Records Desk (KR) confirmed receipt of FORM-27. I saved the confirmation. No follow-up has been agreed.\"\n      ],\n      \"confirm\": \"Who is responsible for agreeing on follow-up actions?\"\n    }\n  ]\n}"
+        ],
+        "issues": [
+          "Part 1/1 could not be processed: 'agencies_contacted' is not one of ['impact', 'action', 'plan']"
+        ],
+        "chunk_count": 1,
+        "source_tokens": 43,
+        "status": "incomplete_draft"
+      },
+      "error": "CoachError: The model did not produce a valid structured draft. Part 1/1 could not be processed: 'agencies_contacted' is not one of ['impact', 'action', 'plan']",
+      "seconds": 31.23
+    },
+    {
+      "id": "planned-not-completed",
+      "mode": "review",
+      "assist": true,
+      "source": "Fictional office note, 2026-09-11 UTC. At 09:00 Support (LM) said they would check the missing attachment on REQ-12. At 09:20 LM said the check had not started. The document was not sent. Nobody has assessed the effect on the meeting. I saved a copy of the request.",
+      "review": "The check is pending and the document was not sent. Preserve who said what and both times.",
+      "variant": "adapter",
+      "result": {
+        "event_type": "other",
+        "sections": {
+          "situation": [
+            {
+              "text": "2026-09-11 UTC: Support (LM) said they would check the missing attachment on REQ-12 at 09:00. At 09:20, LM said the check had not started.",
+              "evidence": [
+                "2026-09-11 UTC. At 09:00 Support (LM) said they would check the missing attachment on REQ-12. At 09:20 LM said the check had not started."
+              ]
+            }
+          ],
+          "impact": [
+            {
+              "text": "The document was not sent. Nobody has assessed the effect on the meeting.",
+              "evidence": [
+                "The document was not sent. Nobody has assessed the effect on the meeting."
+              ]
+            }
+          ],
+          "agencies_contacted": [
+            {
+              "text": "Support (LM)",
+              "evidence": [
+                "Support (LM)"
+              ]
+            }
+          ],
+          "action": [
+            {
+              "text": "Saved a copy of the request.",
+              "evidence": [
+                "I saved a copy of the request."
+              ]
+            }
+          ],
+          "plan": []
+        },
+        "suggestions": [
+          {
+            "section": "plan",
+            "text": "Proposed follow-up: ask the author whether the missing attachment affects the meeting and record the response.",
+            "basis": [
+              "2026-09-11 UTC. At 09:00 Support (LM) said they would check the missing attachment on REQ-12. At 09:20 LM said the check had not started.",
+              "The document was not sent. Nobody has assessed the effect on the meeting."
+            ],
+            "confirm": "Has the author reviewed the meeting documentation, and is a follow-up needed?"
+          }
+        ],
+        "missing_fields": [
+          "plan"
+        ],
+        "questions": [
+          "Has the author reviewed the meeting documentation, and is a follow-up needed?"
+        ],
+        "issues": [
+          "1 source passage(s) were not covered by accepted factual evidence. They are preserved below for review, including details without dates or reference numbers."
+        ],
+        "status": "needs_confirmation",
+        "schema_version": "coached-five-sections-2.4",
+        "review_excerpts": [
+          {
+            "text": "Fictional office note,",
+            "evidence": [
+              "Fictional office note,"
+            ]
+          }
+        ],
+        "human_approval_required": true,
+        "raw_outputs": [
+          "{\"event_type\": \"other\", \"sections\": {\"situation\": [{\"text\": \"2026-09-11 UTC: Support (LM) said they would check the missing attachment on REQ-12 at 09:00. At 09:20, LM said the check had not started.\", \"evidence\": [\"2026-09-11 UTC. At 09:00 Support (LM) said they would check the missing attachment on REQ-12. At 09:20 LM said the check had not started.\"]}], \"impact\": [{\"text\": \"The document was not sent. Nobody has assessed the effect on the meeting.\", \"evidence\": [\"The document was not sent. Nobody has assessed the effect on the meeting.\"]}], \"agencies_contacted\": [{\"text\": \"Support (LM)\", \"evidence\": [\"Support (LM)\"]}], \"action\": [{\"text\": \"Saved a copy of the request.\", \"evidence\": [\"I saved a copy of the request.\"]}], \"plan\": []}, \"suggestions\": [{\"section\": \"impact\", \"text\": \"Possible effect: the meeting may have received incomplete information. Confirm whether the meeting actually received the document.\", \"basis\": [\"2026-09-11 UTC. At 09:00 Support (LM) said they would check the missing attachment on REQ-12. At 09:20 LM said the check had not started.\", \"The document was not sent. Nobody has assessed the effect on the meeting.\"], \"confirm\": \"Did the meeting receive the document, and was incomplete information used?\"}, {\"section\": \"plan\", \"text\": \"Proposed follow-up: ask the author whether the missing attachment affects the meeting and record the response.\", \"basis\": [\"2026-09-11 UTC. At 09:00 Support (LM) said they would check the missing attachment on REQ-12. At 09:20 LM said the check had not started.\", \"The document was not sent. Nobody has assessed the effect on the meeting.\"], \"confirm\": \"Has the author reviewed the meeting documentation, and is a follow-up needed?\"}]}"
+        ],
+        "coaching_outputs": [],
+        "chunk_count": 1,
+        "source_tokens": 81,
+        "mode": "review",
+        "source_coverage": {
+          "source_characters": 265,
+          "characters_in_fact_evidence": 240,
+          "unquoted_spans": [
+            "Fictional office note,"
+          ],
+          "interpretation": "Literal quote coverage only. It does not establish correct meaning, field placement, or completeness."
+        }
+      },
+      "draft": "DRAFT — REVIEW FACTS AND CONFIRM SUGGESTIONS\n\nSITUATION (With times of particular events):\n- 2026-09-11 UTC: Support (LM) said they would check the missing attachment on REQ-12 at 09:00. At 09:20, LM said the check had not started.\n\nIMPACT:\n- The document was not sent. Nobody has assessed the effect on the meeting.\n\nAGENCIES CONTACTED (W/Initials):\n- Support (LM)\n\nACTION:\n- Saved a copy of the request.\n\nPLAN:\n[No confirmed detail supplied]\n\n[SUGGESTED PLAN — NOT YET AGREED]\nProposed follow-up: ask the author whether the missing attachment affects the meeting and record the response.\n\n[SOURCE DETAILS TO PLACE DURING REVIEW — UNASSIGNED]\n- Fictional office note,",
+      "error": null,
+      "seconds": 49.67
+    },
+    {
+      "id": "planned-not-completed",
+      "mode": "review",
+      "assist": true,
+      "source": "Fictional office note, 2026-09-11 UTC. At 09:00 Support (LM) said they would check the missing attachment on REQ-12. At 09:20 LM said the check had not started. The document was not sent. Nobody has assessed the effect on the meeting. I saved a copy of the request.",
+      "review": "The check is pending and the document was not sent. Preserve who said what and both times.",
+      "variant": "base",
+      "result": {
+        "event_type": "launch_report",
+        "sections": {
+          "situation": [
+            {
+              "text": "Support (LM) committed to checking a missing attachment on REQ-12 at 09:00 UTC.",
+              "evidence": [
+                "At 09:00 Support (LM) said they would check the missing attachment on REQ-12."
+              ]
+            },
+            {
+              "text": "The document referenced in the request was not sent.",
+              "evidence": [
+                "The document was not sent."
+              ]
+            }
+          ],
+          "impact": [],
+          "agencies_contacted": [
+            {
+              "text": "Support (LM) was contacted regarding the missing attachment on REQ-12.",
+              "evidence": [
+                "Support (LM) said they would check the missing attachment on REQ-12."
+              ]
+            }
+          ],
+          "action": [],
+          "plan": []
+        },
+        "suggestions": [
+          {
+            "section": "impact",
+            "text": "The meeting may be affected if the missing document is required for discussion or presentation.",
+            "basis": [
+              "Nobody has assessed the effect on the meeting."
+            ],
+            "confirm": "Was the document required for the meeting agenda or presentation?"
+          },
+          {
+            "section": "plan",
+            "text": "Support (LM) should be asked to confirm the status of the check and provide a timeline for resolution.",
+            "basis": [
+              "At 09:20 LM said the check had not started."
+            ],
+            "confirm": "Can Support (LM) provide a clear timeline for when the check will begin and when the document will be delivered?"
+          }
+        ],
+        "missing_fields": [
+          "impact",
+          "action",
+          "plan"
+        ],
+        "questions": [
+          "Was the document required for the meeting agenda or presentation?",
+          "What action was actually taken? Explicitly state no action taken if applicable.",
+          "Can Support (LM) provide a clear timeline for when the check will begin and when the document will be delivered?",
+          "What date applies to these events?"
+        ],
+        "issues": [
+          "Source times not present in the factual draft: 09:20. Check whether they belong in the chronology.",
+          "Preserved 2 source excerpt(s) containing dates, times or references missing from the draft. Place these details during review; field placement is not complete.",
+          "SITUATION: withheld a paraphrase with a number or time absent from its evidence. Original source wording is preserved below the draft for placement during review.",
+          "Withheld a suggestion introducing contact initials absent from its evidence.",
+          "Withheld a suggestion introducing a number or time absent from its evidence.",
+          "1 source passage(s) were not covered by accepted factual evidence. They are preserved below for review, including details without dates or reference numbers."
+        ],
+        "status": "needs_confirmation",
+        "schema_version": "coached-five-sections-2.4",
+        "review_excerpts": [
+          {
+            "text": "Fictional office note, 2026-09-11 UTC.",
+            "evidence": [
+              "Fictional office note, 2026-09-11 UTC."
+            ]
+          },
+          {
+            "text": "At 09:20 LM said the check had not started.",
+            "evidence": [
+              "At 09:20 LM said the check had not started."
+            ]
+          },
+          {
+            "text": "Nobody has assessed the effect on the meeting. I saved a copy of the request.",
+            "evidence": [
+              "Nobody has assessed the effect on the meeting. I saved a copy of the request."
+            ]
+          }
+        ],
+        "human_approval_required": true,
+        "raw_outputs": [
+          "{\n  \"event_type\": \"launch_report\",\n  \"sections\": {\n    \"situation\": [\n      {\n        \"text\": \"Support (LM) committed to checking a missing attachment on REQ-12 at 09:00 UTC.\",\n        \"evidence\": [\n          \"At 09:00 Support (LM) said they would check the missing attachment on REQ-12.\"\n        ]\n      },\n      {\n        \"text\": \"By 09:20 UTC, Support (LM) had not started the check for the missing attachment on REQ-12.\",\n        \"evidence\": [\n          \"At 09:20 LM said the check had not started.\"\n        ]\n      },\n      {\n        \"text\": \"The document referenced in the request was not sent.\",\n        \"evidence\": [\n          \"The document was not sent.\"\n        ]\n      }\n    ],\n    \"impact\": [],\n    \"agencies_contacted\": [\n      {\n        \"text\": \"Support (LM) was contacted regarding the missing attachment on REQ-12.\",\n        \"evidence\": [\n          \"Support (LM) said they would check the missing attachment on REQ-12.\"\n        ]\n      }\n    ],\n    \"action\": [],\n    \"plan\": []\n  },\n  \"suggestions\": [\n    {\n      \"section\": \"impact\",\n      \"text\": \"The meeting may be affected if the missing document is required for discussion or presentation.\",\n      \"basis\": [\n        \"Nobody has assessed the effect on the meeting.\"\n      ],\n      \"confirm\": \"Was the document required for the meeting agenda or presentation?\"\n    },\n    {\n      \"section\": \"action\",\n      \"text\": \"The requestor should be notified that the document was not sent and the check by Support (LM) has not started.\",\n      \"basis\": [\n        \"The document was not sent. Nobody has assessed the effect on the meeting.\"\n      ],\n      \"confirm\": \"Has the requestor been informed of the missing attachment and the lack of action from Support (LM)?\"\n    },\n    {\n      \"section\": \"plan\",\n      \"text\": \"Support (LM) should be asked to confirm the status of the check and provide a timeline for resolution.\",\n      \"basis\": [\n        \"At 09:20 LM said the check had not started.\"\n      ],\n      \"confirm\": \"Can Support (LM) provide a clear timeline for when the check will begin and when the document will be delivered?\"\n    }\n  ]\n}"
+        ],
+        "coaching_outputs": [
+          "{\"suggestions\": [{\"section\":\"action\",\"text\":\"Log a follow-up to confirm when Support (LM) will begin checking the missing attachment on REQ-12.\",\"basis\":[\"At 09:20 LM said the check had not started.\"],\"confirm\":\"Has Support (LM) confirmed a start time for checking the missing attachment on REQ-12?\"}]}"
+        ],
+        "chunk_count": 1,
+        "source_tokens": 81,
+        "mode": "review",
+        "source_coverage": {
+          "source_characters": 265,
+          "characters_in_fact_evidence": 103,
+          "unquoted_spans": [
+            "Fictional office note, 2026-09-11 UTC.",
+            "At 09:20 LM said the check had not started.",
+            "Nobody has assessed the effect on the meeting. I saved a copy of the request."
+          ],
+          "interpretation": "Literal quote coverage only. It does not establish correct meaning, field placement, or completeness."
+        }
+      },
+      "draft": "DRAFT — REVIEW FACTS AND CONFIRM SUGGESTIONS\n\nSITUATION (With times of particular events):\n- Support (LM) committed to checking a missing attachment on REQ-12 at 09:00 UTC.\n- The document referenced in the request was not sent.\n\nIMPACT:\n[No confirmed detail supplied]\n\n[POSSIBLE IMPACT — CONFIRM]\nThe meeting may be affected if the missing document is required for discussion or presentation.\n\nAGENCIES CONTACTED (W/Initials):\n- Support (LM) was contacted regarding the missing attachment on REQ-12.\n\nACTION:\n[No confirmed detail supplied]\n\nPLAN:\n[No confirmed detail supplied]\n\n[SUGGESTED PLAN — NOT YET AGREED]\nSupport (LM) should be asked to confirm the status of the check and provide a timeline for resolution.\n\n[SOURCE DETAILS TO PLACE DURING REVIEW — UNASSIGNED]\n- Fictional office note, 2026-09-11 UTC.\n- At 09:20 LM said the check had not started.\n- Nobody has assessed the effect on the meeting. I saved a copy of the request.",
+      "error": null,
+      "seconds": 38.47
+    },
+    {
+      "id": "unanchored-details",
+      "mode": "draft",
+      "assist": false,
+      "source": "Fictional reception note. The visitor list would not open. I kept the paper register beside the desk. Nobody was contacted. I did not change the computer settings. Whether arrivals were delayed is unknown. There is no agreed follow-up owner.",
+      "review": "Keep the paper register, explicit no contact, no settings change, unknown impact, and missing owner visible despite no date/reference anchors.",
+      "variant": "adapter",
+      "result": {
+        "event_type": "equipment_error",
+        "sections": {
+          "situation": [
+            {
+              "text": "The visitor list would not open.",
+              "evidence": [
+                "The visitor list would not open."
+              ]
+            }
+          ],
+          "impact": [
+            {
+              "text": "Whether arrivals were delayed is unknown.",
+              "evidence": [
+                "Whether arrivals were delayed is unknown."
+              ]
+            }
+          ],
+          "agencies_contacted": [
+            {
+              "text": "Nobody was contacted.",
+              "evidence": [
+                "Nobody was contacted."
+              ]
+            }
+          ],
+          "action": [
+            {
+              "text": "I kept the paper register beside the desk. I did not change the computer settings.",
+              "evidence": [
+                "I kept the paper register beside the desk.",
+                "I did not change the computer settings."
+              ]
+            }
+          ],
+          "plan": [
+            {
+              "text": "There is no agreed follow-up owner.",
+              "evidence": [
+                "There is no agreed follow-up owner."
+              ]
+            }
+          ]
+        },
+        "suggestions": [],
+        "missing_fields": [],
+        "questions": [
+          "What were the times of the individual events?",
+          "What date applies to these events?",
+          "What time zone applies to the event times?",
+          "What initials belong with each contacted agency?",
+          "What remains to be confirmed in IMPACT? Preserve the stated uncertainty until confirmed."
+        ],
+        "issues": [
+          "1 source passage(s) were not covered by accepted factual evidence. They are preserved below for review, including details without dates or reference numbers."
+        ],
+        "status": "needs_confirmation",
+        "schema_version": "coached-five-sections-2.4",
+        "review_excerpts": [
+          {
+            "text": "Fictional reception note.",
+            "evidence": [
+              "Fictional reception note."
+            ]
+          }
+        ],
+        "human_approval_required": true,
+        "raw_outputs": [
+          "{\"event_type\": \"equipment_error\", \"sections\": {\"situation\": [{\"text\": \"The visitor list would not open.\", \"evidence\": [\"The visitor list would not open.\"]}], \"impact\": [{\"text\": \"Whether arrivals were delayed is unknown.\", \"evidence\": [\"Whether arrivals were delayed is unknown.\"]}], \"agencies_contacted\": [{\"text\": \"Nobody was contacted.\", \"evidence\": [\"Nobody was contacted.\"]}], \"action\": [{\"text\": \"I kept the paper register beside the desk. I did not change the computer settings.\", \"evidence\": [\"I kept the paper register beside the desk.\", \"I did not change the computer settings.\"]}], \"plan\": [{\"text\": \"There is no agreed follow-up owner.\", \"evidence\": [\"There is no agreed follow-up owner.\"]}]}, \"suggestions\": [{\"section\": \"action\", \"text\": \"Consider recording the actual arrival time and the register page that was used.\", \"basis\": [\"The visitor list would not open.\", \"I kept the paper register beside the desk.\"], \"confirm\": \"Which arrival was affected, and what register page was used?\"}, {\"section\": \"plan\", \"text\": \"Proposed follow-up: identify an owner and agree when the register needs checking.\", \"basis\": [\"There is no agreed follow-up owner.\"], \"confirm\": \"Who will check the register, and when?\"}]}"
+        ],
+        "coaching_outputs": [],
+        "chunk_count": 1,
+        "source_tokens": 49,
+        "mode": "draft",
+        "source_coverage": {
+          "source_characters": 241,
+          "characters_in_fact_evidence": 210,
+          "unquoted_spans": [
+            "Fictional reception note."
+          ],
+          "interpretation": "Literal quote coverage only. It does not establish correct meaning, field placement, or completeness."
+        }
+      },
+      "draft": "DRAFT — REVIEW FACTS AND CONFIRM SUGGESTIONS\n\nSITUATION (With times of particular events):\n- The visitor list would not open.\n\nIMPACT:\n- Whether arrivals were delayed is unknown.\n\nAGENCIES CONTACTED (W/Initials):\n- Nobody was contacted.\n\nACTION:\n- I kept the paper register beside the desk. I did not change the computer settings.\n\nPLAN:\n- There is no agreed follow-up owner.\n\n[SOURCE DETAILS TO PLACE DURING REVIEW — UNASSIGNED]\n- Fictional reception note.",
+      "error": null,
+      "seconds": 30.64
+    },
+    {
+      "id": "unanchored-details",
+      "mode": "draft",
+      "assist": false,
+      "source": "Fictional reception note. The visitor list would not open. I kept the paper register beside the desk. Nobody was contacted. I did not change the computer settings. Whether arrivals were delayed is unknown. There is no agreed follow-up owner.",
+      "review": "Keep the paper register, explicit no contact, no settings change, unknown impact, and missing owner visible despite no date/reference anchors.",
+      "variant": "base",
+      "result": {
+        "event_type": "launch_report",
+        "sections": {
+          "situation": [
+            {
+              "text": "The visitor list could not be opened on the computer system.",
+              "evidence": [
+                "The visitor list would not open."
+              ]
+            },
+            {
+              "text": "A paper register was kept beside the desk as a backup record.",
+              "evidence": [
+                "I kept the paper register beside the desk."
+              ]
+            }
+          ],
+          "impact": [],
+          "agencies_contacted": [],
+          "action": [],
+          "plan": []
+        },
+        "suggestions": [],
+        "missing_fields": [
+          "impact",
+          "agencies_contacted",
+          "action",
+          "plan"
+        ],
+        "questions": [
+          "What impact was observed? Explicitly state no impact or not yet assessed when appropriate.",
+          "Which agencies were contacted, with contact initials? Explicitly state none contacted if applicable.",
+          "What action was actually taken? Explicitly state no action taken if applicable.",
+          "What is the next step, with an owner and due time if known? Explicitly state no further action if applicable.",
+          "What were the times of the individual events?",
+          "What date applies to these events?",
+          "What time zone applies to the event times?"
+        ],
+        "issues": [
+          "2 source passage(s) were not covered by accepted factual evidence. They are preserved below for review, including details without dates or reference numbers."
+        ],
+        "status": "needs_confirmation",
+        "schema_version": "coached-five-sections-2.4",
+        "review_excerpts": [
+          {
+            "text": "Fictional reception note.",
+            "evidence": [
+              "Fictional reception note."
+            ]
+          },
+          {
+            "text": "Nobody was contacted. I did not change the computer settings. Whether arrivals were delayed is unknown. There is no agreed follow-up owner.",
+            "evidence": [
+              "Nobody was contacted. I did not change the computer settings. Whether arrivals were delayed is unknown. There is no agreed follow-up owner."
+            ]
+          }
+        ],
+        "human_approval_required": true,
+        "raw_outputs": [
+          "{\n  \"event_type\": \"launch_report\",\n  \"sections\": {\n    \"situation\": [\n      {\n        \"text\": \"The visitor list could not be opened on the computer system.\",\n        \"evidence\": [\"The visitor list would not open.\"]\n      },\n      {\n        \"text\": \"A paper register was kept beside the desk as a backup record.\",\n        \"evidence\": [\"I kept the paper register beside the desk.\"]\n      }\n    ],\n    \"impact\": [],\n    \"agencies_contacted\": [],\n    \"action\": [],\n    \"plan\": []\n  },\n  \"suggestions\": [\n    {\n      \"section\": \"impact\",\n      \"text\": \"If visitors were delayed, the inability to access the visitor list may have affected tracking or reporting of arrivals.\",\n      \"basis\": [\"Whether arrivals were delayed is unknown.\"],\n      \"confirm\": \"Was there any evidence of delayed arrivals or unrecorded visits?\"\n    },\n    {\n      \"section\": \"action\",\n      \"text\": \"Check the computer system settings and logs to determine why the visitor list would not open.\",\n      \"basis\": [\"I did not change the computer settings.\"],\n      \"confirm\": \"Were there any error messages or system logs indicating a technical issue?\"\n    },\n    {\n      \"section\": \"plan\",\n      \"text\": \"Identify a follow-up owner to monitor access to the visitor list and ensure future availability.\",\n      \"basis\": [\"There is no agreed follow-up owner.\"],\n      \"confirm\": \"Who should be responsible for ensuring the visitor list is accessible and updated?\"\n    }\n  ]\n}"
+        ],
+        "coaching_outputs": [],
+        "chunk_count": 1,
+        "source_tokens": 49,
+        "mode": "draft",
+        "source_coverage": {
+          "source_characters": 241,
+          "characters_in_fact_evidence": 74,
+          "unquoted_spans": [
+            "Fictional reception note.",
+            "Nobody was contacted. I did not change the computer settings. Whether arrivals were delayed is unknown. There is no agreed follow-up owner."
+          ],
+          "interpretation": "Literal quote coverage only. It does not establish correct meaning, field placement, or completeness."
+        }
+      },
+      "draft": "DRAFT — REVIEW FACTS AND CONFIRM SUGGESTIONS\n\nSITUATION (With times of particular events):\n- The visitor list could not be opened on the computer system.\n- A paper register was kept beside the desk as a backup record.\n\nIMPACT:\n[No confirmed detail supplied]\n\nAGENCIES CONTACTED (W/Initials):\n[No confirmed detail supplied]\n\nACTION:\n[No confirmed detail supplied]\n\nPLAN:\n[No confirmed detail supplied]\n\n[SOURCE DETAILS TO PLACE DURING REVIEW — UNASSIGNED]\n- Fictional reception note.\n- Nobody was contacted. I did not change the computer settings. Whether arrivals were delayed is unknown. There is no agreed follow-up owner.",
+      "error": null,
+      "seconds": 21.17
+    },
+    {
+      "id": "complete-record-control",
+      "mode": "review",
+      "assist": true,
+      "source": "Fictional office record, 2026-09-11 UTC. 12:02 Room B printer displayed PAPER EMPTY. 12:04 I loaded one ream of office paper. 12:06 the queued handouts printed and the instructor confirmed class began on time with all handouts. At 12:08 Office Support (NH) acknowledged the paper use. NH agreed to update the stock sheet by 15:00 today. No additional action was needed for the printing issue.",
+      "review": "Preserve completed printing, no class delay, NH and the supplied future stock update. Do not manufacture an additional problem.",
+      "variant": "adapter",
+      "result": {
+        "event_type": "equipment_error",
+        "sections": {
+          "situation": [
+            {
+              "text": "2026-09-11 UTC: At 12:02, Room B printer displayed PAPER EMPTY. At 12:04, one ream of office paper was loaded. At 12:06, the queued handouts printed, and the instructor confirmed class began on time with all handouts. At 12:08, Office Support (NH) acknowledged the paper use.",
+              "evidence": [
+                "2026-09-11 UTC. 12:02 Room B printer displayed PAPER EMPTY.",
+                "12:04 I loaded one ream of office paper.",
+                "12:06 the queued handouts printed and the instructor confirmed class began on time with all handouts.",
+                "12:08 Office Support (NH) acknowledged the paper use."
+              ]
+            }
+          ],
+          "impact": [
+            {
+              "text": "No additional action was needed for the printing issue.",
+              "evidence": [
+                "No additional action was needed for the printing issue."
+              ]
+            }
+          ],
+          "agencies_contacted": [
+            {
+              "text": "Office Support (NH) acknowledged the paper use.",
+              "evidence": [
+                "12:08 Office Support (NH) acknowledged the paper use."
+              ]
+            }
+          ],
+          "action": [
+            {
+              "text": "12:04: Loaded one ream of office paper.",
+              "evidence": [
+                "12:04 I loaded one ream of office paper."
+              ]
+            }
+          ],
+          "plan": [
+            {
+              "text": "NH agreed to update the stock sheet by 15:00 today.",
+              "evidence": [
+                "NH agreed to update the stock sheet by 15:00 today."
+              ]
+            }
+          ]
+        },
+        "suggestions": [
+          {
+            "section": "action",
+            "text": "Consider recording the actual paper quantity used and the printer's current status after the handout printing.",
+            "basis": [
+              "12:04 I loaded one ream of office paper.",
+              "12:06 the queued handouts printed and the instructor confirmed class began on time with all handouts."
+            ],
+            "confirm": "What was the actual paper quantity used, and is the printer currently ready for additional printing?"
+          },
+          {
+            "section": "plan",
+            "text": "Proposed refinement: ask the owner to confirm the update is recorded and identify the review point after the stock sheet is updated.",
+            "basis": [
+              "NH agreed to update the stock sheet by 15:00 today."
+            ],
+            "confirm": "Who will confirm the update is recorded, and when should the owner check the sheet?"
+          }
+        ],
+        "missing_fields": [],
+        "questions": [
+          "What was the actual paper quantity used, and is the printer currently ready for additional printing?",
+          "Who will confirm the update is recorded, and when should the owner check the sheet?"
+        ],
+        "issues": [
+          "2 source passage(s) were not covered by accepted factual evidence. They are preserved below for review, including details without dates or reference numbers."
+        ],
+        "status": "needs_confirmation",
+        "schema_version": "coached-five-sections-2.4",
+        "review_excerpts": [
+          {
+            "text": "Fictional office record,",
+            "evidence": [
+              "Fictional office record,"
+            ]
+          },
+          {
+            "text": "At",
+            "evidence": [
+              "At"
+            ]
+          }
+        ],
+        "human_approval_required": true,
+        "raw_outputs": [
+          "{\"event_type\": \"equipment_error\", \"sections\": {\"situation\": [{\"text\": \"2026-09-11 UTC: At 12:02, Room B printer displayed PAPER EMPTY. At 12:04, one ream of office paper was loaded. At 12:06, the queued handouts printed, and the instructor confirmed class began on time with all handouts. At 12:08, Office Support (NH) acknowledged the paper use.\", \"evidence\": [\"2026-09-11 UTC. 12:02 Room B printer displayed PAPER EMPTY.\", \"12:04 I loaded one ream of office paper.\", \"12:06 the queued handouts printed and the instructor confirmed class began on time with all handouts.\", \"12:08 Office Support (NH) acknowledged the paper use.\"]}], \"impact\": [{\"text\": \"No additional action was needed for the printing issue.\", \"evidence\": [\"No additional action was needed for the printing issue.\"]}], \"agencies_contacted\": [{\"text\": \"Office Support (NH) acknowledged the paper use.\", \"evidence\": [\"12:08 Office Support (NH) acknowledged the paper use.\"]}], \"action\": [{\"text\": \"12:04: Loaded one ream of office paper.\", \"evidence\": [\"12:04 I loaded one ream of office paper.\"]}], \"plan\": [{\"text\": \"NH agreed to update the stock sheet by 15:00 today.\", \"evidence\": [\"NH agreed to update the stock sheet by 15:00 today.\"]}]}, \"suggestions\": [{\"section\": \"action\", \"text\": \"Consider recording the actual paper quantity used and the printer's current status after the handout printing.\", \"basis\": [\"12:04 I loaded one ream of office paper.\", \"12:06 the queued handouts printed and the instructor confirmed class began on time with all handouts.\"], \"confirm\": \"What was the actual paper quantity used, and is the printer currently ready for additional printing?\"}, {\"section\": \"plan\", \"text\": \"Proposed refinement: ask the owner to confirm the update is recorded and identify the review point after the stock sheet is updated.\", \"basis\": [\"NH agreed to update the stock sheet by 15:00 today.\"], \"confirm\": \"Who will confirm the update is recorded, and when should the owner check the sheet?\"}]}"
+        ],
+        "coaching_outputs": [],
+        "chunk_count": 1,
+        "source_tokens": 115,
+        "mode": "review",
+        "source_coverage": {
+          "source_characters": 392,
+          "characters_in_fact_evidence": 359,
+          "unquoted_spans": [
+            "Fictional office record,",
+            "At"
+          ],
+          "interpretation": "Literal quote coverage only. It does not establish correct meaning, field placement, or completeness."
+        }
+      },
+      "draft": "DRAFT — REVIEW FACTS AND CONFIRM SUGGESTIONS\n\nSITUATION (With times of particular events):\n- 2026-09-11 UTC: At 12:02, Room B printer displayed PAPER EMPTY. At 12:04, one ream of office paper was loaded. At 12:06, the queued handouts printed, and the instructor confirmed class began on time with all handouts. At 12:08, Office Support (NH) acknowledged the paper use.\n\nIMPACT:\n- No additional action was needed for the printing issue.\n\nAGENCIES CONTACTED (W/Initials):\n- Office Support (NH) acknowledged the paper use.\n\nACTION:\n- 12:04: Loaded one ream of office paper.\n\n[RECOMMENDED ACTION — NOT RECORDED AS DONE]\nConsider recording the actual paper quantity used and the printer's current status after the handout printing.\n\nPLAN:\n- NH agreed to update the stock sheet by 15:00 today.\n\n[SUGGESTED PLAN — NOT YET AGREED]\nProposed refinement: ask the owner to confirm the update is recorded and identify the review point after the stock sheet is updated.\n\n[SOURCE DETAILS TO PLACE DURING REVIEW — UNASSIGNED]\n- Fictional office record,\n- At",
+      "error": null,
+      "seconds": 55.89
+    },
+    {
+      "id": "complete-record-control",
+      "mode": "review",
+      "assist": true,
+      "source": "Fictional office record, 2026-09-11 UTC. 12:02 Room B printer displayed PAPER EMPTY. 12:04 I loaded one ream of office paper. 12:06 the queued handouts printed and the instructor confirmed class began on time with all handouts. At 12:08 Office Support (NH) acknowledged the paper use. NH agreed to update the stock sheet by 15:00 today. No additional action was needed for the printing issue.",
+      "review": "Preserve completed printing, no class delay, NH and the supplied future stock update. Do not manufacture an additional problem.",
+      "variant": "base",
+      "result": {
+        "raw_outputs": [
+          "{\n  \"event_type\": \"equipment_error\",\n  \"sections\": {\n    \"situation\": [\n      {\"text\": \"At 12:02 UTC, the Room B printer displayed 'PAPER EMPTY'.\", \"evidence\": [\"Fictional office record, 2026-09-11 UTC. 12:02 Room B printer displayed PAPER EMPTY.\"]}\n    ],\n    \"impact\": [],\n    \"agencies_contacted\": [\n      {\"text\": \"Office Support (NH) acknowledged the paper use.\", \"evidence\": [\"At 12:08 Office Support (NH) acknowledged the paper use.\"]}\n    ],\n    \"action\": [\n      {\"text\": \"The user loaded one ream of office paper at 12:04.\", \"evidence\": [\"12:04 I loaded one ream of office paper.\"]}\n    ],\n    \"plan\": [\n      {\"text\": \"Office Support (NH) agreed to update the stock sheet by 15:00 today.\", \"evidence\": [\"NH agreed to update the stock sheet by 15:00 today.\"]}\n    ]\n  },\n  \"suggestions\": [\n    {\n      \"section\": \"impact\",\n      \"text\": \"The printing issue may have delayed class if the paper had not been loaded promptly.\",\n      \"basis\": [\"At 12:06 the queued handouts printed and the instructor confirmed class began on time with all handouts.\"],\n      \"confirm\": \"Was the handout printing delayed before 12:06 due to the paper empty message?\"\n    },\n    {\n      \"section\": \"action\",\n      \"text\": \"Verify that the ream loaded at 12:04 was sufficient for the queued handouts.\",\n      \"basis\": [\"12:04 I loaded one ream of office paper. 12:06 the queued handouts printed.\"],\n      \"confirm\": \"Was the one ream sufficient for the printed handouts?\"\n    },\n    {\n      \"section\": \"plan\",\n      \"text\": \"Confirm that the stock sheet update will include the paper used and the date/time of the load.\",\n      \"basis\": [\"NH agreed to update the stock sheet by 15:00 today.\"],\n      \"confirm\": \"Will the update include the time and quantity of paper loaded?\"\n    },\n    {\n      \"section\": \"situation\",\n      \"text\": \"The printer error was resolved without further disruption to class operations.\",\n      \"basis\": [\"At 12:06 the queued handouts printed and the instructor confirmed class began on time with all handouts.\"],\n      \"confirm\": \"Was the printer fully functional after 12:06, or did it require further checks?\"\n    }\n  ]\n}"
+        ],
+        "issues": [
+          "Part 1/1 could not be processed: 'situation' is not one of ['impact', 'action', 'plan']"
+        ],
+        "chunk_count": 1,
+        "source_tokens": 115,
+        "status": "incomplete_draft"
+      },
+      "error": "CoachError: The model did not produce a valid structured draft. Part 1/1 could not be processed: 'situation' is not one of ['impact', 'action', 'plan']",
+      "seconds": 37.66
+    },
+    {
+      "id": "actual-default-multichunk",
+      "mode": "draft",
+      "assist": false,
+      "source": "Fictional inventory note 0: the classroom supply sheet lists box DEMO-100. The label was readable, but no physical count or restock was confirmed. The note remains open for later review.\nFictional inventory note 1: the classroom supply sheet lists box DEMO-101. The label was readable, but no physical count or restock was confirmed. The note remains open for later review.\nFictional inventory note 2: the classroom supply sheet lists box DEMO-102. The label was readable, but no physical count or restock was confirmed. The note remains open for later review.\nFictional inventory note 3: the classroom supply sheet lists box DEMO-103. The label was readable, but no physical count or restock was confirmed. The note remains open for later review.\nFictional inventory note 4: the classroom supply sheet lists box DEMO-104. The label was readable, but no physical count or restock was confirmed. The note remains open for later review.\nFictional inventory note 5: the classroom supply sheet lists box DEMO-105. The label was readable, but no physical count or restock was confirmed. The note remains open for later review.\nFictional inventory note 6: the classroom supply sheet lists box DEMO-106. The label was readable, but no physical count or restock was confirmed. The note remains open for later review.\nFictional inventory note 7: the classroom supply sheet lists box DEMO-107. The label was readable, but no physical count or restock was confirmed. The note remains open for later review.\nFictional inventory note 8: the classroom supply sheet lists box DEMO-108. The label was readable, but no physical count or restock was confirmed. The note remains open for later review.\nFictional inventory note 9: the classroom supply sheet lists box DEMO-109. The label was readable, but no physical count or restock was confirmed. The note remains open for later review.\nFictional inventory note 10: the classroom supply sheet lists box DEMO-110. The label was readable, but no physical count or restock was confirmed. The note remains open for later review.\nFictional inventory note 11: the classroom supply sheet lists box DEMO-111. The label was readable, but no physical count or restock was confirmed. The note remains open for later review.\nFictional inventory note 12: the classroom supply sheet lists box DEMO-112. The label was readable, but no physical count or restock was confirmed. The note remains open for later review.\nFictional inventory note 13: the classroom supply sheet lists box DEMO-113. The label was readable, but no physical count or restock was confirmed. The note remains open for later review.\nFictional inventory note 14: the classroom supply sheet lists box DEMO-114. The label was readable, but no physical count or restock was confirmed. The note remains open for later review.\nFictional inventory note 15: the classroom supply sheet lists box DEMO-115. The label was readable, but no physical count or restock was confirmed. The note remains open for later review.\nFictional inventory note 16: the classroom supply sheet lists box DEMO-116. The label was readable, but no physical count or restock was confirmed. The note remains open for later review.\nFictional inventory note 17: the classroom supply sheet lists box DEMO-117. The label was readable, but no physical count or restock was confirmed. The note remains open for later review.\nFictional inventory note 18: the classroom supply sheet lists box DEMO-118. The label was readable, but no physical count or restock was confirmed. The note remains open for later review.\nFictional inventory note 19: the classroom supply sheet lists box DEMO-119. The label was readable, but no physical count or restock was confirmed. The note remains open for later review.\nFictional inventory note 20: the classroom supply sheet lists box DEMO-120. The label was readable, but no physical count or restock was confirmed. The note remains open for later review.\nFictional inventory note 21: the classroom supply sheet lists box DEMO-121. The label was readable, but no physical count or restock was confirmed. The note remains open for later review.\nFictional inventory note 22: the classroom supply sheet lists box DEMO-122. The label was readable, but no physical count or restock was confirmed. The note remains open for later review.\nFictional inventory note 23: the classroom supply sheet lists box DEMO-123. The label was readable, but no physical count or restock was confirmed. The note remains open for later review.\nFictional inventory note 24: the classroom supply sheet lists box DEMO-124. The label was readable, but no physical count or restock was confirmed. The note remains open for later review.\nFictional inventory note 25: the classroom supply sheet lists box DEMO-125. The label was readable, but no physical count or restock was confirmed. The note remains open for later review.\nFictional inventory note 26: the classroom supply sheet lists box DEMO-126. The label was readable, but no physical count or restock was confirmed. The note remains open for later review.\nFictional inventory note 27: the classroom supply sheet lists box DEMO-127. The label was readable, but no physical count or restock was confirmed. The note remains open for later review.\nFictional inventory note 28: the classroom supply sheet lists box DEMO-128. The label was readable, but no physical count or restock was confirmed. The note remains open for later review.\nFictional inventory note 29: the classroom supply sheet lists box DEMO-129. The label was readable, but no physical count or restock was confirmed. The note remains open for later review.\nFictional inventory note 30: the classroom supply sheet lists box DEMO-130. The label was readable, but no physical count or restock was confirmed. The note remains open for later review.\nFictional inventory note 31: the classroom supply sheet lists box DEMO-131. The label was readable, but no physical count or restock was confirmed. The note remains open for later review.\nFictional inventory note 32: the classroom supply sheet lists box DEMO-132. The label was readable, but no physical count or restock was confirmed. The note remains open for later review.\nFictional inventory note 33: the classroom supply sheet lists box DEMO-133. The label was readable, but no physical count or restock was confirmed. The note remains open for later review.\nFictional inventory note 34: the classroom supply sheet lists box DEMO-134. The label was readable, but no physical count or restock was confirmed. The note remains open for later review.\nFictional inventory note 35: the classroom supply sheet lists box DEMO-135. The label was readable, but no physical count or restock was confirmed. The note remains open for later review.\nFictional inventory note 36: the classroom supply sheet lists box DEMO-136. The label was readable, but no physical count or restock was confirmed. The note remains open for later review.\nFictional inventory note 37: the classroom supply sheet lists box DEMO-137. The label was readable, but no physical count or restock was confirmed. The note remains open for later review.\nFictional inventory note 38: the classroom supply sheet lists box DEMO-138. The label was readable, but no physical count or restock was confirmed. The note remains open for later review.\nFictional inventory note 39: the classroom supply sheet lists box DEMO-139. The label was readable, but no physical count or restock was confirmed. The note remains open for later review.\nFictional inventory note 40: the classroom supply sheet lists box DEMO-140. The label was readable, but no physical count or restock was confirmed. The note remains open for later review.\nFictional inventory note 41: the classroom supply sheet lists box DEMO-141. The label was readable, but no physical count or restock was confirmed. The note remains open for later review.\nFictional inventory note 42: the classroom supply sheet lists box DEMO-142. The label was readable, but no physical count or restock was confirmed. The note remains open for later review.\nFictional inventory note 43: the classroom supply sheet lists box DEMO-143. The label was readable, but no physical count or restock was confirmed. The note remains open for later review.\nFictional inventory note 44: the classroom supply sheet lists box DEMO-144. The label was readable, but no physical count or restock was confirmed. The note remains open for later review.\nFictional inventory note 45: the classroom supply sheet lists box DEMO-145. The label was readable, but no physical count or restock was confirmed. The note remains open for later review.\nFictional inventory note 46: the classroom supply sheet lists box DEMO-146. The label was readable, but no physical count or restock was confirmed. The note remains open for later review.\nFictional inventory note 47: the classroom supply sheet lists box DEMO-147. The label was readable, but no physical count or restock was confirmed. The note remains open for later review.\nFictional inventory note 48: the classroom supply sheet lists box DEMO-148. The label was readable, but no physical count or restock was confirmed. The note remains open for later review.\nFictional inventory note 49: the classroom supply sheet lists box DEMO-149. The label was readable, but no physical count or restock was confirmed. The note remains open for later review.\nFictional inventory note 50: the classroom supply sheet lists box DEMO-150. The label was readable, but no physical count or restock was confirmed. The note remains open for later review.\nFictional inventory note 51: the classroom supply sheet lists box DEMO-151. The label was readable, but no physical count or restock was confirmed. The note remains open for later review.",
+      "review": "A deliberately dense fictional inventory note exceeding the default 2200-token chunk boundary. Check incomplete processing, reference retention, and excessive unassigned text; this is not a realistic-user accuracy benchmark.",
+      "variant": "adapter",
+      "result": {
+        "raw_outputs": [
+          "{\"event_type\": \"other\", \"sections\": {\"situation\": [{\"text\": \"The classroom supply sheet lists box DEMO-100 through DEMO-148. The label was readable for each listed item, but no physical count or restock was confirmed.\", \"evidence\": [\"the classroom supply sheet lists box DEMO-100. The label was readable, but no physical count or restock was confirmed.\", \"the classroom supply sheet lists box DEMO-101. The label was readable, but no physical count or restock was confirmed.\", \"the classroom supply sheet lists box DEMO-102. The label was readable, but no physical count or restock was confirmed.\", \"the classroom supply sheet lists box DEMO-103. The label was readable, but no physical count or restock was confirmed.\", \"the classroom supply sheet lists box DEMO-104. The label was readable, but no physical count or restock was confirmed.\", \"the classroom supply sheet lists box DEMO-105. The label was readable, but no physical count or restock was confirmed.\", \"the classroom supply sheet lists box DEMO-106. The label was readable, but no physical count or restock was confirmed.\", \"the classroom supply sheet lists box DEMO-107. The label was readable, but no physical count or restock was confirmed.\", \"the classroom supply sheet lists box DEMO-108. The label was readable, but no physical count or restock was confirmed.\", \"the classroom supply sheet lists box DEMO-109. The label was readable, but no physical count or restock was confirmed.\", \"the classroom supply sheet lists box DEMO-110. The label was readable, but no physical count or restock was confirmed.\", \"the classroom supply sheet lists box DEMO-111. The label was readable, but no physical count or restock was confirmed.\", \"the classroom supply sheet lists box DEMO-112. The label was readable, but no physical count or restock was confirmed.\", \"the classroom supply sheet lists box DEMO-113. The label was readable, but no physical count or restock was confirmed.\", \"the classroom supply sheet lists box DEMO-114. The label was readable, but no physical count or restock was confirmed.\", \"the classroom supply sheet lists box DEMO-115. The label was readable, but no physical count or restock was confirmed.\", \"the classroom supply sheet lists box DEMO-116. The label was readable, but no physical count or restock was confirmed.\", \"the classroom supply sheet lists box DEMO-117. The label was readable, but no physical count or restock was confirmed.\", \"the classroom supply sheet lists box DEMO-118. The label was readable, but no physical count or restock was confirmed.\", \"the classroom supply sheet lists box DEMO-119. The label was readable, but no physical count or restock was confirmed.\", \"the classroom supply sheet lists box DEMO-120. The label was readable, but no physical count or restock was confirmed.\", \"the classroom supply sheet lists box DEMO-121. The label was readable, but no physical count or restock was confirmed.\", \"the classroom supply sheet lists box DEMO-122. The label was readable, but no physical count or restock was confirmed.\", \"the classroom supply sheet lists box DEMO-123. The label was readable, but no physical count or restock was confirmed.\", \"the classroom supply sheet lists box DEMO-124. The label was readable, but no physical count or restock was confirmed.\", \"the classroom supply sheet lists box DEMO-125. The label was readable, but no physical count or restock was confirmed.\", \"the classroom supply sheet lists box DEMO-126. The label was readable, but no physical count or restock was confirmed.\", \"the classroom supply sheet lists box DEMO-127. The label was readable, but no physical count or restock was confirmed.\", \"the classroom supply sheet lists box DEMO-128. The label was readable, but no physical count or restock was confirmed.\", \"the classroom supply sheet lists box DEMO-129. The label was readable, but no physical count or restock was confirmed.\", \"the classroom supply sheet lists box DEMO-130. The label was readable, but no physical count or restock was confirmed.\", \"the classroom supply sheet lists box DEMO-131. The label was readable, but no physical count or restock was confirmed.\", \"the classroom supply sheet lists box DEMO-132. The label was readable, but no physical count or restock was confirmed.\", \"the classroom supply sheet lists box DEMO-133. The label was readable, but no physical count or restock was confirmed.\", \"the classroom supply sheet lists box DEMO-134. The label was readable, but no physical count or restock was confirmed.\", \"the classroom supply sheet lists box DEMO-135. The label was readable, but no physical count or restock was confirmed.\", \"the classroom supply sheet lists box DEMO-136. The label was readable, but no physical count or restock was confirmed.\", \"the classroom supply sheet lists box DEMO-137. The label was readable, but no physical count or restock was confirmed.\", \"the classroom supply sheet lists box DEMO-138. The label was readable, but no physical count or restock was confirmed.\", \"the classroom supply sheet lists box DEMO-139. The label was readable, but no physical count or restock was confirmed.\", \"the classroom supply sheet lists box DEMO-140. The label was readable, but no physical count or restock was confirmed.\", \"the classroom supply sheet lists box DEMO-141. The label was readable, but no physical count or restock was confirmed.\", \"the classroom supply sheet lists box DEMO-142. The label was readable, but no physical count or restock was confirmed.\", \"the classroom supply sheet lists box DEMO-143. The label was readable, but no physical count or restock was confirmed.\", \"the classroom supply sheet lists box DEMO-144. The label was readable, but no physical count or restock was confirmed.\", \"the classroom supply sheet lists box DEMO-145. The label was readable, but no physical count or restock was confirmed.\", \"the classroom supply sheet lists box DEMO-146. The label was readable, but no physical count or restock was confirmed.\", \"the classroom supply sheet lists box DEMO-147. The label was readable, but no physical count or restock was confirmed.\", \"the classroom supply sheet lists box DEMO-148. The label was readable, but no physical count or restock was confirmed.\"]}], \"impact\": [], \"agencies_contacted\": [], \"action\": [], \"plan\": [{\"text\": \"The note remains open for later review.\", \"evidence\": [\"The note remains open for later review.\"]}]}, \"suggestions\": [{\"section\": \"impact\", \"text\": \"Possible impact: the classroom supply sheet may contain outdated information if the actual inventory has changed.\", \"basis\": [\"the classroom supply sheet lists box DEMO-100. The label was readable, but no physical count or restock was confirmed.\"], \"confirm\": \"Has the actual inventory been checked, and is the listed information still current?\"}, {\"section\": \"action\", \"text\": \"Consider recording the actual inventory status and the last review date.\", \"basis\": [\"the classroom supply sheet lists box DEMO-100. The label was readable, but no physical count or restock was confirmed.\"], \"confirm\": \"Has the actual inventory been checked, and is the listed information still current?\"}, {\"section\": \"plan\", \"text\": \"Proposed follow-up: assign someone to confirm the inventory status and record the review date.\", \"basis\": [\"the classroom supply sheet lists box DEMO-100. The label was readable, but no physical count or restock was confirmed.\"], \"confirm\": \"Who will confirm the inventory status, and when should the review occur?\"}]}",
+          "{\"event_type\": \"other\", \"sections\": {\"situation\": [{\"text\": \"Fictional inventory notes 46 through 51 list classroom supply boxes DEMO-146 through DEMO-151. The label was readable in each case.\", \"evidence\": [\"Fictional inventory note 46: the classroom supply sheet lists box DEMO-146. The label was readable, but no physical count or restock was confirmed.\", \"Fictional inventory note 47: the classroom supply sheet lists box DEMO-147. The label was readable, but no physical count or restock was confirmed.\", \"Fictional inventory note 48: the classroom supply sheet lists box DEMO-148. The label was readable, but no physical count or restock was confirmed.\", \"Fictional inventory note 49: the classroom supply sheet lists box DEMO-149. The label was readable, but no physical count or restock was confirmed.\", \"Fictional inventory note 50: the classroom supply sheet lists box DEMO-150. The label was readable, but no physical count or restock was confirmed.\", \"Fictional inventory note 51: the classroom supply sheet lists box DEMO-151. The label was readable, but no physical count or restock was confirmed.\"]}], \"impact\": [], \"agencies_contacted\": [], \"action\": [], \"plan\": [{\"text\": \"The note remains open for later review.\", \"evidence\": [\"The note remains open for later review.\"]}]}, \"suggestions\": [{\"section\": \"impact\", \"text\": \"Possible impact: the classroom may still be missing the listed supplies; the actual inventory status is unconfirmed.\", \"basis\": [\"Fictional inventory note 46: the classroom supply sheet lists box DEMO-146. The label was readable, but no physical count or restock was confirmed.\", \"Fictional inventory note 47: the classroom supply sheet lists box DEMO-147. The label was readable, but no physical count or restock was confirmed.\", \"Fictional inventory note 48: the classroom supply sheet lists box DEMO-148. The label was readable, but no physical count or restock was confirmed.\", \"Fictional inventory note 49: the classroom supply sheet lists box DEMO-149. The label was readable, but no physical count or restock was confirmed.\", \"Fictional inventory note 50: the classroom supply sheet lists box DEMO-150. The label was readable, but no physical count or restock was confirmed.\", \"Fictional inventory note 51: the classroom supply sheet lists box DEMO-151. The label was readable, but no physical count or restock was confirmed.\"], \"confirm\": \"Were any physical counts taken, and are the listed supplies actually available?\"}, {\"section\": \"action\", \"text\": \"Consider recording the actual inventory status and the last review date after checking with the classroom staff.\", \"basis\": [\"Fictional inventory note 46: the classroom supply sheet lists box DEMO-146. The label was readable, but no physical count or restock was confirmed.\", \"Fictional inventory note 47: the classroom supply sheet lists box DEMO-147. The label was readable, but no physical count or restock was confirmed.\", \"Fictional inventory note 48: the classroom supply sheet lists box DEMO-148. The label was readable, but no physical count or restock was confirmed.\", \"Fictional inventory note 49: the classroom supply sheet lists box DEMO-149. The label was readable, but no physical count or restock was confirmed.\", \"Fictional inventory note 50: the classroom supply sheet lists box DEMO-150. The label was readable, but no physical count or restock was confirmed.\", \"Fictional inventory note 51: the classroom supply sheet lists box DEMO-151. The label was readable, but no physical count or restock was confirmed.\"], \"confirm\": \"Who can confirm the actual inventory status and the last review date?\"}, {\"section\": \"plan\", \"text\": \"Proposed follow-up: assign someone to review the inventory and update the record after the classroom staff confirm the current supply status.\", \"basis\": [\"Fictional inventory note 46: the classroom supply sheet lists box DEMO-146. The label was readable, but no physical count or restock was confirmed.\", \"Fictional inventory note 47: the classroom supply sheet lists box DEMO-147. The label was readable, but no physical count or restock was confirmed.\", \"Fictional inventory note 48: the classroom supply sheet lists box DEMO-148. The label was readable, but no physical count or restock was confirmed.\", \"Fictional inventory note 49: the classroom supply sheet lists box DEMO-149. The label was readable, but no physical count or restock was confirmed.\", \"Fictional inventory note 50: the classroom supply sheet lists box DEMO-150. The label was readable, but no physical count or restock was confirmed.\", \"Fictional inventory note 51: the classroom supply sheet lists box DEMO-151. The label was readable, but no physical count or restock was confirmed.\"], \"confirm\": \"Who will review the inventory, and when is the updated record needed?\"}]}"
+        ],
+        "issues": [
+          "Part 1/2 could not be processed: ['the classroom supply sheet lists box DEMO-100. The label was readable, but no physical count or restock was confirmed.', 'the classroom supply sheet lists box DEMO-101. The label",
+          "Part 2/2 could not be processed: ['Fictional inventory note 46: the classroom supply sheet lists box DEMO-146. The label was readable, but no physical count or restock was confirmed.', 'Fictional inventory note 47"
+        ],
+        "chunk_count": 2,
+        "source_tokens": 2330,
+        "status": "incomplete_draft"
+      },
+      "error": "CoachError: The model did not produce a valid structured draft. Part 1/2 could not be processed: ['the classroom supply sheet lists box DEMO-100. The label was readable, but no physical count or restock was confirmed.', 'the classroom supply sheet lists box DEMO-101. The label; Part 2/2 could not be processed: ['Fictional inventory note 46: the classroom supply sheet lists box DEMO-146. The label was readable, but no phy",
+      "seconds": 299.11
+    }
+  ],
+  "complete": true
+}

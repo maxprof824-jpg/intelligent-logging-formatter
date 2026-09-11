@@ -2,6 +2,10 @@
 
 Prepared 2026-09-11. This local proof of concept organizes fictional administrative notes into **SITUATION (with event times), IMPACT, AGENCIES CONTACTED (W/Initials), ACTION, and PLAN**. It also offers labeled possible impacts, recommended actions, suggested plans, and confirmation questions. It was trained entirely on synthetic examples; no actual UEWR logs or operating procedures were used.
 
+## Current runtime 2.4
+
+The adapter weights and training measurements below are unchanged. Runtime 2.4 adds bounded paraphrase risk checks, source passages outside accepted evidence, per-chunk validation, a readable evidence table, and setup/evaluation protections. Review [VALIDATION-V24.md](reports/VALIDATION-V24.md) for current tests and measured model output. Historical v2.1–2.3 evidence below remains labeled by its actual version.
+
 ## Model and runtime
 
 The trained artifact is a separate **LoRA adapter**, not a standalone replacement for the base model. V2 was trained from the original **Qwen/Qwen3-4B-Instruct-2507** base, revision `cdbee75f17c01a7cc42f958dc650907174af0554`; it did not continue training the v1 adapter. The base weights remain in the project's `models/Qwen3-4B-Instruct-2507` directory. File hashes are recorded in [model-manifest.json](model-manifest.json).
@@ -12,6 +16,7 @@ The demo's behavior combines those adapter weights with the runtime in [coach.py
 - Possible impacts and proposals remain visibly separate from reported facts. A recommendation is not a completed action, and a suggested plan is not agreed work.
 - When gaps remain, an optional second pass through the **same loaded adapter** requests additional suggestions. It adds inference time, not another trained model. Disabling assistance hides suggestions and skips that extra pass.
 - Long notes use overlapping chunks of about 2,200 source tokens, up to 12,000 tokens per submission. The app merges results and flags incomplete processing. Recognized author editing requests and embedded instructions are excluded from evidence.
+- The main generation prompt still requests at most four concise evidence/basis quotations per item. The current validator accepts up to 64 per fact or suggestion so extra evidence in a dense note does not alone invalidate an entire chunk. Every quote must still occur literally in that input chunk, and the same downstream evidence and paraphrase checks apply. This increases structural tolerance, not semantic confidence.
 - Quote checks and simple number/initial checks reject some unsupported text. Verified excerpts from a rejected paraphrase can appear in an **UNASSIGNED** review block for the author to place; they are not silently assigned to a factual section.
 
 The [loader](core.py) uses local files, a 4-bit NF4 base with double quantization, and BF16 compute. The demo listens on `127.0.0.1:7860` and processes notes locally.
@@ -39,11 +44,10 @@ Project root: `intelligent-logging-formatter`.
 | Purpose | File or directory under the project root |
 |---|---|
 | V2 weights and saved training configuration | `runs/adapter-v2/`; adapter weights: `adapter_model.safetensors` |
-| Preserved v1 adapter | `runs/adapter/` |
 | V2 data | `data-v2/train.jsonl`, `data-v2/validation.jsonl` |
 | Local Python and dependency record | `.venv/Scripts/python.exe`, `requirements-lock.txt` |
-| Open v2 / v1 / stop demo | `RUN-DEMO.cmd` / `RUN-V1-DEMO.cmd` / `STOP-DEMO.cmd` |
-| Train / resume / evaluate v2 | `TRAIN-V2.cmd` / `RESUME-V2.cmd` / `EVALUATE-V2.cmd` |
+| Open / stop demo | `RUN-DEMO.cmd` / `STOP-DEMO.cmd` |
+| Train / evaluate v2 | `TRAIN-V2.cmd` / `EVALUATE-V2.cmd` |
 
 Stop the demo before training or evaluating to free GPU memory. The training launcher protects an existing completed adapter from accidental replacement. For a fresh reproducibility run, choose a new output directory:
 

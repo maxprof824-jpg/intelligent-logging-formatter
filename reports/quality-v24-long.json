@@ -1,0 +1,490 @@
+{
+  "runtime": "2.4",
+  "weights_changed": false,
+  "created_utc": "2026-09-11T16:03:38.132360+00:00",
+  "code_sha256": {
+    "coach.py": "1b411faa7bddc15c887d0b815e6c85c0fc460e7e258df5d633f63d4a820e1b56",
+    "coaching_pass.py": "989cb218069bcfe462b851522b1b020a9f5763dc61f1cadb68012ba061fff966",
+    "evidence_checks.py": "e6f87b0e7c28b6c80a2ae4916f365f26d757e1929c004fc15f4103653c6e011c",
+    "source_coverage.py": "bdf40ca98629532f2a88c4620e64fd4f72b0b86e4b55588b85408b621b112584",
+    "core.py": "aee474c96d06c9d8fc8fe73e0a1d77b2d7c9c032491f2c1d30e8841721009530",
+    "quality_check_v24.py": "d6645427d75fcbef87a234b7a44f0141db3b8933ec38bd50c43cc3918e2829e7"
+  },
+  "adapter_sha256": "08a0f0d7c2c93dacb84fcdef97f1c2952c7a70551d260921c9782fa4bfa6dc9d",
+  "limitations": "Small synthetic development smoke set authored for this review; not an untouched holdout or semantic accuracy score.",
+  "outputs": [
+    {
+      "id": "actual-default-multichunk",
+      "mode": "draft",
+      "assist": false,
+      "source": "Fictional inventory note 0: the classroom supply sheet lists box DEMO-100. The label was readable, but no physical count or restock was confirmed. The note remains open for later review.\nFictional inventory note 1: the classroom supply sheet lists box DEMO-101. The label was readable, but no physical count or restock was confirmed. The note remains open for later review.\nFictional inventory note 2: the classroom supply sheet lists box DEMO-102. The label was readable, but no physical count or restock was confirmed. The note remains open for later review.\nFictional inventory note 3: the classroom supply sheet lists box DEMO-103. The label was readable, but no physical count or restock was confirmed. The note remains open for later review.\nFictional inventory note 4: the classroom supply sheet lists box DEMO-104. The label was readable, but no physical count or restock was confirmed. The note remains open for later review.\nFictional inventory note 5: the classroom supply sheet lists box DEMO-105. The label was readable, but no physical count or restock was confirmed. The note remains open for later review.\nFictional inventory note 6: the classroom supply sheet lists box DEMO-106. The label was readable, but no physical count or restock was confirmed. The note remains open for later review.\nFictional inventory note 7: the classroom supply sheet lists box DEMO-107. The label was readable, but no physical count or restock was confirmed. The note remains open for later review.\nFictional inventory note 8: the classroom supply sheet lists box DEMO-108. The label was readable, but no physical count or restock was confirmed. The note remains open for later review.\nFictional inventory note 9: the classroom supply sheet lists box DEMO-109. The label was readable, but no physical count or restock was confirmed. The note remains open for later review.\nFictional inventory note 10: the classroom supply sheet lists box DEMO-110. The label was readable, but no physical count or restock was confirmed. The note remains open for later review.\nFictional inventory note 11: the classroom supply sheet lists box DEMO-111. The label was readable, but no physical count or restock was confirmed. The note remains open for later review.\nFictional inventory note 12: the classroom supply sheet lists box DEMO-112. The label was readable, but no physical count or restock was confirmed. The note remains open for later review.\nFictional inventory note 13: the classroom supply sheet lists box DEMO-113. The label was readable, but no physical count or restock was confirmed. The note remains open for later review.\nFictional inventory note 14: the classroom supply sheet lists box DEMO-114. The label was readable, but no physical count or restock was confirmed. The note remains open for later review.\nFictional inventory note 15: the classroom supply sheet lists box DEMO-115. The label was readable, but no physical count or restock was confirmed. The note remains open for later review.\nFictional inventory note 16: the classroom supply sheet lists box DEMO-116. The label was readable, but no physical count or restock was confirmed. The note remains open for later review.\nFictional inventory note 17: the classroom supply sheet lists box DEMO-117. The label was readable, but no physical count or restock was confirmed. The note remains open for later review.\nFictional inventory note 18: the classroom supply sheet lists box DEMO-118. The label was readable, but no physical count or restock was confirmed. The note remains open for later review.\nFictional inventory note 19: the classroom supply sheet lists box DEMO-119. The label was readable, but no physical count or restock was confirmed. The note remains open for later review.\nFictional inventory note 20: the classroom supply sheet lists box DEMO-120. The label was readable, but no physical count or restock was confirmed. The note remains open for later review.\nFictional inventory note 21: the classroom supply sheet lists box DEMO-121. The label was readable, but no physical count or restock was confirmed. The note remains open for later review.\nFictional inventory note 22: the classroom supply sheet lists box DEMO-122. The label was readable, but no physical count or restock was confirmed. The note remains open for later review.\nFictional inventory note 23: the classroom supply sheet lists box DEMO-123. The label was readable, but no physical count or restock was confirmed. The note remains open for later review.\nFictional inventory note 24: the classroom supply sheet lists box DEMO-124. The label was readable, but no physical count or restock was confirmed. The note remains open for later review.\nFictional inventory note 25: the classroom supply sheet lists box DEMO-125. The label was readable, but no physical count or restock was confirmed. The note remains open for later review.\nFictional inventory note 26: the classroom supply sheet lists box DEMO-126. The label was readable, but no physical count or restock was confirmed. The note remains open for later review.\nFictional inventory note 27: the classroom supply sheet lists box DEMO-127. The label was readable, but no physical count or restock was confirmed. The note remains open for later review.\nFictional inventory note 28: the classroom supply sheet lists box DEMO-128. The label was readable, but no physical count or restock was confirmed. The note remains open for later review.\nFictional inventory note 29: the classroom supply sheet lists box DEMO-129. The label was readable, but no physical count or restock was confirmed. The note remains open for later review.\nFictional inventory note 30: the classroom supply sheet lists box DEMO-130. The label was readable, but no physical count or restock was confirmed. The note remains open for later review.\nFictional inventory note 31: the classroom supply sheet lists box DEMO-131. The label was readable, but no physical count or restock was confirmed. The note remains open for later review.\nFictional inventory note 32: the classroom supply sheet lists box DEMO-132. The label was readable, but no physical count or restock was confirmed. The note remains open for later review.\nFictional inventory note 33: the classroom supply sheet lists box DEMO-133. The label was readable, but no physical count or restock was confirmed. The note remains open for later review.\nFictional inventory note 34: the classroom supply sheet lists box DEMO-134. The label was readable, but no physical count or restock was confirmed. The note remains open for later review.\nFictional inventory note 35: the classroom supply sheet lists box DEMO-135. The label was readable, but no physical count or restock was confirmed. The note remains open for later review.\nFictional inventory note 36: the classroom supply sheet lists box DEMO-136. The label was readable, but no physical count or restock was confirmed. The note remains open for later review.\nFictional inventory note 37: the classroom supply sheet lists box DEMO-137. The label was readable, but no physical count or restock was confirmed. The note remains open for later review.\nFictional inventory note 38: the classroom supply sheet lists box DEMO-138. The label was readable, but no physical count or restock was confirmed. The note remains open for later review.\nFictional inventory note 39: the classroom supply sheet lists box DEMO-139. The label was readable, but no physical count or restock was confirmed. The note remains open for later review.\nFictional inventory note 40: the classroom supply sheet lists box DEMO-140. The label was readable, but no physical count or restock was confirmed. The note remains open for later review.\nFictional inventory note 41: the classroom supply sheet lists box DEMO-141. The label was readable, but no physical count or restock was confirmed. The note remains open for later review.\nFictional inventory note 42: the classroom supply sheet lists box DEMO-142. The label was readable, but no physical count or restock was confirmed. The note remains open for later review.\nFictional inventory note 43: the classroom supply sheet lists box DEMO-143. The label was readable, but no physical count or restock was confirmed. The note remains open for later review.\nFictional inventory note 44: the classroom supply sheet lists box DEMO-144. The label was readable, but no physical count or restock was confirmed. The note remains open for later review.\nFictional inventory note 45: the classroom supply sheet lists box DEMO-145. The label was readable, but no physical count or restock was confirmed. The note remains open for later review.\nFictional inventory note 46: the classroom supply sheet lists box DEMO-146. The label was readable, but no physical count or restock was confirmed. The note remains open for later review.\nFictional inventory note 47: the classroom supply sheet lists box DEMO-147. The label was readable, but no physical count or restock was confirmed. The note remains open for later review.\nFictional inventory note 48: the classroom supply sheet lists box DEMO-148. The label was readable, but no physical count or restock was confirmed. The note remains open for later review.\nFictional inventory note 49: the classroom supply sheet lists box DEMO-149. The label was readable, but no physical count or restock was confirmed. The note remains open for later review.\nFictional inventory note 50: the classroom supply sheet lists box DEMO-150. The label was readable, but no physical count or restock was confirmed. The note remains open for later review.\nFictional inventory note 51: the classroom supply sheet lists box DEMO-151. The label was readable, but no physical count or restock was confirmed. The note remains open for later review.",
+      "review": "A deliberately dense fictional inventory note exceeding the default 2200-token chunk boundary. Check incomplete processing, reference retention, and excessive unassigned text; this is not a realistic-user accuracy benchmark.",
+      "variant": "adapter",
+      "result": {
+        "event_type": "other",
+        "sections": {
+          "situation": [
+            {
+              "text": "The classroom supply sheet lists box DEMO-100 through DEMO-148. The label was readable for each listed item, but no physical count or restock was confirmed.",
+              "evidence": [
+                "the classroom supply sheet lists box DEMO-100. The label was readable, but no physical count or restock was confirmed.",
+                "the classroom supply sheet lists box DEMO-101. The label was readable, but no physical count or restock was confirmed.",
+                "the classroom supply sheet lists box DEMO-102. The label was readable, but no physical count or restock was confirmed.",
+                "the classroom supply sheet lists box DEMO-103. The label was readable, but no physical count or restock was confirmed.",
+                "the classroom supply sheet lists box DEMO-104. The label was readable, but no physical count or restock was confirmed.",
+                "the classroom supply sheet lists box DEMO-105. The label was readable, but no physical count or restock was confirmed.",
+                "the classroom supply sheet lists box DEMO-106. The label was readable, but no physical count or restock was confirmed.",
+                "the classroom supply sheet lists box DEMO-107. The label was readable, but no physical count or restock was confirmed.",
+                "the classroom supply sheet lists box DEMO-108. The label was readable, but no physical count or restock was confirmed.",
+                "the classroom supply sheet lists box DEMO-109. The label was readable, but no physical count or restock was confirmed.",
+                "the classroom supply sheet lists box DEMO-110. The label was readable, but no physical count or restock was confirmed.",
+                "the classroom supply sheet lists box DEMO-111. The label was readable, but no physical count or restock was confirmed.",
+                "the classroom supply sheet lists box DEMO-112. The label was readable, but no physical count or restock was confirmed.",
+                "the classroom supply sheet lists box DEMO-113. The label was readable, but no physical count or restock was confirmed.",
+                "the classroom supply sheet lists box DEMO-114. The label was readable, but no physical count or restock was confirmed.",
+                "the classroom supply sheet lists box DEMO-115. The label was readable, but no physical count or restock was confirmed.",
+                "the classroom supply sheet lists box DEMO-116. The label was readable, but no physical count or restock was confirmed.",
+                "the classroom supply sheet lists box DEMO-117. The label was readable, but no physical count or restock was confirmed.",
+                "the classroom supply sheet lists box DEMO-118. The label was readable, but no physical count or restock was confirmed.",
+                "the classroom supply sheet lists box DEMO-119. The label was readable, but no physical count or restock was confirmed.",
+                "the classroom supply sheet lists box DEMO-120. The label was readable, but no physical count or restock was confirmed.",
+                "the classroom supply sheet lists box DEMO-121. The label was readable, but no physical count or restock was confirmed.",
+                "the classroom supply sheet lists box DEMO-122. The label was readable, but no physical count or restock was confirmed.",
+                "the classroom supply sheet lists box DEMO-123. The label was readable, but no physical count or restock was confirmed.",
+                "the classroom supply sheet lists box DEMO-124. The label was readable, but no physical count or restock was confirmed.",
+                "the classroom supply sheet lists box DEMO-125. The label was readable, but no physical count or restock was confirmed.",
+                "the classroom supply sheet lists box DEMO-126. The label was readable, but no physical count or restock was confirmed.",
+                "the classroom supply sheet lists box DEMO-127. The label was readable, but no physical count or restock was confirmed.",
+                "the classroom supply sheet lists box DEMO-128. The label was readable, but no physical count or restock was confirmed.",
+                "the classroom supply sheet lists box DEMO-129. The label was readable, but no physical count or restock was confirmed.",
+                "the classroom supply sheet lists box DEMO-130. The label was readable, but no physical count or restock was confirmed.",
+                "the classroom supply sheet lists box DEMO-131. The label was readable, but no physical count or restock was confirmed.",
+                "the classroom supply sheet lists box DEMO-132. The label was readable, but no physical count or restock was confirmed.",
+                "the classroom supply sheet lists box DEMO-133. The label was readable, but no physical count or restock was confirmed.",
+                "the classroom supply sheet lists box DEMO-134. The label was readable, but no physical count or restock was confirmed.",
+                "the classroom supply sheet lists box DEMO-135. The label was readable, but no physical count or restock was confirmed.",
+                "the classroom supply sheet lists box DEMO-136. The label was readable, but no physical count or restock was confirmed.",
+                "the classroom supply sheet lists box DEMO-137. The label was readable, but no physical count or restock was confirmed.",
+                "the classroom supply sheet lists box DEMO-138. The label was readable, but no physical count or restock was confirmed.",
+                "the classroom supply sheet lists box DEMO-139. The label was readable, but no physical count or restock was confirmed.",
+                "the classroom supply sheet lists box DEMO-140. The label was readable, but no physical count or restock was confirmed.",
+                "the classroom supply sheet lists box DEMO-141. The label was readable, but no physical count or restock was confirmed.",
+                "the classroom supply sheet lists box DEMO-142. The label was readable, but no physical count or restock was confirmed.",
+                "the classroom supply sheet lists box DEMO-143. The label was readable, but no physical count or restock was confirmed.",
+                "the classroom supply sheet lists box DEMO-144. The label was readable, but no physical count or restock was confirmed.",
+                "the classroom supply sheet lists box DEMO-145. The label was readable, but no physical count or restock was confirmed.",
+                "the classroom supply sheet lists box DEMO-146. The label was readable, but no physical count or restock was confirmed.",
+                "the classroom supply sheet lists box DEMO-147. The label was readable, but no physical count or restock was confirmed.",
+                "the classroom supply sheet lists box DEMO-148. The label was readable, but no physical count or restock was confirmed."
+              ]
+            },
+            {
+              "text": "Fictional inventory notes 46 through 51 list classroom supply boxes DEMO-146 through DEMO-151. The label was readable in each case.",
+              "evidence": [
+                "Fictional inventory note 46: the classroom supply sheet lists box DEMO-146. The label was readable, but no physical count or restock was confirmed.",
+                "Fictional inventory note 47: the classroom supply sheet lists box DEMO-147. The label was readable, but no physical count or restock was confirmed.",
+                "Fictional inventory note 48: the classroom supply sheet lists box DEMO-148. The label was readable, but no physical count or restock was confirmed.",
+                "Fictional inventory note 49: the classroom supply sheet lists box DEMO-149. The label was readable, but no physical count or restock was confirmed.",
+                "Fictional inventory note 50: the classroom supply sheet lists box DEMO-150. The label was readable, but no physical count or restock was confirmed.",
+                "Fictional inventory note 51: the classroom supply sheet lists box DEMO-151. The label was readable, but no physical count or restock was confirmed."
+              ]
+            }
+          ],
+          "impact": [],
+          "agencies_contacted": [],
+          "action": [],
+          "plan": [
+            {
+              "text": "The note remains open for later review.",
+              "evidence": [
+                "The note remains open for later review."
+              ]
+            }
+          ]
+        },
+        "suggestions": [],
+        "missing_fields": [
+          "impact",
+          "agencies_contacted",
+          "action"
+        ],
+        "questions": [
+          "What impact was observed? Explicitly state no impact or not yet assessed when appropriate.",
+          "Which agencies were contacted, with contact initials? Explicitly state none contacted if applicable.",
+          "What action was actually taken? Explicitly state no action taken if applicable.",
+          "What were the times of the individual events?",
+          "What date applies to these events?",
+          "What time zone applies to the event times?"
+        ],
+        "issues": [
+          "Preserved 48 source excerpt(s) containing dates, times or references missing from the draft. Place these details during review; field placement is not complete.",
+          "1 source passage(s) were not covered by accepted factual evidence. They are preserved below for review, including details without dates or reference numbers."
+        ],
+        "status": "needs_confirmation",
+        "schema_version": "coached-five-sections-2.4",
+        "review_excerpts": [
+          {
+            "text": "Fictional inventory note 1: the classroom supply sheet lists box DEMO-101.",
+            "evidence": [
+              "Fictional inventory note 1: the classroom supply sheet lists box DEMO-101."
+            ]
+          },
+          {
+            "text": "Fictional inventory note 2: the classroom supply sheet lists box DEMO-102.",
+            "evidence": [
+              "Fictional inventory note 2: the classroom supply sheet lists box DEMO-102."
+            ]
+          },
+          {
+            "text": "Fictional inventory note 3: the classroom supply sheet lists box DEMO-103.",
+            "evidence": [
+              "Fictional inventory note 3: the classroom supply sheet lists box DEMO-103."
+            ]
+          },
+          {
+            "text": "Fictional inventory note 4: the classroom supply sheet lists box DEMO-104.",
+            "evidence": [
+              "Fictional inventory note 4: the classroom supply sheet lists box DEMO-104."
+            ]
+          },
+          {
+            "text": "Fictional inventory note 5: the classroom supply sheet lists box DEMO-105.",
+            "evidence": [
+              "Fictional inventory note 5: the classroom supply sheet lists box DEMO-105."
+            ]
+          },
+          {
+            "text": "Fictional inventory note 6: the classroom supply sheet lists box DEMO-106.",
+            "evidence": [
+              "Fictional inventory note 6: the classroom supply sheet lists box DEMO-106."
+            ]
+          },
+          {
+            "text": "Fictional inventory note 7: the classroom supply sheet lists box DEMO-107.",
+            "evidence": [
+              "Fictional inventory note 7: the classroom supply sheet lists box DEMO-107."
+            ]
+          },
+          {
+            "text": "Fictional inventory note 8: the classroom supply sheet lists box DEMO-108.",
+            "evidence": [
+              "Fictional inventory note 8: the classroom supply sheet lists box DEMO-108."
+            ]
+          },
+          {
+            "text": "Fictional inventory note 9: the classroom supply sheet lists box DEMO-109.",
+            "evidence": [
+              "Fictional inventory note 9: the classroom supply sheet lists box DEMO-109."
+            ]
+          },
+          {
+            "text": "Fictional inventory note 10: the classroom supply sheet lists box DEMO-110.",
+            "evidence": [
+              "Fictional inventory note 10: the classroom supply sheet lists box DEMO-110."
+            ]
+          },
+          {
+            "text": "Fictional inventory note 11: the classroom supply sheet lists box DEMO-111.",
+            "evidence": [
+              "Fictional inventory note 11: the classroom supply sheet lists box DEMO-111."
+            ]
+          },
+          {
+            "text": "Fictional inventory note 12: the classroom supply sheet lists box DEMO-112.",
+            "evidence": [
+              "Fictional inventory note 12: the classroom supply sheet lists box DEMO-112."
+            ]
+          },
+          {
+            "text": "Fictional inventory note 13: the classroom supply sheet lists box DEMO-113.",
+            "evidence": [
+              "Fictional inventory note 13: the classroom supply sheet lists box DEMO-113."
+            ]
+          },
+          {
+            "text": "Fictional inventory note 14: the classroom supply sheet lists box DEMO-114.",
+            "evidence": [
+              "Fictional inventory note 14: the classroom supply sheet lists box DEMO-114."
+            ]
+          },
+          {
+            "text": "Fictional inventory note 15: the classroom supply sheet lists box DEMO-115.",
+            "evidence": [
+              "Fictional inventory note 15: the classroom supply sheet lists box DEMO-115."
+            ]
+          },
+          {
+            "text": "Fictional inventory note 16: the classroom supply sheet lists box DEMO-116.",
+            "evidence": [
+              "Fictional inventory note 16: the classroom supply sheet lists box DEMO-116."
+            ]
+          },
+          {
+            "text": "Fictional inventory note 17: the classroom supply sheet lists box DEMO-117.",
+            "evidence": [
+              "Fictional inventory note 17: the classroom supply sheet lists box DEMO-117."
+            ]
+          },
+          {
+            "text": "Fictional inventory note 18: the classroom supply sheet lists box DEMO-118.",
+            "evidence": [
+              "Fictional inventory note 18: the classroom supply sheet lists box DEMO-118."
+            ]
+          },
+          {
+            "text": "Fictional inventory note 19: the classroom supply sheet lists box DEMO-119.",
+            "evidence": [
+              "Fictional inventory note 19: the classroom supply sheet lists box DEMO-119."
+            ]
+          },
+          {
+            "text": "Fictional inventory note 20: the classroom supply sheet lists box DEMO-120.",
+            "evidence": [
+              "Fictional inventory note 20: the classroom supply sheet lists box DEMO-120."
+            ]
+          },
+          {
+            "text": "Fictional inventory note 21: the classroom supply sheet lists box DEMO-121.",
+            "evidence": [
+              "Fictional inventory note 21: the classroom supply sheet lists box DEMO-121."
+            ]
+          },
+          {
+            "text": "Fictional inventory note 22: the classroom supply sheet lists box DEMO-122.",
+            "evidence": [
+              "Fictional inventory note 22: the classroom supply sheet lists box DEMO-122."
+            ]
+          },
+          {
+            "text": "Fictional inventory note 23: the classroom supply sheet lists box DEMO-123.",
+            "evidence": [
+              "Fictional inventory note 23: the classroom supply sheet lists box DEMO-123."
+            ]
+          },
+          {
+            "text": "Fictional inventory note 24: the classroom supply sheet lists box DEMO-124.",
+            "evidence": [
+              "Fictional inventory note 24: the classroom supply sheet lists box DEMO-124."
+            ]
+          },
+          {
+            "text": "Fictional inventory note 25: the classroom supply sheet lists box DEMO-125.",
+            "evidence": [
+              "Fictional inventory note 25: the classroom supply sheet lists box DEMO-125."
+            ]
+          },
+          {
+            "text": "Fictional inventory note 26: the classroom supply sheet lists box DEMO-126.",
+            "evidence": [
+              "Fictional inventory note 26: the classroom supply sheet lists box DEMO-126."
+            ]
+          },
+          {
+            "text": "Fictional inventory note 27: the classroom supply sheet lists box DEMO-127.",
+            "evidence": [
+              "Fictional inventory note 27: the classroom supply sheet lists box DEMO-127."
+            ]
+          },
+          {
+            "text": "Fictional inventory note 28: the classroom supply sheet lists box DEMO-128.",
+            "evidence": [
+              "Fictional inventory note 28: the classroom supply sheet lists box DEMO-128."
+            ]
+          },
+          {
+            "text": "Fictional inventory note 29: the classroom supply sheet lists box DEMO-129.",
+            "evidence": [
+              "Fictional inventory note 29: the classroom supply sheet lists box DEMO-129."
+            ]
+          },
+          {
+            "text": "Fictional inventory note 30: the classroom supply sheet lists box DEMO-130.",
+            "evidence": [
+              "Fictional inventory note 30: the classroom supply sheet lists box DEMO-130."
+            ]
+          },
+          {
+            "text": "Fictional inventory note 31: the classroom supply sheet lists box DEMO-131.",
+            "evidence": [
+              "Fictional inventory note 31: the classroom supply sheet lists box DEMO-131."
+            ]
+          },
+          {
+            "text": "Fictional inventory note 32: the classroom supply sheet lists box DEMO-132.",
+            "evidence": [
+              "Fictional inventory note 32: the classroom supply sheet lists box DEMO-132."
+            ]
+          },
+          {
+            "text": "Fictional inventory note 33: the classroom supply sheet lists box DEMO-133.",
+            "evidence": [
+              "Fictional inventory note 33: the classroom supply sheet lists box DEMO-133."
+            ]
+          },
+          {
+            "text": "Fictional inventory note 34: the classroom supply sheet lists box DEMO-134.",
+            "evidence": [
+              "Fictional inventory note 34: the classroom supply sheet lists box DEMO-134."
+            ]
+          },
+          {
+            "text": "Fictional inventory note 35: the classroom supply sheet lists box DEMO-135.",
+            "evidence": [
+              "Fictional inventory note 35: the classroom supply sheet lists box DEMO-135."
+            ]
+          },
+          {
+            "text": "Fictional inventory note 36: the classroom supply sheet lists box DEMO-136.",
+            "evidence": [
+              "Fictional inventory note 36: the classroom supply sheet lists box DEMO-136."
+            ]
+          },
+          {
+            "text": "Fictional inventory note 37: the classroom supply sheet lists box DEMO-137.",
+            "evidence": [
+              "Fictional inventory note 37: the classroom supply sheet lists box DEMO-137."
+            ]
+          },
+          {
+            "text": "Fictional inventory note 38: the classroom supply sheet lists box DEMO-138.",
+            "evidence": [
+              "Fictional inventory note 38: the classroom supply sheet lists box DEMO-138."
+            ]
+          },
+          {
+            "text": "Fictional inventory note 39: the classroom supply sheet lists box DEMO-139.",
+            "evidence": [
+              "Fictional inventory note 39: the classroom supply sheet lists box DEMO-139."
+            ]
+          },
+          {
+            "text": "Fictional inventory note 40: the classroom supply sheet lists box DEMO-140.",
+            "evidence": [
+              "Fictional inventory note 40: the classroom supply sheet lists box DEMO-140."
+            ]
+          },
+          {
+            "text": "Fictional inventory note 41: the classroom supply sheet lists box DEMO-141.",
+            "evidence": [
+              "Fictional inventory note 41: the classroom supply sheet lists box DEMO-141."
+            ]
+          },
+          {
+            "text": "Fictional inventory note 42: the classroom supply sheet lists box DEMO-142.",
+            "evidence": [
+              "Fictional inventory note 42: the classroom supply sheet lists box DEMO-142."
+            ]
+          },
+          {
+            "text": "Fictional inventory note 43: the classroom supply sheet lists box DEMO-143.",
+            "evidence": [
+              "Fictional inventory note 43: the classroom supply sheet lists box DEMO-143."
+            ]
+          },
+          {
+            "text": "Fictional inventory note 44: the classroom supply sheet lists box DEMO-144.",
+            "evidence": [
+              "Fictional inventory note 44: the classroom supply sheet lists box DEMO-144."
+            ]
+          },
+          {
+            "text": "Fictional inventory note 45: the classroom supply sheet lists box DEMO-145.",
+            "evidence": [
+              "Fictional inventory note 45: the classroom supply sheet lists box DEMO-145."
+            ]
+          },
+          {
+            "text": "Fictional inventory note 47: the classroom supply sheet lists box DEMO-147.",
+            "evidence": [
+              "Fictional inventory note 47: the classroom supply sheet lists box DEMO-147."
+            ]
+          },
+          {
+            "text": "Fictional inventory note 49: the classroom supply sheet lists box DEMO-149.",
+            "evidence": [
+              "Fictional inventory note 49: the classroom supply sheet lists box DEMO-149."
+            ]
+          },
+          {
+            "text": "Fictional inventory note 50: the classroom supply sheet lists box DEMO-150.",
+            "evidence": [
+              "Fictional inventory note 50: the classroom supply sheet lists box DEMO-150."
+            ]
+          },
+          {
+            "text": "Fictional inventory note 0:",
+            "evidence": [
+              "Fictional inventory note 0:"
+            ]
+          }
+        ],
+        "human_approval_required": true,
+        "raw_outputs": [
+          "{\"event_type\": \"other\", \"sections\": {\"situation\": [{\"text\": \"The classroom supply sheet lists box DEMO-100 through DEMO-148. The label was readable for each listed item, but no physical count or restock was confirmed.\", \"evidence\": [\"the classroom supply sheet lists box DEMO-100. The label was readable, but no physical count or restock was confirmed.\", \"the classroom supply sheet lists box DEMO-101. The label was readable, but no physical count or restock was confirmed.\", \"the classroom supply sheet lists box DEMO-102. The label was readable, but no physical count or restock was confirmed.\", \"the classroom supply sheet lists box DEMO-103. The label was readable, but no physical count or restock was confirmed.\", \"the classroom supply sheet lists box DEMO-104. The label was readable, but no physical count or restock was confirmed.\", \"the classroom supply sheet lists box DEMO-105. The label was readable, but no physical count or restock was confirmed.\", \"the classroom supply sheet lists box DEMO-106. The label was readable, but no physical count or restock was confirmed.\", \"the classroom supply sheet lists box DEMO-107. The label was readable, but no physical count or restock was confirmed.\", \"the classroom supply sheet lists box DEMO-108. The label was readable, but no physical count or restock was confirmed.\", \"the classroom supply sheet lists box DEMO-109. The label was readable, but no physical count or restock was confirmed.\", \"the classroom supply sheet lists box DEMO-110. The label was readable, but no physical count or restock was confirmed.\", \"the classroom supply sheet lists box DEMO-111. The label was readable, but no physical count or restock was confirmed.\", \"the classroom supply sheet lists box DEMO-112. The label was readable, but no physical count or restock was confirmed.\", \"the classroom supply sheet lists box DEMO-113. The label was readable, but no physical count or restock was confirmed.\", \"the classroom supply sheet lists box DEMO-114. The label was readable, but no physical count or restock was confirmed.\", \"the classroom supply sheet lists box DEMO-115. The label was readable, but no physical count or restock was confirmed.\", \"the classroom supply sheet lists box DEMO-116. The label was readable, but no physical count or restock was confirmed.\", \"the classroom supply sheet lists box DEMO-117. The label was readable, but no physical count or restock was confirmed.\", \"the classroom supply sheet lists box DEMO-118. The label was readable, but no physical count or restock was confirmed.\", \"the classroom supply sheet lists box DEMO-119. The label was readable, but no physical count or restock was confirmed.\", \"the classroom supply sheet lists box DEMO-120. The label was readable, but no physical count or restock was confirmed.\", \"the classroom supply sheet lists box DEMO-121. The label was readable, but no physical count or restock was confirmed.\", \"the classroom supply sheet lists box DEMO-122. The label was readable, but no physical count or restock was confirmed.\", \"the classroom supply sheet lists box DEMO-123. The label was readable, but no physical count or restock was confirmed.\", \"the classroom supply sheet lists box DEMO-124. The label was readable, but no physical count or restock was confirmed.\", \"the classroom supply sheet lists box DEMO-125. The label was readable, but no physical count or restock was confirmed.\", \"the classroom supply sheet lists box DEMO-126. The label was readable, but no physical count or restock was confirmed.\", \"the classroom supply sheet lists box DEMO-127. The label was readable, but no physical count or restock was confirmed.\", \"the classroom supply sheet lists box DEMO-128. The label was readable, but no physical count or restock was confirmed.\", \"the classroom supply sheet lists box DEMO-129. The label was readable, but no physical count or restock was confirmed.\", \"the classroom supply sheet lists box DEMO-130. The label was readable, but no physical count or restock was confirmed.\", \"the classroom supply sheet lists box DEMO-131. The label was readable, but no physical count or restock was confirmed.\", \"the classroom supply sheet lists box DEMO-132. The label was readable, but no physical count or restock was confirmed.\", \"the classroom supply sheet lists box DEMO-133. The label was readable, but no physical count or restock was confirmed.\", \"the classroom supply sheet lists box DEMO-134. The label was readable, but no physical count or restock was confirmed.\", \"the classroom supply sheet lists box DEMO-135. The label was readable, but no physical count or restock was confirmed.\", \"the classroom supply sheet lists box DEMO-136. The label was readable, but no physical count or restock was confirmed.\", \"the classroom supply sheet lists box DEMO-137. The label was readable, but no physical count or restock was confirmed.\", \"the classroom supply sheet lists box DEMO-138. The label was readable, but no physical count or restock was confirmed.\", \"the classroom supply sheet lists box DEMO-139. The label was readable, but no physical count or restock was confirmed.\", \"the classroom supply sheet lists box DEMO-140. The label was readable, but no physical count or restock was confirmed.\", \"the classroom supply sheet lists box DEMO-141. The label was readable, but no physical count or restock was confirmed.\", \"the classroom supply sheet lists box DEMO-142. The label was readable, but no physical count or restock was confirmed.\", \"the classroom supply sheet lists box DEMO-143. The label was readable, but no physical count or restock was confirmed.\", \"the classroom supply sheet lists box DEMO-144. The label was readable, but no physical count or restock was confirmed.\", \"the classroom supply sheet lists box DEMO-145. The label was readable, but no physical count or restock was confirmed.\", \"the classroom supply sheet lists box DEMO-146. The label was readable, but no physical count or restock was confirmed.\", \"the classroom supply sheet lists box DEMO-147. The label was readable, but no physical count or restock was confirmed.\", \"the classroom supply sheet lists box DEMO-148. The label was readable, but no physical count or restock was confirmed.\"]}], \"impact\": [], \"agencies_contacted\": [], \"action\": [], \"plan\": [{\"text\": \"The note remains open for later review.\", \"evidence\": [\"The note remains open for later review.\"]}]}, \"suggestions\": [{\"section\": \"impact\", \"text\": \"Possible impact: the classroom supply sheet may contain outdated information if the actual inventory has changed.\", \"basis\": [\"the classroom supply sheet lists box DEMO-100. The label was readable, but no physical count or restock was confirmed.\"], \"confirm\": \"Has the actual inventory been checked, and is the listed information still current?\"}, {\"section\": \"action\", \"text\": \"Consider recording the actual inventory status and the last review date.\", \"basis\": [\"the classroom supply sheet lists box DEMO-100. The label was readable, but no physical count or restock was confirmed.\"], \"confirm\": \"Has the actual inventory been checked, and is the listed information still current?\"}, {\"section\": \"plan\", \"text\": \"Proposed follow-up: assign someone to confirm the inventory status and record the review date.\", \"basis\": [\"the classroom supply sheet lists box DEMO-100. The label was readable, but no physical count or restock was confirmed.\"], \"confirm\": \"Who will confirm the inventory status, and when should the review occur?\"}]}",
+          "{\"event_type\": \"other\", \"sections\": {\"situation\": [{\"text\": \"Fictional inventory notes 46 through 51 list classroom supply boxes DEMO-146 through DEMO-151. The label was readable in each case.\", \"evidence\": [\"Fictional inventory note 46: the classroom supply sheet lists box DEMO-146. The label was readable, but no physical count or restock was confirmed.\", \"Fictional inventory note 47: the classroom supply sheet lists box DEMO-147. The label was readable, but no physical count or restock was confirmed.\", \"Fictional inventory note 48: the classroom supply sheet lists box DEMO-148. The label was readable, but no physical count or restock was confirmed.\", \"Fictional inventory note 49: the classroom supply sheet lists box DEMO-149. The label was readable, but no physical count or restock was confirmed.\", \"Fictional inventory note 50: the classroom supply sheet lists box DEMO-150. The label was readable, but no physical count or restock was confirmed.\", \"Fictional inventory note 51: the classroom supply sheet lists box DEMO-151. The label was readable, but no physical count or restock was confirmed.\"]}], \"impact\": [], \"agencies_contacted\": [], \"action\": [], \"plan\": [{\"text\": \"The note remains open for later review.\", \"evidence\": [\"The note remains open for later review.\"]}]}, \"suggestions\": [{\"section\": \"impact\", \"text\": \"Possible impact: the classroom may still be missing the listed supplies; the actual inventory status is unconfirmed.\", \"basis\": [\"Fictional inventory note 46: the classroom supply sheet lists box DEMO-146. The label was readable, but no physical count or restock was confirmed.\", \"Fictional inventory note 47: the classroom supply sheet lists box DEMO-147. The label was readable, but no physical count or restock was confirmed.\", \"Fictional inventory note 48: the classroom supply sheet lists box DEMO-148. The label was readable, but no physical count or restock was confirmed.\", \"Fictional inventory note 49: the classroom supply sheet lists box DEMO-149. The label was readable, but no physical count or restock was confirmed.\", \"Fictional inventory note 50: the classroom supply sheet lists box DEMO-150. The label was readable, but no physical count or restock was confirmed.\", \"Fictional inventory note 51: the classroom supply sheet lists box DEMO-151. The label was readable, but no physical count or restock was confirmed.\"], \"confirm\": \"Were any physical counts taken, and are the listed supplies actually available?\"}, {\"section\": \"action\", \"text\": \"Consider recording the actual inventory status and the last review date after checking with the classroom staff.\", \"basis\": [\"Fictional inventory note 46: the classroom supply sheet lists box DEMO-146. The label was readable, but no physical count or restock was confirmed.\", \"Fictional inventory note 47: the classroom supply sheet lists box DEMO-147. The label was readable, but no physical count or restock was confirmed.\", \"Fictional inventory note 48: the classroom supply sheet lists box DEMO-148. The label was readable, but no physical count or restock was confirmed.\", \"Fictional inventory note 49: the classroom supply sheet lists box DEMO-149. The label was readable, but no physical count or restock was confirmed.\", \"Fictional inventory note 50: the classroom supply sheet lists box DEMO-150. The label was readable, but no physical count or restock was confirmed.\", \"Fictional inventory note 51: the classroom supply sheet lists box DEMO-151. The label was readable, but no physical count or restock was confirmed.\"], \"confirm\": \"Who can confirm the actual inventory status and the last review date?\"}, {\"section\": \"plan\", \"text\": \"Proposed follow-up: assign someone to review the inventory and update the record after the classroom staff confirm the current supply status.\", \"basis\": [\"Fictional inventory note 46: the classroom supply sheet lists box DEMO-146. The label was readable, but no physical count or restock was confirmed.\", \"Fictional inventory note 47: the classroom supply sheet lists box DEMO-147. The label was readable, but no physical count or restock was confirmed.\", \"Fictional inventory note 48: the classroom supply sheet lists box DEMO-148. The label was readable, but no physical count or restock was confirmed.\", \"Fictional inventory note 49: the classroom supply sheet lists box DEMO-149. The label was readable, but no physical count or restock was confirmed.\", \"Fictional inventory note 50: the classroom supply sheet lists box DEMO-150. The label was readable, but no physical count or restock was confirmed.\", \"Fictional inventory note 51: the classroom supply sheet lists box DEMO-151. The label was readable, but no physical count or restock was confirmed.\"], \"confirm\": \"Who will review the inventory, and when is the updated record needed?\"}]}"
+        ],
+        "coaching_outputs": [],
+        "chunk_count": 2,
+        "source_tokens": 2330,
+        "mode": "draft",
+        "source_coverage": {
+          "source_characters": 9765,
+          "characters_in_fact_evidence": 8338,
+          "unquoted_spans": [
+            "Fictional inventory note 0:",
+            "Fictional inventory note 1:",
+            "Fictional inventory note 2:",
+            "Fictional inventory note 3:",
+            "Fictional inventory note 4:",
+            "Fictional inventory note 5:",
+            "Fictional inventory note 6:",
+            "Fictional inventory note 7:",
+            "Fictional inventory note 8:",
+            "Fictional inventory note 9:",
+            "Fictional inventory note 10:",
+            "Fictional inventory note 11:",
+            "Fictional inventory note 12:",
+            "Fictional inventory note 13:",
+            "Fictional inventory note 14:",
+            "Fictional inventory note 15:",
+            "Fictional inventory note 16:",
+            "Fictional inventory note 17:",
+            "Fictional inventory note 18:",
+            "Fictional inventory note 19:",
+            "Fictional inventory note 20:",
+            "Fictional inventory note 21:",
+            "Fictional inventory note 22:",
+            "Fictional inventory note 23:",
+            "Fictional inventory note 24:",
+            "Fictional inventory note 25:",
+            "Fictional inventory note 26:",
+            "Fictional inventory note 27:",
+            "Fictional inventory note 28:",
+            "Fictional inventory note 29:",
+            "Fictional inventory note 30:",
+            "Fictional inventory note 31:",
+            "Fictional inventory note 32:",
+            "Fictional inventory note 33:",
+            "Fictional inventory note 34:",
+            "Fictional inventory note 35:",
+            "Fictional inventory note 36:",
+            "Fictional inventory note 37:",
+            "Fictional inventory note 38:",
+            "Fictional inventory note 39:",
+            "Fictional inventory note 40:",
+            "Fictional inventory note 41:",
+            "Fictional inventory note 42:",
+            "Fictional inventory note 43:",
+            "Fictional inventory note 44:",
+            "Fictional inventory note 45:"
+          ],
+          "interpretation": "Literal quote coverage only. It does not establish correct meaning, field placement, or completeness."
+        }
+      },
+      "draft": "DRAFT — REVIEW FACTS AND CONFIRM SUGGESTIONS\n\nSITUATION (With times of particular events):\n- The classroom supply sheet lists box DEMO-100 through DEMO-148. The label was readable for each listed item, but no physical count or restock was confirmed.\n- Fictional inventory notes 46 through 51 list classroom supply boxes DEMO-146 through DEMO-151. The label was readable in each case.\n\nIMPACT:\n[No confirmed detail supplied]\n\nAGENCIES CONTACTED (W/Initials):\n[No confirmed detail supplied]\n\nACTION:\n[No confirmed detail supplied]\n\nPLAN:\n- The note remains open for later review.\n\n[SOURCE DETAILS TO PLACE DURING REVIEW — UNASSIGNED]\n- Fictional inventory note 1: the classroom supply sheet lists box DEMO-101.\n- Fictional inventory note 2: the classroom supply sheet lists box DEMO-102.\n- Fictional inventory note 3: the classroom supply sheet lists box DEMO-103.\n- Fictional inventory note 4: the classroom supply sheet lists box DEMO-104.\n- Fictional inventory note 5: the classroom supply sheet lists box DEMO-105.\n- Fictional inventory note 6: the classroom supply sheet lists box DEMO-106.\n- Fictional inventory note 7: the classroom supply sheet lists box DEMO-107.\n- Fictional inventory note 8: the classroom supply sheet lists box DEMO-108.\n- Fictional inventory note 9: the classroom supply sheet lists box DEMO-109.\n- Fictional inventory note 10: the classroom supply sheet lists box DEMO-110.\n- Fictional inventory note 11: the classroom supply sheet lists box DEMO-111.\n- Fictional inventory note 12: the classroom supply sheet lists box DEMO-112.\n- Fictional inventory note 13: the classroom supply sheet lists box DEMO-113.\n- Fictional inventory note 14: the classroom supply sheet lists box DEMO-114.\n- Fictional inventory note 15: the classroom supply sheet lists box DEMO-115.\n- Fictional inventory note 16: the classroom supply sheet lists box DEMO-116.\n- Fictional inventory note 17: the classroom supply sheet lists box DEMO-117.\n- Fictional inventory note 18: the classroom supply sheet lists box DEMO-118.\n- Fictional inventory note 19: the classroom supply sheet lists box DEMO-119.\n- Fictional inventory note 20: the classroom supply sheet lists box DEMO-120.\n- Fictional inventory note 21: the classroom supply sheet lists box DEMO-121.\n- Fictional inventory note 22: the classroom supply sheet lists box DEMO-122.\n- Fictional inventory note 23: the classroom supply sheet lists box DEMO-123.\n- Fictional inventory note 24: the classroom supply sheet lists box DEMO-124.\n- Fictional inventory note 25: the classroom supply sheet lists box DEMO-125.\n- Fictional inventory note 26: the classroom supply sheet lists box DEMO-126.\n- Fictional inventory note 27: the classroom supply sheet lists box DEMO-127.\n- Fictional inventory note 28: the classroom supply sheet lists box DEMO-128.\n- Fictional inventory note 29: the classroom supply sheet lists box DEMO-129.\n- Fictional inventory note 30: the classroom supply sheet lists box DEMO-130.\n- Fictional inventory note 31: the classroom supply sheet lists box DEMO-131.\n- Fictional inventory note 32: the classroom supply sheet lists box DEMO-132.\n- Fictional inventory note 33: the classroom supply sheet lists box DEMO-133.\n- Fictional inventory note 34: the classroom supply sheet lists box DEMO-134.\n- Fictional inventory note 35: the classroom supply sheet lists box DEMO-135.\n- Fictional inventory note 36: the classroom supply sheet lists box DEMO-136.\n- Fictional inventory note 37: the classroom supply sheet lists box DEMO-137.\n- Fictional inventory note 38: the classroom supply sheet lists box DEMO-138.\n- Fictional inventory note 39: the classroom supply sheet lists box DEMO-139.\n- Fictional inventory note 40: the classroom supply sheet lists box DEMO-140.\n- Fictional inventory note 41: the classroom supply sheet lists box DEMO-141.\n- Fictional inventory note 42: the classroom supply sheet lists box DEMO-142.\n- Fictional inventory note 43: the classroom supply sheet lists box DEMO-143.\n- Fictional inventory note 44: the classroom supply sheet lists box DEMO-144.\n- Fictional inventory note 45: the classroom supply sheet lists box DEMO-145.\n- Fictional inventory note 47: the classroom supply sheet lists box DEMO-147.\n- Fictional inventory note 49: the classroom supply sheet lists box DEMO-149.\n- Fictional inventory note 50: the classroom supply sheet lists box DEMO-150.\n- Fictional inventory note 0:",
+      "error": null,
+      "seconds": 297.75
+    }
+  ],
+  "complete": true
+}

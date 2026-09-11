@@ -1,5 +1,11 @@
-# Intelligent Logging Formatter v2.3 — proof-of-concept preview
+# Intelligent Logging Formatter 2.4 — proof-of-concept preview
 
-Windows tester package containing application code, synthetic datasets, evaluation evidence, and the trained LoRA adapter. Extract the tester ZIP, run SETUP-WINDOWS.cmd, then RUN-DEMO.cmd. Setup downloads Python, dependencies, and the pinned approximately 8 GB base model. Tested locally on RTX 5060 Ti 16 GB / 32 GB RAM; recipient clean-install testing remains pending.
+This update improves review and reliability around the existing v2 adapter. It adds checks for recognized negation, uncertainty, date, reference and completion errors; preserves source passages outside accepted factual evidence; and shows draft entries beside their source quotations.
 
-Runtime v2.3 uses the same trained v2 adapter plus improved evidence and source-excerpt recovery checks. All outputs require human review. This release does not provide an online inference endpoint.
+Dense notes can retain additional evidence quotes without rejecting an otherwise valid part. Quotes still undergo the same source checks. Longer drafts can remain slow and require substantial review.
+
+Setup now verifies all base-model files against the saved hashes and checks GPU compatibility before downloading weights. Retraining uses separate experiment directories. Evaluation and resume protect earlier records.
+
+Download `intelligent-logging-formatter-tester-v2.4.zip`, extract it, run `SETUP-WINDOWS.cmd`, then `RUN-DEMO.cmd`. Windows and a compatible NVIDIA GPU are required. Initial setup downloads the approximately 8 GB base model and dependencies. A separate-computer clean install remains untested.
+
+The model can still omit or misplace information, confuse separate events, and suggest unsupported next steps. Every result requires review. Read `reports/VALIDATION-V24.md` and `REVIEW-AND-ROADMAP.md` for measured checks, limitations, and next work. This is a synthetic-data proof of concept and does not host online inference.

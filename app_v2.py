@@ -70,6 +70,25 @@ def format_raw(raw_outputs, coaching_outputs=None):
     return "\n\n".join(group for group in groups if group)
 
 
+def evidence_rows(result):
+    """A direct, readable comparison for human review; quotes are not correctness scores."""
+    return [[field.replace('_', ' ').upper(), fact['text'], '\n\n'.join(fact['evidence'])]
+            for field, facts in result.get('sections', {}).items() for fact in facts]
+
+
+def draft_status(result):
+    count = sum(len(facts) for facts in result.get('sections', {}).values())
+    if result.get('status') == 'incomplete_draft':
+        return 'Partial draft: some notes could not be processed. Check the source and review details.'
+    if not count:
+        return 'No supported entries were organized. Review the preserved source passages and try a shorter related group.'
+    unassigned = len(result.get('review_excerpts', []))
+    message = f'{count} draft entries prepared for review.'
+    if unassigned:
+        message += f' {unassigned} source passage(s) still need placement or checking.'
+    return message + ' Confirm suggestions before using them.'
+
+
 def build_demo(model, tokenizer, model_name):
     """Build the UI around an already-loaded model; inference is serialized."""
     import gradio as gr
@@ -80,24 +99,25 @@ def build_demo(model, tokenizer, model_name):
         result = {}
         try:
             if not source or not source.strip():
-                return "", "Enter fictional notes above to prepare a draft.", "", {}, ""
+                return "", "Enter fictional notes above to prepare a draft.", "", {}, "", []
             progress(0, desc="Organizing notes and checking suggested next steps…" if assist else "Organizing your notes…")
             with inference_lock:
-                result = process_note(model, tokenizer, source, mode=mode, assist=assist)
+                def update_progress(stage, part, total):
+                    fraction = (part-1) / max(total, 1)
+                    fraction = .6 + .35*fraction if stage == 'Preparing suggestions' else .6*fraction
+                    if stage == 'Checking source coverage': fraction = .98
+                    progress(fraction, desc=f'{stage} · part {part}/{total}')
+                result = process_note(model, tokenizer, source, mode=mode, assist=assist, progress=update_progress)
             draft = render_coached_log(result)
             followup = format_followup(result)
             count = result.get("chunk_count", 1)
-            status = "Draft prepared. Review the details and confirm any suggestions."
-            if not assist:
-                status = "Draft prepared from your notes. Review the details below."
-            if result.get("status") == "incomplete_draft":
-                status = "Partial draft prepared. Some notes could not be processed; check the details below."
+            status = draft_status(result)
             if count > 1:
                 status += f" Long notes processed in {count} parts; check the full sequence of events."
             diagnostics = {key: value for key, value in result.items()
                            if key not in ("raw_outputs", "coaching_outputs")}
             progress(1, desc="Partial draft ready" if result.get("status") == "incomplete_draft" else "Draft ready")
-            return draft, followup, status, diagnostics, format_raw(result.get("raw_outputs"), result.get("coaching_outputs"))
+            return draft, followup, status, diagnostics, format_raw(result.get("raw_outputs"), result.get("coaching_outputs")), evidence_rows(result)
         except Exception as error:
             # If the extraction layer attaches partial output, retain it for diagnosis.
             partial_result = getattr(error, "result", None)
@@ -113,7 +133,7 @@ def build_demo(model, tokenizer, model_name):
                 message += " " + _plain_markdown(str(error))
             else:
                 message += " Try a shorter section, or check the details in the accordion below."
-            return "", message, "Draft not completed.", diagnostics, format_raw(raw_outputs, coaching_outputs)
+            return "", message, "Draft not completed.", diagnostics, format_raw(raw_outputs, coaching_outputs), []
 
     with gr.Blocks(
         title="Intelligent Logging Formatter",
@@ -138,8 +158,8 @@ def build_demo(model, tokenizer, model_name):
                 value=True, label="Include possible impacts and suggested next steps", scale=2,
             )
         gr.Markdown(
-            "Long notes are processed in parts. When more help is needed, the same local model makes "
-            "an additional suggestion pass; suggestions can take longer to prepare."
+            "Keep related updates together. For separate incidents, separate drafts are easier to check. "
+            "Long notes and optional suggestions take more time to prepare."
         )
         source = gr.Textbox(
             lines=12, max_lines=24, label="Fictional notes or existing log",
@@ -160,6 +180,11 @@ def build_demo(model, tokenizer, model_name):
             interactive=True, show_copy_button=True, elem_id="draft",
         )
         followup = gr.Markdown()
+        with gr.Accordion('Compare draft entries with your source', open=False):
+            gr.Markdown('Check meaning, uncertainty, and who did what—not just matching words. '
+                        'These quotes relate to the generated draft; check them again after editing.')
+            evidence = gr.Dataframe(headers=['Section', 'Generated entry', 'Quoted source'],
+                                    datatype=['str', 'str', 'str'], type='array', interactive=False, wrap=True)
         gr.Markdown(
             "Add answers to your notes and prepare the draft again, or edit the draft above. "
             "Keep suggestions labeled until you confirm them."
@@ -169,31 +194,33 @@ def build_demo(model, tokenizer, model_name):
             raw = gr.Textbox(lines=8, max_lines=20, label="Raw extraction and suggestion responses", interactive=False)
         gr.Markdown(f"Running locally · {model_name}. Processing stays on this computer.")
         button.click(
-            process, inputs=[source, mode, assist], outputs=[draft, followup, status, checked, raw],
+            process, inputs=[source, mode, assist], outputs=[draft, followup, status, checked, raw, evidence],
             concurrency_limit=1, concurrency_id="logging-model", api_name="process_note",
         )
         clear.click(
-            lambda: ("", "", "", "", {}, ""),
-            outputs=[source, draft, followup, status, checked, raw], queue=False,
+            lambda: ("", "", "", "", {}, "", []),
+            outputs=[source, draft, followup, status, checked, raw, evidence], queue=False,
         )
     return demo.queue(default_concurrency_limit=1)
 
 
 def main():
     parser = argparse.ArgumentParser(description="Run the local intelligent logging formatter demo.")
-    parser.add_argument("--base", action="store_true", help="Use the original model without an adapter")
+    selection = parser.add_mutually_exclusive_group()
+    selection.add_argument("--base", action="store_true", help="Use the original model without an adapter")
+    selection.add_argument("--adapter", help="Path to a trained adapter directory, relative to the project or absolute")
     parser.add_argument("--port", type=int, default=7860)
     parser.add_argument("--no-browser", action="store_true", help="Start without opening a browser")
     args = parser.parse_args()
     import torch
     torch.set_num_threads(4)
-    adapter = None if args.base else ROOT / "runs" / "adapter-v2"
+    adapter = None if args.base else ROOT / (args.adapter or "runs/adapter-v2")
     if adapter and not (adapter / "adapter_model.safetensors").exists():
         raise RuntimeError(
             "The v2 adapter is not ready. Finish v2 training, or run python app_v2.py --base to use the base model."
         )
     model, tokenizer = load_model(adapter)
-    model_name = "Original base model" if args.base else "Locally fine-tuned logging adapter v2"
+    model_name = "Original base model" if args.base else f"Local adapter: {adapter.name} · formatter runtime 2.4"
     demo = build_demo(model, tokenizer, model_name)
     demo.launch(
         server_name="127.0.0.1", server_port=args.port,

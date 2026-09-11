@@ -1,0 +1,24 @@
+{
+  "purpose": "Runtime 2.4 compatibility check on the existing local installation; not a clean-install test.",
+  "doctor_sha256": "9974f50fb853207f4c63744c2440da6121ed2d9d883e9b179f7ca475a808add1",
+  "cuda_available": true,
+  "torch_cuda": "12.8",
+  "gpu": "NVIDIA GeForce RTX 5060 Ti",
+  "capability": [
+    12,
+    0
+  ],
+  "vram_gib": 15.93,
+  "bf16_supported": true,
+  "compiled_arches": [
+    "sm_70",
+    "sm_75",
+    "sm_80",
+    "sm_86",
+    "sm_90",
+    "sm_100",
+    "sm_120"
+  ],
+  "nf4_forward_backward": "passed",
+  "status": "passed"
+}

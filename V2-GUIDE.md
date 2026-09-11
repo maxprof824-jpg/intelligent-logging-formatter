@@ -1,47 +1,43 @@
-# Intelligent Logging Formatter v2
+# Using Intelligent Logging Formatter
 
-The new default demo organizes messy notes into the same five sections and helps the author develop missing content. RUN-DEMO.cmd opens v2; RUN-V1-DEMO.cmd preserves the earlier extract-only model. Stop the current demo with STOP-DEMO.cmd before switching models or training.
+This synthetic proof of concept turns fictional notes into five sections and helps the author identify missing details. Runtime **2.4** uses the same trained v2 adapter, with improved checks and a clearer review interface.
 
-## How it helps
+## Run the demo
 
-- **Reported details:** cleans up shorthand, combines related fragments, and preserves source evidence, dates, times, initials, references, negation and uncertainty.
-- **Possible impact:** when an impact is missing or uncertain, proposes a plausible administrative effect for the author to confirm. A frozen classroom console might have interrupted a practice session; the model must not assert that it did.
-- **Recommended action:** proposes a documentation or coordination step, such as confirming who was affected or whether a support request exists. This is never presented as an action already performed.
-- **Suggested plan:** proposes follow-up, such as identifying an owner and agreeing a review point. It does not invent a deadline or turn a proposed plan into an approved one.
-- **Questions:** asks for the actual missing details, plus questions tied to the suggested content.
+Extract the tester download, run **SETUP-WINDOWS.cmd**, then **RUN-DEMO.cmd**. Open <http://127.0.0.1:7860> if the browser does not open. Use **STOP-DEMO.cmd** before training or evaluation so the model is not competing for GPU memory.
 
-These additions appear inside your five headings with visible labels: **POSSIBLE IMPACT — CONFIRM**, **RECOMMENDED ACTION — NOT RECORDED AS DONE**, and **SUGGESTED PLAN — NOT YET AGREED**. If the first pass leaves an unresolved impact, action or plan without useful assistance, a conditional second pass through the same adapter requests suggestions for those gaps. The second pass adds suggestions, not factual claims. Turning off the assistance checkbox skips that additional pass and leaves the factual draft without suggestions. Edit the draft for your use or add confirmed answers to the source and prepare it again. Editing a draft does not itself establish that a suggestion is true.
+Draft mode organizes rough notes; review mode applies the same source and completeness checks to an existing log. Neither mode approves a log. Keep separate incidents in separate submissions when possible.
 
-## Longer notes
+## Review the result
 
-The app accepts up to 12,000 source tokens, roughly 7,000–9,000 English words depending on the content. It processes overlapping sections of about 2,200 tokens and merges the results, keeping evidence for each fact. Separate events can remain identifiable in the wording of the draft. It does not silently truncate oversized submissions. If a section fails, the result is explicitly marked incomplete. Missing source times are listed for review.
+- Check **Situation, Impact, Agencies contacted, Action, and Plan**, including event times, who said what, and whether work was completed or merely proposed.
+- Possible impacts, recommended actions, and suggested plans are labeled separately. They require confirmation.
+- Read **source passages to place during review**. These include rejected paraphrase evidence and text not covered by accepted factual evidence. They have not been assigned to the right field for you.
+- Open **Compare draft entries with your source** to see each generated entry beside its quotations. A real quote does not prove that the entry's meaning or placement is correct.
+- Edit the draft or add missing information to the notes and generate again. Evidence rows refer to the generated draft, so recheck them after editing.
 
-The runtime also checks recognizable dates, times and reference identifiers against the draft. When one is omitted, its exact source sentence is preserved in the UNASSIGNED review block. This keeps important anchors visible without claiming correct field placement or complete coverage of every detail. Source-span grouping and deduplication are heuristics; they do not prove event relationships or chronology. Long, dense submissions take longer and may need to be split into related incidents.
+The formatter accepts up to 12,000 source tokens and processes long notes in overlapping parts. It rejects oversized input rather than silently cutting it. Failed parts are marked incomplete. Long and dense notes can still lose field placement or produce a large review area; progress now identifies the current stage and part.
 
-## Model change
+The model is asked for at most four concise quotes per entry, but validation allows up to 64 for dense notes. Extra quotes within that limit no longer cause a whole part to fail. They still undergo the same source and paraphrase checks; more evidence does not establish that an entry is correct.
 
-A separate rank-16 QLoRA adapter was trained from the original Qwen3-4B-Instruct-2507 model on **480 synthetic training examples**, with **48 validation examples**. Training took **12.2 minutes**, with peak allocated VRAM of **7.48 GiB** and peak reserved VRAM of **13.38 GiB**. Allocated and reserved memory are different measurements, not amounts to add together.
+## Train or evaluate
 
-The richer output contract contains five arrays of factual sentences with evidence, plus separate suggestions with source basis and a confirmation question. Training uses assistant-response-only loss, BF16 compute, NF4 base weights, gradient checkpointing and a microbatch of one. The old adapter and old evaluation remain intact.
-
-Training data and generation code: `data-v2/` and `build_data_v2.py`. The **18 acceptance examples were authored independently and were not used for model training**. They contain short messy notes and two longer notes, including contradictory times, proposed versus completed actions, uncertain paperwork and pasted instructions. Their outputs have since been examined to refine the application's filtering and coaching pipeline. They are therefore development acceptance cases, not a pristine held-out estimate of generalization. Initial raw outputs exposed problems including copied editing requests, an embedded instruction, inaccurate paraphrases and missing useful suggestions. Final pipeline results must be read from the completed acceptance report; these changes alone do not establish that every case passes.
-
-## Reproduce
+**TRAIN-V2.cmd** creates a new timestamped experiment and prints a command for opening that adapter. The released adapter is preserved. To select an existing experiment yourself:
 
 ```powershell
-.\.venv\Scripts\python.exe train.py --data-dir data-v2 --max-length 4096 --output runs/adapter-v2
-.\.venv\Scripts\python.exe evaluate_v2.py
-.\.venv\Scripts\python.exe app_v2.py
+.venv\Scripts\python.exe app_v2.py --adapter runs/experiments/YOUR-RUN
 ```
 
-TRAIN-V2.cmd and RESUME-V2.cmd provide the same workflow. Choose a new `--output` path for additional experiments so the trained adapter is not overwritten.
+**EVALUATE-V2.cmd** runs the synthetic development evaluation. Each run gets separate files; see its printed paths. For CPU checks:
 
-## What still needs review
+```powershell
+.venv\Scripts\python.exe -m unittest discover -p "test_*.py"
+```
 
-Quote checks verify that evidence appears in the note. When a simple check finds an unsupported number or contact initial in a factual paraphrase, the app preserves its exact verified source excerpts in an **UNASSIGNED** review block below the five sections. The error can also indicate that the model chose the wrong section, so the author must assign those excerpts during review. They are not automatically placed in ACTION, PLAN or another factual section, and the draft remains marked as needing confirmation. Evidence quotations that are not present in the source are still withheld. These checks cannot prove that a paraphrase or possible impact is logically supported.
+Setup verifies local model files using their saved hashes. An already complete installation can be checked without internet access:
 
-The source filter excludes recognized requests to rewrite the log, recognized control lines, and delimited blocks that contain instructions directed at the model. It does not recognize every possible embedded instruction. Suggestions concern administrative documentation and coordination; the model does not establish operational impact or prescribe radar or maintenance procedures.
+```powershell
+.venv\Scripts\python.exe download_model.py --verify-only
+```
 
-Acceptance metrics separately show the final draft's structure and literal retention, raw main-pass schema and quote checks, and raw second-pass schema and quote checks when available. Literal retention counts only the five factual sections: a time or reference visible in the UNASSIGNED review block can still fail that check because it has not been assigned to the log. These are not semantic accuracy scores. Expected-empty-section checks can penalize legitimate, attributed future plans, and forbidden-phrase searches can flag negated statements. Inspect those cases in context. A valid JSON object and a real source quote do not by themselves establish a correct interpretation.
-
-All data remain fictional in this proof of concept. The useful next evaluation is independent operator review of fresh fictional notes, assessing retained facts, sensible questions, useful suggestions and mistaken implications. See STATUS.md and the v2 acceptance report for the actual measured results.
+The training data remain the original 480 synthetic examples and 48 validation examples. Read the [model card](MODEL-CARD-V2.md), [review and roadmap](REVIEW-AND-ROADMAP.md), and [2.4 validation record](reports/VALIDATION-V24.md) for evidence and limitations. No claim of readiness for real operational use is made.

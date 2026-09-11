@@ -46,7 +46,7 @@
               "evidence": {
                 "type": "array",
                 "minItems": 1,
-                "maxItems": 4,
+                "maxItems": 64,
                 "items": {
                   "type": "string",
                   "minLength": 1,
@@ -75,7 +75,7 @@
               "evidence": {
                 "type": "array",
                 "minItems": 1,
-                "maxItems": 4,
+                "maxItems": 64,
                 "items": {
                   "type": "string",
                   "minLength": 1,
@@ -104,7 +104,7 @@
               "evidence": {
                 "type": "array",
                 "minItems": 1,
-                "maxItems": 4,
+                "maxItems": 64,
                 "items": {
                   "type": "string",
                   "minLength": 1,
@@ -133,7 +133,7 @@
               "evidence": {
                 "type": "array",
                 "minItems": 1,
-                "maxItems": 4,
+                "maxItems": 64,
                 "items": {
                   "type": "string",
                   "minLength": 1,
@@ -162,7 +162,7 @@
               "evidence": {
                 "type": "array",
                 "minItems": 1,
-                "maxItems": 4,
+                "maxItems": 64,
                 "items": {
                   "type": "string",
                   "minLength": 1,
@@ -202,7 +202,7 @@
           "basis": {
             "type": "array",
             "minItems": 1,
-            "maxItems": 4,
+            "maxItems": 64,
             "items": {
               "type": "string",
               "minLength": 1,

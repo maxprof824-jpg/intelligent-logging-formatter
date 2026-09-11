@@ -9,6 +9,7 @@ import json
 import re
 import time
 import traceback
+import uuid
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -59,7 +60,8 @@ def sha256_file(path):
 def artifact_hashes(adapter, dataset):
     """Fingerprint the evaluated code, available datasets, and selected adapter."""
     code = {name: sha256_file(ROOT / name) for name in
-            ('coach.py', 'coaching_pass.py', 'core.py', 'evaluate_v2.py', 'app.py')}
+            ('coach.py', 'coaching_pass.py', 'core.py', 'evaluate_v2.py', 'app_v2.py',
+             'evidence_checks.py', 'source_coverage.py')}
     datasets = {'data-v2/acceptance.jsonl': sha256_file(dataset)}
     for name in ('train.jsonl', 'validation.jsonl'):
         path = ROOT / 'data-v2' / name
@@ -409,14 +411,52 @@ def run_case(model, tokenizer, row):
     return output
 
 
+def new_run_name(base=False):
+    stamp = datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%S%fZ')
+    return f"{'base' if base else 'adapter'}-v2-{stamp}-{uuid.uuid4().hex[:8]}"
+
+
+def reserve_report_paths(reports, name, overwrite=False):
+    """Reserve a run's data files exclusively; never replace earlier evidence implicitly."""
+    if not re.fullmatch(r'[A-Za-z0-9][A-Za-z0-9._-]*', name):
+        raise ValueError('--name must be a simple filename prefix.')
+    predictions = reports / f'{name}-acceptance.jsonl'
+    metrics = reports / f'{name}-acceptance-metrics.json'
+    summary = reports / f'{name}-acceptance.md'
+    if not overwrite:
+        existing = [path.name for path in (predictions, metrics, summary) if path.exists()]
+        if existing:
+            raise FileExistsError('Report files already exist: ' + ', '.join(existing)
+                                  + '. Use a new --name or explicit --overwrite.')
+    reports.mkdir(parents=True, exist_ok=True)
+    if not overwrite:
+        created = []
+        try:
+            for path in (predictions, metrics):
+                with path.open('x', encoding='utf-8'):
+                    pass
+                created.append(path)
+        except Exception:
+            for path in created:
+                path.unlink()
+            raise
+    return predictions, metrics
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--adapter', default='runs/adapter-v2', help='Adapter path, absolute or relative to this project.')
-    parser.add_argument('--name', default='adapter-v2', help='Report filename prefix; letters, digits, dots, underscores, or hyphens.')
+    parser.add_argument('--name', default=None, help='Report prefix; defaults to a unique timestamped run name.')
+    parser.add_argument('--overwrite', action='store_true', help='Explicitly replace reports with the selected --name.')
+    parser.add_argument('--summary', action='store_true', help='Write a Markdown summary for this completed run.')
     parser.add_argument('--limit', type=int, default=None, help='Run at most this many cases, after applying --ids.')
     parser.add_argument('--ids', default=None, help='Comma-separated case IDs; execution follows dataset order.')
     parser.add_argument('--base', action='store_true', help='Use the original base model without any adapter, under the same v2 pipeline.')
     args = parser.parse_args()
+    if args.overwrite and args.name is None:
+        parser.error('--overwrite requires an explicit --name.')
+    if args.name is None:
+        args.name = new_run_name(args.base)
     if not re.fullmatch(r'[A-Za-z0-9][A-Za-z0-9._-]*', args.name):
         parser.error('--name must be a simple filename prefix.')
     if args.limit is not None and args.limit < 1:
@@ -441,11 +481,12 @@ def main():
     if adapter is not None and not (adapter / 'adapter_config.json').is_file():
         parser.error(f'Adapter configuration not found: {adapter / "adapter_config.json"}')
     reports = ROOT / 'reports'
-    reports.mkdir(exist_ok=True)
-    predictions_path = reports / f'{args.name}-acceptance.jsonl'
-    metrics_path = reports / f'{args.name}-acceptance-metrics.json'
     start = time.perf_counter()
     fingerprints = artifact_hashes(adapter, dataset)
+    try:
+        predictions_path, metrics_path = reserve_report_paths(reports, args.name, args.overwrite)
+    except (ValueError, FileExistsError) as error:
+        parser.error(str(error))
     metadata = {'run_name': args.name, 'started_utc': datetime.now(timezone.utc).isoformat(),
                 'adapter': str(adapter) if adapter else None, 'base_model_only': args.base,
                 'pipeline': 'coach.process_note(mode=draft, assist=True)',
@@ -484,6 +525,9 @@ def main():
                   f"seconds={output['runtime_seconds']:.1f}", flush=True)
     save_metrics(run_complete=True)
     print(f'Results: {predictions_path}\nMetrics: {metrics_path}', flush=True)
+    if args.summary:
+        from summarize_v2 import write_summary
+        print(f'Summary: {write_summary(args.name, overwrite=args.overwrite)}', flush=True)
 
 
 if __name__ == '__main__':

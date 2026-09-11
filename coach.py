@@ -3,16 +3,22 @@ import json
 import re
 from core import ROOT, FIELDS, TYPES, QUESTIONS, load_model
 from coaching_pass import generate_suggestions
+from source_coverage import add_source_coverage
+from evidence_checks import factual_risk
 
 QUOTE = {'type': 'string', 'minLength': 1, 'maxLength': 1600}
+# Keep the prompt's concise four-quote target, but accept bounded extra evidence
+# from dense notes instead of discarding an otherwise valid chunk. Every quote
+# still has to exist in that chunk and pass the same downstream review checks.
+MAX_EVIDENCE_QUOTES = 64
 FACT = {'type': 'object', 'additionalProperties': False, 'required': ['text', 'evidence'],
         'properties': {'text': {'type': 'string', 'minLength': 1, 'maxLength': 1200},
-                       'evidence': {'type': 'array', 'minItems': 1, 'maxItems': 4, 'items': QUOTE}}}
+                       'evidence': {'type': 'array', 'minItems': 1, 'maxItems': MAX_EVIDENCE_QUOTES, 'items': QUOTE}}}
 SUGGESTION = {'type': 'object', 'additionalProperties': False,
               'required': ['section', 'text', 'basis', 'confirm'],
               'properties': {'section': {'enum': ['impact', 'action', 'plan']},
                              'text': {'type': 'string', 'minLength': 1, 'maxLength': 1200},
-                             'basis': {'type': 'array', 'minItems': 1, 'maxItems': 4, 'items': QUOTE},
+                             'basis': {'type': 'array', 'minItems': 1, 'maxItems': MAX_EVIDENCE_QUOTES, 'items': QUOTE},
                              'confirm': {'type': 'string', 'minLength': 1, 'maxLength': 300}}}
 SCHEMA_V2 = {'type': 'object', 'additionalProperties': False,
              'required': ['event_type', 'sections', 'suggestions'],
@@ -93,8 +99,16 @@ def clean_source(source):
     cleaned = re.sub(r'(?:(?:I|we) (?:copied|pasted|included) [^.!?\n]{0,160}?:\s*)?\[BEGIN ([^\]\n]+)\][\s\S]*?\[END \1\](?:\s*\.)?', block, cleaned, flags=re.I)
     def sentence(match):
         if author_request(match.group()) or direct_control(match.group()):
-            removed.append(match.group())
-            return ''
+            # A writing request and a real update often share a semicolon line.
+            # Retain contiguous event clauses instead of deleting the whole line.
+            clauses = re.split(r'(?<=;)', match.group())
+            kept_clauses = []
+            for clause in clauses:
+                if author_request(clause) or direct_control(clause):
+                    removed.append(clause)
+                else:
+                    kept_clauses.append(clause)
+            return ''.join(kept_clauses)
         return match.group()
     return re.sub(r'[^.!?\n]+(?:[.!?]+|$)', sentence, cleaned), removed
 
@@ -168,13 +182,13 @@ def check_record(record, source):
             if _unrecorded_proposal(field, fact):
                 issues.append(f'{field.upper()}: withheld a model proposal from reported facts. Suggestions must remain separately labeled.')
                 continue
-            reason = _unsupported_detail(fact['text'], fact['evidence'])
+            reason = _unsupported_detail(fact['text'], fact['evidence']) or factual_risk(fact['text'], fact['evidence'])
             if field == 'agencies_contacted' and not reason:
                 provided = re.findall(r'\b(?i:initials?)\s*:?\s*(?:(?i:were|are|was|is)\s+)?([A-Z]{2,4})\b', '\n'.join(fact['evidence']))
                 if any(not re.search(r'\b' + re.escape(initials) + r'\b', fact['text'], re.I) for initials in provided):
                     reason = 'an omission of contact initials stated in the evidence'
             if reason:
-                issues.append(f'{field.upper()}: withheld a paraphrase introducing {reason}. Original source wording is preserved below the draft for placement during review.')
+                issues.append(f'{field.upper()}: withheld a paraphrase with {reason}. Original source wording is preserved below the draft for placement during review.')
                 review_excerpts.extend(source_wording(fact['evidence']))
                 continue
             sections[field].append(fact)
@@ -231,6 +245,10 @@ def recover_missing_anchors(source, sections, excerpts):
     return recovered
 
 def split_source(source, tokenizer, chunk_tokens=2200, overlap_tokens=160, max_tokens=12000):
+    if not all(isinstance(x, int) and not isinstance(x, bool) for x in (chunk_tokens, overlap_tokens, max_tokens)):
+        raise ValueError('Chunk sizes must be integers.')
+    if chunk_tokens <= 0 or not 0 <= overlap_tokens < chunk_tokens or max_tokens <= 0:
+        raise ValueError('Use a positive chunk size and an overlap smaller than the chunk size.')
     encoded = tokenizer(source, add_special_tokens=False, return_offsets_mapping=True)
     offsets = encoded['offset_mapping']
     if len(offsets) > max_tokens:
@@ -336,7 +354,7 @@ def assemble_results(records, source, assist=True):
             'suggestions': kept_suggestions, 'missing_fields': missing,
             'questions': list(dict.fromkeys(questions)), 'issues': list(dict.fromkeys(issues)),
             'status': 'needs_confirmation' if questions or issues or kept_suggestions else 'ready_for_human_review',
-            'schema_version': 'coached-five-sections-2.3', 'review_excerpts': unique_excerpts,
+            'schema_version': 'coached-five-sections-2.4', 'review_excerpts': unique_excerpts,
             'human_approval_required': True}
 
 class CoachError(ValueError):
@@ -360,19 +378,33 @@ def coaching_focus(result, source):
             focus.append(field)
     return focus
 
-def process_note(model, tokenizer, source, mode='draft', assist=True):
-    if not source.strip():
+def process_note(model, tokenizer, source, mode='draft', assist=True, progress=None):
+    if not isinstance(source, str) or not source.strip():
         raise ValueError('Enter a note to organize.')
+    if mode not in ('draft', 'review'):
+        raise ValueError('Select draft or review.')
+    if len(source) > 120000:
+        raise ValueError('This note is too large. Split it into related groups before submitting.')
+    def report(stage, part, total):
+        if progress:
+            progress(stage, part, total)
     cleaned, removed = clean_source(source)
     if not cleaned.strip():
         raise ValueError('No event details remain after excluding explicitly labeled pasted instructions.')
     chunks, token_count = split_source(cleaned, tokenizer)
     records, raw_outputs, failures, chunk_records = [], [], [], []
+    local_issues, local_excerpts = [], []
+    def check_local(record, chunk):
+        checked = check_record(record, chunk)
+        local_issues.extend(checked['issues'])
+        local_excerpts.extend(checked['review_excerpts'])
+        return {key: checked[key] for key in ('event_type', 'sections', 'suggestions')}
     for i, chunk in enumerate(chunks):
+        report('Organizing notes', i+1, len(chunks))
         try:
             raw = generate_coached(model, tokenizer, chunk, mode)
             raw_outputs.append(raw)
-            record = parse_coached_output(raw)
+            record = check_local(parse_coached_output(raw), chunk)
             records.append(record)
             chunk_records.append((chunk, record))
         except Exception as error:
@@ -392,6 +424,7 @@ def process_note(model, tokenizer, source, mode='draft', assist=True):
             focus = coaching_focus(chunk_result, chunk)
             if not focus or not any(chunk_result['sections'].values()):
                 continue
+            report('Preparing suggestions', i+1, len(chunks))
             try:
                 raw = generate_suggestions(model, tokenizer, chunk, focus, chunk_result['sections'])
                 coaching_outputs.append(raw)
@@ -399,12 +432,14 @@ def process_note(model, tokenizer, source, mode='draft', assist=True):
                 validate(extra, helper_schema)
                 if any(s['section'] not in focus for s in extra['suggestions']):
                     raise ValueError('Coaching response included a section outside the requested gaps.')
-                records.append({'event_type': record['event_type'], 'sections': {f: [] for f in FIELDS},
-                                'suggestions': extra['suggestions']})
+                records.append(check_local({'event_type': record['event_type'], 'sections': {f: [] for f in FIELDS},
+                                'suggestions': extra['suggestions']}, chunk))
             except Exception as error:
                 coaching_issues.append(f'Additional coaching for part {i+1} was unavailable: {_short_error(error)}. Use the confirmation questions.')
         result = assemble_results(records, cleaned, assist)
     result['issues'].extend(coaching_issues)
+    result['issues'].extend(local_issues)
+    result['review_excerpts'] = list({(f['text'], tuple(f['evidence'])): f for f in [*result['review_excerpts'], *local_excerpts]}.values())
     if failures:
         result['issues'] += ['INCOMPLETE DRAFT: ' + f for f in failures]
         result['status'] = 'incomplete_draft'
@@ -414,7 +449,9 @@ def process_note(model, tokenizer, source, mode='draft', assist=True):
         result['status'] = 'needs_confirmation'
     result.update(raw_outputs=raw_outputs, coaching_outputs=coaching_outputs,
                   chunk_count=len(chunks), source_tokens=token_count, mode=mode)
-    return result
+    result['issues'] = list(dict.fromkeys(result['issues']))
+    report('Checking source coverage', len(chunks), len(chunks))
+    return add_source_coverage(result, cleaned)
 
 def render_coached_log(result):
     headings = {'situation': 'SITUATION (With times of particular events)', 'impact': 'IMPACT',

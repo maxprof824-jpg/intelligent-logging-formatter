@@ -1,6 +1,6 @@
 # Recorded synthetic example
 
-This is an actual recorded runtime v2.1 development output, not a new v2.3 inference run. It illustrates both the format and suggestions; wording still needs human review.
+This is a saved runtime **v2.1** development response. It illustrates the format and suggestions, with the original wording preserved and display encoding corrected. It was not regenerated with runtime 2.4 and does not measure the current release. The draft still needs human review.
 
 ## Input
 
@@ -9,7 +9,7 @@ Fictional training-office note, 11 Sep 2026. 09:14Z: the classroom sign-in sprea
 ## Output
 
 ```text
-DRAFT â€” REVIEW FACTS AND CONFIRM SUGGESTIONS
+DRAFT — REVIEW FACTS AND CONFIRM SUGGESTIONS
 
 SITUATION (With times of particular events):
 - 11 September 2026, 09:14Z: The classroom sign-in spreadsheet displayed two rows for trainee alias Cedar. The author did not check the paper sheet and considered the possibility that this might be a duplicated row.
@@ -17,7 +17,7 @@ SITUATION (With times of particular events):
 IMPACT:
 - No one has told me whether attendance totals or certificates were affected.
 
-[POSSIBLE IMPACT â€” CONFIRM]
+[POSSIBLE IMPACT — CONFIRM]
 Possible administrative effect: attendance totals or certificates might be duplicated or incorrect; this has not been confirmed.
 
 AGENCIES CONTACTED (W/Initials):
@@ -26,13 +26,13 @@ AGENCIES CONTACTED (W/Initials):
 ACTION:
 - 09:22Z: Saved a screenshot under ADMIN-104 and left the workbook open.
 
-[RECOMMENDED ACTION â€” NOT RECORDED AS DONE]
+[RECOMMENDED ACTION — NOT RECORDED AS DONE]
 Proposed refinement: record the actual paper sheet and compare it with the spreadsheet.
 
 PLAN:
 [No confirmed detail supplied]
 
-[SUGGESTED PLAN â€” NOT YET AGREED]
+[SUGGESTED PLAN — NOT YET AGREED]
 Proposed follow-up: identify an owner to confirm the spreadsheet and obtain the missing information.
 ```
 

@@ -63,6 +63,8 @@ def generate_suggestions(model, tokenizer, source, focus_sections, existing_sect
 
     prompt = tokenizer.apply_chat_template(messages, tokenize=False, add_generation_prompt=True)
     inputs = tokenizer(prompt, return_tensors="pt").to("cuda")
+    if inputs.input_ids.shape[1] > 6000:
+        raise ValueError('Suggestion context exceeds the prompt budget. Use a shorter related group of notes.')
     with torch.inference_mode():
         output = model.generate(
             **inputs,
