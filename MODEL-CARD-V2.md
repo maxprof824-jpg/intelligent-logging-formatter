@@ -1,4 +1,4 @@
-# Logging coach v2 — model card
+# Intelligent Logging Formatter v2 — model card
 
 Prepared 2026-09-11. This local proof of concept organizes fictional administrative notes into **SITUATION (with event times), IMPACT, AGENCIES CONTACTED (W/Initials), ACTION, and PLAN**. It also offers labeled possible impacts, recommended actions, suggested plans, and confirmation questions. It was trained entirely on synthetic examples; no actual UEWR logs or operating procedures were used.
 
@@ -34,7 +34,7 @@ The [dataset card](data-v2/DATASET_CARD.md) describes scenario families, split c
 
 ## Files and reproduction
 
-Project root: `space-logging-coach`.
+Project root: `intelligent-logging-formatter`.
 
 | Purpose | File or directory under the project root |
 |---|---|
@@ -48,7 +48,7 @@ Project root: `space-logging-coach`.
 Stop the demo before training or evaluating to free GPU memory. The training launcher protects an existing completed adapter from accidental replacement. For a fresh reproducibility run, choose a new output directory:
 
 ```powershell
-$pocRoot = 'space-logging-coach'
+$pocRoot = 'intelligent-logging-formatter'
 & "$pocRoot\.venv\Scripts\python.exe" "$pocRoot\train.py" --data-dir data-v2 --max-length 4096 --output runs/adapter-v2-reproduction
 & "$pocRoot\.venv\Scripts\python.exe" "$pocRoot\evaluate_v2.py" --adapter runs/adapter-v2-reproduction --name adapter-v2-reproduction
 ```

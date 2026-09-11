@@ -1,4 +1,4 @@
-# Logging Coach v2.3 — proof-of-concept preview
+# Intelligent Logging Formatter v2.3 — proof-of-concept preview
 
 Windows tester package containing application code, synthetic datasets, evaluation evidence, and the trained LoRA adapter. Extract the tester ZIP, run SETUP-WINDOWS.cmd, then RUN-DEMO.cmd. Setup downloads Python, dependencies, and the pinned approximately 8 GB base model. Tested locally on RTX 5060 Ti 16 GB / 32 GB RAM; recipient clean-install testing remains pending.
 

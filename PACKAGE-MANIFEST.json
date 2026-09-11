@@ -10,7 +10,7 @@
   ],
   "files": {
     ".gitignore": "017f57a6728940ff2c49efef95dd2fe0e3033365dab1e806bdc6eb9790be9e30",
-    "app_v2.py": "7cca621e1fef68fd466c117b8e88e2ce7951bd2dfeb1e47afa706432f19e1ccc",
+    "app_v2.py": "cb1563781b706bb81ef475600223e52c7bbd245971d141ccc697615851dba916",
     "build_data.py": "51c75a264699af5bbfe32f801500eec4da429f6147653244cd54d4d31638c307",
     "build_data_v2.py": "ca4d5dfe2aae0c2b67f2751445d9fd574099de61b0aa6ee7c38313883e41f3f4",
     "coach.py": "cf4eac56feb477501a5eee853a4d1e25556b725445d807a78e275963562aa248",
@@ -22,10 +22,10 @@
     "evaluate_v2.py": "902e7d3024db5f0995c77f1fdab61075d1608001dba6adc0635dcdd553567f5f",
     "EXAMPLE.md": "812491bbab19b9b391cc264dd417ef44247a557e4c15addd89f39099aee97ac4",
     "log-v2.schema.json": "7cbcbc2a89edcfcf607f68d712693ac5fb28c4638d03e624d771a9f253c2b920",
-    "MODEL-CARD-V2.md": "5a750dc88a89fa3f152cfc432788d87585f1c04593a54deddfa01209ef9b541d",
+    "MODEL-CARD-V2.md": "936a972b186a9f7e808aa273cb1890cb590d392fb4b2c3ae2fa65ea63b9c0872",
     "model-manifest.json": "c2220e6bf1f786ebcbf8146933690a45fd819618d7135410480ee462cce8c2c8",
-    "README.md": "b3f67af060ceac9b4a868c485b6f2b31fd081f524b7ea9705d18417df142c26d",
-    "RELEASE-NOTES.md": "906c3955d1ccb645b129090c123db898bbafb4ccadea157c61737e73df220620",
+    "README.md": "6579e8d08cb02e059be3d03935e942a14ba2114aa1aaf843824b1b212f75c889",
+    "RELEASE-NOTES.md": "fd360cec40f7cadb81a335781e0b73a95be73539e6e0f9c6a7ddc956f5f246c3",
     "replay_chunk_recovery.py": "12283af1c5f00eb53850212016bb74d71df2dc6e714ade0570c30a7b52e3ce1c",
     "requirements-lock.txt": "b8b8ffe1cf0907821c53a06b065a6851e6cf8711bcd0c0cdf964cac0904965b8",
     "requirements.txt": "3e1c66aba643d73aa871927bac856f19e6a49acb70236f6e137e5b1e810cd39f",
@@ -43,7 +43,7 @@
     "THIRD-PARTY-NOTICES.md": "d09f31b1aea23a755c7f2263d6b47f54d25d38c7eb93ffb30c41e5dd89f9b478",
     "TRAIN-V2.cmd": "69ad8fa9d47f9e68a3a0effda3af74a44fb10fb7dffe0888568c88ef2ff3c3a4",
     "train.py": "ce7f690558b3620e96f515ea6b58a28f8ec8c904f8d1b492ef59790eb8695c50",
-    "V2-GUIDE.md": "1cd5d151cdd68f6b3473b7a5de559e43cd72861718f8878a94ddbc596fa1d5d0",
+    "V2-GUIDE.md": "6943e43528fbe68eff2dba8165031e40a92e8b3df01c2fca3536e7f261d3f1f1",
     "data/DATASET_CARD.md": "72b8188b76baf0ec3d7aaed28c3c0c39b079298f40e3329fc0a0049cf8a524a4",
     "data/test.jsonl": "584381670736735d6c7b02708fb2b58a9079efbca78e9b2cebfa3761a791c56a",
     "data/train.jsonl": "acf34e436244ac8046bfd949a1a86e4abc7eb49f22d2f34df42496e576b72f4c",
@@ -70,5 +70,6 @@
     "runs/adapter-v2/metrics.json": "a3cdb1cf75ab289ae6097ea53f938934c60c1b46f90af759c5ffe638af591a63",
     "runs/adapter-v2/README.md": "b326a2d0b0863a8b573138d40a717e131993edf62841baec218b9f97060c6142",
     "runs/adapter-v2/training-config.json": "3d93e84da17a4f932f95af572f5f7f4b036a69974f162486289db53e68c37c5f"
-  }
+  },
+  "display_name": "Intelligent Logging Formatter"
 }

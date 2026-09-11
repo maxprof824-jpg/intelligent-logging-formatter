@@ -1,4 +1,4 @@
-# Logging coach v2
+# Intelligent Logging Formatter v2
 
 The new default demo organizes messy notes into the same five sections and helps the author develop missing content. RUN-DEMO.cmd opens v2; RUN-V1-DEMO.cmd preserves the earlier extract-only model. Stop the current demo with STOP-DEMO.cmd before switching models or training.
 

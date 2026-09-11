@@ -1,4 +1,4 @@
-"""Local logging coach demo: source details and suggestions stay distinct."""
+"""Local intelligent logging formatter demo: source details and suggestions stay distinct."""
 import argparse
 import html
 import threading
@@ -66,7 +66,7 @@ def format_raw(raw_outputs, coaching_outputs=None):
             for index, output in enumerate(outputs or [], 1)
         )
     groups = [format_group(raw_outputs, "EXTRACTION RESPONSE"),
-              format_group(coaching_outputs, "ADDITIONAL COACHING RESPONSE")]
+              format_group(coaching_outputs, "ADDITIONAL SUGGESTION RESPONSE")]
     return "\n\n".join(group for group in groups if group)
 
 
@@ -116,13 +116,13 @@ def build_demo(model, tokenizer, model_name):
             return "", message, "Draft not completed.", diagnostics, format_raw(raw_outputs, coaching_outputs)
 
     with gr.Blocks(
-        title="Space Operations · Logging Coach",
+        title="Intelligent Logging Formatter",
         analytics_enabled=False,
         theme=gr.themes.Soft(),
         css=".gradio-container {max-width: 1200px !important;} #draft textarea {line-height: 1.6;}",
     ) as demo:
         gr.Markdown(
-            "# Logging coach\n"
+            "# Intelligent Logging Formatter\n"
             "Turn messy notes into a standard draft, find missing details, and explore possible next steps. "
             "**Synthetic proof of concept · fictional administrative notes only.**\n\n"
             "Reported details from your notes and inferred suggestions appear separately in the draft. "
@@ -139,7 +139,7 @@ def build_demo(model, tokenizer, model_name):
             )
         gr.Markdown(
             "Long notes are processed in parts. When more help is needed, the same local model makes "
-            "an additional coaching pass; suggestions can take longer to prepare."
+            "an additional suggestion pass; suggestions can take longer to prepare."
         )
         source = gr.Textbox(
             lines=12, max_lines=24, label="Fictional notes or existing log",
@@ -166,7 +166,7 @@ def build_demo(model, tokenizer, model_name):
         )
         with gr.Accordion("Source evidence and processing details", open=False):
             checked = gr.JSON(label="Source details, suggestions, and checks")
-            raw = gr.Textbox(lines=8, max_lines=20, label="Raw extraction and coaching responses", interactive=False)
+            raw = gr.Textbox(lines=8, max_lines=20, label="Raw extraction and suggestion responses", interactive=False)
         gr.Markdown(f"Running locally · {model_name}. Processing stays on this computer.")
         button.click(
             process, inputs=[source, mode, assist], outputs=[draft, followup, status, checked, raw],
@@ -180,7 +180,7 @@ def build_demo(model, tokenizer, model_name):
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Run the local logging coach demo.")
+    parser = argparse.ArgumentParser(description="Run the local intelligent logging formatter demo.")
     parser.add_argument("--base", action="store_true", help="Use the original model without an adapter")
     parser.add_argument("--port", type=int, default=7860)
     parser.add_argument("--no-browser", action="store_true", help="Start without opening a browser")
