@@ -1,0 +1,14 @@
+{
+  "train_runtime": 730.8648,
+  "train_samples_per_second": 0.657,
+  "train_steps_per_second": 0.082,
+  "train_loss": 0.3102549350510041,
+  "epoch": 1.0,
+  "wall_seconds": 731.4944487999965,
+  "peak_allocated_vram_gib": 7.481202125549316,
+  "peak_reserved_vram_gib": 13.37890625,
+  "eval_loss": 0.24513351917266846,
+  "eval_runtime": 20.6355,
+  "eval_samples_per_second": 2.326,
+  "eval_steps_per_second": 2.326
+}

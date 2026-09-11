@@ -1,0 +1,192 @@
+{
+  "selected_cases": 4,
+  "attempted_cases": 4,
+  "dataset_usage": {
+    "independently_authored": true,
+    "used_during_pipeline_refinement": true,
+    "pristine_holdout": false,
+    "interpretation": "Acceptance/regression set inspected during pipeline refinement; these results are not an untouched held-out generalization estimate."
+  },
+  "remaining_cases": 0,
+  "valid_final_result_structure_and_status": {
+    "numerator": 4,
+    "denominator": 4,
+    "rate": 1.0
+  },
+  "complete_valid_results": {
+    "numerator": 4,
+    "denominator": 4,
+    "rate": 1.0
+  },
+  "literal_token_retention_in_factual_text": {
+    "numerator": 11,
+    "denominator": 11,
+    "rate": 1.0
+  },
+  "cases_with_all_literal_retention_strings": {
+    "numerator": 4,
+    "denominator": 4,
+    "rate": 1.0
+  },
+  "expected_absent_fact_sections_left_empty": {
+    "numerator": 1,
+    "denominator": 5,
+    "rate": 0.2
+  },
+  "desired_suggestion_section_coverage": {
+    "numerator": 7,
+    "denominator": 11,
+    "rate": 0.6363636363636364
+  },
+  "forbidden_factual_claim_screen": {
+    "cases_screened": 4,
+    "phrases_screened": 16,
+    "cases_with_lexical_hits": 0,
+    "phrase_section_hits": 0,
+    "interpretation": "Lexical screen only; inspect hit contexts for negation and paraphrase limitations."
+  },
+  "raw_generated_chunk_schema_validity": {
+    "numerator": 4,
+    "denominator": 4,
+    "rate": 1.0
+  },
+  "incomplete_draft_cases": 0,
+  "incomplete_status_consistency_in_valid_results": {
+    "numerator": 4,
+    "denominator": 4,
+    "rate": 1.0
+  },
+  "pipeline_error_cases": 0,
+  "case_failures": [
+    {
+      "id": "accept-v2-03-uncertain-contact",
+      "failures": [
+        "expected_absent_fact_section_nonempty",
+        "desired_suggestion_sections_missing"
+      ],
+      "missing_literal_strings": [],
+      "review_notes": "Preserve approximate time and uncertainty about KR. The caller's intended check is a reported commitment by that caller, not completed maintenance or the operator's own completed action. Useful advice can ask for contact confirmation and a ticket reference."
+    },
+    {
+      "id": "accept-v2-07-separate-events",
+      "failures": [
+        "expected_absent_fact_section_nonempty",
+        "desired_suggestion_sections_missing"
+      ],
+      "missing_literal_strings": [],
+      "review_notes": "Separate or clearly label the two administrative events while keeping the requested five sections. Marker impact is reported no class delay; portal impact is unknown. Waiting for a template is an instruction, not proof that one arrived."
+    },
+    {
+      "id": "accept-v2-16-multiple-suggestions",
+      "failures": [
+        "expected_absent_fact_section_nonempty",
+        "desired_suggestion_sections_missing"
+      ],
+      "missing_literal_strings": [],
+      "review_notes": "Direct test of assistance request: possible printing delay/incorrect version risk is useful, stated as possible. Recommend asking the form owner to confirm the approved version, then preparing the bundle after confirmation. No invented owner names or deadlines."
+    }
+  ],
+  "limitations": [
+    "This small synthetic administrative set was independently authored but has since been used during pipeline refinement. It is an acceptance/regression set, not a pristine holdout, and does not establish readiness for real operations.",
+    "Factual-text retention, emptiness, suggestion coverage, and forbidden-claim screens use final v2 pipeline output after filtering and assembly. Raw chunk outputs, schema validity, and pre-filter quote presence are recorded separately.",
+    "Literal token retention uses case-insensitive substring matching in concatenated factual section texts only. It is not semantic accuracy: paraphrases or formatting changes can fail, and misplaced or negated strings can pass.",
+    "Expected section emptiness is a strict structural check, not a judgment of field accuracy. A supported statement that a detail is unknown can populate a section and fail this check; inspect the displayed text.",
+    "Suggestion coverage counts a suggestion with the requested section label; it does not establish usefulness, correctness, calibrated uncertainty, or proper administrative scope.",
+    "A quote found verbatim in cleaned source establishes lexical quote presence only; it does not prove the generated claim follows from that quote.",
+    "Forbidden factual claims are case-insensitive substring screens of factual texts only, excluding suggestions, evidence, questions, and source text. Negation can trigger false positives; paraphrases can evade the screen.",
+    "A valid schema or status does not establish a correct, complete, or human-approved log. Incomplete chunks are tracked explicitly; a partial result is not a completed case.",
+    "Failed or invalid results contribute no successes to expectation-based metrics. Final quote-support and forbidden-claim screens use only structurally valid final results; their denominators are shown.",
+    "Raw quote-support metrics inspect all evidence and basis quotes in schema-valid raw chunk records before source filtering, against the entire cleaned source. Invalid raw chunks are excluded, and included/excluded chunk counts are shown. Repeated quotes across chunks count as separate emissions.",
+    "Conditional coaching-helper outputs use a separate suggestions-only schema and are scored separately from main-model chunks. Helper quote metrics include only schema-valid helper outputs retained in result.coaching_outputs; malformed outputs are counted but excluded from quote denominators. A helper failure does not itself imply that the main factual draft is incomplete.",
+    "Human review must still assess chronology, attribution, negation, claim entailment, fact/suggestion separation, relevance, and the practicality of suggestions. Do not report these metrics as field accuracy or operational reliability."
+  ],
+  "fact_evidence_verbatim_quote_presence_in_cleaned_source": {
+    "numerator": 24,
+    "denominator": 24,
+    "rate": 1.0
+  },
+  "raw_unfiltered_fact_evidence_verbatim_quote_presence_in_cleaned_source": {
+    "numerator": 25,
+    "denominator": 25,
+    "rate": 1.0
+  },
+  "suggestion_basis_verbatim_quote_presence_in_cleaned_source": {
+    "numerator": 11,
+    "denominator": 11,
+    "rate": 1.0
+  },
+  "raw_unfiltered_suggestion_basis_verbatim_quote_presence_in_cleaned_source": {
+    "numerator": 13,
+    "denominator": 13,
+    "rate": 1.0
+  },
+  "raw_unfiltered_quote_support_scope": {
+    "schema_valid_chunks_included": 4,
+    "schema_invalid_chunks_excluded": 0,
+    "cases_with_unsupported_fact_evidence_quotes": 0,
+    "cases_with_unsupported_suggestion_basis_quotes": 0,
+    "interpretation": "Before coach source filtering; case-sensitive continuous quote match against the entire cleaned source. Includes schema-valid raw chunks even if the final pipeline result failed."
+  },
+  "raw_coaching_output_schema_validity": {
+    "numerator": 1,
+    "denominator": 1,
+    "rate": 1.0
+  },
+  "raw_coaching_suggestion_basis_verbatim_quote_presence_in_cleaned_source": {
+    "numerator": 2,
+    "denominator": 3,
+    "rate": 0.6666666666666666
+  },
+  "raw_coaching_quote_support_scope": {
+    "schema_valid_outputs_included": 1,
+    "schema_invalid_outputs_excluded": 0,
+    "cases_with_helper_outputs": 1,
+    "cases_with_invalid_helper_outputs": 0,
+    "cases_with_invalid_coaching_outputs_collection": 0,
+    "cases_with_unsupported_helper_basis_quotes": 1,
+    "interpretation": "Suggestions-only helper outputs scored before source filtering, separately from main-model chunks. Exact case-sensitive quote match against the entire cleaned source; malformed helper outputs excluded from quote denominators."
+  },
+  "run_name": "adapter-v2-regressions",
+  "started_utc": "2026-09-11T13:46:41.748358+00:00",
+  "adapter": "space-logging-coach\\runs\\adapter-v2",
+  "base_model_only": false,
+  "pipeline": "coach.process_note(mode=draft, assist=True)",
+  "dataset": "space-logging-coach\\data-v2\\acceptance.jsonl",
+  "selected_ids": [
+    "accept-v2-03-uncertain-contact",
+    "accept-v2-05-instruction-in-paste",
+    "accept-v2-07-separate-events",
+    "accept-v2-16-multiple-suggestions"
+  ],
+  "artifact_hashes": {
+    "algorithm": "sha256",
+    "captured_utc": "2026-09-11T13:46:41.748358+00:00",
+    "code": {
+      "coach.py": "b193d1710ba976e00e2f9be5e8193802c6c5eb8cee711fb5cf69dca6fdb1bbeb",
+      "coaching_pass.py": "8ab181ab91df07d08470dec85a0c8a09d8106cde4f295ab8956c97c81094a570",
+      "core.py": "e5d964fc065b9755ac07ec30aced4d1be828091eebc34d3f26a62df11c7cdce3",
+      "evaluate_v2.py": "3f8c09b759a05e8a53fd4d46f69957e3dc18be9bfac499b2b5393d3dbd138a9c",
+      "app.py": "25126fecc852df363166d418dd7f2096d5e41270dd6d18d53aa212b5778ee1ed"
+    },
+    "datasets": {
+      "data-v2/acceptance.jsonl": "0f3170e4b011c4bc7691ae6a8e88eabc3de0853a751262246e3bd4141241967f",
+      "data-v2/train.jsonl": "221b20b72c07abf1e65c5fea96e7467f2337c8fb9ebcbc652280a2e340efefba",
+      "data-v2/validation.jsonl": "68c166cba26037d1165210aa10cb049d9c5cb6b5f955b47b0b73dd424082741e"
+    },
+    "adapter": {
+      "path": "space-logging-coach\\runs\\adapter-v2",
+      "files": {
+        "adapter_config.json": "7b0c2a68c97293fad2edd3a4d986bcca0c8c6caf2334ed506154f68feca405dd",
+        "adapter_model.safetensors": "08a0f0d7c2c93dacb84fcdef97f1c2952c7a70551d260921c9782fa4bfa6dc9d"
+      }
+    },
+    "coverage": "Computed before model load. Covers the listed code and dataset files plus selected adapter configuration/weights. Base-model weights and runtime dependencies are not hashed."
+  },
+  "predictions_path": "space-logging-coach\\reports\\adapter-v2-regressions-acceptance.jsonl",
+  "mode": "draft",
+  "assist": true,
+  "sequential_inference": true,
+  "wall_seconds": 254.86807600000247,
+  "run_complete": true,
+  "model_load_error": null
+}

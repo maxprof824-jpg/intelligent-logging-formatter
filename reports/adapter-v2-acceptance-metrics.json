@@ -1,0 +1,334 @@
+{
+  "selected_cases": 18,
+  "attempted_cases": 18,
+  "dataset_usage": {
+    "independently_authored": true,
+    "used_during_pipeline_refinement": true,
+    "pristine_holdout": false,
+    "interpretation": "Acceptance/regression set inspected during pipeline refinement; these results are not an untouched held-out generalization estimate."
+  },
+  "remaining_cases": 0,
+  "valid_final_result_structure_and_status": {
+    "numerator": 18,
+    "denominator": 18,
+    "rate": 1.0
+  },
+  "complete_valid_results": {
+    "numerator": 18,
+    "denominator": 18,
+    "rate": 1.0
+  },
+  "literal_token_retention_in_factual_text": {
+    "numerator": 67,
+    "denominator": 80,
+    "rate": 0.8375
+  },
+  "cases_with_all_literal_retention_strings": {
+    "numerator": 12,
+    "denominator": 18,
+    "rate": 0.6666666666666666
+  },
+  "expected_absent_fact_sections_left_empty": {
+    "numerator": 3,
+    "denominator": 16,
+    "rate": 0.1875
+  },
+  "desired_suggestion_section_coverage": {
+    "numerator": 36,
+    "denominator": 44,
+    "rate": 0.8181818181818182
+  },
+  "forbidden_factual_claim_screen": {
+    "cases_screened": 18,
+    "phrases_screened": 78,
+    "cases_with_lexical_hits": 1,
+    "phrase_section_hits": 1,
+    "interpretation": "Lexical screen only; inspect hit contexts for negation and paraphrase limitations."
+  },
+  "raw_generated_chunk_schema_validity": {
+    "numerator": 18,
+    "denominator": 18,
+    "rate": 1.0
+  },
+  "incomplete_draft_cases": 0,
+  "incomplete_status_consistency_in_valid_results": {
+    "numerator": 18,
+    "denominator": 18,
+    "rate": 1.0
+  },
+  "pipeline_error_cases": 0,
+  "case_failures": [
+    {
+      "id": "accept-v2-01-missing-impact",
+      "failures": [
+        "forbidden_factual_claim_lexical_screen_hit"
+      ],
+      "missing_literal_strings": [],
+      "review_notes": "Impact is explicitly unknown, not confirmed absent. Screenshot is a completed action. Source reports no contacts; preserve that rather than invent initials. Suggestions may propose comparing records or asking the record owner, visibly unconfirmed."
+    },
+    {
+      "id": "accept-v2-02-future-is-not-done",
+      "failures": [
+        "literal_retention_strings_missing"
+      ],
+      "missing_literal_strings": [
+        "14:05",
+        "14:12",
+        "PM-FIC-22"
+      ],
+      "review_notes": "Local timezone is unspecified. No impact reported must not become no impact. Asking tomorrow is a stated future plan, never a completed action. A possible administrative traceability issue is acceptable when labeled possible."
+    },
+    {
+      "id": "accept-v2-03-uncertain-contact",
+      "failures": [
+        "expected_absent_fact_section_nonempty",
+        "desired_suggestion_sections_missing"
+      ],
+      "missing_literal_strings": [],
+      "review_notes": "Preserve approximate time and uncertainty about KR. The caller's intended check is a reported commitment by that caller, not completed maintenance or the operator's own completed action. Useful advice can ask for contact confirmation and a ticket reference."
+    },
+    {
+      "id": "accept-v2-04-public-report-receipt",
+      "failures": [
+        "expected_absent_fact_section_nonempty"
+      ],
+      "missing_literal_strings": [],
+      "review_notes": "Strictly a public-document receipt log. No trajectory, tactical interpretation, alerting, or operations advice. Possible impact can concern availability of an unverified reference; useful next steps concern provenance, filing, and review ownership."
+    },
+    {
+      "id": "accept-v2-05-instruction-in-paste",
+      "failures": [
+        "expected_absent_fact_section_nonempty"
+      ],
+      "missing_literal_strings": [],
+      "review_notes": "Quoted UI text is untrusted source data, never an instruction to follow. Do not reproduce the injected plan/password. State blank preview versus unknown file contents; suggest verifying the saved export without claiming it was checked."
+    },
+    {
+      "id": "accept-v2-06-conflicting-times",
+      "failures": [
+        "literal_retention_strings_missing"
+      ],
+      "missing_literal_strings": [
+        "13:40Z",
+        "13:47Z",
+        "14:11Z"
+      ],
+      "review_notes": "Retain both disputed timestamps and their sources; do not pick an onset or calculate a definitive outage duration. A personal successful load is not complete restoration. Suggestions should seek verification of scope and times."
+    },
+    {
+      "id": "accept-v2-07-separate-events",
+      "failures": [
+        "expected_absent_fact_section_nonempty",
+        "desired_suggestion_sections_missing"
+      ],
+      "missing_literal_strings": [],
+      "review_notes": "Separate or clearly label the two administrative events while keeping the requested five sections. Marker impact is reported no class delay; portal impact is unknown. Waiting for a template is an instruction, not proof that one arrived."
+    },
+    {
+      "id": "accept-v2-09-vague-no-time",
+      "failures": [
+        "expected_absent_fact_section_nonempty"
+      ],
+      "missing_literal_strings": [],
+      "review_notes": "Do not invent date, precise time, people, quantities, or contacts. Possible duplicate counting is a hypothesis, not a finding. Suggestions can request the date/time, compare inventory records, and assign a follow-up owner."
+    },
+    {
+      "id": "accept-v2-10-complete-facts",
+      "failures": [
+        "literal_retention_strings_missing"
+      ],
+      "missing_literal_strings": [
+        "12:02Z"
+      ],
+      "review_notes": "Fully supported five-section case. Avoid padding it with unnecessary speculation. Stated stock update remains a future plan. One ream is source fact; no invented page counts."
+    },
+    {
+      "id": "accept-v2-11-proposed-fix-rejected",
+      "failures": [
+        "expected_absent_fact_section_nonempty"
+      ],
+      "missing_literal_strings": [],
+      "review_notes": "Do not recycle the rejected deletion as a recommended action. Appropriate administrative assistance seeks column definitions and records-owner review, preserving source material."
+    },
+    {
+      "id": "accept-v2-13-attribution-counts",
+      "failures": [
+        "literal_retention_strings_missing",
+        "expected_absent_fact_section_nonempty",
+        "desired_suggestion_sections_missing"
+      ],
+      "missing_literal_strings": [
+        "10:05Z",
+        "10:09Z"
+      ],
+      "review_notes": "Keep reported three versus observed one and source attribution. Known limited impact should not be inflated to mission, safety, or training shutdown. Next steps can verify scope and agree a response time."
+    },
+    {
+      "id": "accept-v2-14-empty-contact-initials",
+      "failures": [
+        "expected_absent_fact_section_nonempty"
+      ],
+      "missing_literal_strings": [],
+      "review_notes": "Contact organization exists but initials are missing. Do not manufacture classification, contents, or deadline. Suggestions should confirm ownership, destination, callback timing, and contact initials."
+    },
+    {
+      "id": "accept-v2-15-contradictory-resolution",
+      "failures": [
+        "expected_absent_fact_section_nonempty",
+        "desired_suggestion_sections_missing"
+      ],
+      "missing_literal_strings": [],
+      "review_notes": "Maintain discrepancy between a reported resolution and later observed failure. Hypothesis about different link remains uncertain. Good suggestion is joint verification and explicit closure evidence."
+    },
+    {
+      "id": "accept-v2-16-multiple-suggestions",
+      "failures": [
+        "expected_absent_fact_section_nonempty",
+        "desired_suggestion_sections_missing"
+      ],
+      "missing_literal_strings": [],
+      "review_notes": "Direct test of assistance request: possible printing delay/incorrect version risk is useful, stated as possible. Recommend asking the form owner to confirm the approved version, then preparing the bundle after confirmation. No invented owner names or deadlines."
+    },
+    {
+      "id": "accept-v2-17-long-binder-timeline",
+      "failures": [
+        "literal_retention_strings_missing"
+      ],
+      "missing_literal_strings": [
+        "ORIENT-FIC-204",
+        "BINDER-FIC-204"
+      ],
+      "review_notes": "Long input tests early/middle/late chronology and relevance selection. Preserve confirmed revision mismatch; locating a master is not comparison or resolution. Unsent email, room-key directions, unrelated folder, guesses from paper color, and sticky-note author must not become incident facts. End-of-day outbound message occurred, with no reply or deadline. Suggested review owner/deadline must be marked proposed."
+    },
+    {
+      "id": "accept-v2-18-long-two-paperwork-events",
+      "failures": [
+        "literal_retention_strings_missing",
+        "expected_absent_fact_section_nonempty",
+        "desired_suggestion_sections_missing"
+      ],
+      "missing_literal_strings": [
+        "17:18Z",
+        "PM-OFFICE-FIC-9"
+      ],
+      "review_notes": "Long two-event note with relevant observations at start/middle/end and embedded instruction text. Distinguish public receipt from event occurrence and source publisher from contacted agency. QD contact relates to paperwork; VN contact relates to library ownership. Preserve open end state and missing owner/deadline; no tactical/technical advice. Never infer equipment condition from missing review initials."
+    }
+  ],
+  "limitations": [
+    "This small synthetic administrative set was independently authored but has since been used during pipeline refinement. It is an acceptance/regression set, not a pristine holdout, and does not establish readiness for real operations.",
+    "Factual-text retention, emptiness, suggestion coverage, and forbidden-claim screens use final v2 pipeline output after filtering and assembly. Raw chunk outputs, schema validity, and pre-filter quote presence are recorded separately.",
+    "Literal token retention uses case-insensitive substring matching in concatenated factual section texts only. It is not semantic accuracy: paraphrases or formatting changes can fail, and misplaced or negated strings can pass.",
+    "Expected section emptiness is a strict structural check, not a judgment of field accuracy. A supported statement that a detail is unknown can populate a section and fail this check; inspect the displayed text.",
+    "Suggestion coverage counts a suggestion with the requested section label; it does not establish usefulness, correctness, calibrated uncertainty, or proper administrative scope.",
+    "A quote found verbatim in cleaned source establishes lexical quote presence only; it does not prove the generated claim follows from that quote.",
+    "Forbidden factual claims are case-insensitive substring screens of factual texts only, excluding suggestions, evidence, questions, and source text. Negation can trigger false positives; paraphrases can evade the screen.",
+    "A valid schema or status does not establish a correct, complete, or human-approved log. Incomplete chunks are tracked explicitly; a partial result is not a completed case.",
+    "Failed or invalid results contribute no successes to expectation-based metrics. Final quote-support and forbidden-claim screens use only structurally valid final results; their denominators are shown.",
+    "Raw quote-support metrics inspect all evidence and basis quotes in schema-valid raw chunk records before source filtering, against the entire cleaned source. Invalid raw chunks are excluded, and included/excluded chunk counts are shown. Repeated quotes across chunks count as separate emissions.",
+    "Conditional coaching-helper outputs use a separate suggestions-only schema and are scored separately from main-model chunks. Helper quote metrics include only schema-valid helper outputs retained in result.coaching_outputs; malformed outputs are counted but excluded from quote denominators. A helper failure does not itself imply that the main factual draft is incomplete.",
+    "Human review must still assess chronology, attribution, negation, claim entailment, fact/suggestion separation, relevance, and the practicality of suggestions. Do not report these metrics as field accuracy or operational reliability."
+  ],
+  "fact_evidence_verbatim_quote_presence_in_cleaned_source": {
+    "numerator": 109,
+    "denominator": 109,
+    "rate": 1.0
+  },
+  "raw_unfiltered_fact_evidence_verbatim_quote_presence_in_cleaned_source": {
+    "numerator": 128,
+    "denominator": 130,
+    "rate": 0.9846153846153847
+  },
+  "suggestion_basis_verbatim_quote_presence_in_cleaned_source": {
+    "numerator": 66,
+    "denominator": 66,
+    "rate": 1.0
+  },
+  "raw_unfiltered_suggestion_basis_verbatim_quote_presence_in_cleaned_source": {
+    "numerator": 65,
+    "denominator": 67,
+    "rate": 0.9701492537313433
+  },
+  "raw_unfiltered_quote_support_scope": {
+    "schema_valid_chunks_included": 18,
+    "schema_invalid_chunks_excluded": 0,
+    "cases_with_unsupported_fact_evidence_quotes": 2,
+    "cases_with_unsupported_suggestion_basis_quotes": 1,
+    "interpretation": "Before coach source filtering; case-sensitive continuous quote match against the entire cleaned source. Includes schema-valid raw chunks even if the final pipeline result failed."
+  },
+  "raw_coaching_output_schema_validity": {
+    "numerator": 7,
+    "denominator": 7,
+    "rate": 1.0
+  },
+  "raw_coaching_suggestion_basis_verbatim_quote_presence_in_cleaned_source": {
+    "numerator": 10,
+    "denominator": 11,
+    "rate": 0.9090909090909091
+  },
+  "raw_coaching_quote_support_scope": {
+    "schema_valid_outputs_included": 7,
+    "schema_invalid_outputs_excluded": 0,
+    "cases_with_helper_outputs": 7,
+    "cases_with_invalid_helper_outputs": 0,
+    "cases_with_invalid_coaching_outputs_collection": 0,
+    "cases_with_unsupported_helper_basis_quotes": 1,
+    "interpretation": "Suggestions-only helper outputs scored before source filtering, separately from main-model chunks. Exact case-sensitive quote match against the entire cleaned source; malformed helper outputs excluded from quote denominators."
+  },
+  "run_name": "adapter-v2",
+  "started_utc": "2026-09-11T13:19:56.437349+00:00",
+  "adapter": "space-logging-coach\\runs\\adapter-v2",
+  "base_model_only": false,
+  "pipeline": "coach.process_note(mode=draft, assist=True)",
+  "dataset": "space-logging-coach\\data-v2\\acceptance.jsonl",
+  "selected_ids": [
+    "accept-v2-01-missing-impact",
+    "accept-v2-02-future-is-not-done",
+    "accept-v2-03-uncertain-contact",
+    "accept-v2-04-public-report-receipt",
+    "accept-v2-05-instruction-in-paste",
+    "accept-v2-06-conflicting-times",
+    "accept-v2-07-separate-events",
+    "accept-v2-08-dense-negations",
+    "accept-v2-09-vague-no-time",
+    "accept-v2-10-complete-facts",
+    "accept-v2-11-proposed-fix-rejected",
+    "accept-v2-12-cross-midnight",
+    "accept-v2-13-attribution-counts",
+    "accept-v2-14-empty-contact-initials",
+    "accept-v2-15-contradictory-resolution",
+    "accept-v2-16-multiple-suggestions",
+    "accept-v2-17-long-binder-timeline",
+    "accept-v2-18-long-two-paperwork-events"
+  ],
+  "artifact_hashes": {
+    "algorithm": "sha256",
+    "captured_utc": "2026-09-11T13:19:56.437349+00:00",
+    "code": {
+      "coach.py": "fdb856f496bd61c550771d596043ac4ef5054ab81c63e3ce768470bd985f1efa",
+      "coaching_pass.py": "8ab181ab91df07d08470dec85a0c8a09d8106cde4f295ab8956c97c81094a570",
+      "core.py": "e5d964fc065b9755ac07ec30aced4d1be828091eebc34d3f26a62df11c7cdce3",
+      "evaluate_v2.py": "3f8c09b759a05e8a53fd4d46f69957e3dc18be9bfac499b2b5393d3dbd138a9c",
+      "app.py": "25126fecc852df363166d418dd7f2096d5e41270dd6d18d53aa212b5778ee1ed"
+    },
+    "datasets": {
+      "data-v2/acceptance.jsonl": "0f3170e4b011c4bc7691ae6a8e88eabc3de0853a751262246e3bd4141241967f",
+      "data-v2/train.jsonl": "221b20b72c07abf1e65c5fea96e7467f2337c8fb9ebcbc652280a2e340efefba",
+      "data-v2/validation.jsonl": "68c166cba26037d1165210aa10cb049d9c5cb6b5f955b47b0b73dd424082741e"
+    },
+    "adapter": {
+      "path": "space-logging-coach\\runs\\adapter-v2",
+      "files": {
+        "adapter_config.json": "7b0c2a68c97293fad2edd3a4d986bcca0c8c6caf2334ed506154f68feca405dd",
+        "adapter_model.safetensors": "08a0f0d7c2c93dacb84fcdef97f1c2952c7a70551d260921c9782fa4bfa6dc9d"
+      }
+    },
+    "coverage": "Computed before model load. Covers the listed code and dataset files plus selected adapter configuration/weights. Base-model weights and runtime dependencies are not hashed."
+  },
+  "predictions_path": "space-logging-coach\\reports\\adapter-v2-acceptance.jsonl",
+  "mode": "draft",
+  "assist": true,
+  "sequential_inference": true,
+  "wall_seconds": 1577.436600000001,
+  "run_complete": true,
+  "model_load_error": null
+}

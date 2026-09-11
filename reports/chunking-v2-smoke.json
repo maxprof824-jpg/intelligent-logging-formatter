@@ -1,0 +1,180 @@
+{
+  "created_utc": "2026-09-11T13:53:26.300719+00:00",
+  "purpose": "Real-model forced chunk-and-merge smoke test",
+  "limitation": "This deliberately forces a short fictional note across a 150-token split threshold. It checks real-model chunk execution, merge structure, and literal time/reference retention. It does not establish long-input accuracy, long-input performance, semantic correctness, or assistance quality; assistance is disabled.",
+  "adapter": "space-logging-coach\\runs\\adapter-v2",
+  "source": "Fictional administrative office record for 2026-09-11; all event times are UTC.\nAt 08:10 UTC, the training desk found two printed copies of the room-calendar notice DEMO-ROOM-71 beside the classroom door. The headings were identical, but one copy was inside a clear folder and the other was loose. At 08:18 UTC, Training Coordination (JN) confirmed the loose copy was a spare print, not a second booking. The room reservation and attendance were checked and were unaffected. I filed the spare copy with the notice. Training Coordination confirmed no further action was needed for this duplicate print.\n\nA separate office-supply question arose at 10:05 UTC. The classroom marker inventory sheet DEMO-STOCK-84 listed four sealed packages, while the cabinet count showed three packages. The counter did not know whether another package had already been issued to a class. At 10:12 UTC, I saved the count note and sent it to Office Supplies (RC). The effect on the afternoon class was not yet assessed. Office Supplies had not replied, and no replacement delivery or follow-up owner had been confirmed. The cabinet was left as found, and the count note remained open for review.",
+  "source_word_count": 189,
+  "forced_threshold": {
+    "chunk_tokens": 150,
+    "overlap_tokens": 40,
+    "production_threshold_unchanged": true,
+    "other_split_arguments": "Original split_source defaults preserved."
+  },
+  "assist": false,
+  "chunks": [
+    "Fictional administrative office record for 2026-09-11; all event times are UTC.\nAt 08:10 UTC, the training desk found two printed copies of the room-calendar notice DEMO-ROOM-71 beside the classroom door. The headings were identical, but one copy was inside a clear folder and the other was loose. At 08:18 UTC, Training Coordination (JN) confirmed the loose copy was a spare print, not a second booking. The room reservation and attendance were checked and were unaffected. I filed the spare copy with the notice. Training Coordination confirmed no further action was needed for this duplicate print.\n\nA separate office-supply question arose at ",
+    " and attendance were checked and were unaffected. I filed the spare copy with the notice. Training Coordination confirmed no further action was needed for this duplicate print.\n\nA separate office-supply question arose at 10:05 UTC. The classroom marker inventory sheet DEMO-STOCK-84 listed four sealed packages, while the cabinet count showed three packages. The counter did not know whether another package had already been issued to a class. At 10:12 UTC, I saved the count note and sent it to Office Supplies (RC). The effect on the afternoon class was not yet assessed. Office Supplies had not replied, and no replacement delivery or follow-up owner had been confirmed. The cabinet was left as found, and the count",
+    "). The effect on the afternoon class was not yet assessed. Office Supplies had not replied, and no replacement delivery or follow-up owner had been confirmed. The cabinet was left as found, and the count note remained open for review."
+  ],
+  "result": {
+    "event_type": "other",
+    "sections": {
+      "situation": [
+        {
+          "text": "An equipment error occurred: the cabinet was left as found after the incident.",
+          "evidence": [
+            "The cabinet was left as found, and the count note remained open for review."
+          ]
+        }
+      ],
+      "impact": [
+        {
+          "text": "Training Coordination confirmed the loose copy was a spare print, not a second booking. The room reservation and attendance were checked and were unaffected.",
+          "evidence": [
+            "At 08:18 UTC, Training Coordination (JN) confirmed the loose copy was a spare print, not a second booking. The room reservation and attendance were checked and were unaffected."
+          ]
+        },
+        {
+          "text": "The effect on the afternoon class was not yet assessed.",
+          "evidence": [
+            "The effect on the afternoon class was not yet assessed."
+          ]
+        }
+      ],
+      "agencies_contacted": [
+        {
+          "text": "Training Coordination (JN) confirmed the loose copy was a spare print, not a second booking.",
+          "evidence": [
+            "At 08:18 UTC, Training Coordination (JN) confirmed the loose copy was a spare print, not a second booking."
+          ]
+        },
+        {
+          "text": "At 10:12 UTC, I saved the count note and sent it to Office Supplies (RC).",
+          "evidence": [
+            "At 10:12 UTC, I saved the count note and sent it to Office Supplies (RC)."
+          ]
+        },
+        {
+          "text": "Office Supplies had not replied.",
+          "evidence": [
+            "Office Supplies had not replied, and no replacement delivery or follow-up owner had been confirmed."
+          ]
+        }
+      ],
+      "action": [
+        {
+          "text": "I filed the spare copy with the notice.",
+          "evidence": [
+            "I filed the spare copy with the notice."
+          ]
+        },
+        {
+          "text": "The cabinet was left as found, and the count note remained open for review.",
+          "evidence": [
+            "The cabinet was left as found, and the count note remained open for review."
+          ]
+        }
+      ],
+      "plan": [
+        {
+          "text": "Training Coordination confirmed no further action was needed for this duplicate print.",
+          "evidence": [
+            "Training Coordination confirmed no further action was needed for this duplicate print."
+          ]
+        },
+        {
+          "text": "Office Supplies had not replied, and no replacement delivery or follow-up owner had been confirmed.",
+          "evidence": [
+            "Office Supplies had not replied, and no replacement delivery or follow-up owner had been confirmed."
+          ]
+        }
+      ]
+    },
+    "suggestions": [],
+    "missing_fields": [],
+    "questions": [
+      "What were the times of the individual events?",
+      "What date applies to these events?",
+      "What time zone applies to the event times?",
+      "What initials belong with each contacted agency?",
+      "What remains to be confirmed in IMPACT? Preserve the stated uncertainty until confirmed."
+    ],
+    "issues": [
+      "SITUATION: withheld a sentence with an unsupported source quote.",
+      "ACTION: withheld a sentence with an unsupported source quote.",
+      "Source times not present in the factual draft: 08:10, 08:18, 10:05. Check whether they belong in the chronology."
+    ],
+    "status": "needs_confirmation",
+    "schema_version": "coached-five-sections-2.2",
+    "review_excerpts": [],
+    "human_approval_required": true,
+    "raw_outputs": [
+      "{\"event_type\": \"other\", \"sections\": {\"situation\": [{\"text\": \"2026-09-11: At 08:10 UTC, the training desk found two printed copies of the room-calendar notice DEMO-ROOM-71 beside the classroom door. The headings were identical, but one copy was inside a clear folder and the other was loose.\", \"evidence\": [\"2026-09-11: At 08:10 UTC, the training desk found two printed copies of the room-calendar notice DEMO-ROOM-71 beside the classroom door. The headings were identical, but one copy was inside a clear folder and the other was loose.\"]}], \"impact\": [{\"text\": \"Training Coordination confirmed the loose copy was a spare print, not a second booking. The room reservation and attendance were checked and were unaffected.\", \"evidence\": [\"At 08:18 UTC, Training Coordination (JN) confirmed the loose copy was a spare print, not a second booking. The room reservation and attendance were checked and were unaffected.\"]}], \"agencies_contacted\": [{\"text\": \"Training Coordination (JN) confirmed the loose copy was a spare print, not a second booking.\", \"evidence\": [\"At 08:18 UTC, Training Coordination (JN) confirmed the loose copy was a spare print, not a second booking.\"]}], \"action\": [{\"text\": \"I filed the spare copy with the notice.\", \"evidence\": [\"I filed the spare copy with the notice.\"]}], \"plan\": [{\"text\": \"Training Coordination confirmed no further action was needed for this duplicate print.\", \"evidence\": [\"Training Coordination confirmed no further action was needed for this duplicate print.\"]}]}, \"suggestions\": []}",
+      "{\"event_type\": \"other\", \"sections\": {\"situation\": [{\"text\": \"At 10:05 UTC, a separate office-supply question arose: the classroom marker inventory sheet (DEMO-STOCK-84) listed four sealed packages, while the cabinet count showed three. The counter did not know whether another package had already been issued to a class.\", \"evidence\": [\"At 10:05 UTC. The classroom marker inventory sheet DEMO-STOCK-84 listed four sealed packages, while the cabinet count showed three packages. The counter did not know whether another package had already been issued to a class.\"]}], \"impact\": [{\"text\": \"The effect on the afternoon class was not yet assessed.\", \"evidence\": [\"The effect on the afternoon class was not yet assessed.\"]}], \"agencies_contacted\": [{\"text\": \"At 10:12 UTC, I saved the count note and sent it to Office Supplies (RC).\", \"evidence\": [\"At 10:12 UTC, I saved the count note and sent it to Office Supplies (RC).\"]}], \"action\": [{\"text\": \"The cabinet was left as found, and the count was saved.\", \"evidence\": [\"The cabinet was left as found, and the count was saved.\"]}], \"plan\": [{\"text\": \"Office Supplies had not replied, and no replacement delivery or follow-up owner had been confirmed.\", \"evidence\": [\"Office Supplies had not replied, and no replacement delivery or follow-up owner had been confirmed.\"]}]}, \"suggestions\": [{\"section\": \"impact\", \"text\": \"Possible effect: the afternoon class may have received an incomplete or incorrect marker count.\", \"basis\": [\"The effect on the afternoon class was not yet assessed.\"], \"confirm\": \"Has the afternoon class received the marker count, and is it complete?\"}, {\"section\": \"plan\", \"text\": \"Proposed follow-up: confirm the current inventory with the counter and identify a follow-up owner.\", \"basis\": [\"Office Supplies had not replied, and no replacement delivery or follow-up owner had been confirmed.\"], \"confirm\": \"Who will confirm the current inventory and coordinate the follow-up?\"}]}",
+      "{\"event_type\": \"equipment_error\", \"sections\": {\"situation\": [{\"text\": \"An equipment error occurred: the cabinet was left as found after the incident.\", \"evidence\": [\"The cabinet was left as found, and the count note remained open for review.\"]}], \"impact\": [{\"text\": \"The effect on the afternoon class was not yet assessed.\", \"evidence\": [\"The effect on the afternoon class was not yet assessed.\"]}], \"agencies_contacted\": [{\"text\": \"Office Supplies had not replied.\", \"evidence\": [\"Office Supplies had not replied, and no replacement delivery or follow-up owner had been confirmed.\"]}], \"action\": [{\"text\": \"The cabinet was left as found, and the count note remained open for review.\", \"evidence\": [\"The cabinet was left as found, and the count note remained open for review.\"]}], \"plan\": []}, \"suggestions\": [{\"section\": \"action\", \"text\": \"Consider recording the actual time the cabinet was left unattended and the last review point.\", \"basis\": [\"The cabinet was left as found, and the count note remained open for review.\"], \"confirm\": \"What was the actual time the cabinet was left unattended, and when is the count note due for review?\"}, {\"section\": \"plan\", \"text\": \"Proposed follow-up: assign someone to confirm the afternoon class effect and obtain a response from Office Supplies.\", \"basis\": [\"The effect on the afternoon class was not yet assessed.\", \"Office Supplies had not replied, and no replacement delivery or follow-up owner had been confirmed.\"], \"confirm\": \"Who will confirm the class effect and obtain the Office Supplies reply, and when is that follow-up needed?\"}]}"
+    ],
+    "coaching_outputs": [],
+    "chunk_count": 3,
+    "source_tokens": 266,
+    "mode": "draft"
+  },
+  "raw_outputs": [
+    "{\"event_type\": \"other\", \"sections\": {\"situation\": [{\"text\": \"2026-09-11: At 08:10 UTC, the training desk found two printed copies of the room-calendar notice DEMO-ROOM-71 beside the classroom door. The headings were identical, but one copy was inside a clear folder and the other was loose.\", \"evidence\": [\"2026-09-11: At 08:10 UTC, the training desk found two printed copies of the room-calendar notice DEMO-ROOM-71 beside the classroom door. The headings were identical, but one copy was inside a clear folder and the other was loose.\"]}], \"impact\": [{\"text\": \"Training Coordination confirmed the loose copy was a spare print, not a second booking. The room reservation and attendance were checked and were unaffected.\", \"evidence\": [\"At 08:18 UTC, Training Coordination (JN) confirmed the loose copy was a spare print, not a second booking. The room reservation and attendance were checked and were unaffected.\"]}], \"agencies_contacted\": [{\"text\": \"Training Coordination (JN) confirmed the loose copy was a spare print, not a second booking.\", \"evidence\": [\"At 08:18 UTC, Training Coordination (JN) confirmed the loose copy was a spare print, not a second booking.\"]}], \"action\": [{\"text\": \"I filed the spare copy with the notice.\", \"evidence\": [\"I filed the spare copy with the notice.\"]}], \"plan\": [{\"text\": \"Training Coordination confirmed no further action was needed for this duplicate print.\", \"evidence\": [\"Training Coordination confirmed no further action was needed for this duplicate print.\"]}]}, \"suggestions\": []}",
+    "{\"event_type\": \"other\", \"sections\": {\"situation\": [{\"text\": \"At 10:05 UTC, a separate office-supply question arose: the classroom marker inventory sheet (DEMO-STOCK-84) listed four sealed packages, while the cabinet count showed three. The counter did not know whether another package had already been issued to a class.\", \"evidence\": [\"At 10:05 UTC. The classroom marker inventory sheet DEMO-STOCK-84 listed four sealed packages, while the cabinet count showed three packages. The counter did not know whether another package had already been issued to a class.\"]}], \"impact\": [{\"text\": \"The effect on the afternoon class was not yet assessed.\", \"evidence\": [\"The effect on the afternoon class was not yet assessed.\"]}], \"agencies_contacted\": [{\"text\": \"At 10:12 UTC, I saved the count note and sent it to Office Supplies (RC).\", \"evidence\": [\"At 10:12 UTC, I saved the count note and sent it to Office Supplies (RC).\"]}], \"action\": [{\"text\": \"The cabinet was left as found, and the count was saved.\", \"evidence\": [\"The cabinet was left as found, and the count was saved.\"]}], \"plan\": [{\"text\": \"Office Supplies had not replied, and no replacement delivery or follow-up owner had been confirmed.\", \"evidence\": [\"Office Supplies had not replied, and no replacement delivery or follow-up owner had been confirmed.\"]}]}, \"suggestions\": [{\"section\": \"impact\", \"text\": \"Possible effect: the afternoon class may have received an incomplete or incorrect marker count.\", \"basis\": [\"The effect on the afternoon class was not yet assessed.\"], \"confirm\": \"Has the afternoon class received the marker count, and is it complete?\"}, {\"section\": \"plan\", \"text\": \"Proposed follow-up: confirm the current inventory with the counter and identify a follow-up owner.\", \"basis\": [\"Office Supplies had not replied, and no replacement delivery or follow-up owner had been confirmed.\"], \"confirm\": \"Who will confirm the current inventory and coordinate the follow-up?\"}]}",
+    "{\"event_type\": \"equipment_error\", \"sections\": {\"situation\": [{\"text\": \"An equipment error occurred: the cabinet was left as found after the incident.\", \"evidence\": [\"The cabinet was left as found, and the count note remained open for review.\"]}], \"impact\": [{\"text\": \"The effect on the afternoon class was not yet assessed.\", \"evidence\": [\"The effect on the afternoon class was not yet assessed.\"]}], \"agencies_contacted\": [{\"text\": \"Office Supplies had not replied.\", \"evidence\": [\"Office Supplies had not replied, and no replacement delivery or follow-up owner had been confirmed.\"]}], \"action\": [{\"text\": \"The cabinet was left as found, and the count note remained open for review.\", \"evidence\": [\"The cabinet was left as found, and the count note remained open for review.\"]}], \"plan\": []}, \"suggestions\": [{\"section\": \"action\", \"text\": \"Consider recording the actual time the cabinet was left unattended and the last review point.\", \"basis\": [\"The cabinet was left as found, and the count note remained open for review.\"], \"confirm\": \"What was the actual time the cabinet was left unattended, and when is the count note due for review?\"}, {\"section\": \"plan\", \"text\": \"Proposed follow-up: assign someone to confirm the afternoon class effect and obtain a response from Office Supplies.\", \"basis\": [\"The effect on the afternoon class was not yet assessed.\", \"Office Supplies had not replied, and no replacement delivery or follow-up owner had been confirmed.\"], \"confirm\": \"Who will confirm the class effect and obtain the Office Supplies reply, and when is that follow-up needed?\"}]}"
+  ],
+  "rendered_draft": "DRAFT — REVIEW FACTS AND CONFIRM SUGGESTIONS\n\nSITUATION (With times of particular events):\n- An equipment error occurred: the cabinet was left as found after the incident.\n\nIMPACT:\n- Training Coordination confirmed the loose copy was a spare print, not a second booking. The room reservation and attendance were checked and were unaffected.\n- The effect on the afternoon class was not yet assessed.\n\nAGENCIES CONTACTED (W/Initials):\n- Training Coordination (JN) confirmed the loose copy was a spare print, not a second booking.\n- At 10:12 UTC, I saved the count note and sent it to Office Supplies (RC).\n- Office Supplies had not replied.\n\nACTION:\n- I filed the spare copy with the notice.\n- The cabinet was left as found, and the count note remained open for review.\n\nPLAN:\n- Training Coordination confirmed no further action was needed for this duplicate print.\n- Office Supplies had not replied, and no replacement delivery or follow-up owner had been confirmed.",
+  "error": null,
+  "runtime": {
+    "total_seconds": 131.21847780000098,
+    "model_load_seconds": 8.183354999997391,
+    "process_seconds": 123.03510910000114
+  },
+  "checks": {
+    "multiple_chunks_split": true,
+    "multiple_chunks_generated": true,
+    "pipeline_error": false,
+    "incomplete_draft": false,
+    "valid_structure": true,
+    "validation_errors": [],
+    "no_suggestions_with_assistance_disabled": true,
+    "retention": {
+      "method": "Case-insensitive literal substring checks; not semantic or section-accuracy judgments.",
+      "expected": [
+        "08:10",
+        "08:18",
+        "10:05",
+        "10:12",
+        "DEMO-ROOM-71",
+        "DEMO-STOCK-84"
+      ],
+      "factual_sections_retained": [
+        "10:12"
+      ],
+      "unassigned_review_retained": [],
+      "unassigned_only": [],
+      "factual_plus_unassigned_retained": [
+        "10:12"
+      ],
+      "missing_from_factual_plus_unassigned": [
+        "08:10",
+        "08:18",
+        "10:05",
+        "DEMO-ROOM-71",
+        "DEMO-STOCK-84"
+      ],
+      "all_rendered_text_retained": [
+        "10:12"
+      ],
+      "missing_from_all_rendered_text": [
+        "08:10",
+        "08:18",
+        "10:05",
+        "DEMO-ROOM-71",
+        "DEMO-STOCK-84"
+      ]
+    }
+  },
+  "passed": false
+}

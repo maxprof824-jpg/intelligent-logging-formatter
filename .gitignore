@@ -1,0 +1,13 @@
+# Machine-specific environments and downloaded weights
+.venv/
+.runtime/
+.cache/
+models/
+__pycache__/
+*.pyc
+*.safetensors
+*.bin
+checkpoint-*/
+*.zip
+.env
+.env.*
