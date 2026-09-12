@@ -4,7 +4,7 @@ import html
 import threading
 
 from core import ROOT, load_model
-from coach import process_note, render_coached_log
+from event_formatter import process_note, render_coached_log
 
 
 EXAMPLES = [
@@ -20,11 +20,11 @@ EXAMPLES = [
         "I filed a copy under DEMO-PM-18. unsure if work really done."
     ],
     [
-        "2026-09-11 UTC / 13:10 Training Coordination (JK) called: fictional "
+        "EVENT: Briefing room change\n2026-09-11 UTC / 13:10 Training Coordination (JK) called: fictional "
         "briefing moved from room A to room B. I updated the practice calendar "
-        "at 13:14. 13:25 Training Support (LM) called about a separate projector "
-        "issue in room C; picture flickering, no fix confirmed. unrelated: "
-        "at 13:40 JK called back, room B now confirmed. At 13:45 I sent the "
+        "at 13:14.\n\nEVENT: Room C projector\n2026-09-11 UTC / 13:25 Training Support (LM) called about a projector "
+        "issue in room C; picture flickering, no fix confirmed.\n\nEVENT: Briefing room change\n"
+        "2026-09-11 UTC / 13:40 JK called back, room B now confirmed. At 13:45 I sent the "
         "updated briefing location to the fictional participants. Need the "
         "projector issue kept separate from the room change."
     ],
@@ -72,18 +72,35 @@ def format_raw(raw_outputs, coaching_outputs=None):
 
 def evidence_rows(result):
     """A direct, readable comparison for human review; quotes are not correctness scores."""
-    return [[field.replace('_', ' ').upper(), fact['text'], '\n\n'.join(fact['evidence'])]
+    if 'event_results' in result:
+        rows=[]
+        for event in result['event_results']:
+            for entry in event['source_evidence']:
+                if entry['kind']=='review_excerpt':continue
+                locations=[]
+                for quote in entry['quotes']:
+                    candidates=quote['candidates']
+                    label='Multiple possible matches: ' if quote['ambiguous'] else ''
+                    label+=' | '.join(', '.join(f"lines {span['line_start']}–{span['line_end']}" for span in candidate['segments']) for candidate in candidates)
+                    locations.append(label or 'No original source match')
+                field=entry['section'].replace('_',' ').upper()
+                if entry['kind']=='suggestion':field+=' (SUGGESTION — CONFIRM)'
+                rows.append([event['label'],field,entry['text'],'\n\n'.join(q['quote'] for q in entry['quotes']),'\n\n'.join(locations)])
+        return rows
+    return [['Supplied notes',field.replace('_', ' ').upper(), fact['text'], '\n\n'.join(fact['evidence']),'Not recorded in this saved result']
             for field, facts in result.get('sections', {}).items() for fact in facts]
 
 
 def draft_status(result):
     count = sum(len(facts) for facts in result.get('sections', {}).values())
     if result.get('status') == 'incomplete_draft':
+        if not count:return 'Draft not completed: no supported entries were organized. Your source notes remain available for review.'
         return 'Partial draft: some notes could not be processed. Check the source and review details.'
     if not count:
         return 'No supported entries were organized. Review the preserved source passages and try a shorter related group.'
     unassigned = len(result.get('review_excerpts', []))
     message = f'{count} draft entries prepared for review.'
+    if result.get('event_count',0)>1:message+=f" Kept in {result['event_count']} separate groups."
     if unassigned:
         message += f' {unassigned} source passage(s) still need placement or checking.'
     return message + ' Confirm suggestions before using them.'
@@ -102,18 +119,15 @@ def build_demo(model, tokenizer, model_name):
                 return "", "Enter fictional notes above to prepare a draft.", "", {}, "", []
             progress(0, desc="Organizing notes and checking suggested next steps…" if assist else "Organizing your notes…")
             with inference_lock:
-                def update_progress(stage, part, total):
-                    fraction = (part-1) / max(total, 1)
-                    fraction = .6 + .35*fraction if stage == 'Preparing suggestions' else .6*fraction
-                    if stage == 'Checking source coverage': fraction = .98
-                    progress(fraction, desc=f'{stage} · part {part}/{total}')
+                def update_progress(fraction, description):
+                    progress(fraction, desc=description)
                 result = process_note(model, tokenizer, source, mode=mode, assist=assist, progress=update_progress)
             draft = render_coached_log(result)
             followup = format_followup(result)
-            count = result.get("chunk_count", 1)
             status = draft_status(result)
-            if count > 1:
-                status += f" Long notes processed in {count} parts; check the full sequence of events."
+            long_events = [event for event in result.get('event_results',[]) if event['result'].get('chunk_count',0)>1]
+            if long_events:
+                status += f" {len(long_events)} event group(s) needed multiple processing parts; check their full sequence."
             diagnostics = {key: value for key, value in result.items()
                            if key not in ("raw_outputs", "coaching_outputs")}
             progress(1, desc="Partial draft ready" if result.get("status") == "incomplete_draft" else "Draft ready")
@@ -158,8 +172,9 @@ def build_demo(model, tokenizer, model_name):
                 value=True, label="Include possible impacts and suggested next steps", scale=2,
             )
         gr.Markdown(
-            "Keep related updates together. For separate incidents, separate drafts are easier to check. "
-            "Long notes and optional suggestions take more time to prepare."
+            "For different incidents, start each group with **EVENT: a short name** on its own line. "
+            "Repeat the same heading for later updates to that event. Put its date and context inside that group. "
+            "Without headings, notes are processed together. Long notes and optional suggestions take more time."
         )
         source = gr.Textbox(
             lines=12, max_lines=24, label="Fictional notes or existing log",
@@ -168,7 +183,7 @@ def build_demo(model, tokenizer, model_name):
         gr.Examples(
             examples=EXAMPLES, inputs=[source],
             label="Try an example", example_labels=[
-                "Terminal issue with missing details", "Uncertain PM paperwork", "Several phone updates",
+                "Terminal issue with missing details", "Uncertain PM paperwork", "Two events with later updates",
             ],
         )
         with gr.Row():
@@ -182,9 +197,11 @@ def build_demo(model, tokenizer, model_name):
         followup = gr.Markdown()
         with gr.Accordion('Compare draft entries with your source', open=False):
             gr.Markdown('Check meaning, uncertainty, and who did what—not just matching words. '
-                        'These quotes relate to the generated draft; check them again after editing.')
-            evidence = gr.Dataframe(headers=['Section', 'Generated entry', 'Quoted source'],
-                                    datatype=['str', 'str', 'str'], type='array', interactive=False, wrap=True)
+                        'These quotes relate to the generated draft; check them again after editing. '
+                        'Line numbers refer to your original notes. '
+                        'Multiple matches are shown when the wording repeats; the intended occurrence still needs confirmation.')
+            evidence = gr.Dataframe(headers=['Event', 'Section', 'Generated entry', 'Quoted source', 'Source locations'],
+                                    datatype=['str']*5, type='array', interactive=False, wrap=True)
         gr.Markdown(
             "Add answers to your notes and prepare the draft again, or edit the draft above. "
             "Keep suggestions labeled until you confirm them."
@@ -220,7 +237,7 @@ def main():
             "The v2 adapter is not ready. Finish v2 training, or run python app_v2.py --base to use the base model."
         )
     model, tokenizer = load_model(adapter)
-    model_name = "Original base model" if args.base else f"Local adapter: {adapter.name} · formatter runtime 2.4"
+    model_name = "Original base model · formatter runtime 2.5" if args.base else f"Local adapter: {adapter.name} · formatter runtime 2.5"
     demo = build_demo(model, tokenizer, model_name)
     demo.launch(
         server_name="127.0.0.1", server_port=args.port,
