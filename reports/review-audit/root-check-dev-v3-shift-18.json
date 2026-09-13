@@ -1,0 +1,12 @@
+{
+  "case_id": "dev-v3-shift-18",
+  "reviewer": "Root adjudication of the second AI-assisted masked peer check before model unmasking.",
+  "canonical_review_sha256": "c49e6c84f4d259860ae545ca02b820aaedf1dd74a0382661bfc4cd9bc6295e52",
+  "peer_review_sha256": "7f4e33d16083185273ba87948d3136bb70133279ee159b16e488cde85bcaf298",
+  "decision": "Adopt the peer qualification and retain A R01 as critical actor_change, with unchanged placement and repair counts.",
+  "source_quote": "SF will ask the next desk worker to identify the papers.",
+  "output_quote": "The next desk worker will identify the papers.",
+  "reason": "The source assigns SF the next step of making a request. The draft removes that step and asserts future identification by the recipient. The recipient is not invented; the unsupported change is from an intended request to stated future performance. This is not a claim of completed work or a literal promise spoken in the source.",
+  "counts": {"placed_supported_units": 0, "repair_operations": 7, "critical_errors": 1},
+  "limits": "An AI-assisted semantic judgment with practical model-label masking, not independent user validation. Canonical review bytes are unchanged; the peer note supplies the narrower interpretation."
+}

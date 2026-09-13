@@ -1,0 +1,86 @@
+{
+  "schema_version": "1.0",
+  "review_complete": true,
+  "created_utc": "2026-09-13T14:55:30.463139+00:00",
+  "tag": "v3.0.0-experimental",
+  "release_kind": "experimental",
+  "promotion": false,
+  "default_adapter": "current_v2",
+  "reserved_used": false,
+  "reserved_used_definition": "Model inference or semantic review. Earlier automated dataset integrity checks are excluded from this definition.",
+  "comparison_sha256": "86cd6ac98088085915e165e5da8589f98aefd3e6bba8b1980169eb543864e54f",
+  "qualitative_review_sha256": "0735441446ca921028013e37ef53bc592d5973378a2a4c5fe0c3265c52fb0036",
+  "candidate_export_manifest_sha256": "41576805805555e4f9505eebae8bdbb8b334456dc64e1722bf101cad0adcfa6f",
+  "candidate_weights_sha256": "cfad487fd5834e9d5cb986f0a479e91095e9187338a130940095c9df4c06ec0f",
+  "default_weights_sha256": "08a0f0d7c2c93dacb84fcdef97f1c2952c7a70551d260921c9782fa4bfa6dc9d",
+  "reviewed_public_files_sha256": {
+    "README.md": "7ec151a9336ecc545405dad429c52661c0b5afdb0f72f1b91e843b6e30b313cc",
+    "RELEASE-NOTES.md": "7301e58c77156f5d8833b170717ba0d5bd0cfcd7d7a91678e224dc0e2a550ad3",
+    "MODEL-CARD-V2.md": "d2d1cf58bc3a60ae3d9ddaf81bb11a89932f36fdb82373a463de782a996e2ca1",
+    "MODEL-CARD-V3-CANDIDATE.md": "ff5963e9fd1577318e70979d895b427549c76adb426fd58f83413ebf9b1797ed",
+    "V2-GUIDE.md": "c0b4e56602183f0647c289a9753fc1ff540df1403a42e84c06bb64e14d6f2a22",
+    "REVIEW-AND-ROADMAP.md": "b123f99db2cb86e0dd6fc084e88b62b3108c74599a3aecba279d736ed68938ed",
+    "reports/V3-COMPARISON.md": "3f9febf6738175962009d3619bb2087518841d45c115683afd1aeec2d59a17f8",
+    "reports/V3-TRAINING-PROVENANCE.json": "8437b309c39c03557ad9f029901a18d5cbbf69a0761609e9f9b079632a16582a",
+    "reports/V3-CPU-VALIDATION.json": "2a83c242cf1d53758d2880541661bc98c3e35923e94fb27a4fccb50834159554",
+    "reports/V3-RUN-NOTES.json": "adf9dedd9265adc5d77f800a7b1c4251a90040d93448768efeba177345d16874",
+    "reports/V3-EXPORT-SMOKE.json": "2399f8754b05e840a33b64a727295c5f4b618b2a85dff96e23a539a2d0402999",
+    "reports/review-audit/INDEX.json": "90be44ca2a26d1fe5d3bf48676dbe5d4f8114b6edc3199207e0b04c103e0d710"
+  },
+  "source_snapshot_sha256": "6c396778be38127c80618b804f4348f879a2e190b543a56e3c28f04100ab1c70",
+  "source_snapshot_definition": "SHA-256 of canonical JSON mapping tracked payload paths to exact working-copy SHA-256 values, excluding this decision and PACKAGE-MANIFEST.json. Archive manifests bind this decision separately.",
+  "rationale": "Do not promote. V3 places more checked units and requires fewer repairs overall, but introduces unsupported causes and promised follow-ups. Primary critical errors increase from two to three, including a new IT07 regression, while the administrative primary case loses placement. Total failed groups remain equal but newly affected IT06 and Shift17 courier groups require investigation. Frozen gate 2 fails; pooled gains do not override it. Keep v2 as default and release v3 only as an optional experiment.",
+  "gate_assessment": {
+    "primary_placement_and_repairs": "Aggregate improvement: 38 to 46 of 103 placed units; 68 to 59 repair operations. Administrative13 regresses from 3 to 2 placed units and 7 to 8 repairs.",
+    "correctness": "Fail: primary critical errors 2 to 3; new unsupported cause/commitment claims in Maintenance01, IT05 and IT07. IT07 had no recorded v2 correctness error. No recorded false-completion errors in either adapter.",
+    "failure_accounting": "Aggregate count condition met: incomplete cases 4 to 3, failed groups 4 to 4. New failures in IT06 and Shift17 courier require investigation; no missing/malformed/unexpected output groups reported and failed sources retained.",
+    "reserved_decision": "Development gate failed; do not run or semantically review reserved notes."
+  },
+  "reviewer_note": "Root decision with a separate AI-assisted gate consistency check after all 20 canonical reviews were completed. Practical model-label masking and prior familiarity limits are disclosed in the qualitative report and audit.",
+  "primary_counts": {
+    "base": {
+      "checklist_units": 103,
+      "placed_supported_units": 8,
+      "repair_operations": 95,
+      "critical_errors": 2
+    },
+    "current_v2": {
+      "checklist_units": 103,
+      "placed_supported_units": 38,
+      "repair_operations": 68,
+      "critical_errors": 2
+    },
+    "candidate_v3": {
+      "checklist_units": 103,
+      "placed_supported_units": 46,
+      "repair_operations": 59,
+      "critical_errors": 3
+    }
+  },
+  "all20_counts": {
+    "base": {
+      "checklist_units": 195,
+      "placed_supported_units": 17,
+      "repair_operations": 180,
+      "critical_errors": 3,
+      "structurally_complete_cases": 3,
+      "failed_or_incomplete_groups": 23
+    },
+    "current_v2": {
+      "checklist_units": 195,
+      "placed_supported_units": 97,
+      "repair_operations": 104,
+      "critical_errors": 4,
+      "structurally_complete_cases": 16,
+      "failed_or_incomplete_groups": 4
+    },
+    "candidate_v3": {
+      "checklist_units": 195,
+      "placed_supported_units": 117,
+      "repair_operations": 83,
+      "critical_errors": 3,
+      "structurally_complete_cases": 17,
+      "failed_or_incomplete_groups": 4
+    }
+  }
+}

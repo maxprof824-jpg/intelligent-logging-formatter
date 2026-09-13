@@ -1,0 +1,13 @@
+{
+  "case_id": "dev-v3-admin-15",
+  "created_utc": "2026-09-13T14:40:12.282200+00:00",
+  "reviewer": "Root follow-up review of source/checklist and allowlisted variant B; model identity not opened.",
+  "canonical_review_sha256": "dc68789c6760238a178c6bb205db179fbfa24684eb1a9457b2bc48efb1331bb6",
+  "packet_sha256": "c189724090858d394ec0f8de878ca0f83dcd43bf9917263a8da798dd6a15516b",
+  "decision": "Retain variant B R01 as a critical stale-status finding; no canonical changes.",
+  "source_quote": "The mailbox stamp is 15:02, and the correct recorded acknowledgement time is 15:02.",
+  "output_quote": "The recorded acknowledgement time may be incorrect; the actual time is not confirmed.",
+  "reason": "The source explicitly resolves its earlier 15:20 timestamp and states that the draft was corrected. The suggestion recasts the accepted correction as unresolved, and its follow-up question repeats that premise. This is more than asking for an absent detail. It is a stale uncertainty assertion, not an invented second acknowledgement or a claim that a reservation was approved.",
+  "repair_accounting": "Restoring C01 and removing its contradictory uncertainty suggestion/question remain one logical repair. The separate headcount-advice cleanup concerns C05, which is already correctly placed, and is not double-counted with C01.",
+  "limitations": "AI-assisted judgment, not independent user validation or measured editing time. Root saw labeled execution progress elsewhere but did not open this case model mapping."
+}

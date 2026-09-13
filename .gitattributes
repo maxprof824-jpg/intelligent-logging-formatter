@@ -1,2 +1,14 @@
 # Evaluation checks fingerprint exact dataset bytes on every platform.
 evaluation-v3/*.jsonl text eol=lf
+
+# Preserve exact recorded artifact bytes and their referenced SHA-256 values.
+reports/V3-COMPARISON-DEVELOPMENT.json -text whitespace=cr-at-eol
+reports/V3-QUALITATIVE-REVIEW.json -text whitespace=cr-at-eol
+reports/V3-TRAINING-PROVENANCE.json -text whitespace=cr-at-eol
+reports/V3-TRAINING-METRICS.json -text whitespace=cr-at-eol
+reports/V3-CPU-VALIDATION.json -text whitespace=cr-at-eol
+reports/V3-RUN-NOTES.json -text whitespace=cr-at-eol
+reports/V3-EXPORT-SMOKE.json -text whitespace=cr-at-eol
+reports/V3-RELEASE-DECISION.json -text whitespace=cr-at-eol
+reports/review-audit/*.json -text whitespace=cr-at-eol
+reports/archive/PACKAGE-MANIFEST-V25.json -text whitespace=cr-at-eol

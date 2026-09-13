@@ -1,0 +1,179 @@
+{
+  "case_id": "dev-v3-fac-09",
+  "reviewer": "AI-assisted masked peer check; prior formatter familiarity disclosed.",
+  "scope": "Advice-related repairs and overlap with linked factual restoration only. No original claim placements or correctness judgments are changed by this note.",
+  "input_sha256": {
+    "packet": "c9f7e7d3eff3f00a3f85c3bae7bbc646821902e2a3f62ac24b9c6bca6f911b39",
+    "original_review": "e9d904e152210de2ff14b36f7fe71ec59a1d782e18e12aad1b4032aba891bd26",
+    "review_instructions": "03378fdc6d8f0fe9f7df2186bb6f7dd17f04b33236b2f1b60ff2b97cf1a4fe1f"
+  },
+  "access_disclosure": "For this check the packet viewer emitted only allowlisted source_text, embedded source checklist, event identity/status, accepted factual text, suggestion text/confirmation questions and displayed questions. No raw-output fields, label map, full comparison report, other case outputs, training data or reserved notes were inspected in this check.",
+  "criterion": "Reasonable marked proposals may extend beyond supplied facts; absent requirements alone do not establish a necessary advice repair. Count a demonstrated semantic correction or substantive redundancy once, including repeated manifestations and cleanup inseparable from an existing linked factual restoration.",
+  "findings": [
+    {
+      "variant": "A",
+      "review_edit_ids": [
+        "E09"
+      ],
+      "source_quotes": [
+        "At 07:48 Building Services (DM) said the notice should have been collected but they had not checked the room."
+      ],
+      "output_quotes": [
+        "Reception should confirm with Building Services (DM) whether a room check protocol exists for cleaning notices or room occupancy.",
+        "Does Building Services (DM) have a standard procedure for checking room occupancy or cleaning notices?"
+      ],
+      "assessment": "A process question may be less direct than checking the room, but it is marked as a recommended next step and asks about an unknown process; it neither assumes one exists nor contradicts the no-check finding. Unrequested or indirect advice alone is not a demonstrated necessary correction.",
+      "proposed_change": "Remove E09 from required repairs; retain an optional-advice usefulness concern in prose.",
+      "repair_count_delta": -1
+    },
+    {
+      "variant": "A",
+      "review_edit_ids": [
+        "E10"
+      ],
+      "related_factual_edit_ids": [
+        "E04"
+      ],
+      "source_quotes": [
+        "08:05 DM sent a message asking Reception to keep the photograph available. This was a request for the record, not permission to remove the notice or use the room."
+      ],
+      "output_quotes": [
+        "Reception should maintain the photograph of the notice for audit or reference until further notice.",
+        "Is there a formal record retention policy for such notices or photographs?"
+      ],
+      "assessment": "Keeping the photograph is already a recorded request, so presenting it only as a proposed plan is redundant/incomplete. E04 already restores that exact request, time, recipient and permission limit in PLAN. Converting/removing its overlapping proposed-plan wording belongs to the same restoration. The question about a formal policy introduces no established audit duty and may remain an optional clarification; no supplied retention limit is contradicted by the proposal.",
+      "proposed_change": "Merge the overlapping retention-plan cleanup into E04 and remove separate E10. Do not require deleting the policy question merely because no policy was supplied.",
+      "repair_count_delta": -1
+    },
+    {
+      "variant": "B",
+      "review_edit_ids": [
+        "E04",
+        "E05"
+      ],
+      "source_quotes": [
+        "No meeting organizer has told me whether a booking was affected."
+      ],
+      "output_quotes": [
+        "Possible impact: the room booking may be unconfirmed; confirm whether a meeting was affected.",
+        "Proposed follow-up: obtain the confirmed booking status and record the actual room availability after the notice is reviewed.",
+        "Who can obtain the booking status and record the room availability after the notice is reviewed?"
+      ],
+      "assessment": "The frozen C05 distinction requires preserving unknown booking impact without turning it into uncertain booking existence/confirmation. A targeted change from booking-confirmation status to the notice's effect is warranted. The two proposals and repeated question share that single ambiguity; count one coordinated premise correction, consistent with one correction for repeated proposal/question wording. C05 is already correctly placed in factual IMPACT, so there is no factual restoration to charge again.",
+      "proposed_change": "Keep E04 as one consolidated rewrite covering both proposals and the matching question; merge E05 into it. Preserve reasonable room-availability follow-up.",
+      "repair_count_delta": -1
+    },
+    {
+      "variant": "B",
+      "review_edit_ids": [
+        "E06"
+      ],
+      "source_quotes": [
+        "12 September 2026, local time; zone not recorded.",
+        "07:43 Stores (EP) brought the replacement reception sign SIGN-11."
+      ],
+      "output_quotes": [
+        "Consider recording the actual reception zone and the confirmed sign wording.",
+        "What reception zone was involved, and what wording was confirmed?",
+        "What time zone applies to the event times?"
+      ],
+      "assessment": "Reception zone may be an unnecessary location refinement, but the output also separately asks for the time zone. The displayed wording therefore does not establish a mistaken replacement of the missing time zone with a location. It asks for, rather than invents, a more specific location and wording. The record supplies no answer that makes this question demonstrably redundant.",
+      "proposed_change": "Remove E06 from required repairs; retain uncertainty about the usefulness/clarity of reception-zone wording without claiming a proven temporal-to-location mistake.",
+      "repair_count_delta": -1
+    },
+    {
+      "variant": "B",
+      "review_edit_ids": [
+        "E07"
+      ],
+      "source_quotes": [
+        "I replaced the paper sign at 07:51 after Reception confirmed the wording.",
+        "Reception stayed open and no visitors waited because of the sign change."
+      ],
+      "output_quotes": [
+        "Proposed follow-up: identify who will confirm the sign is displayed correctly and when the review is needed.",
+        "Who will confirm the sign is displayed correctly, and when is a review needed?"
+      ],
+      "assessment": "Replacing the sign after wording confirmation does not itself establish that its display was checked. A clearly proposed display check does not claim an assigned owner, agreed review or remaining defect. Its added value may be limited, but a lack of supplied concern alone does not make this a necessary removal.",
+      "proposed_change": "Remove E07 from required repairs; describe the display review as optional advice of uncertain value.",
+      "repair_count_delta": -1
+    },
+    {
+      "variant": "C",
+      "review_edit_ids": [
+        "E04"
+      ],
+      "source_quotes": [
+        "At 07:48 Building Services (DM) said the notice should have been collected but they had not checked the room.",
+        "08:05 DM sent a message asking Reception to keep the photograph available."
+      ],
+      "output_quotes": [
+        "Consider documenting whether anyone has agreed to review the existing cleaning notice record.",
+        "Has anyone agreed to review the existing cleaning notice record?"
+      ],
+      "assessment": "Keeping a photograph and reviewing a notice record are distinct activities. This asks whether a review agreement exists rather than asserting one; no supplied fact answers that question or forbids proposing a review. It may be less direct than checking room/booking status but is not demonstrably contradictory or redundant.",
+      "proposed_change": "Remove E04 from required repairs; keep the qualitative concern that record-review advice is indirect.",
+      "repair_count_delta": -1
+    },
+    {
+      "variant": "C",
+      "review_edit_ids": [
+        "E05"
+      ],
+      "source_quotes": [
+        "I replaced the paper sign at 07:51 after Reception confirmed the wording.",
+        "The old sign was placed in the recycling tray."
+      ],
+      "output_quotes": [
+        "Proposed follow-up: agree who will review the existing reception signage record.",
+        "Who will review the existing reception signage record?"
+      ],
+      "assessment": "The follow-up is explicitly proposed and asks to agree an owner; it does not present a new assignment as already agreed. Completed physical replacement and recycling do not establish that a record review occurred or rule out proposing one. The usefulness is uncertain, which should be discussed without automatically charging a substantive correction.",
+      "proposed_change": "Remove E05 from required repairs; retain optional record-review advice as a usefulness concern.",
+      "repair_count_delta": -1
+    },
+    {
+      "variant": "C",
+      "review_edit_ids": [
+        "E06"
+      ],
+      "related_factual_edit_ids": [
+        "E02"
+      ],
+      "source_quotes": [
+        "07:43 Stores (EP) brought the replacement reception sign SIGN-11. I replaced the paper sign at 07:51 after Reception confirmed the wording."
+      ],
+      "output_quotes": [
+        "07:43 Stores (EP) brought the replacement reception sign SIGN-11. I replaced the paper sign at 07:51 after Reception confirmed the wording.",
+        "What were the times of the individual events?"
+      ],
+      "assessment": "The generic time question is actually redundant: both times already appear in accepted ACTION. E02 already moves the delivery chronology into SITUATION. Remove the stale chronology question as part of that same field-placement operation, matching the treatment of supplied-chronology questions elsewhere. It requires no separate reconstruction or independent substantive decision.",
+      "proposed_change": "Merge deletion of the redundant time question into E02; remove separate E06. Retain the separate valid time-zone question.",
+      "repair_count_delta": -1
+    }
+  ],
+  "proposed_counts": {
+    "A": {
+      "original_repairs": 10,
+      "proposed_repairs": 8,
+      "placed_unit_changes": 0,
+      "correctness_error_changes": 0,
+      "critical_error_changes": 0
+    },
+    "B": {
+      "original_repairs": 7,
+      "proposed_repairs": 4,
+      "placed_unit_changes": 0,
+      "correctness_error_changes": 0,
+      "critical_error_changes": 0
+    },
+    "C": {
+      "original_repairs": 6,
+      "proposed_repairs": 3,
+      "placed_unit_changes": 0,
+      "correctness_error_changes": 0,
+      "critical_error_changes": 0
+    }
+  },
+  "limitations": "Recommendations for root adjudication, preserving the original review and frozen criteria. Optional-advice usefulness remains qualitative. This is not a model selection, semantic accuracy result or measured editing-time claim."
+}

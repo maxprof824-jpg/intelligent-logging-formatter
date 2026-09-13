@@ -1,0 +1,298 @@
+{
+  "case_id": "dev-v3-fac-10",
+  "checklist_sha256": "70b29cbcc62e29c1c2a39b16cc5999bc8cd621d41ed7bba6d3ed4aa01fd38b0e",
+  "reviewer": "AI-assisted review; A/B/C model labels withheld. Source-only checklist authored earlier; surfaced fields reviewed with the allowlisted viewer. No raw generations or private model-label map read.",
+  "variants": {
+    "A": {
+      "claim_results": [
+        {
+          "claim_id": "dev-v3-fac-10-C01",
+          "status": "placed_supported",
+          "rationale": "SITUATION preserves 16:05 UTC, west corridor, the two numbers and tomorrow's induction without an invented date."
+        },
+        {
+          "claim_id": "dev-v3-fac-10-C02",
+          "status": "placed_supported",
+          "rationale": "SITUATION preserves the reported wayfinding difficulty and lack of information about signs used or notice relevance."
+        },
+        {
+          "claim_id": "dev-v3-fac-10-C03",
+          "status": "present_wrong_field_or_event",
+          "rationale": "The lack of a link is stated in IMPACT rather than SITUATION, alongside the misleading phrase missing entrance."
+        },
+        {
+          "claim_id": "dev-v3-fac-10-C04",
+          "status": "placed_supported",
+          "rationale": "ACTION explicitly records both the notice discrepancy and delivery-entrance issue in the facilities notebook."
+        },
+        {
+          "claim_id": "dev-v3-fac-10-C05",
+          "status": "partial",
+          "rationale": "Reception/OL's intended inquiry is in AGENCIES CONTACTED, PLAN is empty, and its 16:18 timestamp remains only in evidence/excerpts."
+        },
+        {
+          "claim_id": "dev-v3-fac-10-C06",
+          "status": "evidence_or_unassigned_only",
+          "rationale": "The author's explicit lack of driver contact is retained in an excerpt, not the agency field."
+        },
+        {
+          "claim_id": "dev-v3-fac-10-C07",
+          "status": "evidence_or_unassigned_only",
+          "rationale": "The 16:23 driver update and limit on completion are retained only in excerpts."
+        }
+      ],
+      "edits": [
+        {
+          "edit_id": "E01",
+          "categories": [
+            "correct_meaning",
+            "move_supported_unit"
+          ],
+          "claim_ids": [
+            "dev-v3-fac-10-C02",
+            "dev-v3-fac-10-C03"
+          ],
+          "detail": "Replace missing entrance with reported difficulty finding the entrance, and place the explicit lack of a link between reports in SITUATION."
+        },
+        {
+          "edit_id": "E02",
+          "categories": [
+            "place_missing_unit",
+            "move_supported_unit"
+          ],
+          "claim_ids": [
+            "dev-v3-fac-10-C05"
+          ],
+          "detail": "Place Reception/OL's intended room-number inquiry in PLAN with the source's 16:18 UTC statement time."
+        },
+        {
+          "edit_id": "E03",
+          "categories": [
+            "place_missing_unit"
+          ],
+          "claim_ids": [
+            "dev-v3-fac-10-C06"
+          ],
+          "detail": "Add that the author did not contact the driver to AGENCIES CONTACTED."
+        },
+        {
+          "edit_id": "E04",
+          "categories": [
+            "place_missing_unit"
+          ],
+          "claim_ids": [
+            "dev-v3-fac-10-C07"
+          ],
+          "detail": "Restore the 16:23 found-someone update in SITUATION, explicitly preserving that delivery completion is unconfirmed."
+        },
+        {
+          "edit_id": "E05",
+          "categories": [
+            "remove_unnecessary_advice"
+          ],
+          "claim_ids": [
+            "dev-v3-fac-10-C05"
+          ],
+          "detail": "Remove or narrow the generic next-step/owner question: Reception/OL's intended inquiry is supplied already; only any further timing detail remains unstated."
+        }
+      ],
+      "correctness_errors": [
+        {
+          "error_id": "R01",
+          "type": "other_meaning_error",
+          "critical": false,
+          "claim_ids": [
+            "dev-v3-fac-10-C02",
+            "dev-v3-fac-10-C03"
+          ],
+          "output_quote": "the missing entrance",
+          "detail": "This phrase changes a reported difficulty locating an entrance into wording that can imply the entrance itself is absent. SITUATION correctly describes the driver's difficulty, so this is treated as a noncritical but substantive wording correction, not a confirmed physical-loss claim or delivery-completion error."
+        }
+      ],
+      "additional_omissions": [],
+      "suggestions_review": "Assistance is off and no proposals are returned. The date question is relevant. The generic next-step/owner question overlooks the supplied Reception/OL plan and should be narrowed; the broad situation-uncertainty question remains relevant to the unlinked reports.",
+      "failure_review": "The unseparated group returns accepted sections, but the driver update and no-contact detail remain only in source excerpts. No group is displayed as incomplete."
+    },
+    "B": {
+      "claim_results": [
+        {
+          "claim_id": "dev-v3-fac-10-C01",
+          "status": "placed_supported",
+          "rationale": "The noticeboard discrepancy is correctly placed with its time, location and tomorrow context."
+        },
+        {
+          "claim_id": "dev-v3-fac-10-C02",
+          "status": "evidence_or_unassigned_only",
+          "rationale": "The initial driver difficulty and unknown sign use are left in excerpts; SITUATION starts with the noticeboard and later driver update."
+        },
+        {
+          "claim_id": "dev-v3-fac-10-C03",
+          "status": "evidence_or_unassigned_only",
+          "rationale": "The explicit lack of a link between reports remains only in an excerpt."
+        },
+        {
+          "claim_id": "dev-v3-fac-10-C04",
+          "status": "partial",
+          "rationale": "ACTION says the incident was recorded but does not preserve that the author copied both distinct reports. The singular wording does not by itself prove an asserted shared cause."
+        },
+        {
+          "claim_id": "dev-v3-fac-10-C05",
+          "status": "present_wrong_field_or_event",
+          "rationale": "The intended Reception/OL inquiry and 16:18 time are in SITUATION rather than PLAN. The agency field separately adds an unsupported completed request to Reception."
+        },
+        {
+          "claim_id": "dev-v3-fac-10-C06",
+          "status": "evidence_or_unassigned_only",
+          "rationale": "The explicit no-driver-contact statement is retained only in an excerpt."
+        },
+        {
+          "claim_id": "dev-v3-fac-10-C07",
+          "status": "placed_supported",
+          "rationale": "SITUATION keeps the driver's 16:23 found-someone message and explicitly denies confirmation of delivery completion."
+        }
+      ],
+      "edits": [
+        {
+          "edit_id": "E01",
+          "categories": [
+            "place_missing_unit"
+          ],
+          "claim_ids": [
+            "dev-v3-fac-10-C02"
+          ],
+          "detail": "Restore the driver's initial wayfinding report with unknown sign use to SITUATION."
+        },
+        {
+          "edit_id": "E02",
+          "categories": [
+            "place_missing_unit"
+          ],
+          "claim_ids": [
+            "dev-v3-fac-10-C03"
+          ],
+          "detail": "Restore that nobody has linked the two reports to SITUATION."
+        },
+        {
+          "edit_id": "E03",
+          "categories": [
+            "place_missing_unit"
+          ],
+          "claim_ids": [
+            "dev-v3-fac-10-C04"
+          ],
+          "detail": "Specify that the author copied both reports into the facilities notebook, preserving the source's scope."
+        },
+        {
+          "edit_id": "E04",
+          "categories": [
+            "correct_meaning",
+            "move_supported_unit"
+          ],
+          "claim_ids": [
+            "dev-v3-fac-10-C05"
+          ],
+          "detail": "Replace the invented request-to-Reception wording with the actual received Reception/OL statement, and place the timed intended inquiry in PLAN."
+        },
+        {
+          "edit_id": "E05",
+          "categories": [
+            "place_missing_unit"
+          ],
+          "claim_ids": [
+            "dev-v3-fac-10-C06"
+          ],
+          "detail": "Place the author's no-driver-contact statement in AGENCIES CONTACTED."
+        },
+        {
+          "edit_id": "E06",
+          "categories": [
+            "remove_unnecessary_advice"
+          ],
+          "claim_ids": [
+            "dev-v3-fac-10-C05"
+          ],
+          "detail": "Remove or narrow the next-step/owner question, which asks again for the supplied Reception/OL inquiry rather than only its missing due time."
+        }
+      ],
+      "correctness_errors": [
+        {
+          "error_id": "R01",
+          "type": "unsupported_fact",
+          "critical": true,
+          "claim_ids": [
+            "dev-v3-fac-10-C05"
+          ],
+          "output_quote": "Reception (OL) was contacted at 16:18 UTC to request clarification on the room number.",
+          "detail": "The source records Reception/OL saying they would ask the induction organizer. It does not record a completed clarification request directed to Reception. The added purpose/direction invents an outgoing request in the contact history; replace it with the received statement and preserve the intended organizer inquiry as a plan. Merely noting that communication with Reception occurred would have been supportable."
+        }
+      ],
+      "additional_omissions": [],
+      "suggestions_review": "Assistance-off is respected: no suggestions. Impact/date clarification is reasonable. The next-step/owner question asks for a plan already supplied. No delivery completion is claimed; the principal correctness concern is the extra directed clarification request in the agency history.",
+      "failure_review": "The group returns accepted structure but leaves three important units only in excerpts and the plan in the wrong field. It does not display an incomplete status."
+    },
+    "C": {
+      "claim_results": [
+        {
+          "claim_id": "dev-v3-fac-10-C01",
+          "status": "placed_supported",
+          "rationale": "The original noticeboard observation, 16:05 UTC and tomorrow context are retained in SITUATION."
+        },
+        {
+          "claim_id": "dev-v3-fac-10-C02",
+          "status": "placed_supported",
+          "rationale": "SITUATION explicitly retains the received driver report and unknown sign use/relevance."
+        },
+        {
+          "claim_id": "dev-v3-fac-10-C03",
+          "status": "placed_supported",
+          "rationale": "SITUATION expressly states that nobody has linked the reports."
+        },
+        {
+          "claim_id": "dev-v3-fac-10-C04",
+          "status": "placed_supported",
+          "rationale": "ACTION retains the author's recording of both items in the facilities notebook."
+        },
+        {
+          "claim_id": "dev-v3-fac-10-C05",
+          "status": "partial",
+          "rationale": "PLAN correctly retains Reception/OL's intended organizer inquiry but omits its 16:18 statement time. That event-specific timestamp is only in SITUATION; shared date/time-zone context does not replace the missing plan timestamp."
+        },
+        {
+          "claim_id": "dev-v3-fac-10-C06",
+          "status": "placed_supported",
+          "rationale": "AGENCIES CONTACTED explicitly retains that the author did not contact the driver."
+        },
+        {
+          "claim_id": "dev-v3-fac-10-C07",
+          "status": "placed_supported",
+          "rationale": "SITUATION retains the 16:23 driver message and its explicit lack of delivery-completion confirmation."
+        }
+      ],
+      "edits": [
+        {
+          "edit_id": "E01",
+          "categories": [
+            "place_missing_unit"
+          ],
+          "claim_ids": [
+            "dev-v3-fac-10-C05"
+          ],
+          "detail": "Add 16:18 UTC as the time Reception/OL stated the intended inquiry in PLAN."
+        },
+        {
+          "edit_id": "E02",
+          "categories": [
+            "remove_unnecessary_advice"
+          ],
+          "claim_ids": [],
+          "detail": "Remove the generic request for every contacted agency's initials, or narrow it to an actual missing party: Reception's OL initials are already supplied and the author explicitly did not contact the driver."
+        }
+      ],
+      "correctness_errors": [],
+      "additional_omissions": [],
+      "suggestions_review": "No suggestions are produced with assistance off. Asking for the date and actual impact is appropriate. The agency-initials question overlooks the supplied OL attribution. The full-source SITUATION is verbose, but retained chronology and duplication do not require separate substantive factual repairs here.",
+      "failure_review": "The group retains all source content and accepted fields. Its single unplaced checklist unit is a missing timestamp in the correct PLAN field, not a failed generation or missing source."
+    }
+  },
+  "case_assessment": "All variants keep a single unseparated group and none claims completed delivery. A preserves the initial reports but leaves the later update in excerpts; B preserves the later update but loses the initial driver context and unlinked relationship from factual fields. C retains both reports and their explicit ambiguity, with one plan-time placement omission. B adds an unsupported directed clarification request; A uses imprecise missing-entrance wording. These are seven selected review units and assessed editing operations, not an accuracy percentage or measured human effort."
+}

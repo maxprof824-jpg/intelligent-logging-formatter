@@ -1,0 +1,32 @@
+{
+  "status": "passed",
+  "suite": "python -B -m unittest discover -p 'test_*.py'",
+  "tests_run": 233,
+  "failures": 0,
+  "errors": 0,
+  "seconds": 11.222,
+  "tested_commit": "f8968712fde9588f015a1b9f277be831ac0db802",
+  "tested_source_sha256": {
+    "compare_candidates.py": "09a50e8d359b71ee6349c2f69b1946d6842046845eee21773a70ea661a722c00",
+    "test_compare_candidates.py": "2422bfaebaff6a977f0ca5c1b2ab2e39e6806c09b56dcda4def305189f405207",
+    "export_candidate.py": "6fbbfc0d0e824c7ab65eb280ae2d2215865e079a057263638d6c5bdec9364274",
+    "test_export_candidate.py": "120f5c7b5106d12f33b342f8bf7abde9f0c364800490f2b2ad71fab393ebb36c",
+    "reports/V3-CANDIDATE-PROTOCOL.md": "f0c341bdf1fa8928ce734af99265ae2f5d1464e712712159f64a2fc2ed9bca9e",
+    "reports/V3-REVIEW-CHECKLIST.json": "08546bda79a20f037aae552455f6c38758e54617d533c1865b9d5328f4705533",
+    "reports/V3-REVIEW-EXPANSION-CHECKLIST.json": "70b29cbcc62e29c1c2a39b16cc5999bc8cd621d41ed7bba6d3ed4aa01fd38b0e",
+    "reports/V3-REVIEW-SCOPE.md": "f512be662b77b4e054d3cace21102114fda2244d465f4a80f71a166ae860d74e"
+  },
+  "raw_local_log_sha256": "05771111656e591bcc7e29afd2601b31d171ad71f395978a825461607157ad6a",
+  "scope": "CPU regression tests including real tiny randomly initialized PEFT adapter switching, temporary synthetic exporter fixtures, source grouping, scoring and setup behavior. No trained-model draft evaluation is claimed by these tests.",
+  "additional_read_only_checks": {
+    "frozen_generation_runtime_verified": true,
+    "pinned_base_inference_files_verified": 10,
+    "base_repo": "Qwen/Qwen3-4B-Instruct-2507",
+    "base_revision": "cdbee75f17c01a7cc42f958dc650907174af0554"
+  },
+  "warnings": [
+    "Installed PyTorch emitted a torch.jit.script_method deprecation warning.",
+    "The tiny temporary PEFT fixture emitted a missing base-config warning; the real pinned base files were separately verified."
+  ],
+  "limits": "Tests do not establish semantic correctness, a clean installation on another machine, operational suitability or model quality. The local raw log is omitted because library warnings contain machine-specific installation paths."
+}

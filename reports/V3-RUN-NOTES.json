@@ -1,0 +1,17 @@
+{
+  "comparison_sha256": "86cd6ac98088085915e165e5da8589f98aefd3e6bba8b1980169eb543864e54f",
+  "attempts_completed": 60,
+  "distinct_cases": 20,
+  "timing_caveat": {
+    "case_id": "dev-v3-shift-17",
+    "model_variant": "current_v2",
+    "recorded_elapsed_seconds": 34975.937,
+    "last_observed_session_time_before_gap_utc": "2026-09-13 04:44:35 UTC",
+    "resumed_session_observation_utc": "2026-09-13 14:29:47 UTC",
+    "interpretation": "This case spans an extended observation/session gap. Its recorded monotonic elapsed duration cannot be treated as active model latency. The duration and cause of any process or host suspension were not established.",
+    "handling": "Preserve the original duration and output unchanged. No speed comparison or active-processing-time claim is made from this run. No retry replaced this result."
+  },
+  "comparison_bytes_changed": false,
+  "generation_reruns_for_this_experiment": 0,
+  "limits": "These notes qualify timing only; successful completion of all attempts does not establish that all drafts were complete or correct."
+}

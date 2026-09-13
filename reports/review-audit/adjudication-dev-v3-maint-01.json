@@ -1,0 +1,134 @@
+{
+  "case_id": "dev-v3-maint-01",
+  "adjudication": "AI-assisted source-grounded peer adjudication accepted by the root agent; model labels remain withheld from this review.",
+  "created_utc": "2026-09-13T03:44:48.771484+00:00",
+  "original_review": {
+    "file": "work\\v3-review-audit\\original-dev-v3-maint-01.json",
+    "sha256": "c9efac7efe0a22b6e4ed012285a9f56cd58f5810a59fb28de2ff0e8a72539a37",
+    "bytes_preserved": true
+  },
+  "updated_review": {
+    "file": "work\\v3-case-reviews\\dev-v3-maint-01.json",
+    "sha256": "196ca7746fce0cadcfeea871afd9dbc333cc594dc7f663c6eb04463fae9c3293"
+  },
+  "peer_review": {
+    "file": "work\\v3-peer-review-maint01.json",
+    "sha256": "173d08338650f96006dd4af8d59d185f3ccaad15a3a7244893573e60da9694ff"
+  },
+  "packet": {
+    "file": "work\\v3-review-packets\\dev-v3-maint-01.json",
+    "sha256": "220f1921a6692d5cc11acd4860eefe60dc543bfbe07ec1e0e9f9616da485e428"
+  },
+  "changes": [
+    {
+      "variant": "B",
+      "claim_id": "dev-v3-maint-01-C03",
+      "old_status": "meaning_error",
+      "new_status": "partial",
+      "reason": "TC undertaking definitely omitted; answer reference is ambiguous rather than a proven unanswered-call reversal. No placed credit and the same one repair remain."
+    },
+    {
+      "variant": "B",
+      "error_id": "R01",
+      "type": "other_meaning_error",
+      "old_critical": true,
+      "new_critical": false,
+      "reason": "Severity reflects definite omission and ambiguous reference without asserting a conclusively reversed call status."
+    },
+    {
+      "variant": "B",
+      "error_id": "R02",
+      "critical_unchanged": true,
+      "clarification": "Unsupported preventive-maintenance subtype, not a work-completion claim."
+    }
+  ],
+  "counts_before": {
+    "A": {
+      "checklist_units": 10,
+      "placed_supported_units": 8,
+      "repair_operations": 3,
+      "correctness_errors": 1,
+      "critical_errors": 1,
+      "placement_status_counts": {
+        "placed_supported": 8,
+        "present_wrong_field_or_event": 1,
+        "meaning_error": 1
+      }
+    },
+    "B": {
+      "checklist_units": 10,
+      "placed_supported_units": 6,
+      "repair_operations": 5,
+      "correctness_errors": 2,
+      "critical_errors": 2,
+      "placement_status_counts": {
+        "evidence_or_unassigned_only": 2,
+        "meaning_error": 1,
+        "placed_supported": 6,
+        "present_wrong_field_or_event": 1
+      }
+    },
+    "C": {
+      "checklist_units": 10,
+      "placed_supported_units": 1,
+      "repair_operations": 9,
+      "correctness_errors": 0,
+      "critical_errors": 0,
+      "placement_status_counts": {
+        "failed_group": 6,
+        "placed_supported": 1,
+        "partial": 1,
+        "evidence_or_unassigned_only": 2
+      }
+    }
+  },
+  "counts_after": {
+    "A": {
+      "checklist_units": 10,
+      "placed_supported_units": 8,
+      "repair_operations": 3,
+      "correctness_errors": 1,
+      "critical_errors": 1,
+      "placement_status_counts": {
+        "placed_supported": 8,
+        "present_wrong_field_or_event": 1,
+        "meaning_error": 1
+      }
+    },
+    "B": {
+      "checklist_units": 10,
+      "placed_supported_units": 6,
+      "repair_operations": 5,
+      "correctness_errors": 2,
+      "critical_errors": 1,
+      "placement_status_counts": {
+        "evidence_or_unassigned_only": 2,
+        "partial": 1,
+        "placed_supported": 6,
+        "present_wrong_field_or_event": 1
+      }
+    },
+    "C": {
+      "checklist_units": 10,
+      "placed_supported_units": 1,
+      "repair_operations": 9,
+      "correctness_errors": 0,
+      "critical_errors": 0,
+      "placement_status_counts": {
+        "failed_group": 6,
+        "placed_supported": 1,
+        "partial": 1,
+        "evidence_or_unassigned_only": 2
+      }
+    }
+  },
+  "invariants": {
+    "A_R01_remains_critical": true,
+    "A_and_C_variants_unchanged": true,
+    "placed_units_repairs_and_error_totals_unchanged": true,
+    "same_checklist_hash": true,
+    "no_protocol_or_inference_change": true,
+    "no_model_unmasking": true
+  },
+  "validation": "Updated JSON passes validate_review for exact claim coverage, links, allowed statuses/categories and surfaced quotation membership."
+}

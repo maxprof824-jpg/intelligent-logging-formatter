@@ -1,0 +1,89 @@
+{
+  "case_id": "dev-v3-maint-01",
+  "review_type": "Masked second-review adjudication of three previously recorded correctness errors",
+  "reviewer_disclosure": "AI-assisted second review. The original review was visible, so this is adjudication quality control rather than an independent first-pass review. Model identities remain unknown; A/B/C labels are preserved.",
+  "original_review_sha256": "c9efac7efe0a22b6e4ed012285a9f56cd58f5810a59fb28de2ff0e8a72539a37",
+  "masked_packet_sha256": "220f1921a6692d5cc11acd4860eefe60dc543bfbe07ec1e0e9f9616da485e428",
+  "checklist_sha256": "08546bda79a20f037aae552455f6c38758e54617d533c1865b9d5328f4705533",
+  "scope": "Compared the original error records with the source and accepted factual sections. For the recorded suggestion-premise error, checked only its accepted suggestion and confirmation question. No raw generations, identity map or full comparison report were inspected. No original review, checklist, protocol or code was changed.",
+  "severity_rule": "Apply the existing invented-facts rule, as relayed by the coordinating reviewer: an unsupported factual premise remains a critical unsupported-fact error even inside a labeled suggestion. Do not promote ambiguous wording or an omitted response to a proven critical reversal without an asserted contradiction.",
+  "assessments": [
+    {
+      "variant": "A",
+      "original_error_id": "R01",
+      "claim_ids": ["dev-v3-maint-01-C09"],
+      "claim_verdict": "agree",
+      "severity_verdict": "agree",
+      "critical": true,
+      "error_type": "unsupported_fact",
+      "source_quotes": [
+        "I checked the quantity against the request and filed the delivery slip.",
+        "The labels were for a future filing change, so today's filing work was not delayed."
+      ],
+      "output_evidence": [
+        {
+          "json_pointer": "/variants/A/result/event_results/1/result/sections/impact/0/text",
+          "quote": "The filing work was not delayed because the required labels were delivered and the quantity was verified."
+        }
+      ],
+      "rationale": "The no-delay outcome, delivery and quantity check are individually supported. The output combines them into a causal explanation that the source does not provide, replacing the source's explicit future-change reason. Because this appears as accepted factual IMPACT, it is an unsupported causal assertion. The claim and critical classification are supported under the invented-facts rule; the error is the asserted cause, not the no-delay outcome.",
+      "proposed_correction": "Retain the original R01 and its corrective edit: state that the labels concerned a future filing change, so today's filing work was not delayed."
+    },
+    {
+      "variant": "B",
+      "original_error_id": "R01",
+      "claim_ids": ["dev-v3-maint-01-C03"],
+      "claim_verdict": "disagree_as_worded",
+      "severity_verdict": "disagree",
+      "critical": false,
+      "error_type": "other_meaning_error",
+      "definite_repair_required": true,
+      "source_quotes": [
+        "At 08:19 I phoned Vendor Records (TC), who said they would ask the visiting technician. No answer yet.",
+        "08:42 TC called back: the technician was unavailable. This was not confirmation that the service happened."
+      ],
+      "output_evidence": [
+        {
+          "json_pointer": "/variants/B/result/event_results/0/result/sections/agencies_contacted/0/text",
+          "quote": "08:19: Phoned Vendor Records (TC). No answer was received."
+        },
+        {
+          "json_pointer": "/variants/B/result/event_results/0/result/sections/agencies_contacted/1/text",
+          "quote": "08:42: Vendor Records (TC) called back: the technician was unavailable. This was not confirmation that the service happened. The records office said an update would be sent this afternoon; no completion time was promised."
+        }
+      ],
+      "rationale": "The source establishes that TC responded and undertook to ask the technician. The output definitely omits that undertaking and leaves the referent of 'answer' unclear. In a phone entry, 'No answer was received' can suggest an unanswered call; it can also mean that the requested substantive answer or confirmation remained outstanding, as in the source's 'No answer yet.' The output does not explicitly say TC failed to answer the telephone. The later callback and continued lack of service confirmation preserve further context but do not restore the missing initial response. This is a definite omission and an ambiguous contact summary requiring repair, not a sufficiently established critical reversal.",
+      "proposed_correction": "Retain one corrective edit for C03: restore TC's undertaking to ask the technician and specify that the pending answer concerned service confirmation. Change the recorded error's critical flag to false and describe omission/ambiguity rather than a proven unanswered-call assertion. Consider C03 partial, because the time and contact are placed but the actual response is absent; the coordinating reviewer should apply the same checklist rule consistently."
+    },
+    {
+      "variant": "B",
+      "original_error_id": "R02",
+      "claim_ids": [],
+      "claim_verdict": "agree",
+      "severity_verdict": "agree",
+      "critical": true,
+      "error_type": "unsupported_fact",
+      "source_quotes": [
+        "The form lists yesterday's visit but the technician signature is blank.",
+        "The copier was producing pages when I looked; I did not assess print quality or confirm what work occurred.",
+        "This was not confirmation that the service happened."
+      ],
+      "output_evidence": [
+        {
+          "json_pointer": "/variants/B/result/event_results/0/result/suggestions/0/text",
+          "quote": "Possible impact: the missing signature and unconfirmed visit may affect the documented record of the preventive maintenance."
+        },
+        {
+          "json_pointer": "/variants/B/result/event_results/0/result/suggestions/0/confirm",
+          "quote": "Was the preventive maintenance actually completed, and is the missing signature needed for the record?"
+        }
+      ],
+      "rationale": "The source provides a visit and generic, unconfirmed service; it does not identify preventive maintenance. 'Possible impact' and 'may affect' qualify the proposed consequence, while 'the preventive maintenance' presupposes the specific work classification. The confirmation question asks whether that presumed maintenance was completed, rather than asking what kind of work was scheduled or performed. The unsupported subtype therefore remains a factual premise inside otherwise labeled assistance. It is critical under the existing invented-facts rule. Neither sentence asserts that maintenance was completed; the review must not describe it as a fabricated completion claim.",
+      "proposed_correction": "Retain one unsupported-fact error and one repair for the shared subtype assumption. Replace the presumed preventive-maintenance wording with generic unconfirmed service/visit, or explicitly ask what work classification applies. Do not count the matching question as a second error."
+    }
+  ],
+  "adjudication_summary": "Retain the supported critical causal error in A and the supported critical suggestion-premise error in B. Retain B's initial-contact repair, but qualify its rationale as definite omission plus ambiguity and mark it noncritical. These are proposed corrections to the masked review, not changes to promotion criteria or a model-selection decision.",
+  "original_review_preserved": true,
+  "promotion_criteria_changed": false,
+  "identity_unmasking_performed": false
+}

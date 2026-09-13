@@ -1,0 +1,78 @@
+{
+  "case_id": "dev-v3-maint-02",
+  "checklist_sha256": "08546bda79a20f037aae552455f6c38758e54617d533c1865b9d5328f4705533",
+  "reviewer": "AI-assisted review; model labels withheld; prior familiarity with the formatter and some released outputs disclosed. Only this anonymized packet and the frozen review instructions were used for this case.",
+  "variants": {
+    "A": {
+      "claim_results": [
+        {"claim_id": "dev-v3-maint-02-C01", "status": "evidence_or_unassigned_only", "rationale": "The 09:05 UTC unsigned-checklist discovery and WO-66 remain in unassigned excerpts; SITUATION is empty."},
+        {"claim_id": "dev-v3-maint-02-C02", "status": "evidence_or_unassigned_only", "rationale": "Priya's 09:09 report, yesterday's envelope and unknown contents survive only in retained source, not AGENCIES CONTACTED."},
+        {"claim_id": "dev-v3-maint-02-C03", "status": "evidence_or_unassigned_only", "rationale": "The spare-handle inventory entry, last-week timing and missing delivery slip appear only in retained excerpts."},
+        {"claim_id": "dev-v3-maint-02-C04", "status": "evidence_or_unassigned_only", "rationale": "The unidentified awaiting-signature note is retained but not placed in factual SITUATION."},
+        {"claim_id": "dev-v3-maint-02-C05", "status": "evidence_or_unassigned_only", "rationale": "The explicit lack of a confirmed relationship among the three records survives only in unassigned source. The accepted entries do not invent a relationship."},
+        {"claim_id": "dev-v3-maint-02-C06", "status": "placed_supported", "rationale": "ACTION faithfully states that the loose papers were moved into a temporary sleeve without adding signing, repair or a specific inventory of the moved papers."},
+        {"claim_id": "dev-v3-maint-02-C07", "status": "placed_supported", "rationale": "AGENCIES CONTACTED records the 09:21 UTC request to Records Desk and the missing recipient initials and acknowledgement."},
+        {"claim_id": "dev-v3-maint-02-C08", "status": "partial", "rationale": "The missing Records Desk acknowledgement is stated under AGENCIES CONTACTED, but the unanswered checklist-envelope question is only retained source and PLAN is empty. The combined unresolved-follow-up unit is not placed."}
+      ],
+      "edits": [
+        {"edit_id": "E01", "categories": ["place_missing_unit"], "claim_ids": ["dev-v3-maint-02-C01"], "detail": "Place the unsigned-checklist discovery, work-order folder, WO-66 and 09:05 UTC in SITUATION without adding an unsupported calendar date or work-completion conclusion."},
+        {"edit_id": "E02", "categories": ["place_missing_unit"], "claim_ids": ["dev-v3-maint-02-C02"], "detail": "Restore Priya at Reception's 09:09 report to AGENCIES CONTACTED, retaining yesterday's envelope and her lack of knowledge about its contents. Consolidate the repeated excerpts for this same unit as it is placed."},
+        {"edit_id": "E03", "categories": ["place_missing_unit"], "claim_ids": ["dev-v3-maint-02-C03"], "detail": "Restore the spare-handle receipt entry from last week and the absent adjacent delivery slip to SITUATION as an inventory observation, not installation or a confirmed connection to WO-66."},
+        {"edit_id": "E04", "categories": ["place_missing_unit"], "claim_ids": ["dev-v3-maint-02-C04"], "detail": "Place the awaiting-signature note in SITUATION with its explicit failure to identify a form."},
+        {"edit_id": "E05", "categories": ["place_missing_unit"], "claim_ids": ["dev-v3-maint-02-C05"], "detail": "Restore the explicit uncertainty about whether the checklist, envelope and handle entry concern the same job. Keep one unseparated ambiguous record rather than inventing confirmed incident boundaries."},
+        {"edit_id": "E06", "categories": ["place_missing_unit"], "claim_ids": ["dev-v3-maint-02-C08"], "detail": "Complete PLAN with the unanswered checklist-envelope question and the unacknowledged Records Desk request. Retain these as unresolved statuses, without adding a promised response, agreed owner or due time."}
+      ],
+      "correctness_errors": [],
+      "additional_omissions": [],
+      "suggestions_review": "No suggested impact, action or plan appears, consistent with assistance being off. The questions about a calendar date, observed impact and recipient initials concern genuine gaps. Some time/chronology information requested by the broad SITUATION question is already supplied but withheld; restoring the omitted units addresses that problem. The next-step question does not assert an agreed follow-up. Repeated source excerpts are handled while placing their corresponding units rather than counted as extra missing facts.",
+      "failure_review": "The single unseparated group is not marked incomplete, but only two complete checklist units are placed. Retained source enables six separate unit repairs. No accepted assertion resolves the uncertain record relationships or invents completed work."
+    },
+    "B": {
+      "claim_results": [
+        {"claim_id": "dev-v3-maint-02-C01", "status": "placed_supported", "rationale": "SITUATION retains the 09:05 UTC discovery, unsigned checklist, work-order folder and WO-66, without inventing a date or maintenance completion."},
+        {"claim_id": "dev-v3-maint-02-C02", "status": "present_wrong_field_or_event", "rationale": "Priya's complete report appears in SITUATION. AGENCIES CONTACTED contains only Records Desk, so the Reception conversation is in the wrong field."},
+        {"claim_id": "dev-v3-maint-02-C03", "status": "placed_supported", "rationale": "SITUATION preserves the inventory entry for a spare handle received last week and the missing delivery slip without claiming installation or a job relationship."},
+        {"claim_id": "dev-v3-maint-02-C04", "status": "placed_supported", "rationale": "SITUATION explicitly retains that the awaiting-signature note identifies no form."},
+        {"claim_id": "dev-v3-maint-02-C05", "status": "placed_supported", "rationale": "SITUATION preserves the unresolved relationship among checklist, envelope and handle entry; one unseparated record is retained."},
+        {"claim_id": "dev-v3-maint-02-C06", "status": "placed_supported", "rationale": "ACTION states that the author moved the loose papers into a temporary sleeve without inventing signing or repair."},
+        {"claim_id": "dev-v3-maint-02-C07", "status": "placed_supported", "rationale": "AGENCIES CONTACTED preserves the 09:21 UTC Records Desk request and the absence of recipient initials and acknowledgement."},
+        {"claim_id": "dev-v3-maint-02-C08", "status": "partial", "rationale": "PLAN preserves the missing Records Desk acknowledgement. The separate unanswered checklist-envelope question remains in SITUATION, so the required combined unresolved-follow-up unit is only partly placed in PLAN."}
+      ],
+      "edits": [
+        {"edit_id": "E01", "categories": ["move_supported_unit"], "claim_ids": ["dev-v3-maint-02-C02"], "detail": "Move Priya's 09:09 Reception report from the long SITUATION paragraph to AGENCIES CONTACTED, preserving the visiting team's reported envelope and Priya's uncertainty about its contents."},
+        {"edit_id": "E02", "categories": ["move_supported_unit"], "claim_ids": ["dev-v3-maint-02-C08"], "detail": "Place the already reported unanswered checklist-envelope question beside the unacknowledged Records Desk request in PLAN, preserving both unresolved statuses without turning either into an agreed action schedule."}
+      ],
+      "correctness_errors": [],
+      "additional_omissions": [],
+      "suggestions_review": "No proposed impacts, actions or plans are generated with assistance off. The calendar-date, impact and initials questions address unsupplied details. The uncertainty question does not falsely resolve the association among the records. Some discovery/paper-handling language repeats across factual fields, but this does not change meaning and is not counted as another substantive repair; the two recorded repairs address actual field-placement defects.",
+      "failure_review": "The single group is not incomplete and retains the substantive source information in factual fields. Two units need field reorganization; no unit requires reconstruction from a failed group or exclusively retained evidence."
+    },
+    "C": {
+      "claim_results": [
+        {"claim_id": "dev-v3-maint-02-C01", "status": "placed_supported", "rationale": "SITUATION correctly states that an unsigned checklist was found in the WO-66 work-order folder at 09:05 UTC without supplying a date."},
+        {"claim_id": "dev-v3-maint-02-C02", "status": "evidence_or_unassigned_only", "rationale": "Priya's 09:09 conversation and uncertainty about the envelope remain only in retained source."},
+        {"claim_id": "dev-v3-maint-02-C03", "status": "evidence_or_unassigned_only", "rationale": "The actual spare-handle receipt entry, last-week timing and absent delivery slip remain in source excerpts rather than factual SITUATION."},
+        {"claim_id": "dev-v3-maint-02-C04", "status": "placed_supported", "rationale": "SITUATION retains the awaiting-signature note and explicitly says the form is unidentified."},
+        {"claim_id": "dev-v3-maint-02-C05", "status": "evidence_or_unassigned_only", "rationale": "The explicit absence of a confirmed job relationship is retained as source, not as a factual statement. The generated physical grouping of the papers is separately recorded as an unsupported expansion of the movement claim."},
+        {"claim_id": "dev-v3-maint-02-C06", "status": "meaning_error", "rationale": "SITUATION says the moved loose papers included the checklist, envelope and handle entry. The source identifies only loose papers as moved and does not establish that inventory of moved items. ACTION is also empty, so the unit needs both meaning correction and relocation."},
+        {"claim_id": "dev-v3-maint-02-C07", "status": "partial", "rationale": "AGENCIES CONTACTED preserves Records Desk, the identification request and missing initials/acknowledgement, but drops 09:21. That time survives only in retained source."},
+        {"claim_id": "dev-v3-maint-02-C08", "status": "partial", "rationale": "The missing Records Desk acknowledgement is factual under AGENCIES CONTACTED, while the unanswered checklist-envelope question is only retained source. PLAN is empty, leaving the combined unresolved-follow-up unit unplaced."}
+      ],
+      "edits": [
+        {"edit_id": "E01", "categories": ["place_missing_unit"], "claim_ids": ["dev-v3-maint-02-C02"], "detail": "Restore Priya's timed Reception report to AGENCIES CONTACTED with the reported envelope delivery and her lack of knowledge about its contents."},
+        {"edit_id": "E02", "categories": ["place_missing_unit"], "claim_ids": ["dev-v3-maint-02-C03"], "detail": "Restore the last-week spare-handle inventory receipt and absent adjacent delivery slip to SITUATION without inferring installation or association with WO-66."},
+        {"edit_id": "E03", "categories": ["place_missing_unit"], "claim_ids": ["dev-v3-maint-02-C05"], "detail": "Place the explicit lack of a confirmed relationship among the three records in SITUATION. Preserve ambiguity instead of inferring one established work sequence or separate established incidents."},
+        {"edit_id": "E04", "categories": ["correct_meaning", "move_supported_unit"], "claim_ids": ["dev-v3-maint-02-C06"], "detail": "Correct the movement statement to the author's supported action of moving loose papers into a temporary sleeve, removing the unsupported list of items, and place it in ACTION. Count correction and relocation of this same unit as one repair."},
+        {"edit_id": "E05", "categories": ["place_missing_unit"], "claim_ids": ["dev-v3-maint-02-C07"], "detail": "Complete the existing Records Desk contact entry with its source-supplied 09:21 UTC time; retain the missing initials and acknowledgement."},
+        {"edit_id": "E06", "categories": ["place_missing_unit"], "claim_ids": ["dev-v3-maint-02-C08"], "detail": "Complete PLAN with the unanswered checklist-envelope question and the unacknowledged Records Desk request, without inventing a response promise, owner agreement or due time."}
+      ],
+      "correctness_errors": [
+        {"error_id": "R01", "type": "unsupported_fact", "critical": true, "claim_ids": ["dev-v3-maint-02-C06"], "output_quote": "The loose papers, including the checklist, envelope, and handle entry, were moved into a temporary sleeve.", "detail": "This invents which items were physically collected and moved. The author reported moving loose papers, not moving all three identified records. The source specifically leaves their relationship unresolved; the output must not turn that uncertainty into a confirmed inventory of moved items."}
+      ],
+      "additional_omissions": [],
+      "suggestions_review": "No proposed impacts, actions or plans are displayed, respecting assistance off. The date, impact and initials questions address genuine missing details. The action question asks about an action already supplied but misplaced and altered; the recorded correction/relocation handles that problem. The next-step question does not itself invent an agreed follow-up. The unsupported grouping is in an accepted factual statement, not in a clearly conditional suggestion.",
+      "failure_review": "The group is not marked incomplete, but only two checklist units are fully placed. Source excerpts preserve several withheld details. Six distinct unit repairs are needed, including one correction of an unsupported factual expansion. A single unseparated group remains appropriate; no automatic incident separation is assumed."
+    }
+  },
+  "case_assessment": "B places six of the eight units and needs two field-placement repairs. A and C each place two units, with six unit repairs apiece; C additionally expands the paper-handling action into an unsupported list of moved items. All three keep one unseparated record and display no proposed impacts/actions/plans with assistance off. Source retention preserves omitted information but is not factual placement. These counts describe this AI-assisted case review and do not establish model selection, semantic accuracy or human review time."
+}

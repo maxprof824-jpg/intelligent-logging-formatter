@@ -1,0 +1,15 @@
+# Intelligent Logging Formatter — v3 candidate
+
+This experimental adapter is a synthetic-data proof of concept for jobs that rely on daily logs to track important information. It is designed to organize messy notes into SITUATION, IMPACT, AGENCIES CONTACTED, ACTION and PLAN, with proposed additions clearly distinguished from supplied facts. It was **not promoted**: the completed comparison found better placement overall, alongside new critical meaning errors. The released v2 adapter remains the default.
+
+The base is [Qwen3-4B-Instruct-2507](https://huggingface.co/Qwen/Qwen3-4B-Instruct-2507), pinned to revision `cdbee75f17c01a7cc42f958dc650907174af0554`. Training used PyTorch, Transformers, PEFT and bitsandbytes. QLoRA kept the base quantized with NF4 double quantization and BF16 computation while training small adapter matrices: rank 16, alpha 32, dropout 0.05, targeting all linear layers. The settings were one example per microbatch, eight-step gradient accumulation, learning rate 0.0001 and a 4,096-token limit. Only assistant responses contributed to the loss.
+
+The curriculum contains 720 training examples: 600 formatting/review tasks and 120 suggestion-only helper tasks. Validation contains 144 examples: 120 main tasks and 24 helpers. All are programmatically authored synthetic examples, not operational records. Scenario families are separated between training and validation, but the small family library, repeated templates and shared long-note guidance limit diversity. Passing target-contract and overlap checks does not establish generalization.
+
+Training completed one epoch and 90 optimizer updates in 46.37 minutes, followed by 177.4 seconds of validation. The reported training and validation losses were 0.08869 and 0.21264; these measure fit to the authored examples, not practical accuracy.
+
+On the test machine's RTX 5060 Ti, reported training peaks were 11.693 GiB allocated and 25.547 GiB reserved, versus 15.93 GiB physical VRAM. [PyTorch distinguishes allocated tensors from allocator reservations](https://docs.pytorch.org/docs/2.10/notes/cuda.html#memory-management). Physical/shared-memory peaks and the cause of the above-capacity reservation were not established. Completion does **not** show that all training memory stayed within 16 GB of dedicated VRAM.
+
+The [233 passing CPU checks](reports/V3-CPU-VALIDATION.json) cover software behavior, not trained-model quality. [Training provenance](reports/V3-TRAINING-PROVENANCE.json) records settings and hashes. Candidate weight SHA-256: `cfad487fd5834e9d5cb986f0a479e91095e9187338a130940095c9df4c06ec0f`.
+
+Across all 20 development notes, the candidate correctly placed 117 of 195 checklist units versus v2's 97, with 83 versus 104 reviewer-assessed repair operations. On the primary eight cases, critical errors increased from two to three. New failed groups also appeared. These are AI-assisted development judgments, not accuracy percentages or measured time saved. The [full comparison](reports/V3-COMPARISON.md) explains the decision; the ten reserved notes were not used for inference or semantic review.

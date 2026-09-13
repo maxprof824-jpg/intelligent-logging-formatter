@@ -1,0 +1,125 @@
+{
+  "case_id": "dev-v3-fac-09",
+  "created_utc": "2026-09-13T04:23:20.814104+00:00",
+  "adjudication": "Root accepts focused masked peer recommendations after reading source/checklist and exact surfaced evidence.",
+  "original_review": {
+    "file": "work/v3-review-audit/original-dev-v3-fac-09.json",
+    "sha256": "e9d904e152210de2ff14b36f7fe71ec59a1d782e18e12aad1b4032aba891bd26",
+    "bytes_preserved": true
+  },
+  "updated_review": {
+    "file": "work/v3-case-reviews/dev-v3-fac-09.json",
+    "sha256": "b317861927f8a5be238276eef97e4276b9a6f9d8de229abd72ef373a01fda7f2"
+  },
+  "peer_review": {
+    "file": "work/v3-peer-review-fac09.json",
+    "sha256": "5df3caa67982cd00c2de3957f62fec3095176d2284db30fdc8e20e382fd1d4b3"
+  },
+  "packet": {
+    "file": "work/v3-review-packets/dev-v3-fac-09.json",
+    "sha256": "c9f7e7d3eff3f00a3f85c3bae7bbc646821902e2a3f62ac24b9c6bca6f911b39"
+  },
+  "removed_separate_edit_ids": {
+    "A": [
+      "E09",
+      "E10"
+    ],
+    "B": [
+      "E05",
+      "E06",
+      "E07"
+    ],
+    "C": [
+      "E04",
+      "E05",
+      "E06"
+    ]
+  },
+  "merged_into": {
+    "A_E10": "A_E04",
+    "B_E05": "B_E04",
+    "C_E06": "C_E02"
+  },
+  "reason": "Reasonable optional proposals are not required removals merely because no procedure was supplied. Count linked restoration and overlapping question cleanup once; combine repeated booking-status premise correction.",
+  "counts_before": {
+    "A": {
+      "checklist_units": 10,
+      "placed_supported_units": 2,
+      "repair_operations": 10,
+      "correctness_errors": 0,
+      "critical_errors": 0,
+      "placement_status_counts": {
+        "placed_supported": 2,
+        "partial": 2,
+        "evidence_or_unassigned_only": 2,
+        "failed_group": 4
+      }
+    },
+    "B": {
+      "checklist_units": 10,
+      "placed_supported_units": 7,
+      "repair_operations": 7,
+      "correctness_errors": 0,
+      "critical_errors": 0,
+      "placement_status_counts": {
+        "partial": 3,
+        "placed_supported": 7
+      }
+    },
+    "C": {
+      "checklist_units": 10,
+      "placed_supported_units": 7,
+      "repair_operations": 6,
+      "correctness_errors": 0,
+      "critical_errors": 0,
+      "placement_status_counts": {
+        "placed_supported": 7,
+        "evidence_or_unassigned_only": 1,
+        "present_wrong_field_or_event": 2
+      }
+    }
+  },
+  "counts_after": {
+    "A": {
+      "checklist_units": 10,
+      "placed_supported_units": 2,
+      "repair_operations": 8,
+      "correctness_errors": 0,
+      "critical_errors": 0,
+      "placement_status_counts": {
+        "placed_supported": 2,
+        "partial": 2,
+        "evidence_or_unassigned_only": 2,
+        "failed_group": 4
+      }
+    },
+    "B": {
+      "checklist_units": 10,
+      "placed_supported_units": 7,
+      "repair_operations": 4,
+      "correctness_errors": 0,
+      "critical_errors": 0,
+      "placement_status_counts": {
+        "partial": 3,
+        "placed_supported": 7
+      }
+    },
+    "C": {
+      "checklist_units": 10,
+      "placed_supported_units": 7,
+      "repair_operations": 3,
+      "correctness_errors": 0,
+      "critical_errors": 0,
+      "placement_status_counts": {
+        "placed_supported": 7,
+        "evidence_or_unassigned_only": 1,
+        "present_wrong_field_or_event": 2
+      }
+    }
+  },
+  "invariants": {
+    "all_placements_and_errors_unchanged": true,
+    "no_model_unmasking_or_protocol_change": true
+  },
+  "validation": "Exact claim coverage, restoration links, categories and surfaced quotation membership passed."
+}

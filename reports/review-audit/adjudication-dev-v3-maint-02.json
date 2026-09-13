@@ -1,0 +1,115 @@
+{
+  "case_id": "dev-v3-maint-02",
+  "adjudication": "Root accepts source-grounded masked peer rationale clarification; no model identities were used.",
+  "created_utc": "2026-09-13T04:00:41.724301+00:00",
+  "original_review": {
+    "file": "work/v3-review-audit/original-dev-v3-maint-02.json",
+    "sha256": "6458f8b584a2f0220ec3939613c266539b11bc5726723307ba74a62e558fa8e4",
+    "bytes_preserved": true
+  },
+  "updated_review": {
+    "file": "work/v3-case-reviews/dev-v3-maint-02.json",
+    "sha256": "6040b6451d8f48f8522d7caa0a32e2ee45bbcdfe262695913cc7d94195037fb7"
+  },
+  "peer_review": {
+    "file": "work/v3-peer-review-maint02.json",
+    "sha256": "913c2ce58365a505bf33e428073fe6c89eb047717eb3ac7e97af1b9508dded79"
+  },
+  "packet": {
+    "file": "work/v3-review-packets/dev-v3-maint-02.json",
+    "sha256": "aff87868489d780d0deeed6d88361189b70da7ff22a98c3f747dd3cb15295007"
+  },
+  "changes": [
+    {
+      "variant": "C",
+      "error_id": "R01",
+      "critical_unchanged": true,
+      "clarification": "Unsupported identification of moved items; physical grouping does not establish a common job."
+    }
+  ],
+  "counts_before": {
+    "A": {
+      "checklist_units": 8,
+      "placed_supported_units": 2,
+      "repair_operations": 6,
+      "correctness_errors": 0,
+      "critical_errors": 0,
+      "placement_status_counts": {
+        "evidence_or_unassigned_only": 5,
+        "placed_supported": 2,
+        "partial": 1
+      }
+    },
+    "B": {
+      "checklist_units": 8,
+      "placed_supported_units": 6,
+      "repair_operations": 2,
+      "correctness_errors": 0,
+      "critical_errors": 0,
+      "placement_status_counts": {
+        "placed_supported": 6,
+        "present_wrong_field_or_event": 1,
+        "partial": 1
+      }
+    },
+    "C": {
+      "checklist_units": 8,
+      "placed_supported_units": 2,
+      "repair_operations": 6,
+      "correctness_errors": 1,
+      "critical_errors": 1,
+      "placement_status_counts": {
+        "placed_supported": 2,
+        "evidence_or_unassigned_only": 3,
+        "meaning_error": 1,
+        "partial": 2
+      }
+    }
+  },
+  "counts_after": {
+    "A": {
+      "checklist_units": 8,
+      "placed_supported_units": 2,
+      "repair_operations": 6,
+      "correctness_errors": 0,
+      "critical_errors": 0,
+      "placement_status_counts": {
+        "evidence_or_unassigned_only": 5,
+        "placed_supported": 2,
+        "partial": 1
+      }
+    },
+    "B": {
+      "checklist_units": 8,
+      "placed_supported_units": 6,
+      "repair_operations": 2,
+      "correctness_errors": 0,
+      "critical_errors": 0,
+      "placement_status_counts": {
+        "placed_supported": 6,
+        "present_wrong_field_or_event": 1,
+        "partial": 1
+      }
+    },
+    "C": {
+      "checklist_units": 8,
+      "placed_supported_units": 2,
+      "repair_operations": 6,
+      "correctness_errors": 1,
+      "critical_errors": 1,
+      "placement_status_counts": {
+        "placed_supported": 2,
+        "evidence_or_unassigned_only": 3,
+        "meaning_error": 1,
+        "partial": 2
+      }
+    }
+  },
+  "invariants": {
+    "A_and_B_variants_unchanged": true,
+    "all_judgments_counts_and_severity_unchanged": true,
+    "no_protocol_or_inference_change": true,
+    "no_model_unmasking": true
+  },
+  "validation": "Exact claim coverage, links, allowed statuses/categories and surfaced quotation membership passed."
+}

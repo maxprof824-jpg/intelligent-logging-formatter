@@ -1,0 +1,74 @@
+{
+  "case_id": "dev-v3-admin-15",
+  "review_type": "same-author self-check; not an independent peer review",
+  "reviewer": "Original AI-assisted administrative15 reviewer; A/B/C model identities withheld. This reconsideration is not independent evidence. Root will adjudicate separately.",
+  "scope": "B R01 stale-status finding and linked repair accounting only. Source, frozen source checklist, accepted B sections/suggestions/questions, and canonical review were inspected. Full JSON bytes were parsed for allowlisted projection; nested raw generation bodies were not displayed or semantically inspected. No key, full comparison, or reserved material was accessed.",
+  "packet_sha256": "c189724090858d394ec0f8de878ca0f83dcd43bf9917263a8da798dd6a15516b",
+  "canonical_review_sha256_before": "dc68789c6760238a178c6bb205db179fbfa24684eb1a9457b2bc48efb1331bb6",
+  "checklist_sha256": "70b29cbcc62e29c1c2a39b16cc5999bc8cd621d41ed7bba6d3ed4aa01fd38b0e",
+  "finding": {
+    "error_id": "R01",
+    "recommendation": "retain",
+    "type": "stale_status",
+    "critical": true,
+    "claim_ids": [
+      "dev-v3-admin-15-C01"
+    ],
+    "rationale": "The source explicitly resolves the recorded acknowledgement from superseded 15:20 to correct 15:02 and says that the draft correction was completed. B does more than ask an open confirmation question: its suggestion first questions the recorded acknowledgement time, then asserts that the actual time is not confirmed. Its matching question expressly reopens whether the recorded time is still unconfirmed. Together these undo the supplied correction, so the frozen instruction against ignoring an explicit correction applies even though the sentence appears in a suggestion.",
+    "counter_reading_considered": "A mailbox timestamp need not establish every conceivable physical sub-event, and a hypothetical question alone could seek permissible additional confirmation. Here neither the source nor B distinguishes a separate sending, receipt, or physical sub-event; B expressly calls the already corrected recorded acknowledgement time into doubt. Inventing that distinction to reinterpret the output would exceed the text. The finding is narrowly about reopening the supplied recorded-time status.",
+    "limits": "This does not assert that B invented a replacement timestamp, restored 15:20 as fact, or claimed a completed event. It is one stale-status error, not a second error for the repeated confirmation question."
+  },
+  "exact_evidence": [
+    {
+      "kind": "source",
+      "pointer": "/source_text",
+      "quote": "I previously wrote the acknowledgement time as 15:20. The mailbox stamp is 15:02, and the correct recorded acknowledgement time is 15:02."
+    },
+    {
+      "kind": "source",
+      "pointer": "/source_text",
+      "quote": "ACTION: I corrected the time in this draft and saved the acknowledgement."
+    },
+    {
+      "kind": "output",
+      "pointer": "/variants/B/result/event_results/0/result/suggestions/1/text",
+      "quote": "The recorded acknowledgement time may be incorrect; the actual time is not confirmed."
+    },
+    {
+      "kind": "output",
+      "pointer": "/variants/B/result/event_results/0/result/suggestions/1/confirm",
+      "quote": "Did the actual acknowledgement occur at 15:02, or is the recorded time still unconfirmed?"
+    },
+    {
+      "kind": "source",
+      "pointer": "/source_text",
+      "quote": "PLAN: FD expects me to send the headcount by Friday. FD has not agreed to send a headcount to me."
+    },
+    {
+      "kind": "output",
+      "pointer": "/variants/B/result/event_results/0/result/sections/plan/0/text",
+      "quote": "FD expects me to send the headcount by Friday. FD has not agreed to send a headcount to me."
+    },
+    {
+      "kind": "output",
+      "pointer": "/variants/B/result/event_results/0/result/suggestions/0/text",
+      "quote": "Proposed follow-up: ask the author whether the headcount is needed and who will send it."
+    }
+  ],
+  "repair_accounting": {
+    "recommendation": "unchanged",
+    "E01": "Restore C01 to the empty room SITUATION and remove its false uncertainty suggestion, matching question and linked generic chronology question as one logical correction/restoration. R01 is a separate diagnostic classification, not an extra fifth edit.",
+    "E02": "The missing ROOMREQ-93 / next-week / not-confirmed-reservation C02 unit is distinct from the timestamp correction.",
+    "E03": "The certificate Records (UA) contact C06 relocation and corresponding generic contact question cleanup are combined once.",
+    "E04": "The separate headcount-need/owner proposal duplicates C05 already fully present in accepted PLAN. C05 has no factual restoration or movement repair to absorb that cleanup, so this remains one independent advice repair.",
+    "duplicate_repairs_found": false,
+    "recommended_B_counts": {
+      "placed_supported": 6,
+      "logical_repairs": 4,
+      "correctness_errors": 1,
+      "critical_correctness_errors": 1
+    }
+  },
+  "canonical_review_modified": false,
+  "adjudication": "Recommendation only. Root independently decides before model unmasking; this same-author note must not be presented as independent corroboration."
+}

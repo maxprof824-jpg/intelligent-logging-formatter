@@ -1,0 +1,88 @@
+{
+  "case_id": "dev-v3-admin-13",
+  "adjudication": "Root adopts the masked peer qualification after reading full source and authoritative A output.",
+  "created_utc": "2026-09-13T04:37:17.313346+00:00",
+  "original_review": {
+    "file": "work/v3-review-audit/original-dev-v3-admin-13.json",
+    "sha256": "033ce583bc89c3786e96b9de988bb7e761982a8f83f4f9452acc0d52fc07c635",
+    "bytes_preserved": true
+  },
+  "updated_review": {
+    "file": "work/v3-case-reviews/dev-v3-admin-13.json",
+    "sha256": "12cb69a96ef6b52355d308223f1078ae1b1aff185583d8dabdc61f7c9a5d1f90"
+  },
+  "peer_review": {
+    "file": "work/v3-peer-review-admin13.json",
+    "sha256": "6ba9481b8b3a27dff206710a1b16e97b856bfc9ecdedd3acaa647d5fb98bcb4b"
+  },
+  "packet": {
+    "file": "work/v3-review-packets/dev-v3-admin-13.json",
+    "sha256": "c40f4a2805f509e6f0f5f135c76f28e2e098c59209bca1766c705be76309b996"
+  },
+  "changes": [
+    {
+      "variant": "A",
+      "error_id": "R01",
+      "old_type": "stale_status",
+      "new_type": "other_meaning_error",
+      "old_critical": true,
+      "new_critical": false,
+      "reason": "Booking acknowledgement/closure is supplied; a particular email response is not. Preserve the correction without asserting a proven channel-specific reversal."
+    },
+    {
+      "variant": "A",
+      "claim_id": "dev-v3-admin-13-C03",
+      "old_status": "meaning_error",
+      "new_status": "present_wrong_field_or_event",
+      "placed_credit_unchanged": true
+    }
+  ],
+  "counts_before": {
+    "A": {
+      "placed_supported_units": 2,
+      "repair_operations": 8,
+      "correctness_errors": 1,
+      "critical_errors": 1
+    },
+    "B": {
+      "placed_supported_units": 0,
+      "repair_operations": 10,
+      "correctness_errors": 1,
+      "critical_errors": 1
+    },
+    "C": {
+      "placed_supported_units": 3,
+      "repair_operations": 7,
+      "correctness_errors": 0,
+      "critical_errors": 0
+    }
+  },
+  "counts_after": {
+    "A": {
+      "placed_supported_units": 2,
+      "repair_operations": 8,
+      "correctness_errors": 1,
+      "critical_errors": 0
+    },
+    "B": {
+      "placed_supported_units": 0,
+      "repair_operations": 10,
+      "correctness_errors": 1,
+      "critical_errors": 1
+    },
+    "C": {
+      "placed_supported_units": 3,
+      "repair_operations": 7,
+      "correctness_errors": 0,
+      "critical_errors": 0
+    }
+  },
+  "invariants": {
+    "B_and_C_unchanged": true,
+    "all_placed_counts_and_repair_totals_unchanged": true,
+    "B_cross_event_premise_remains_critical": true,
+    "no_model_unmasking_or_protocol_change": true
+  },
+  "limits": "Severity and optional-advice value require judgment. The original stronger finding and peer alternative are preserved; no independent or timed review is claimed.",
+  "validation": "Exact claim coverage, repair links, categories and surfaced error quotes passed."
+}

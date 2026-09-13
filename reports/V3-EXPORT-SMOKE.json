@@ -1,0 +1,14 @@
+{
+  "created_utc": "2026-09-13T14:47:09.232485+00:00",
+  "status": "passed",
+  "scope": "The exported candidate loaded in the installed local application and served its Gradio configuration on loopback.",
+  "adapter_weights_sha256": "cfad487fd5834e9d5cb986f0a479e91095e9187338a130940095c9df4c06ec0f",
+  "adapter_config_sha256": "c46138ab931c3476c3597ed8dcb634c8d42e926aca150d36d741f54f4f9d3ac9",
+  "export_manifest_sha256": "41576805805555e4f9505eebae8bdbb8b334456dc64e1722bf101cad0adcfa6f",
+  "app_v2_sha256": "f0479ca2b17de72dcf23a1092d42ac1c9b717a12895f9139a3b83a23f0efc1ea",
+  "title": "Intelligent Logging Formatter",
+  "footer": "Running locally \u00b7 Local adapter: adapter-v3-experimental \u00b7 formatter runtime 2.5. Processing stays on this computer.",
+  "model_generation_performed": false,
+  "default_adapter_changed": false,
+  "limitations": "Startup and exported-config compatibility only; no new quality evaluation, browser interaction, clean-computer setup, or speed measurement."
+}

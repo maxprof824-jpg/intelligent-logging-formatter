@@ -1,0 +1,116 @@
+{
+  "case_id": "dev-v3-it-07",
+  "created_utc": "2026-09-13T04:15:48.470896+00:00",
+  "adjudication": "Root partially accepts the masked peer recommendation; identities remain unexamined.",
+  "original_review": {
+    "file": "work/v3-review-audit/original-dev-v3-it-07.json",
+    "sha256": "e634678b618d19ccc37e4d86fd19355cad7d99a50316587fd8e8c9d01898b0a6",
+    "bytes_preserved": true
+  },
+  "updated_review": {
+    "file": "work/v3-case-reviews/dev-v3-it-07.json",
+    "sha256": "a10acacf5b6c20ffa374204faad3595572c11a9448da24132798e84563d5cb20"
+  },
+  "peer_review": {
+    "file": "work/v3-peer-review-it07.json",
+    "sha256": "156263536893297f637972b31d5980c28cc57ffd1cd7c73648a15997af868bef"
+  },
+  "packet": {
+    "file": "work/v3-review-packets/dev-v3-it-07.json",
+    "sha256": "981968752774cd9052d1eddc0de57bb378cc90a90a8656d81e554c57c897cac3"
+  },
+  "changes": [
+    {
+      "variant": "C",
+      "removed_edit_id": "E08",
+      "reason": "Optional shared/system documentation is not established as a necessary correction; retain a qualitative usefulness concern."
+    }
+  ],
+  "recommendation_not_adopted": {
+    "variant": "B",
+    "error_id": "R01",
+    "critical_retained": true,
+    "reason": "The frozen rule includes invented facts, including commitment premises inside suggestions. A request does not establish a promise. Naming a promisor, reversing direction or claiming completion is not necessary for this unsupported commitment finding. This applies the same expected/requested-versus-promised distinction used in IT05. Correct factual PLAN does not cancel the separate displayed premise.",
+    "limitation": "Severity is an AI-assisted judgment; the peer recommended noncritical severity and its rationale is preserved. No actor reversal, false completion or promised deadline is alleged."
+  },
+  "counts_before": {
+    "A": {
+      "checklist_units": 10,
+      "placed_supported_units": 8,
+      "repair_operations": 2,
+      "correctness_errors": 0,
+      "critical_errors": 0,
+      "placement_status_counts": {
+        "evidence_or_unassigned_only": 2,
+        "placed_supported": 8
+      }
+    },
+    "B": {
+      "checklist_units": 10,
+      "placed_supported_units": 9,
+      "repair_operations": 2,
+      "correctness_errors": 1,
+      "critical_errors": 1,
+      "placement_status_counts": {
+        "placed_supported": 9,
+        "evidence_or_unassigned_only": 1
+      }
+    },
+    "C": {
+      "checklist_units": 10,
+      "placed_supported_units": 3,
+      "repair_operations": 8,
+      "correctness_errors": 0,
+      "critical_errors": 0,
+      "placement_status_counts": {
+        "failed_group": 6,
+        "evidence_or_unassigned_only": 1,
+        "placed_supported": 3
+      }
+    }
+  },
+  "counts_after": {
+    "A": {
+      "checklist_units": 10,
+      "placed_supported_units": 8,
+      "repair_operations": 2,
+      "correctness_errors": 0,
+      "critical_errors": 0,
+      "placement_status_counts": {
+        "evidence_or_unassigned_only": 2,
+        "placed_supported": 8
+      }
+    },
+    "B": {
+      "checklist_units": 10,
+      "placed_supported_units": 9,
+      "repair_operations": 2,
+      "correctness_errors": 1,
+      "critical_errors": 1,
+      "placement_status_counts": {
+        "placed_supported": 9,
+        "evidence_or_unassigned_only": 1
+      }
+    },
+    "C": {
+      "checklist_units": 10,
+      "placed_supported_units": 3,
+      "repair_operations": 7,
+      "correctness_errors": 0,
+      "critical_errors": 0,
+      "placement_status_counts": {
+        "failed_group": 6,
+        "evidence_or_unassigned_only": 1,
+        "placed_supported": 3
+      }
+    }
+  },
+  "invariants": {
+    "A_and_B_variants_unchanged": true,
+    "placement_and_error_counts_unchanged": true,
+    "C_required_repairs_reduced_by_one": true,
+    "no_model_unmasking_or_protocol_change": true
+  },
+  "access_disclosure": "Peer note records incidental nested raw-output exposure; judgments and exact error quotes use authoritative displayed fields. Root inspected source and allowlisted fields, not raw generations.",
+  "validation": "Exact claim coverage, repair links, allowed categories and surfaced quotation membership passed."
+}

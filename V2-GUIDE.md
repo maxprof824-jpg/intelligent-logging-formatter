@@ -8,6 +8,14 @@ Extract the tester download, run **SETUP-WINDOWS.cmd**, then **RUN-DEMO.cmd**. O
 
 Draft mode organizes rough notes; review mode applies the same source and completeness checks to an existing log. Neither mode approves a log.
 
+The experimental v3 tester download contains both adapters. To try the candidate, stop any running demo, then open a terminal in the extracted folder and run:
+
+```powershell
+.\RUN-DEMO.cmd --adapter runs/adapter-v3-experimental
+```
+
+The footer identifies the selected adapter. Running `RUN-DEMO.cmd` without arguments selects the current v2 adapter. The source-only download does not include model weights; the standalone candidate download requires an existing installation.
+
 ## Separate events in your notes
 
 Start each event with `EVENT: descriptive label` on its own line. Repeating the same label joins later updates to that event. Put dates, time zones, and other necessary context inside each relevant event; opening text before the first heading stays unassigned for your review and is not passed to the model.
@@ -57,7 +65,7 @@ Setup verifies local model files using their saved hashes. An already complete i
 .venv\Scripts\python.exe download_model.py --verify-only
 ```
 
-## Prepare a future training candidate
+## Reproduce candidate training
 
 Run these commands from the installation folder after setup and local base-model verification. Replace `NEW` with a fresh report name each time; existing reports are protected. Start with the CPU curriculum audit and review its findings:
 
@@ -72,7 +80,7 @@ Stop the demo before the GPU feasibility check. This preflight performs no optim
 .\.venv\Scripts\python.exe preflight_training.py --output reports/training-v3-NEW.json
 ```
 
-This phase prepares data and checks feasibility; it does not launch candidate training. When ready for a **future training run**, replace `UNIQUE` with an unused experiment name:
+The audit and preflight above do not train the model. To start a separate training run, replace `UNIQUE` with an unused experiment name:
 
 ```powershell
 .\.venv\Scripts\python.exe train.py --data-dir data-v3 --max-length 4096 --epochs 1 --accumulation 8 --output runs/experiments/v3-candidate-UNIQUE
@@ -80,4 +88,12 @@ This phase prepares data and checks feasibility; it does not launch candidate tr
 
 That command initializes a new adapter from the pinned base model. It preserves the released adapter and refuses an existing training-run directory. The candidate must be evaluated separately before replacing the model used in the demo. `TRAIN-V2.cmd` continues to reproduce the original v2 curriculum.
 
-The released adapter was trained on the original 480 synthetic examples and 48 validation examples. The separate [new curriculum](data-v3/DATASET_CARD.md) is preparation for a future candidate, not a newly trained model. Read the [model card](MODEL-CARD-V2.md), [roadmap](REVIEW-AND-ROADMAP.md), and [2.5 validation record](reports/VALIDATION-V25.md) for measured results and limitations. No claim of readiness for real operational use is made.
+The current default adapter was trained on 480 synthetic examples, with 48 validation examples. A separate [v3 candidate](MODEL-CARD-V3-CANDIDATE.md) has completed training on the broader 720/144 curriculum. Its training record and comparison are separate from the [2.5 runtime validation](reports/VALIDATION-V25.md). Neither successful training nor software checks establish readiness for real operational use.
+
+To reproduce the matched development comparison from the experimental tester package, stop the demo and choose a fresh output name:
+
+```powershell
+.\.venv\Scripts\python.exe compare_candidates.py --candidate-adapter runs/adapter-v3-experimental --output reports/comparison-NEW.json
+```
+
+This runs all 20 development notes with the base model and both adapters, for 60 attempts. It can take considerable time. The saved report includes failures; a completed run does not mean every draft succeeded. The [comparison report](reports/V3-COMPARISON.md) explains the separate source-based review.

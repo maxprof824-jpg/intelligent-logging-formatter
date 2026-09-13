@@ -1,0 +1,148 @@
+{
+  "state": "training_and_development_review_complete_not_promoted",
+  "complete": true,
+  "captured_utc": "2026-09-13T02:30:17.516958+00:00",
+  "scope": "One completed fresh candidate training run, validation loss evaluation and separately recorded matched 20-case development comparison. The candidate remains experimental and v2 remains the default.",
+  "release_commit": "33d2361b0883911bbe792a69079b3eb099c260ec",
+  "release_reference": "33d2361",
+  "candidate_output_relative_path": "runs/experiments/v3-candidate-20260912-a",
+  "candidate_origin": "New rank-16 LoRA adapter initialized from the pinned base model; the released v2 adapter is preserved.",
+  "base_model": {
+    "repo": "Qwen/Qwen3-4B-Instruct-2507",
+    "revision": "cdbee75f17c01a7cc42f958dc650907174af0554",
+    "manifest_sha256": "c2220e6bf1f786ebcbf8146933690a45fd819618d7135410480ee462cce8c2c8"
+  },
+  "candidate_training_config_sha256": "d1a7cabe45b668de98589ef9276932bfe1bbb56d069087dd0ed3889702650fc3",
+  "installed_training_code_sha256": {
+    "train.py": "3aa020b624610303acca7e54d26054a84633b236e1b97a1fe5ac29f774decbde",
+    "core.py": "aee474c96d06c9d8fc8fe73e0a1d77b2d7c9c032491f2c1d30e8841721009530",
+    "build_data_v3.py": "c36c96a23eb9ec28b5ae1cb86d7a8749e05aa3d18c07f5b7853db71f4d6fcdcd"
+  },
+  "candidate_data_sha256": {
+    "train": "512442ccabdb9d0908c2b52344c086bf0027970bbcc401140f3f77a74ee7d1c0",
+    "validation": "02fd5c323ded392367ef30b153be4f183ffbdce43dc7c7d83b4b4114cb5d3697"
+  },
+  "final_curriculum_audit_sha256": "22d75a0a340df83512654104a538cbc3ba98145fbf73078f715b7281bb41a8cd",
+  "curriculum_build_report_sha256": "906a084895e59453b402f96d83bf94811de7401cc7867692f545a664ba7ad58c",
+  "prior_released_adapter_sha256": "08a0f0d7c2c93dacb84fcdef97f1c2952c7a70551d260921c9782fa4bfa6dc9d",
+  "training_settings": {
+    "rank": 16,
+    "alpha": 32,
+    "dropout": 0.05,
+    "target_modules": "all-linear",
+    "quantization": "NF4 double quantization",
+    "max_sequence_length": 4096,
+    "data_dir": "data-v3",
+    "micro_batch": 1,
+    "accumulation": 8,
+    "learning_rate": 0.0001,
+    "epochs": 1.0,
+    "max_steps": -1,
+    "seed": 42,
+    "examples": 720,
+    "max_observed_tokens": 3527,
+    "loss": "assistant completion only"
+  },
+  "intended_optimizer_updates": 90,
+  "runtime": {
+    "python_version": "3.12.14",
+    "python_implementation": "CPython",
+    "python_build": "3.12.14 (main, Sep  1 2026, 14:17:39) [MSC v.1944 64 bit (AMD64)]",
+    "operating_system": {
+      "system": "Windows",
+      "release": "11",
+      "version": "10.0.26200",
+      "machine": "AMD64"
+    },
+    "installed_package_versions": {
+      "torch": "2.10.0+cu128",
+      "transformers": "4.57.6",
+      "peft": "0.18.1",
+      "bitsandbytes": "0.49.2",
+      "accelerate": "1.12.0",
+      "datasets": "4.4.2",
+      "tokenizers": "0.22.2",
+      "safetensors": "0.8.0",
+      "numpy": "2.5.3",
+      "gradio": "5.49.1",
+      "jsonschema": "4.25.1",
+      "psutil": "7.2.2",
+      "pip": null,
+      "setuptools": "78.1.0"
+    },
+    "requirements_lock_sha256": "b8b8ffe1cf0907821c53a06b065a6851e6cf8711bcd0c0cdf964cac0904965b8"
+  },
+  "hardware_configuration_from_prior_preflight": {
+    "source": "reports/training-v3-preflight.json",
+    "source_sha256": "3005f80f854c72ccdd613146de08a3bca76f8e8aba03ae7e1ed154846e057e63",
+    "recorded_utc": "2026-09-11T14:11:04.842503+00:00",
+    "gpu": "NVIDIA GeForce RTX 5060 Ti",
+    "vram_gib": 15.93,
+    "is_live_hardware_measurement": false,
+    "prior_status": "passed",
+    "prior_optimizer_steps": 0,
+    "prior_weights_saved": false,
+    "limitation": "A prior one-example forward/backward check with approximated optimizer-state buffers does not establish full-run memory usage or successful training."
+  },
+  "integrity_checks": {
+    "candidate_data_match_final_audit": true,
+    "training_code_matches_prior_preflight": true,
+    "core_code_matches_prior_preflight": true,
+    "released_adapter_unchanged_at_capture": true,
+    "released_adapter_unchanged_after_training": true,
+    "frozen_code_and_data_unchanged_after_training": true,
+    "all_90_logged_losses_and_gradient_norms_finite": true
+  },
+  "candidate_adapter_sha256": "cfad487fd5834e9d5cb986f0a479e91095e9187338a130940095c9df4c06ec0f",
+  "final_training_metrics": {
+    "train_runtime": 2782.183,
+    "train_samples_per_second": 0.259,
+    "train_steps_per_second": 0.032,
+    "train_loss": 0.08868918844705655,
+    "epoch": 1.0,
+    "wall_seconds": 2782.8920088000013,
+    "peak_allocated_vram_gib": 11.693467617034912,
+    "peak_reserved_vram_gib": 25.546875,
+    "eval_loss": 0.21263541281223297,
+    "eval_runtime": 177.3983,
+    "eval_samples_per_second": 0.812,
+    "eval_steps_per_second": 0.812
+  },
+  "candidate_promotion": {
+    "promoted": false,
+    "decision": "Do not promote. Primary placement improves 38 to 46 units and repairs fall 68 to 59, but critical errors rise 2 to 3, including new cause/commitment errors. Changed failed groups and a primary administrative placement regression also require investigation.",
+    "development_cases": 20,
+    "model_case_attempts": 60,
+    "qualitative_cases_reviewed": 20,
+    "comparison_sha256": "86cd6ac98088085915e165e5da8589f98aefd3e6bba8b1980169eb543864e54f",
+    "qualitative_review_sha256": "0735441446ca921028013e37ef53bc592d5973378a2a4c5fe0c3265c52fb0036",
+    "reserved_inference_or_semantic_review_used": false,
+    "reserved_integrity_note": "Earlier automated integrity checks inspected reserved dataset bytes; no reserved model evaluation or semantic review was used.",
+    "recorded_utc": "2026-09-13T14:51:39.464478+00:00"
+  },
+  "resume_note": "Before resuming an interrupted run, confirm checkpoint adapter weights, trainer_state.json, optimizer.pt, scheduler.pt and RNG state are present. The installed Trainer can skip absent optimizer/scheduler state.",
+  "completed_record_utc": "2026-09-13T03:17:50.578004+00:00",
+  "initial_capture_scope": "CPU-only provenance capture made while training was active; historical preflight hardware details remain labeled as such.",
+  "actual_optimizer_updates": 90,
+  "actual_completed_epochs": 1.0,
+  "validation_examples": 144,
+  "candidate_adapter_config_sha256": "8c6f58bfdbcb5e2b23f123713a6e3f0eaee2437b57186bc4b30776bbe7b6b88f",
+  "candidate_trainer_state_sha256": "13a8811f16d18ad79aa2a9dce43891773955e1432879ba9fba3c725b8b54e659",
+  "candidate_metrics_sha256": "f6fafdc22d3f6476986d35e1bd5cfcf3901e9bef864eebab4965b427d87b76b5",
+  "metric_limits": "Loss measures fit to programmatically authored examples, not semantic correctness or usefulness. Training wall_seconds and CUDA allocator memory peaks are captured before the separate final validation pass. Elapsed training/evaluation durations come from timers rather than wall-clock timestamp differences.",
+  "memory_interpretation": {
+    "completed_on_test_machine": true,
+    "reported_peak_allocated_gib": 11.693467617034912,
+    "reported_peak_reserved_gib": 25.546875,
+    "physical_gpu_capacity_from_preflight_gib": 15.93,
+    "reserved_peak_exceeds_physical_capacity": true,
+    "limitation": "The recorded allocator reservation exceeds the GPU's physical VRAM. PyTorch distinguishes tensor allocations from total memory managed by its caching allocator. Physical residency and shared-memory peaks were not captured, and the cause of the above-capacity reservation was not established; this run does not establish that all training memory remained within 16 GB of dedicated VRAM.",
+    "metric_definition_reference": "https://docs.pytorch.org/docs/2.10/notes/cuda.html#memory-management",
+    "allocator_environment_after_run": {
+      "PYTORCH_CUDA_ALLOC_CONF": null,
+      "PYTORCH_ALLOC_CONF": null
+    },
+    "next_check": "Profile physical and shared memory plus allocator growth before making a strict dedicated-VRAM budget claim."
+  },
+  "comparison_timing_note": "reports/V3-RUN-NOTES.json qualifies the long observation/session gap. The original comparison timers and outputs are preserved; no speed comparison is claimed."
+}

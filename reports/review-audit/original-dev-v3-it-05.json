@@ -1,0 +1,1097 @@
+{
+  "case_id": "dev-v3-it-05",
+  "checklist_sha256": "08546bda79a20f037aae552455f6c38758e54617d533c1865b9d5328f4705533",
+  "reviewer": "AI-assisted review; model labels withheld; prior familiarity with the formatter and earlier released-output discussions disclosed. The source-only checklist and this anonymized packet were used; no identity key, full comparison, raw generations or reserved notes were read.",
+  "variants": {
+    "A": {
+      "claim_results": [
+        {
+          "claim_id": "dev-v3-it-05-C01",
+          "status": "failed_group",
+          "rationale": "The Workshop access requests group is incomplete and has no accepted factual entries. The source retains this unit for reconstruction in SITUATION: At 08:41 on 12 September 2026 UTC, coordinator ME requested preparation-folder access for eight people under ACCESS-208."
+        },
+        {
+          "claim_id": "dev-v3-it-05-C02",
+          "status": "failed_group",
+          "rationale": "The Workshop access requests group is incomplete and has no accepted factual entries. The source retains this unit for reconstruction in SITUATION: At 08:53 the folder opened for the author's own account, showing an agenda and two worksheets."
+        },
+        {
+          "claim_id": "dev-v3-it-05-C03",
+          "status": "failed_group",
+          "rationale": "The Workshop access requests group is incomplete and has no accepted factual entries. The source retains this unit for reconstruction in SITUATION: JT first reported a request-access page at 09:03; that corrected time supersedes the erroneous 09:30 register entry."
+        },
+        {
+          "claim_id": "dev-v3-it-05-C04",
+          "status": "failed_group",
+          "rationale": "The Workshop access requests group is incomplete and has no accepted factual entries. The source retains this unit for reconstruction in SITUATION: RB reported an older workshop agenda at 09:08 and later clarified that a bookmark, not the email link, had been used."
+        },
+        {
+          "claim_id": "dev-v3-it-05-C05",
+          "status": "failed_group",
+          "rationale": "The Workshop access requests group is incomplete and has no accepted factual entries. The source retains this unit for reconstruction in AGENCIES_CONTACTED: The author phoned Service Desk (PK) at 09:14; PK acknowledged two user reports but supplied no cause or restoration time."
+        },
+        {
+          "claim_id": "dev-v3-it-05-C06",
+          "status": "failed_group",
+          "rationale": "The Workshop access requests group is incomplete and has no accepted factual entries. The source retains this unit for reconstruction in ACTION: The original email link and the two reported difficulties were sent at 09:19, rather than the complete eight-person list."
+        },
+        {
+          "claim_id": "dev-v3-it-05-C07",
+          "status": "failed_group",
+          "rationale": "The Workshop access requests group is incomplete and has no accepted factual entries. The source retains this unit for reconstruction in SITUATION: At 09:36 DL reported worksheets opening, without confirming agenda revision or resolving other users' difficulties."
+        },
+        {
+          "claim_id": "dev-v3-it-05-C08",
+          "status": "failed_group",
+          "rationale": "The Workshop access requests group is incomplete and has no accepted factual entries. The source retains this unit for reconstruction in ACTION: The author preserved both screenshot references ACCESS-208-IMG1 and ACCESS-208-IMG2."
+        },
+        {
+          "claim_id": "dev-v3-it-05-C09",
+          "status": "failed_group",
+          "rationale": "The Workshop access requests group is incomplete and has no accepted factual entries. The source retains this unit for reconstruction in ACTION: The author corrected the register at 10:02 and sent PK the corrected first-report time at 10:05."
+        },
+        {
+          "claim_id": "dev-v3-it-05-C10",
+          "status": "failed_group",
+          "rationale": "The Workshop access requests group is incomplete and has no accepted factual entries. The source retains this unit for reconstruction in AGENCIES_CONTACTED: Learning Office (VN) identified the intended preparation folder and revision C, without confirming individual access."
+        },
+        {
+          "claim_id": "dev-v3-it-05-C11",
+          "status": "failed_group",
+          "rationale": "The Workshop access requests group is incomplete and has no accepted factual entries. The source retains this unit for reconstruction in SITUATION: The author saw revision C at 10:18 while RB's saved image showed revision A."
+        },
+        {
+          "claim_id": "dev-v3-it-05-C12",
+          "status": "failed_group",
+          "rationale": "The Workshop access requests group is incomplete and has no accepted factual entries. The source retains this unit for reconstruction in IMPACT: Worksheets were optional preparation, but access to advance agenda information mattered and actual preparation impact remained unassessed."
+        },
+        {
+          "claim_id": "dev-v3-it-05-C13",
+          "status": "failed_group",
+          "rationale": "The Workshop access requests group is incomplete and has no accepted factual entries. The source retains this unit for reconstruction in SITUATION: JT still reported the request-access page at 10:51; RB later succeeded through the original email link at 11:04/11:09."
+        },
+        {
+          "claim_id": "dev-v3-it-05-C14",
+          "status": "failed_group",
+          "rationale": "The Workshop access requests group is incomplete and has no accepted factual entries. The source retains this unit for reconstruction in PLAN: ME had not decided to send a general reminder; VN offered only to review wording if ME chose to send one."
+        },
+        {
+          "claim_id": "dev-v3-it-05-C15",
+          "status": "failed_group",
+          "rationale": "The Workshop access requests group is incomplete and has no accepted factual entries. The source retains this unit for reconstruction in PLAN: At 12:06 PK expected an investigation update by 14:00 UTC, not restoration by that time."
+        },
+        {
+          "claim_id": "dev-v3-it-05-C16",
+          "status": "failed_group",
+          "rationale": "The Workshop access requests group is incomplete and has no accepted factual entries. The source retains this unit for reconstruction in SITUATION: JT reported seeing a colleague's printed agenda at 12:24, without reporting successful folder access."
+        },
+        {
+          "claim_id": "dev-v3-it-05-C17",
+          "status": "failed_group",
+          "rationale": "The Workshop access requests group is incomplete and has no accepted factual entries. The source retains this unit for reconstruction in SITUATION: The handover left the other five attendees' access status unknown, and the request remained open at the 13:04 final check."
+        },
+        {
+          "claim_id": "dev-v3-it-05-C18",
+          "status": "failed_group",
+          "rationale": "The Workshop access requests group is incomplete and has no accepted factual entries. The source retains this unit for reconstruction in PLAN: Incoming Desk (FR) agreed to watch for PK's update and add it to ACCESS-208 when received."
+        },
+        {
+          "claim_id": "dev-v3-it-05-C19",
+          "status": "failed_group",
+          "rationale": "The Workshop access requests group is incomplete and has no accepted factual entries. The source retains this unit for reconstruction in SITUATION: At the final check the expected 14:00 update was not yet overdue."
+        },
+        {
+          "claim_id": "dev-v3-it-05-C20",
+          "status": "failed_group",
+          "rationale": "The Help-desk printed contact card group is incomplete and has no accepted factual entries. The source retains this unit for reconstruction in SITUATION: At 10:32 the card showed an old extension; ACCESS-208 calls had used the current cover-sheet number."
+        },
+        {
+          "claim_id": "dev-v3-it-05-C21",
+          "status": "failed_group",
+          "rationale": "The Help-desk printed contact card group is incomplete and has no accepted factual entries. The source retains this unit for reconstruction in AGENCIES_CONTACTED: Directory Desk (HU) was asked at 10:40 and confirmed the directory entry at 10:47."
+        },
+        {
+          "claim_id": "dev-v3-it-05-C22",
+          "status": "failed_group",
+          "rationale": "The Help-desk printed contact card group is incomplete and has no accepted factual entries. The source retains this unit for reconstruction in ACTION: The author replaced the card at 10:55; HU checked the replacement at 11:03."
+        },
+        {
+          "claim_id": "dev-v3-it-05-C23",
+          "status": "failed_group",
+          "rationale": "The Help-desk printed contact card group is incomplete and has no accepted factual entries. The source retains this unit for reconstruction in IMPACT: No call was misdirected because of this card during the shift; this does not determine workshop impact."
+        },
+        {
+          "claim_id": "dev-v3-it-05-C24",
+          "status": "failed_group",
+          "rationale": "The Help-desk printed contact card group is incomplete and has no accepted factual entries. The source retains this unit for reconstruction in PLAN: The card replacement was complete and no follow-up for it was agreed."
+        }
+      ],
+      "edits": [
+        {
+          "edit_id": "E01",
+          "categories": [
+            "place_missing_unit"
+          ],
+          "claim_ids": [
+            "dev-v3-it-05-C01"
+          ],
+          "detail": "Restore this distinct source-retained unit to Workshop access requests / SITUATION: At 08:41 on 12 September 2026 UTC, coordinator ME requested preparation-folder access for eight people under ACCESS-208. Preserve: Eight requested users are not eight proven failures; this is not session authorization."
+        },
+        {
+          "edit_id": "E02",
+          "categories": [
+            "place_missing_unit"
+          ],
+          "claim_ids": [
+            "dev-v3-it-05-C02"
+          ],
+          "detail": "Restore this distinct source-retained unit to Workshop access requests / SITUATION: At 08:53 the folder opened for the author's own account, showing an agenda and two worksheets. Preserve: Do not generalize to attendee access or claim a permission change."
+        },
+        {
+          "edit_id": "E03",
+          "categories": [
+            "place_missing_unit"
+          ],
+          "claim_ids": [
+            "dev-v3-it-05-C03"
+          ],
+          "detail": "Restore this distinct source-retained unit to Workshop access requests / SITUATION: JT first reported a request-access page at 09:03; that corrected time supersedes the erroneous 09:30 register entry. Preserve: Do not use 09:30 as the actual first failure time or move other timestamps."
+        },
+        {
+          "edit_id": "E04",
+          "categories": [
+            "place_missing_unit"
+          ],
+          "claim_ids": [
+            "dev-v3-it-05-C04"
+          ],
+          "detail": "Restore this distinct source-retained unit to Workshop access requests / SITUATION: RB reported an older workshop agenda at 09:08 and later clarified that a bookmark, not the email link, had been used. Preserve: This is a different reported experience from JT's; it does not prove a single root cause."
+        },
+        {
+          "edit_id": "E05",
+          "categories": [
+            "place_missing_unit"
+          ],
+          "claim_ids": [
+            "dev-v3-it-05-C05"
+          ],
+          "detail": "Restore this distinct source-retained unit to Workshop access requests / AGENCIES_CONTACTED: The author phoned Service Desk (PK) at 09:14; PK acknowledged two user reports but supplied no cause or restoration time. Preserve: Keep PK's role separate from materials-owner and directory contacts."
+        },
+        {
+          "edit_id": "E06",
+          "categories": [
+            "place_missing_unit"
+          ],
+          "claim_ids": [
+            "dev-v3-it-05-C06"
+          ],
+          "detail": "Restore this distinct source-retained unit to Workshop access requests / ACTION: The original email link and the two reported difficulties were sent at 09:19, rather than the complete eight-person list. Preserve: Reported users, not all requested users, were supplied at this stage."
+        },
+        {
+          "edit_id": "E07",
+          "categories": [
+            "place_missing_unit"
+          ],
+          "claim_ids": [
+            "dev-v3-it-05-C07"
+          ],
+          "detail": "Restore this distinct source-retained unit to Workshop access requests / SITUATION: At 09:36 DL reported worksheets opening, without confirming agenda revision or resolving other users' difficulties. Preserve: DL's single success is not universal recovery."
+        },
+        {
+          "edit_id": "E08",
+          "categories": [
+            "place_missing_unit"
+          ],
+          "claim_ids": [
+            "dev-v3-it-05-C08"
+          ],
+          "detail": "Restore this distinct source-retained unit to Workshop access requests / ACTION: The author preserved both screenshot references ACCESS-208-IMG1 and ACCESS-208-IMG2. Preserve: IMG1 belongs to RB's earlier image; IMG2 to JT's later repeated-access report."
+        },
+        {
+          "edit_id": "E09",
+          "categories": [
+            "place_missing_unit"
+          ],
+          "claim_ids": [
+            "dev-v3-it-05-C09"
+          ],
+          "detail": "Restore this distinct source-retained unit to Workshop access requests / ACTION: The author corrected the register at 10:02 and sent PK the corrected first-report time at 10:05. Preserve: These are correction/notification times, not JT's original report time."
+        },
+        {
+          "edit_id": "E10",
+          "categories": [
+            "place_missing_unit"
+          ],
+          "claim_ids": [
+            "dev-v3-it-05-C10"
+          ],
+          "detail": "Restore this distinct source-retained unit to Workshop access requests / AGENCIES_CONTACTED: Learning Office (VN) identified the intended preparation folder and revision C, without confirming individual access. Preserve: The materials-owner confirmation is not a successful attendee access test."
+        },
+        {
+          "edit_id": "E11",
+          "categories": [
+            "place_missing_unit"
+          ],
+          "claim_ids": [
+            "dev-v3-it-05-C11"
+          ],
+          "detail": "Restore this distinct source-retained unit to Workshop access requests / SITUATION: The author saw revision C at 10:18 while RB's saved image showed revision A. Preserve: Preserve which person/source supplied each observation."
+        },
+        {
+          "edit_id": "E12",
+          "categories": [
+            "place_missing_unit"
+          ],
+          "claim_ids": [
+            "dev-v3-it-05-C12"
+          ],
+          "detail": "Restore this distinct source-retained unit to Workshop access requests / IMPACT: Worksheets were optional preparation, but access to advance agenda information mattered and actual preparation impact remained unassessed. Preserve: Optional work and a still-scheduled session do not establish no impact."
+        },
+        {
+          "edit_id": "E13",
+          "categories": [
+            "place_missing_unit"
+          ],
+          "claim_ids": [
+            "dev-v3-it-05-C13"
+          ],
+          "detail": "Restore this distinct source-retained unit to Workshop access requests / SITUATION: JT still reported the request-access page at 10:51; RB later succeeded through the original email link at 11:04/11:09. Preserve: RB's later success does not resolve JT's separate problem or establish bookmark removal."
+        },
+        {
+          "edit_id": "E14",
+          "categories": [
+            "place_missing_unit"
+          ],
+          "claim_ids": [
+            "dev-v3-it-05-C14"
+          ],
+          "detail": "Restore this distinct source-retained unit to Workshop access requests / PLAN: ME had not decided to send a general reminder; VN offered only to review wording if ME chose to send one. Preserve: Do not make the reminder completed, assign VN technical ownership, or invent a sending deadline."
+        },
+        {
+          "edit_id": "E15",
+          "categories": [
+            "place_missing_unit"
+          ],
+          "claim_ids": [
+            "dev-v3-it-05-C15"
+          ],
+          "detail": "Restore this distinct source-retained unit to Workshop access requests / PLAN: At 12:06 PK expected an investigation update by 14:00 UTC, not restoration by that time. Preserve: Keep acknowledgement, expected update, and technical restoration distinct."
+        },
+        {
+          "edit_id": "E16",
+          "categories": [
+            "place_missing_unit"
+          ],
+          "claim_ids": [
+            "dev-v3-it-05-C16"
+          ],
+          "detail": "Restore this distinct source-retained unit to Workshop access requests / SITUATION: JT reported seeing a colleague's printed agenda at 12:24, without reporting successful folder access. Preserve: Do not close the access issue or assume the printed agenda's revision."
+        },
+        {
+          "edit_id": "E17",
+          "categories": [
+            "place_missing_unit"
+          ],
+          "claim_ids": [
+            "dev-v3-it-05-C17"
+          ],
+          "detail": "Restore this distinct source-retained unit to Workshop access requests / SITUATION: The handover left the other five attendees' access status unknown, and the request remained open at the 13:04 final check. Preserve: The final status is mixed and open, not all restored, all blocked, or closed."
+        },
+        {
+          "edit_id": "E18",
+          "categories": [
+            "place_missing_unit"
+          ],
+          "claim_ids": [
+            "dev-v3-it-05-C18"
+          ],
+          "detail": "Restore this distinct source-retained unit to Workshop access requests / PLAN: Incoming Desk (FR) agreed to watch for PK's update and add it to ACCESS-208 when received. Preserve: FR accepted documentation follow-up, not repairs or contacting every attendee."
+        },
+        {
+          "edit_id": "E19",
+          "categories": [
+            "place_missing_unit"
+          ],
+          "claim_ids": [
+            "dev-v3-it-05-C19"
+          ],
+          "detail": "Restore this distinct source-retained unit to Workshop access requests / SITUATION: At the final check the expected 14:00 update was not yet overdue. Preserve: No further reply does not erase prior acknowledgements or establish a missed deadline."
+        },
+        {
+          "edit_id": "E20",
+          "categories": [
+            "place_missing_unit"
+          ],
+          "claim_ids": [
+            "dev-v3-it-05-C20"
+          ],
+          "detail": "Restore this distinct source-retained unit to Help-desk printed contact card / SITUATION: At 10:32 the card showed an old extension; ACCESS-208 calls had used the current cover-sheet number. Preserve: Do not infer that the old card caused the access reports."
+        },
+        {
+          "edit_id": "E21",
+          "categories": [
+            "place_missing_unit"
+          ],
+          "claim_ids": [
+            "dev-v3-it-05-C21"
+          ],
+          "detail": "Restore this distinct source-retained unit to Help-desk printed contact card / AGENCIES_CONTACTED: Directory Desk (HU) was asked at 10:40 and confirmed the directory entry at 10:47. Preserve: HU is the directory contact, not the access investigator."
+        },
+        {
+          "edit_id": "E22",
+          "categories": [
+            "place_missing_unit"
+          ],
+          "claim_ids": [
+            "dev-v3-it-05-C22"
+          ],
+          "detail": "Restore this distinct source-retained unit to Help-desk printed contact card / ACTION: The author replaced the card at 10:55; HU checked the replacement at 11:03. Preserve: Preserve replacement versus verification actors and times."
+        },
+        {
+          "edit_id": "E23",
+          "categories": [
+            "place_missing_unit"
+          ],
+          "claim_ids": [
+            "dev-v3-it-05-C23"
+          ],
+          "detail": "Restore this distinct source-retained unit to Help-desk printed contact card / IMPACT: No call was misdirected because of this card during the shift; this does not determine workshop impact. Preserve: Do not broaden the finding to all calls or claim no effect on workshop preparation."
+        },
+        {
+          "edit_id": "E24",
+          "categories": [
+            "place_missing_unit"
+          ],
+          "claim_ids": [
+            "dev-v3-it-05-C24"
+          ],
+          "detail": "Restore this distinct source-retained unit to Help-desk printed contact card / PLAN: The card replacement was complete and no follow-up for it was agreed. Preserve: Do not present a new directory check as existing agreed work."
+        }
+      ],
+      "correctness_errors": [],
+      "additional_omissions": [],
+      "suggestions_review": "Neither failed group exposes a proposed impact, action or plan. The visible request to review retained source is appropriate failure handling; rejected generations are not treated as displayed assertions.",
+      "failure_review": "Both groups are explicitly incomplete and all factual fields are empty. All source quotations for the 24 checklist units are present in retained passages: nineteen workshop units and five card units require distinct reconstruction. Retention does not earn placement credit, and the two group failures do not create additional edits beyond those unit repairs."
+    },
+    "B": {
+      "claim_results": [
+        {
+          "claim_id": "dev-v3-it-05-C01",
+          "status": "failed_group",
+          "rationale": "The first workshop chunk failed; this unit has no accepted factual placement and survives in retained source: At 08:41 on 12 September 2026 UTC, coordinator ME requested preparation-folder access for eight people under ACCESS-208."
+        },
+        {
+          "claim_id": "dev-v3-it-05-C02",
+          "status": "failed_group",
+          "rationale": "The first workshop chunk failed; this unit has no accepted factual placement and survives in retained source: At 08:53 the folder opened for the author's own account, showing an agenda and two worksheets."
+        },
+        {
+          "claim_id": "dev-v3-it-05-C03",
+          "status": "failed_group",
+          "rationale": "The first workshop chunk failed; this unit has no accepted factual placement and survives in retained source: JT first reported a request-access page at 09:03; that corrected time supersedes the erroneous 09:30 register entry."
+        },
+        {
+          "claim_id": "dev-v3-it-05-C04",
+          "status": "failed_group",
+          "rationale": "The first workshop chunk failed; this unit has no accepted factual placement and survives in retained source: RB reported an older workshop agenda at 09:08 and later clarified that a bookmark, not the email link, had been used."
+        },
+        {
+          "claim_id": "dev-v3-it-05-C05",
+          "status": "failed_group",
+          "rationale": "The first workshop chunk failed; this unit has no accepted factual placement and survives in retained source: The author phoned Service Desk (PK) at 09:14; PK acknowledged two user reports but supplied no cause or restoration time."
+        },
+        {
+          "claim_id": "dev-v3-it-05-C06",
+          "status": "failed_group",
+          "rationale": "The first workshop chunk failed; this unit has no accepted factual placement and survives in retained source: The original email link and the two reported difficulties were sent at 09:19, rather than the complete eight-person list."
+        },
+        {
+          "claim_id": "dev-v3-it-05-C07",
+          "status": "failed_group",
+          "rationale": "The first workshop chunk failed; this unit has no accepted factual placement and survives in retained source: At 09:36 DL reported worksheets opening, without confirming agenda revision or resolving other users' difficulties."
+        },
+        {
+          "claim_id": "dev-v3-it-05-C08",
+          "status": "failed_group",
+          "rationale": "The first workshop chunk failed; this unit has no accepted factual placement and survives in retained source: The author preserved both screenshot references ACCESS-208-IMG1 and ACCESS-208-IMG2."
+        },
+        {
+          "claim_id": "dev-v3-it-05-C09",
+          "status": "failed_group",
+          "rationale": "The first workshop chunk failed; this unit has no accepted factual placement and survives in retained source: The author corrected the register at 10:02 and sent PK the corrected first-report time at 10:05."
+        },
+        {
+          "claim_id": "dev-v3-it-05-C10",
+          "status": "failed_group",
+          "rationale": "The first workshop chunk failed; this unit has no accepted factual placement and survives in retained source: Learning Office (VN) identified the intended preparation folder and revision C, without confirming individual access."
+        },
+        {
+          "claim_id": "dev-v3-it-05-C11",
+          "status": "failed_group",
+          "rationale": "The first workshop chunk failed; this unit has no accepted factual placement and survives in retained source: The author saw revision C at 10:18 while RB's saved image showed revision A."
+        },
+        {
+          "claim_id": "dev-v3-it-05-C12",
+          "status": "failed_group",
+          "rationale": "The first workshop chunk failed; this unit has no accepted factual placement and survives in retained source: Worksheets were optional preparation, but access to advance agenda information mattered and actual preparation impact remained unassessed."
+        },
+        {
+          "claim_id": "dev-v3-it-05-C13",
+          "status": "failed_group",
+          "rationale": "The first workshop chunk failed; this unit has no accepted factual placement and survives in retained source: JT still reported the request-access page at 10:51; RB later succeeded through the original email link at 11:04/11:09."
+        },
+        {
+          "claim_id": "dev-v3-it-05-C14",
+          "status": "failed_group",
+          "rationale": "The first workshop chunk failed; this unit has no accepted factual placement and survives in retained source: ME had not decided to send a general reminder; VN offered only to review wording if ME chose to send one."
+        },
+        {
+          "claim_id": "dev-v3-it-05-C15",
+          "status": "failed_group",
+          "rationale": "The first workshop chunk failed; this unit has no accepted factual placement and survives in retained source: At 12:06 PK expected an investigation update by 14:00 UTC, not restoration by that time."
+        },
+        {
+          "claim_id": "dev-v3-it-05-C16",
+          "status": "failed_group",
+          "rationale": "The first workshop chunk failed; this unit has no accepted factual placement and survives in retained source: JT reported seeing a colleague's printed agenda at 12:24, without reporting successful folder access."
+        },
+        {
+          "claim_id": "dev-v3-it-05-C17",
+          "status": "partial",
+          "rationale": "IMPACT preserves JT's unresolved access report and the five unknown attendee statuses, but the 13:04 final-check time and explicit open request are absent from factual SITUATION."
+        },
+        {
+          "claim_id": "dev-v3-it-05-C18",
+          "status": "partial",
+          "rationale": "The agreement by Incoming Desk (FR) to watch for and add the update is in AGENCIES CONTACTED. The factual entry omits PK and the ACCESS-208 destination, and PLAN is empty."
+        },
+        {
+          "claim_id": "dev-v3-it-05-C19",
+          "status": "failed_group",
+          "rationale": "The not-yet-overdue 14:00 expectation and final-check time are retained only as source/suggestion basis. The accepted draft does not place the bounded deadline status in SITUATION."
+        },
+        {
+          "claim_id": "dev-v3-it-05-C20",
+          "status": "placed_supported",
+          "rationale": "The separate card SITUATION preserves 12 September UTC, 10:32 discovery, the outdated card and use of the current cover-sheet number for ACCESS-208 calls."
+        },
+        {
+          "claim_id": "dev-v3-it-05-C21",
+          "status": "placed_supported",
+          "rationale": "AGENCIES CONTACTED retains Directory Desk (HU), the 10:40 request and 10:47 confirmation."
+        },
+        {
+          "claim_id": "dev-v3-it-05-C22",
+          "status": "placed_supported",
+          "rationale": "ACTION separately retains the author's 10:55 replacement and HU's 11:03 verification, with correct actors and times."
+        },
+        {
+          "claim_id": "dev-v3-it-05-C23",
+          "status": "meaning_error",
+          "rationale": "Card IMPACT claims the replacement had no effect on workshop access or preparation. The source explicitly limits the no-call finding to the card and does not establish a workshop-impact conclusion."
+        },
+        {
+          "claim_id": "dev-v3-it-05-C24",
+          "status": "partial",
+          "rationale": "PLAN retains no agreed follow-up, but omits the explicit completed-replacement status required by this bundled unit. The actual replacement is supported in ACTION."
+        }
+      ],
+      "edits": [
+        {
+          "edit_id": "E01",
+          "categories": [
+            "place_missing_unit"
+          ],
+          "claim_ids": [
+            "dev-v3-it-05-C01"
+          ],
+          "detail": "Restore this distinct source-retained unit to Workshop access requests / SITUATION: At 08:41 on 12 September 2026 UTC, coordinator ME requested preparation-folder access for eight people under ACCESS-208. Preserve: Eight requested users are not eight proven failures; this is not session authorization."
+        },
+        {
+          "edit_id": "E02",
+          "categories": [
+            "place_missing_unit"
+          ],
+          "claim_ids": [
+            "dev-v3-it-05-C02"
+          ],
+          "detail": "Restore this distinct source-retained unit to Workshop access requests / SITUATION: At 08:53 the folder opened for the author's own account, showing an agenda and two worksheets. Preserve: Do not generalize to attendee access or claim a permission change."
+        },
+        {
+          "edit_id": "E03",
+          "categories": [
+            "place_missing_unit"
+          ],
+          "claim_ids": [
+            "dev-v3-it-05-C03"
+          ],
+          "detail": "Restore this distinct source-retained unit to Workshop access requests / SITUATION: JT first reported a request-access page at 09:03; that corrected time supersedes the erroneous 09:30 register entry. Preserve: Do not use 09:30 as the actual first failure time or move other timestamps."
+        },
+        {
+          "edit_id": "E04",
+          "categories": [
+            "place_missing_unit"
+          ],
+          "claim_ids": [
+            "dev-v3-it-05-C04"
+          ],
+          "detail": "Restore this distinct source-retained unit to Workshop access requests / SITUATION: RB reported an older workshop agenda at 09:08 and later clarified that a bookmark, not the email link, had been used. Preserve: This is a different reported experience from JT's; it does not prove a single root cause."
+        },
+        {
+          "edit_id": "E05",
+          "categories": [
+            "place_missing_unit"
+          ],
+          "claim_ids": [
+            "dev-v3-it-05-C05"
+          ],
+          "detail": "Restore this distinct source-retained unit to Workshop access requests / AGENCIES_CONTACTED: The author phoned Service Desk (PK) at 09:14; PK acknowledged two user reports but supplied no cause or restoration time. Preserve: Keep PK's role separate from materials-owner and directory contacts."
+        },
+        {
+          "edit_id": "E06",
+          "categories": [
+            "place_missing_unit"
+          ],
+          "claim_ids": [
+            "dev-v3-it-05-C06"
+          ],
+          "detail": "Restore this distinct source-retained unit to Workshop access requests / ACTION: The original email link and the two reported difficulties were sent at 09:19, rather than the complete eight-person list. Preserve: Reported users, not all requested users, were supplied at this stage."
+        },
+        {
+          "edit_id": "E07",
+          "categories": [
+            "place_missing_unit"
+          ],
+          "claim_ids": [
+            "dev-v3-it-05-C07"
+          ],
+          "detail": "Restore this distinct source-retained unit to Workshop access requests / SITUATION: At 09:36 DL reported worksheets opening, without confirming agenda revision or resolving other users' difficulties. Preserve: DL's single success is not universal recovery."
+        },
+        {
+          "edit_id": "E08",
+          "categories": [
+            "place_missing_unit"
+          ],
+          "claim_ids": [
+            "dev-v3-it-05-C08"
+          ],
+          "detail": "Restore this distinct source-retained unit to Workshop access requests / ACTION: The author preserved both screenshot references ACCESS-208-IMG1 and ACCESS-208-IMG2. Preserve: IMG1 belongs to RB's earlier image; IMG2 to JT's later repeated-access report."
+        },
+        {
+          "edit_id": "E09",
+          "categories": [
+            "place_missing_unit"
+          ],
+          "claim_ids": [
+            "dev-v3-it-05-C09"
+          ],
+          "detail": "Restore this distinct source-retained unit to Workshop access requests / ACTION: The author corrected the register at 10:02 and sent PK the corrected first-report time at 10:05. Preserve: These are correction/notification times, not JT's original report time."
+        },
+        {
+          "edit_id": "E10",
+          "categories": [
+            "place_missing_unit"
+          ],
+          "claim_ids": [
+            "dev-v3-it-05-C10"
+          ],
+          "detail": "Restore this distinct source-retained unit to Workshop access requests / AGENCIES_CONTACTED: Learning Office (VN) identified the intended preparation folder and revision C, without confirming individual access. Preserve: The materials-owner confirmation is not a successful attendee access test."
+        },
+        {
+          "edit_id": "E11",
+          "categories": [
+            "place_missing_unit"
+          ],
+          "claim_ids": [
+            "dev-v3-it-05-C11"
+          ],
+          "detail": "Restore this distinct source-retained unit to Workshop access requests / SITUATION: The author saw revision C at 10:18 while RB's saved image showed revision A. Preserve: Preserve which person/source supplied each observation."
+        },
+        {
+          "edit_id": "E12",
+          "categories": [
+            "place_missing_unit"
+          ],
+          "claim_ids": [
+            "dev-v3-it-05-C12"
+          ],
+          "detail": "Restore this distinct source-retained unit to Workshop access requests / IMPACT: Worksheets were optional preparation, but access to advance agenda information mattered and actual preparation impact remained unassessed. Preserve: Optional work and a still-scheduled session do not establish no impact."
+        },
+        {
+          "edit_id": "E13",
+          "categories": [
+            "place_missing_unit"
+          ],
+          "claim_ids": [
+            "dev-v3-it-05-C13"
+          ],
+          "detail": "Restore this distinct source-retained unit to Workshop access requests / SITUATION: JT still reported the request-access page at 10:51; RB later succeeded through the original email link at 11:04/11:09. Preserve: RB's later success does not resolve JT's separate problem or establish bookmark removal."
+        },
+        {
+          "edit_id": "E14",
+          "categories": [
+            "place_missing_unit"
+          ],
+          "claim_ids": [
+            "dev-v3-it-05-C14"
+          ],
+          "detail": "Restore this distinct source-retained unit to Workshop access requests / PLAN: ME had not decided to send a general reminder; VN offered only to review wording if ME chose to send one. Preserve: Do not make the reminder completed, assign VN technical ownership, or invent a sending deadline."
+        },
+        {
+          "edit_id": "E15",
+          "categories": [
+            "place_missing_unit"
+          ],
+          "claim_ids": [
+            "dev-v3-it-05-C15"
+          ],
+          "detail": "Restore this distinct source-retained unit to Workshop access requests / PLAN: At 12:06 PK expected an investigation update by 14:00 UTC, not restoration by that time. Preserve: Keep acknowledgement, expected update, and technical restoration distinct."
+        },
+        {
+          "edit_id": "E16",
+          "categories": [
+            "place_missing_unit"
+          ],
+          "claim_ids": [
+            "dev-v3-it-05-C16"
+          ],
+          "detail": "Restore this distinct source-retained unit to Workshop access requests / SITUATION: JT reported seeing a colleague's printed agenda at 12:24, without reporting successful folder access. Preserve: Do not close the access issue or assume the printed agenda's revision."
+        },
+        {
+          "edit_id": "E17",
+          "categories": [
+            "place_missing_unit",
+            "move_supported_unit"
+          ],
+          "claim_ids": [
+            "dev-v3-it-05-C17"
+          ],
+          "detail": "Complete the final mixed-status unit in workshop SITUATION: retain the five unknown attendees, state that ACCESS-208 remained open at 13:04, and preserve JT's separate unresolved report. Move supported status wording out of IMPACT. Qualify the ACTION wording 'no reply from PK' as no further reply at that last check, so prior acknowledgements are not erased; it is ambiguous in context, not a proven fabricated absence of all earlier replies."
+        },
+        {
+          "edit_id": "E18",
+          "categories": [
+            "place_missing_unit",
+            "move_supported_unit"
+          ],
+          "claim_ids": [
+            "dev-v3-it-05-C18"
+          ],
+          "detail": "Complete the FR documentation-follow-up unit with PK's investigation update and ACCESS-208, and place the agreement in PLAN. Preserve the limits on FR's responsibility; no permission change or all-attendee contact was agreed."
+        },
+        {
+          "edit_id": "E19",
+          "categories": [
+            "place_missing_unit"
+          ],
+          "claim_ids": [
+            "dev-v3-it-05-C19"
+          ],
+          "detail": "Restore this distinct source-retained unit to Workshop access requests / SITUATION: At the final check the expected 14:00 update was not yet overdue. Preserve: No further reply does not erase prior acknowledgements or establish a missed deadline."
+        },
+        {
+          "edit_id": "E20",
+          "categories": [
+            "correct_meaning"
+          ],
+          "claim_ids": [
+            "dev-v3-it-05-C23"
+          ],
+          "detail": "Replace the unsupported workshop no-effect conclusion with the source's limited finding: no call was misdirected because of this card during the shift, and that finding does not determine workshop access/preparation impact. Restore the card-caused qualifier to the opening no-misdirection sentence as part of this same bounded-impact repair."
+        },
+        {
+          "edit_id": "E21",
+          "categories": [
+            "place_missing_unit"
+          ],
+          "claim_ids": [
+            "dev-v3-it-05-C24"
+          ],
+          "detail": "Complete the card PLAN unit by recording that the replacement was complete and no follow-up for it was agreed; do not turn the separate proposed documentation detail into existing agreed work."
+        },
+        {
+          "edit_id": "E22",
+          "categories": [
+            "remove_unnecessary_advice"
+          ],
+          "claim_ids": [
+            "dev-v3-it-05-C18"
+          ],
+          "detail": "Revise or remove the workshop proposal to identify who will confirm the update: FR already accepted watching for and adding PK's update. Preserve that named commitment; a genuinely unagreed review time may still be asked about separately. Count the proposal and matching question as one cleanup."
+        },
+        {
+          "edit_id": "E23",
+          "categories": [
+            "remove_unnecessary_advice"
+          ],
+          "claim_ids": [
+            "dev-v3-it-05-C21"
+          ],
+          "detail": "Remove the card-event question asking for each contacted agency's initials; Directory Desk (HU) is already identified in the source and contact entries."
+        }
+      ],
+      "correctness_errors": [
+        {
+          "error_id": "R01",
+          "type": "impact_certainty",
+          "critical": true,
+          "claim_ids": [
+            "dev-v3-it-05-C23"
+          ],
+          "output_quote": "The card replacement had no effect on workshop participants' access or preparation.",
+          "detail": "The source distinguishes the card's limited no-call-impact outcome from workshop impact. This accepted factual sentence turns that limitation into a categorical workshop no-effect finding. Restore the card-specific scope. The preceding no-misdirection sentence also needs its source qualifier, but is not counted as a second critical assertion because the card-event context leaves its scope open to interpretation."
+        }
+      ],
+      "additional_omissions": [],
+      "suggestions_review": "Recording a later investigation update and the current extension are reasonable labeled documentation proposals; they do not claim an update has already arrived or add agreed card work. The proposed update-owner identification repeats an already supplied FR responsibility and needs one revision. The card initials question is redundant. Generic workshop chronology/status questions are addressed by restoring the failed units rather than counted again. The proposed actual update-time question is read prospectively with its suggestion, not as proof that an update occurred.",
+      "failure_review": "The workshop event is incomplete: its first chunk failed, but several accepted later status/hand-over entries survive and were assessed rather than discarded. None of the nineteen workshop checklist units is fully placed; sixteen are absent from accepted facts, the final mixed status and FR follow-up are partial, and the non-overdue finding remains source-only. The card event is available and has three fully placed units plus one meaning repair and one partial PLAN unit."
+    },
+    "C": {
+      "claim_results": [
+        {
+          "claim_id": "dev-v3-it-05-C01",
+          "status": "failed_group",
+          "rationale": "The first workshop chunk failed; this unit has no accepted factual placement and survives in retained source: At 08:41 on 12 September 2026 UTC, coordinator ME requested preparation-folder access for eight people under ACCESS-208."
+        },
+        {
+          "claim_id": "dev-v3-it-05-C02",
+          "status": "failed_group",
+          "rationale": "The first workshop chunk failed; this unit has no accepted factual placement and survives in retained source: At 08:53 the folder opened for the author's own account, showing an agenda and two worksheets."
+        },
+        {
+          "claim_id": "dev-v3-it-05-C03",
+          "status": "failed_group",
+          "rationale": "The first workshop chunk failed; this unit has no accepted factual placement and survives in retained source: JT first reported a request-access page at 09:03; that corrected time supersedes the erroneous 09:30 register entry."
+        },
+        {
+          "claim_id": "dev-v3-it-05-C04",
+          "status": "failed_group",
+          "rationale": "The first workshop chunk failed; this unit has no accepted factual placement and survives in retained source: RB reported an older workshop agenda at 09:08 and later clarified that a bookmark, not the email link, had been used."
+        },
+        {
+          "claim_id": "dev-v3-it-05-C05",
+          "status": "failed_group",
+          "rationale": "The first workshop chunk failed; this unit has no accepted factual placement and survives in retained source: The author phoned Service Desk (PK) at 09:14; PK acknowledged two user reports but supplied no cause or restoration time."
+        },
+        {
+          "claim_id": "dev-v3-it-05-C06",
+          "status": "failed_group",
+          "rationale": "The first workshop chunk failed; this unit has no accepted factual placement and survives in retained source: The original email link and the two reported difficulties were sent at 09:19, rather than the complete eight-person list."
+        },
+        {
+          "claim_id": "dev-v3-it-05-C07",
+          "status": "failed_group",
+          "rationale": "The first workshop chunk failed; this unit has no accepted factual placement and survives in retained source: At 09:36 DL reported worksheets opening, without confirming agenda revision or resolving other users' difficulties."
+        },
+        {
+          "claim_id": "dev-v3-it-05-C08",
+          "status": "failed_group",
+          "rationale": "The first workshop chunk failed; this unit has no accepted factual placement and survives in retained source: The author preserved both screenshot references ACCESS-208-IMG1 and ACCESS-208-IMG2."
+        },
+        {
+          "claim_id": "dev-v3-it-05-C09",
+          "status": "failed_group",
+          "rationale": "The first workshop chunk failed; this unit has no accepted factual placement and survives in retained source: The author corrected the register at 10:02 and sent PK the corrected first-report time at 10:05."
+        },
+        {
+          "claim_id": "dev-v3-it-05-C10",
+          "status": "failed_group",
+          "rationale": "The first workshop chunk failed; this unit has no accepted factual placement and survives in retained source: Learning Office (VN) identified the intended preparation folder and revision C, without confirming individual access."
+        },
+        {
+          "claim_id": "dev-v3-it-05-C11",
+          "status": "failed_group",
+          "rationale": "The first workshop chunk failed; this unit has no accepted factual placement and survives in retained source: The author saw revision C at 10:18 while RB's saved image showed revision A."
+        },
+        {
+          "claim_id": "dev-v3-it-05-C12",
+          "status": "failed_group",
+          "rationale": "The first workshop chunk failed; this unit has no accepted factual placement and survives in retained source: Worksheets were optional preparation, but access to advance agenda information mattered and actual preparation impact remained unassessed."
+        },
+        {
+          "claim_id": "dev-v3-it-05-C13",
+          "status": "failed_group",
+          "rationale": "The first workshop chunk failed; this unit has no accepted factual placement and survives in retained source: JT still reported the request-access page at 10:51; RB later succeeded through the original email link at 11:04/11:09."
+        },
+        {
+          "claim_id": "dev-v3-it-05-C14",
+          "status": "failed_group",
+          "rationale": "The first workshop chunk failed; this unit has no accepted factual placement and survives in retained source: ME had not decided to send a general reminder; VN offered only to review wording if ME chose to send one."
+        },
+        {
+          "claim_id": "dev-v3-it-05-C15",
+          "status": "partial",
+          "rationale": "IMPACT contains an expected 14:00 update, but the 12:06 PK statement and complete expected-investigation-update unit are not in PLAN. A suggestion additionally calls the update promised, strengthening the source's expectation."
+        },
+        {
+          "claim_id": "dev-v3-it-05-C16",
+          "status": "failed_group",
+          "rationale": "JT's 12:24 report of being shown a printed agenda survives only in retained source; no accepted SITUATION entry places that limited alternative information route."
+        },
+        {
+          "claim_id": "dev-v3-it-05-C17",
+          "status": "partial",
+          "rationale": "The open request appears in IMPACT and the five unknown attendee statuses in ACTION. Neither is placed in SITUATION with the 13:04 final-check time; the final mixed-status unit is incomplete and misplaced."
+        },
+        {
+          "claim_id": "dev-v3-it-05-C18",
+          "status": "present_wrong_field_or_event",
+          "rationale": "The complete FR/PK/ACCESS-208 documentation agreement is in SITUATION. PLAN instead says 'The note agrees', a defective echo rather than a clear identification of the responsible desk there."
+        },
+        {
+          "claim_id": "dev-v3-it-05-C19",
+          "status": "present_wrong_field_or_event",
+          "rationale": "IMPACT explicitly preserves that the missing update was not overdue because 14:00 was still expected. This bounded deadline fact belongs in SITUATION beside the restored final-check context."
+        },
+        {
+          "claim_id": "dev-v3-it-05-C20",
+          "status": "placed_supported",
+          "rationale": "Card SITUATION faithfully retains the dated 10:32 discovery, old extension, cover-sheet current number and correct number used for ACCESS-208 calls."
+        },
+        {
+          "claim_id": "dev-v3-it-05-C21",
+          "status": "partial",
+          "rationale": "HU's 10:47 confirmation appears in ACTION, while the 10:40 request and full Directory Desk identity remain only in retained source. AGENCIES CONTACTED is empty."
+        },
+        {
+          "claim_id": "dev-v3-it-05-C22",
+          "status": "placed_supported",
+          "rationale": "ACTION correctly states the author's 10:55 replacement, disposal of the old card and HU's distinct 11:03 check."
+        },
+        {
+          "claim_id": "dev-v3-it-05-C23",
+          "status": "placed_supported",
+          "rationale": "IMPACT retains the card-specific no-misdirected-call finding and explicitly limits it to the card rather than workshop access or preparation."
+        },
+        {
+          "claim_id": "dev-v3-it-05-C24",
+          "status": "placed_supported",
+          "rationale": "PLAN explicitly records the completed replacement and absence of an agreed follow-up."
+        }
+      ],
+      "edits": [
+        {
+          "edit_id": "E01",
+          "categories": [
+            "place_missing_unit"
+          ],
+          "claim_ids": [
+            "dev-v3-it-05-C01"
+          ],
+          "detail": "Restore this distinct source-retained unit to Workshop access requests / SITUATION: At 08:41 on 12 September 2026 UTC, coordinator ME requested preparation-folder access for eight people under ACCESS-208. Preserve: Eight requested users are not eight proven failures; this is not session authorization."
+        },
+        {
+          "edit_id": "E02",
+          "categories": [
+            "place_missing_unit"
+          ],
+          "claim_ids": [
+            "dev-v3-it-05-C02"
+          ],
+          "detail": "Restore this distinct source-retained unit to Workshop access requests / SITUATION: At 08:53 the folder opened for the author's own account, showing an agenda and two worksheets. Preserve: Do not generalize to attendee access or claim a permission change."
+        },
+        {
+          "edit_id": "E03",
+          "categories": [
+            "place_missing_unit"
+          ],
+          "claim_ids": [
+            "dev-v3-it-05-C03"
+          ],
+          "detail": "Restore this distinct source-retained unit to Workshop access requests / SITUATION: JT first reported a request-access page at 09:03; that corrected time supersedes the erroneous 09:30 register entry. Preserve: Do not use 09:30 as the actual first failure time or move other timestamps."
+        },
+        {
+          "edit_id": "E04",
+          "categories": [
+            "place_missing_unit"
+          ],
+          "claim_ids": [
+            "dev-v3-it-05-C04"
+          ],
+          "detail": "Restore this distinct source-retained unit to Workshop access requests / SITUATION: RB reported an older workshop agenda at 09:08 and later clarified that a bookmark, not the email link, had been used. Preserve: This is a different reported experience from JT's; it does not prove a single root cause."
+        },
+        {
+          "edit_id": "E05",
+          "categories": [
+            "place_missing_unit"
+          ],
+          "claim_ids": [
+            "dev-v3-it-05-C05"
+          ],
+          "detail": "Restore this distinct source-retained unit to Workshop access requests / AGENCIES_CONTACTED: The author phoned Service Desk (PK) at 09:14; PK acknowledged two user reports but supplied no cause or restoration time. Preserve: Keep PK's role separate from materials-owner and directory contacts."
+        },
+        {
+          "edit_id": "E06",
+          "categories": [
+            "place_missing_unit"
+          ],
+          "claim_ids": [
+            "dev-v3-it-05-C06"
+          ],
+          "detail": "Restore this distinct source-retained unit to Workshop access requests / ACTION: The original email link and the two reported difficulties were sent at 09:19, rather than the complete eight-person list. Preserve: Reported users, not all requested users, were supplied at this stage."
+        },
+        {
+          "edit_id": "E07",
+          "categories": [
+            "place_missing_unit"
+          ],
+          "claim_ids": [
+            "dev-v3-it-05-C07"
+          ],
+          "detail": "Restore this distinct source-retained unit to Workshop access requests / SITUATION: At 09:36 DL reported worksheets opening, without confirming agenda revision or resolving other users' difficulties. Preserve: DL's single success is not universal recovery."
+        },
+        {
+          "edit_id": "E08",
+          "categories": [
+            "place_missing_unit"
+          ],
+          "claim_ids": [
+            "dev-v3-it-05-C08"
+          ],
+          "detail": "Restore this distinct source-retained unit to Workshop access requests / ACTION: The author preserved both screenshot references ACCESS-208-IMG1 and ACCESS-208-IMG2. Preserve: IMG1 belongs to RB's earlier image; IMG2 to JT's later repeated-access report."
+        },
+        {
+          "edit_id": "E09",
+          "categories": [
+            "place_missing_unit"
+          ],
+          "claim_ids": [
+            "dev-v3-it-05-C09"
+          ],
+          "detail": "Restore this distinct source-retained unit to Workshop access requests / ACTION: The author corrected the register at 10:02 and sent PK the corrected first-report time at 10:05. Preserve: These are correction/notification times, not JT's original report time."
+        },
+        {
+          "edit_id": "E10",
+          "categories": [
+            "place_missing_unit"
+          ],
+          "claim_ids": [
+            "dev-v3-it-05-C10"
+          ],
+          "detail": "Restore this distinct source-retained unit to Workshop access requests / AGENCIES_CONTACTED: Learning Office (VN) identified the intended preparation folder and revision C, without confirming individual access. Preserve: The materials-owner confirmation is not a successful attendee access test."
+        },
+        {
+          "edit_id": "E11",
+          "categories": [
+            "place_missing_unit"
+          ],
+          "claim_ids": [
+            "dev-v3-it-05-C11"
+          ],
+          "detail": "Restore this distinct source-retained unit to Workshop access requests / SITUATION: The author saw revision C at 10:18 while RB's saved image showed revision A. Preserve: Preserve which person/source supplied each observation."
+        },
+        {
+          "edit_id": "E12",
+          "categories": [
+            "place_missing_unit"
+          ],
+          "claim_ids": [
+            "dev-v3-it-05-C12"
+          ],
+          "detail": "Restore this distinct source-retained unit to Workshop access requests / IMPACT: Worksheets were optional preparation, but access to advance agenda information mattered and actual preparation impact remained unassessed. Preserve: Optional work and a still-scheduled session do not establish no impact."
+        },
+        {
+          "edit_id": "E13",
+          "categories": [
+            "place_missing_unit"
+          ],
+          "claim_ids": [
+            "dev-v3-it-05-C13"
+          ],
+          "detail": "Restore this distinct source-retained unit to Workshop access requests / SITUATION: JT still reported the request-access page at 10:51; RB later succeeded through the original email link at 11:04/11:09. Preserve: RB's later success does not resolve JT's separate problem or establish bookmark removal."
+        },
+        {
+          "edit_id": "E14",
+          "categories": [
+            "place_missing_unit"
+          ],
+          "claim_ids": [
+            "dev-v3-it-05-C14"
+          ],
+          "detail": "Restore this distinct source-retained unit to Workshop access requests / PLAN: ME had not decided to send a general reminder; VN offered only to review wording if ME chose to send one. Preserve: Do not make the reminder completed, assign VN technical ownership, or invent a sending deadline."
+        },
+        {
+          "edit_id": "E15",
+          "categories": [
+            "place_missing_unit",
+            "correct_meaning",
+            "move_supported_unit"
+          ],
+          "claim_ids": [
+            "dev-v3-it-05-C15"
+          ],
+          "detail": "Complete PLAN with PK's 12:06 expectation of an investigation update by 14:00 UTC, without making it a restoration deadline. Normalize the matching suggestion/question premise from 'promised' to expected update. Treat restoration and consistent correction of this same update commitment as one repair."
+        },
+        {
+          "edit_id": "E16",
+          "categories": [
+            "place_missing_unit"
+          ],
+          "claim_ids": [
+            "dev-v3-it-05-C16"
+          ],
+          "detail": "Restore this distinct source-retained unit to Workshop access requests / SITUATION: JT reported seeing a colleague's printed agenda at 12:24, without reporting successful folder access. Preserve: Do not close the access issue or assume the printed agenda's revision."
+        },
+        {
+          "edit_id": "E17",
+          "categories": [
+            "place_missing_unit",
+            "move_supported_unit"
+          ],
+          "claim_ids": [
+            "dev-v3-it-05-C17"
+          ],
+          "detail": "Consolidate the supported open-request and unknown-five statements into SITUATION with the source's 13:04 final check. Preserve mixed individual outcomes and JT's unresolved access rather than implying universal restoration or failure."
+        },
+        {
+          "edit_id": "E18",
+          "categories": [
+            "move_supported_unit",
+            "correct_meaning"
+          ],
+          "claim_ids": [
+            "dev-v3-it-05-C18"
+          ],
+          "detail": "Place the supported FR agreement from SITUATION in PLAN, replacing 'The note agrees' with Incoming Desk (FR) as the actor. Preserve PK's investigation update, ACCESS-208 and the limited documentation responsibility. Count the relocation and actor clarification once; the nearby correct FR attribution prevents treating the shorthand as a proven new actor invention."
+        },
+        {
+          "edit_id": "E19",
+          "categories": [
+            "move_supported_unit"
+          ],
+          "claim_ids": [
+            "dev-v3-it-05-C19"
+          ],
+          "detail": "Move the existing not-yet-overdue 14:00 statement from IMPACT to SITUATION beside the final-check context restored for C17, preserving the distinction between no further reply and an overdue update."
+        },
+        {
+          "edit_id": "E20",
+          "categories": [
+            "place_missing_unit",
+            "move_supported_unit"
+          ],
+          "claim_ids": [
+            "dev-v3-it-05-C21"
+          ],
+          "detail": "Complete AGENCIES CONTACTED with the 10:40 Directory Desk (HU) request and 10:47 confirmation, using the retained request and relocating the supported confirmation. This also resolves the question asking for contacts already supplied."
+        }
+      ],
+      "correctness_errors": [
+        {
+          "error_id": "R01",
+          "type": "unsupported_fact",
+          "critical": true,
+          "claim_ids": [
+            "dev-v3-it-05-C15"
+          ],
+          "output_quote": "Consider recording the outcome of the promised investigation update when it is available.",
+          "detail": "The source records PK's expected investigation update, not an established promise. 'When it is available' properly leaves receipt in the future, but 'promised' still strengthens the update commitment without support. This is not a fabricated completion or a restoration promise. The same premise in the matching question is one error, addressed with the C15 update-commitment repair."
+        }
+      ],
+      "additional_omissions": [],
+      "suggestions_review": "The proposed recording of an update outcome is reasonable, but its 'promised' premise must be reduced to the source's expectation; its matching question is not a second error or repair. The 'note agrees' PLAN wording is clarified during FR placement, rather than counted as a new fabricated actor despite the correct attribution in SITUATION. Date/time-zone and contact questions ask for supplied but withheld information; the linked restorations address those gaps. The card displays no added proposal or invented follow-up.",
+      "failure_review": "The workshop group is incomplete, but later accepted facts remain: the open request, non-overdue update, five unknown statuses and FR agreement survive in different fields. They receive partial/wrong-field assessments rather than blanket failure labels. Nineteen workshop unit repairs and one card contact-unit repair are required. The separate card event retains four complete checklist units."
+    }
+  },
+  "case_assessment": "A retains both failed groups only as source and needs 24 unit reconstructions. B and C retain accepted later workshop facts despite an incomplete workshop event; neither has a fully placed workshop checklist unit. Their separate card drafts place three and four units respectively. B adds an unsupported workshop no-effect conclusion; C calls an expected update promised. The review preserves partial accepted facts, links repairs to distinct units and separates the two redundant B advice repairs from factual reconstruction. These masked AI-assisted counts are not a model choice, measured review time or a semantic accuracy estimate."
+}

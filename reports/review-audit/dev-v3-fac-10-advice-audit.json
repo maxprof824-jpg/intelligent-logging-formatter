@@ -1,0 +1,19 @@
+{
+  "case_id": "dev-v3-fac-10",
+  "reason": "Apply the clarified rule that restoring one missing source unit and cleaning up its redundant question are a single repair operation.",
+  "original_file": "dev-v3-fac-10-original.json",
+  "original_sha256": "0e8f22dba664bf2dfb167c27cc09837a7fb17a481a211243c0e8b48323ab4c45",
+  "canonical_review_sha256": "0313cb08d47d2431980483f293912167f77149c2909e6f996b78e7b9575d4145",
+  "changes": [
+    {"variant": "A", "removed_edit_id": "E05", "merged_into_edit_id": "E02", "repair_operations_before": 5, "repair_operations_after": 4},
+    {"variant": "B", "removed_edit_id": "E06", "merged_into_edit_id": "E04", "repair_operations_before": 6, "repair_operations_after": 5}
+  ],
+  "unchanged": "All claim placements, correctness-error records and severity labels; variant C remains unchanged.",
+  "finding_for_root_check": {
+    "variant": "B",
+    "error_id": "R01",
+    "source_quote": "At 16:18 UTC Reception (OL) said they would ask the induction organizer for the room number.",
+    "output_quote": "Reception (OL) was contacted at 16:18 UTC to request clarification on the room number.",
+    "distinction": "Source records a received statement about Reception's intended organizer inquiry. The output adds a completed request directed to Reception. Communication with Reception itself is supportable; the invented purpose/direction is the identified problem."
+  }
+}

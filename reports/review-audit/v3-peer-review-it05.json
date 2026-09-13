@@ -1,0 +1,37 @@
+{
+  "case_id": "dev-v3-it-05",
+  "created_utc": "2026-09-13T04:08:43.219677+00:00",
+  "scope": "Focused AI-assisted second review of two correctness findings; original review visible. Not an independent first pass or full recount.",
+  "reviewer": "Root agent; model labels withheld, but labeled execution progress and some prior released findings were visible.",
+  "packet_sha256": "3fbbc9e3f533ae31353fdde8936bf5404bccf8b156c2b863794dd511554ce943",
+  "review_sha256_at_check": "1be1fc4cfe6a8917878fc86c48325eef785f55d026f28e4a60800015bdd99dbc",
+  "assessments": [
+    {
+      "variant": "B",
+      "error_id": "R01",
+      "verdict": "agree",
+      "critical": true,
+      "source_quotes": [
+        "No call was misdirected because of this card during my shift.",
+        "This limited no-call-impact outcome concerns the paper card, not the workshop participants' access or preparation. The contact card did not establish the cause of their reports."
+      ],
+      "rationale": "The accepted output adds a categorical no-effect finding about access/preparation. The source explicitly limits the finding to card-related misdirected calls and does not assess workshop impact. The fact that current numbers were used does not by itself establish every preparation outcome. The impact-certainty error is supported; no separate misdirected-call error is added.",
+      "output_quote": "The card replacement had no effect on workshop participants' access or preparation."
+    },
+    {
+      "variant": "C",
+      "error_id": "R01",
+      "verdict": "agree",
+      "critical": true,
+      "source_quotes": [
+        "At 12:06 PK confirmed the later image had been received. PK said the desk expected to send an investigation update by 14:00 UTC. This is an expected update time, not a promised time for restored access."
+      ],
+      "rationale": "The source describes an expectation, not an established commitment to provide an update. Calling the update promised strengthens that commitment. The suggestion correctly keeps the update in the future, so this is not false completion or a restoration promise. Under the frozen invented-fact rule, an unsupported commitment premise still matters inside a labeled suggestion. Repeated wording in its confirmation question does not add another error or repair.",
+      "output_quote": "Consider recording the outcome of the promised investigation update when it is available."
+    }
+  ],
+  "judgments_changed": false,
+  "counts_or_protocol_changed": false,
+  "private_identity_key_read": false,
+  "verification": "All quoted source passages and authoritative surfaced output quotes matched exactly."
+}

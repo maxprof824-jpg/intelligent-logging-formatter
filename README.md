@@ -31,10 +31,12 @@ For several incidents, add an `EVENT: short name` heading above each one's notes
 I designed the logging workflow and used AI-assisted development to build, train, and test the application.
 
 - **Model:** Qwen3 4B, adapted with QLoRA—a memory-efficient way to teach an existing model a particular response style by training a small set of additional weights.
-- **Training:** 480 synthetic examples and 48 validation examples. One training pass took about 12 minutes on my RTX 5060 Ti with 16 GB VRAM and 32 GB RAM.
+- **Current model:** Trained on 480 synthetic examples, with 48 validation examples. One training pass took about 12 minutes on my RTX 5060 Ti with 16 GB VRAM and 32 GB RAM.
 - **Software:** Python, PyTorch, Hugging Face Transformers, PEFT, and bitsandbytes, with Gradio providing the interface.
 
-The application also checks structure and quoted evidence. The review table shows facts and suggestions beside their source lines, including multiple matches when wording repeats. Its behavior comes from both fine-tuning and these checks. Runtime 2.5 keeps the same trained model; broader synthetic evaluation and a new training curriculum prepare the next improvement. That new curriculum has not been trained yet.
+The application also checks structure and quoted evidence. Its review table puts draft entries beside their source lines. Its behavior comes from both fine-tuning and these checks.
+
+I also trained a [v3 candidate](MODEL-CARD-V3-CANDIDATE.md) on 720 synthetic examples, with 144 validation examples. It preserved more checked details and needed fewer corrections overall, but introduced new errors about causes and promised follow-ups. I kept the existing model as the default and published the [comparison](reports/V3-COMPARISON.md) and [experimental download](https://github.com/maxprof824-jpg/intelligent-logging-formatter/releases/tag/v3.0.0-experimental).
 
 ## Try it
 

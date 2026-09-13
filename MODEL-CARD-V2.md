@@ -39,7 +39,7 @@ The memory figures are separate PyTorch allocator measurements, not quantities t
 
 The [dataset card](data-v2/DATASET_CARD.md) describes scenario families, split construction, token counts, and limitations of the small, programmatically expanded dataset. Its generator does not read the acceptance cases.
 
-The [new synthetic curriculum](data-v3/DATASET_CARD.md) contains 720 training rows and 144 validation rows for a future candidate, including main-response and suggestions-only tasks. It has not been used to update the released adapter. The curriculum's template reuse and validation limits are documented separately. A training preflight exercises feasibility without optimizer updates or saved candidate weights; consult the current validation record for its result. It is not a completed fine-tuning run.
+The [v3 candidate](MODEL-CARD-V3-CANDIDATE.md) was trained separately on 720 synthetic rows, with 144 validation rows, including main-response and suggestions-only tasks. This v2 adapter's weights remain unchanged. The [curriculum card](data-v3/DATASET_CARD.md) documents template reuse and validation limits; the candidate's own records distinguish the completed training run from the earlier zero-update feasibility preflight.
 
 ## Files and reproduction
 
@@ -49,7 +49,7 @@ Project root: `intelligent-logging-formatter`.
 |---|---|
 | V2 weights and saved training configuration | `runs/adapter-v2/`; adapter weights: `adapter_model.safetensors` |
 | V2 data | `data-v2/train.jsonl`, `data-v2/validation.jsonl` |
-| Preparatory curriculum / broader evaluation | `data-v3/` / `evaluation-v3/` |
+| Candidate curriculum / broader evaluation | `data-v3/` / `evaluation-v3/` |
 | Local Python and dependency record | `.venv/Scripts/python.exe`, `requirements-lock.txt` |
 | Open / stop demo | `RUN-DEMO.cmd` / `STOP-DEMO.cmd` |
 | Reproduce v2 training | `TRAIN-V2.cmd` |

@@ -1,0 +1,200 @@
+{
+  "case_id": "dev-v3-maint-02",
+  "review_type": "Masked second-review consistency check of C-R01 and eight-unit repair accounting",
+  "reviewer_disclosure": "AI-assisted adjudication with the original review visible, not an independent first-pass review. A/B/C identities were not available or inferred.",
+  "checklist_sha256": "08546bda79a20f037aae552455f6c38758e54617d533c1865b9d5328f4705533",
+  "scope": "Checked the source, eight source-checklist units, accepted factual sections and retained review excerpts in the anonymized packet. No raw generations, identity map, full comparison report or GPU was used. Original review and fixed criteria remain unchanged.",
+  "correctness_error_assessment": {
+    "variant": "C",
+    "original_error_id": "R01",
+    "claim_id": "dev-v3-maint-02-C06",
+    "claim_verdict": "agree_with_rationale_clarification",
+    "severity_verdict": "agree",
+    "critical": true,
+    "error_type": "unsupported_fact",
+    "source_quotes": [
+      "I moved the loose papers into a temporary sleeve.",
+      "The cupboard inventory also shows a spare handle received last week.",
+      "Nobody has confirmed whether the checklist, envelope, and handle entry relate to the same job."
+    ],
+    "output_evidence": [
+      {
+        "json_pointer": "/variants/C/result/event_results/0/result/sections/situation/2/text",
+        "quote": "The loose papers, including the checklist, envelope, and handle entry, were moved into a temporary sleeve."
+      }
+    ],
+    "rationale": "The source confirms moving loose papers, but does not identify every moved item. In particular, an entry in the cupboard inventory is not identified as a loose document that was moved. The output adds an explicit checklist/envelope/handle-entry inventory as accepted fact, so the unsupported-fact classification and critical flag are justified under the existing invented-facts rule. This is unsupported specificity, not proof that those items were never moved. The unresolved common-job relationship is a separate fact: physically collecting papers would not itself confirm that they belong to one job.",
+    "proposed_correction": "Retain R01 and its critical flag. Narrow its rationale to the unsupported identification of the moved items; do not treat physical collection as inherently reversing the unknown job relationship. Preserve one C06 repair that removes the unprovided inventory and places the author's generic paper-handling action in ACTION."
+  },
+  "repair_accounting": {
+    "verdict": "agree",
+    "checklist_units": 8,
+    "fully_placed_units": [
+      "dev-v3-maint-02-C01",
+      "dev-v3-maint-02-C04"
+    ],
+    "fully_placed_count": 2,
+    "repair_count": 6,
+    "unit_checks": [
+      {
+        "claim_id": "dev-v3-maint-02-C01",
+        "agreed_status": "placed_supported",
+        "repair_count": 0,
+        "source_quotes": [
+          "09:05 UTC found an unsigned checklist in the work-order folder, ref WO-66."
+        ],
+        "output_evidence": [
+          {
+            "json_pointer": "/variants/C/result/event_results/0/result/sections/situation/0/text",
+            "quote": "An unsigned checklist was found in the work-order folder referenced as WO-66 at 09:05 UTC."
+          }
+        ],
+        "rationale": "The checklist discovery, reference and supplied time are present in the intended SITUATION field."
+      },
+      {
+        "claim_id": "dev-v3-maint-02-C02",
+        "agreed_status": "evidence_or_unassigned_only",
+        "original_edit_id": "E01",
+        "repair_count": 1,
+        "source_quotes": [
+          "At 09:09 Priya at Reception said the visiting team had left an envelope there yesterday; she did not know what it contained."
+        ],
+        "output_evidence": [
+          {
+            "json_pointer": "/variants/C/result/event_results/0/result/review_excerpts/0/text",
+            "quote": "At 09:09 Priya at Reception said the visiting team had left an envelope there yesterday; she did not know what it contained."
+          }
+        ],
+        "rationale": "The complete timed report is retained as an excerpt, but the only factual contact entry concerns Records Desk. Restoring Priya's report and uncertainty to AGENCIES CONTACTED is one unit repair. Repeated excerpts do not create extra repairs."
+      },
+      {
+        "claim_id": "dev-v3-maint-02-C03",
+        "agreed_status": "evidence_or_unassigned_only",
+        "original_edit_id": "E02",
+        "repair_count": 1,
+        "source_quotes": [
+          "The cupboard inventory also shows a spare handle received last week. There is no delivery slip beside that inventory entry."
+        ],
+        "output_evidence": [
+          {
+            "json_pointer": "/variants/C/result/event_results/0/result/review_excerpts/2/text",
+            "quote": "The cupboard inventory also shows a spare handle received last week."
+          },
+          {
+            "json_pointer": "/variants/C/result/event_results/0/result/review_excerpts/3/text",
+            "quote": "There is no delivery slip beside that inventory entry."
+          }
+        ],
+        "rationale": "The receipt timing and missing slip are retained outside the factual draft. The phrase 'handle entry' in the altered movement claim does not preserve this substantive unit. Restoring the two bundled inventory details to SITUATION counts once."
+      },
+      {
+        "claim_id": "dev-v3-maint-02-C04",
+        "agreed_status": "placed_supported",
+        "repair_count": 0,
+        "source_quotes": [
+          "A note in the folder says \"awaiting signature\" but does not identify the form."
+        ],
+        "output_evidence": [
+          {
+            "json_pointer": "/variants/C/result/event_results/0/result/sections/situation/1/text",
+            "quote": "A note in the folder states \"awaiting signature\" without identifying the form."
+          }
+        ],
+        "rationale": "The unidentified-form limitation is explicitly preserved in SITUATION."
+      },
+      {
+        "claim_id": "dev-v3-maint-02-C05",
+        "agreed_status": "evidence_or_unassigned_only",
+        "original_edit_id": "E03",
+        "repair_count": 1,
+        "source_quotes": [
+          "Nobody has confirmed whether the checklist, envelope, and handle entry relate to the same job."
+        ],
+        "output_evidence": [
+          {
+            "json_pointer": "/variants/C/result/event_results/0/result/review_excerpts/5/text",
+            "quote": "Nobody has confirmed whether the checklist, envelope, and handle entry relate to the same job."
+          }
+        ],
+        "rationale": "The explicit uncertainty is retained only as source. Merely removing the unsupported inventory from C06 would not restore this separate statement to SITUATION. This is therefore a distinct unit repair, not a duplicate charge for the same wording."
+      },
+      {
+        "claim_id": "dev-v3-maint-02-C06",
+        "agreed_status": "meaning_error",
+        "original_edit_id": "E04",
+        "repair_count": 1,
+        "source_quotes": [
+          "I moved the loose papers into a temporary sleeve."
+        ],
+        "output_evidence": [
+          {
+            "json_pointer": "/variants/C/result/event_results/0/result/sections/situation/2/text",
+            "quote": "The loose papers, including the checklist, envelope, and handle entry, were moved into a temporary sleeve."
+          }
+        ],
+        "rationale": "Remove the unsupported item list, preserve the author's completed action, and relocate this same unit to the empty ACTION field. Correction and relocation count as one repair. The correctness error is a separate quality measure, not a seventh edit."
+      },
+      {
+        "claim_id": "dev-v3-maint-02-C07",
+        "agreed_status": "partial",
+        "original_edit_id": "E05",
+        "repair_count": 1,
+        "source_quotes": [
+          "09:21 UTC I sent Records Desk a request to identify the papers; the message has no recipient initials or acknowledgement."
+        ],
+        "output_evidence": [
+          {
+            "json_pointer": "/variants/C/result/event_results/0/result/sections/agencies_contacted/0/text",
+            "quote": "Records Desk was contacted to identify the papers, but the request has no recipient initials or acknowledgement."
+          }
+        ],
+        "rationale": "The factual contact entry preserves the recipient, request and missing recipient details, but omits 09:21 UTC. Restoring the supplied contact time is one repair."
+      },
+      {
+        "claim_id": "dev-v3-maint-02-C08",
+        "agreed_status": "partial",
+        "original_edit_id": "E06",
+        "repair_count": 1,
+        "source_quotes": [
+          "I asked whether it belonged with the checklist and got no answer.",
+          "09:21 UTC I sent Records Desk a request to identify the papers; the message has no recipient initials or acknowledgement."
+        ],
+        "output_evidence": [
+          {
+            "json_pointer": "/variants/C/result/event_results/0/result/review_excerpts/4/text",
+            "quote": "I asked whether it belonged with the checklist and got no answer."
+          },
+          {
+            "json_pointer": "/variants/C/result/event_results/0/result/sections/agencies_contacted/0/text",
+            "quote": "Records Desk was contacted to identify the papers, but the request has no recipient initials or acknowledgement."
+          }
+        ],
+        "rationale": "PLAN is empty. The unanswered checklist-envelope question remains only in an excerpt, while the missing acknowledgement is factual in AGENCIES CONTACTED. Restoring the two bundled unresolved statuses to PLAN is one repair. This is distinct from C07's missing contact time: fixing either unit would leave the other's defect. No new owner, promise or due time is needed."
+      }
+    ],
+    "empty_field_evidence": [
+      {
+        "json_pointer": "/variants/C/result/event_results/0/result/sections/action",
+        "expected_value": []
+      },
+      {
+        "json_pointer": "/variants/C/result/event_results/0/result/sections/plan",
+        "expected_value": []
+      }
+    ],
+    "cross_variant_consistency": "The accepted sections also support A's two fully placed units (C06/C07) and six repairs, and B's six fully placed units with two field-placement repairs (C02/C08). The same rule is applied: retained source is not factual placement, each bundled checklist unit receives at most one repair, and missing or misplaced components keep a unit from full placement credit."
+  },
+  "adjudication_summary": "Agree with the single critical unsupported-fact error and six C unit repairs. Clarify only that the invented item inventory is the error; physical grouping alone would not establish a common job. No count or severity change is proposed.",
+  "original_review_preserved": true,
+  "promotion_criteria_changed": false,
+  "identity_unmasking_performed": false,
+  "original_review_sha256": "6458f8b584a2f0220ec3939613c266539b11bc5726723307ba74a62e558fa8e4",
+  "masked_packet_sha256": "aff87868489d780d0deeed6d88361189b70da7ff22a98c3f747dd3cb15295007",
+  "verification": {
+    "exact_source_output_quotes": 23,
+    "all_quotes_verified": true,
+    "all_eight_units_accounted_once": true,
+    "repair_sum": 6,
+    "empty_action_and_plan_verified": true
+  }
+}

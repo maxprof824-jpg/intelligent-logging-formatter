@@ -1,0 +1,467 @@
+{
+  "case_id": "dev-v3-admin-13",
+  "checklist_sha256": "08546bda79a20f037aae552455f6c38758e54617d533c1865b9d5328f4705533",
+  "reviewer": "AI-assisted review; model labels withheld; prior familiarity with the formatter and earlier masked/released-output discussions disclosed. Full packet JSON was parsed only to project source, checklist and accepted fields/suggestions/questions/retained excerpts. Raw generation bodies were not displayed or inspected; no key, full comparison or reserved notes were accessed.",
+  "variants": {
+    "A": {
+      "claim_results": [
+        {
+          "claim_id": "dev-v3-admin-13-C01",
+          "status": "placed_supported",
+          "rationale": "SITUATION retains the date/UTC context, 09:11 three-seat BOOK-44 finding and NS's 09:16 two-seat requirement."
+        },
+        {
+          "claim_id": "dev-v3-admin-13-C02",
+          "status": "present_wrong_field_or_event",
+          "rationale": "The complete 09:22 amendment and sent confirmation appear in AGENCIES CONTACTED rather than ACTION."
+        },
+        {
+          "claim_id": "dev-v3-admin-13-C03",
+          "status": "meaning_error",
+          "rationale": "The 09:31 acknowledgement is in ACTION while AGENCIES CONTACTED retains no reply without an explicit historical qualifier and PLAN says the note records no response. The accepted latest acknowledgement is contradicted by that PLAN summary."
+        },
+        {
+          "claim_id": "dev-v3-admin-13-C04",
+          "status": "placed_supported",
+          "rationale": "IMPACT retains the organizer's report that the booking change caused no attendance problem, without broadening it to receipt impact."
+        },
+        {
+          "claim_id": "dev-v3-admin-13-C05",
+          "status": "evidence_or_unassigned_only",
+          "rationale": "Booking closure survives in suggestion basis, but factual PLAN does not say that the booking question is closed."
+        },
+        {
+          "claim_id": "dev-v3-admin-13-C06",
+          "status": "evidence_or_unassigned_only",
+          "rationale": "The expense event retains this unit in source/evidence, while its required factual field is empty: At 09:14 Accounts Desk (GG) requested the second page of RECEIPT-804."
+        },
+        {
+          "claim_id": "dev-v3-admin-13-C07",
+          "status": "evidence_or_unassigned_only",
+          "rationale": "The expense event retains this unit in source/evidence, while its required factual field is empty: The author found only the first page in the shared folder."
+        },
+        {
+          "claim_id": "dev-v3-admin-13-C08",
+          "status": "evidence_or_unassigned_only",
+          "rationale": "The expense event retains this unit in source/evidence, while its required factual field is empty: GG explicitly described a documentation request, not notification of rejected reimbursement."
+        },
+        {
+          "claim_id": "dev-v3-admin-13-C09",
+          "status": "evidence_or_unassigned_only",
+          "rationale": "The expense event retains this unit in source/evidence, while its required factual field is empty: At 09:25 the author forwarded the first page, marked it incomplete, and requested the missing page from the submitter."
+        },
+        {
+          "claim_id": "dev-v3-admin-13-C10",
+          "status": "present_wrong_field_or_event",
+          "rationale": "The complete no-response/no-payment-date statement appears in expense IMPACT instead of PLAN."
+        }
+      ],
+      "edits": [
+        {
+          "edit_id": "E01",
+          "categories": [
+            "move_supported_unit"
+          ],
+          "claim_ids": [
+            "dev-v3-admin-13-C02"
+          ],
+          "detail": "Move the author's completed 09:22 two-seat amendment and sent NS confirmation to ACTION, keeping the later acknowledgement distinct."
+        },
+        {
+          "edit_id": "E02",
+          "categories": [
+            "correct_meaning",
+            "move_supported_unit",
+            "remove_unnecessary_advice"
+          ],
+          "claim_ids": [
+            "dev-v3-admin-13-C03"
+          ],
+          "detail": "Place NS's 09:31 acknowledgement in AGENCIES CONTACTED as the latest response. Qualify or remove the earlier no-reply wording and remove the PLAN claim that no response is recorded. Resolve the linked generic initials question with the same explicitly attributed contact-unit repair; NS is supplied."
+        },
+        {
+          "edit_id": "E03",
+          "categories": [
+            "place_missing_unit",
+            "remove_unnecessary_advice"
+          ],
+          "claim_ids": [
+            "dev-v3-admin-13-C05"
+          ],
+          "detail": "Restore the closed booking question in PLAN, preserving that it determines nothing about the separate receipt. As part of this same boundary/closure repair, remove the unnecessary proposal and matching question about whether the booking change affected the receipt; the source supplies no link requiring that follow-up."
+        },
+        {
+          "edit_id": "E04",
+          "categories": [
+            "place_missing_unit"
+          ],
+          "claim_ids": [
+            "dev-v3-admin-13-C06"
+          ],
+          "detail": "Restore this distinct source-retained unit to Expense receipt attachment / AGENCIES_CONTACTED: At 09:14 Accounts Desk (GG) requested the second page of RECEIPT-804. Preserve: GG is the receipt contact; do not assign the request to NS."
+        },
+        {
+          "edit_id": "E05",
+          "categories": [
+            "place_missing_unit"
+          ],
+          "claim_ids": [
+            "dev-v3-admin-13-C07"
+          ],
+          "detail": "Restore this distinct source-retained unit to Expense receipt attachment / SITUATION: The author found only the first page in the shared folder. Preserve: The second page is not established as lost everywhere or already attached."
+        },
+        {
+          "edit_id": "E06",
+          "categories": [
+            "place_missing_unit"
+          ],
+          "claim_ids": [
+            "dev-v3-admin-13-C08"
+          ],
+          "detail": "Restore this distinct source-retained unit to Expense receipt attachment / SITUATION: GG explicitly described a documentation request, not notification of rejected reimbursement. Preserve: Do not turn missing documentation into a reimbursement decision."
+        },
+        {
+          "edit_id": "E07",
+          "categories": [
+            "place_missing_unit"
+          ],
+          "claim_ids": [
+            "dev-v3-admin-13-C09"
+          ],
+          "detail": "Restore this distinct source-retained unit to Expense receipt attachment / ACTION: At 09:25 the author forwarded the first page, marked it incomplete, and requested the missing page from the submitter. Preserve: These requests are completed; obtaining the missing page is not."
+        },
+        {
+          "edit_id": "E08",
+          "categories": [
+            "move_supported_unit"
+          ],
+          "claim_ids": [
+            "dev-v3-admin-13-C10"
+          ],
+          "detail": "Move the expense receipt's unavailable response/payment-date status into PLAN. Keep it unresolved without creating a payment commitment or borrowing booking closure."
+        }
+      ],
+      "correctness_errors": [
+        {
+          "error_id": "R01",
+          "type": "stale_status",
+          "critical": true,
+          "claim_ids": [
+            "dev-v3-admin-13-C03"
+          ],
+          "output_quote": "the note does not record the response to the confirmation email.",
+          "detail": "The same booking event explicitly records NS's 09:31 acknowledgement, which supersedes the earlier no-reply status. The PLAN sentence falsely summarizes the current record as lacking a response. The earlier 09:22 no-reply wording could be historical when properly qualified; it is not charged as a second critical assertion."
+        }
+      ],
+      "additional_omissions": [],
+      "suggestions_review": "Documenting the expense submitter's response when available is a reasonable future action and does not claim receipt of the page. The booking suggestion asks whether there is an expense effect rather than asserting that a relationship exists, so it is not a second critical error; it is unnecessary follow-up across the source's separate event boundary and is cleaned up with C05. The booking initials question is handled with C03; expense contact and chronology questions are resolved by their restorations, not charged again.",
+      "failure_review": "Neither group is marked incomplete. Two booking units are fully placed, while the amendment/acknowledgement are displaced, one status summary is stale, and closure is not factual. The expense event retains one factual status in the wrong field and four other units only as source. Eight logical unit repairs cover the related question cleanup without extra advice charges."
+    },
+    "B": {
+      "claim_results": [
+        {
+          "claim_id": "dev-v3-admin-13-C01",
+          "status": "partial",
+          "rationale": "SITUATION preserves BOOK-44, the three-to-two requirement and 09:11/09:16 with UTC, but the required 12 September 2026 date is retained only as source."
+        },
+        {
+          "claim_id": "dev-v3-admin-13-C02",
+          "status": "partial",
+          "rationale": "ACTION records the completed amendment and sent confirmation but omits 09:22; that time appears only in the matching SITUATION entry."
+        },
+        {
+          "claim_id": "dev-v3-admin-13-C03",
+          "status": "present_wrong_field_or_event",
+          "rationale": "The 09:31 NS acknowledgement is faithfully present in SITUATION, while AGENCIES CONTACTED contains only a generic contact statement."
+        },
+        {
+          "claim_id": "dev-v3-admin-13-C04",
+          "status": "evidence_or_unassigned_only",
+          "rationale": "The organizer's actual no-attendance-problem finding is only in retained source and a suggestion's basis; factual IMPACT is empty."
+        },
+        {
+          "claim_id": "dev-v3-admin-13-C05",
+          "status": "evidence_or_unassigned_only",
+          "rationale": "The closed booking question is retained only as source/suggestion basis; factual PLAN is empty and the proposed plan treats the receipt as something that should reflect the seat change."
+        },
+        {
+          "claim_id": "dev-v3-admin-13-C06",
+          "status": "failed_group",
+          "rationale": "The expense event is explicitly incomplete with empty factual fields; this unit survives in retained source: At 09:14 Accounts Desk (GG) requested the second page of RECEIPT-804."
+        },
+        {
+          "claim_id": "dev-v3-admin-13-C07",
+          "status": "failed_group",
+          "rationale": "The expense event is explicitly incomplete with empty factual fields; this unit survives in retained source: The author found only the first page in the shared folder."
+        },
+        {
+          "claim_id": "dev-v3-admin-13-C08",
+          "status": "failed_group",
+          "rationale": "The expense event is explicitly incomplete with empty factual fields; this unit survives in retained source: GG explicitly described a documentation request, not notification of rejected reimbursement."
+        },
+        {
+          "claim_id": "dev-v3-admin-13-C09",
+          "status": "failed_group",
+          "rationale": "The expense event is explicitly incomplete with empty factual fields; this unit survives in retained source: At 09:25 the author forwarded the first page, marked it incomplete, and requested the missing page from the submitter."
+        },
+        {
+          "claim_id": "dev-v3-admin-13-C10",
+          "status": "failed_group",
+          "rationale": "The expense event is explicitly incomplete with empty factual fields; this unit survives in retained source: No response or payment date is available for the expense receipt."
+        }
+      ],
+      "edits": [
+        {
+          "edit_id": "E01",
+          "categories": [
+            "place_missing_unit"
+          ],
+          "claim_ids": [
+            "dev-v3-admin-13-C01"
+          ],
+          "detail": "Restore the supplied 12 September 2026 date beside the existing UTC booking chronology. This resolves the question requesting an already supplied date."
+        },
+        {
+          "edit_id": "E02",
+          "categories": [
+            "move_supported_unit"
+          ],
+          "claim_ids": [
+            "dev-v3-admin-13-C02"
+          ],
+          "detail": "Carry the existing 09:22 timestamp with the supported completed amendment/confirmation into ACTION. Consolidate the duplicate situation/action wording as part of this same unit placement."
+        },
+        {
+          "edit_id": "E03",
+          "categories": [
+            "move_supported_unit",
+            "remove_unnecessary_advice"
+          ],
+          "claim_ids": [
+            "dev-v3-admin-13-C03"
+          ],
+          "detail": "Move the timed NS acknowledgement into AGENCIES CONTACTED as the latest response. The same attributed contact-unit repair resolves the generic initials question. Retained earlier no-reply source is historical evidence, not a current factual claim."
+        },
+        {
+          "edit_id": "E04",
+          "categories": [
+            "place_missing_unit",
+            "remove_unnecessary_advice"
+          ],
+          "claim_ids": [
+            "dev-v3-admin-13-C04"
+          ],
+          "detail": "Restore the organizer's supplied booking-specific no-attendance-problem report to IMPACT. Remove the associated question asking NS to confirm an expense effect, so this same impact-unit repair does not transfer the organizer's finding to another event. A conditional possible avoided overbooking issue is not treated as an asserted cause or a separate critical error."
+        },
+        {
+          "edit_id": "E05",
+          "categories": [
+            "place_missing_unit",
+            "correct_meaning"
+          ],
+          "claim_ids": [
+            "dev-v3-admin-13-C05"
+          ],
+          "detail": "Restore booking closure in PLAN and remove the associated proposal/question premised on the separate receipt being updated to reflect the two-seat booking. Keep the receipt documentation request independent; count restoration and correction of this boundary/closure unit once."
+        },
+        {
+          "edit_id": "E06",
+          "categories": [
+            "place_missing_unit"
+          ],
+          "claim_ids": [
+            "dev-v3-admin-13-C06"
+          ],
+          "detail": "Restore this distinct source-retained unit to Expense receipt attachment / AGENCIES_CONTACTED: At 09:14 Accounts Desk (GG) requested the second page of RECEIPT-804. Preserve: GG is the receipt contact; do not assign the request to NS."
+        },
+        {
+          "edit_id": "E07",
+          "categories": [
+            "place_missing_unit"
+          ],
+          "claim_ids": [
+            "dev-v3-admin-13-C07"
+          ],
+          "detail": "Restore this distinct source-retained unit to Expense receipt attachment / SITUATION: The author found only the first page in the shared folder. Preserve: The second page is not established as lost everywhere or already attached."
+        },
+        {
+          "edit_id": "E08",
+          "categories": [
+            "place_missing_unit"
+          ],
+          "claim_ids": [
+            "dev-v3-admin-13-C08"
+          ],
+          "detail": "Restore this distinct source-retained unit to Expense receipt attachment / SITUATION: GG explicitly described a documentation request, not notification of rejected reimbursement. Preserve: Do not turn missing documentation into a reimbursement decision."
+        },
+        {
+          "edit_id": "E09",
+          "categories": [
+            "place_missing_unit"
+          ],
+          "claim_ids": [
+            "dev-v3-admin-13-C09"
+          ],
+          "detail": "Restore this distinct source-retained unit to Expense receipt attachment / ACTION: At 09:25 the author forwarded the first page, marked it incomplete, and requested the missing page from the submitter. Preserve: These requests are completed; obtaining the missing page is not."
+        },
+        {
+          "edit_id": "E10",
+          "categories": [
+            "place_missing_unit"
+          ],
+          "claim_ids": [
+            "dev-v3-admin-13-C10"
+          ],
+          "detail": "Restore this distinct source-retained unit to Expense receipt attachment / PLAN: No response or payment date is available for the expense receipt. Preserve: No invented payment schedule, rejection, or named agreement to supply the page."
+        }
+      ],
+      "correctness_errors": [
+        {
+          "error_id": "R01",
+          "type": "cross_event_attribution",
+          "critical": true,
+          "claim_ids": [
+            "dev-v3-admin-13-C05"
+          ],
+          "output_quote": "Verify with NS whether the expense receipt was updated to reflect the two-seat booking.",
+          "detail": "The proposal qualifies whether an update occurred, but presupposes that the expense receipt should reflect this workshop's seat count. The source supplies no such relationship: its receipt event is a missing second-page documentation request, and booking closure says nothing about that receipt. This is an unsupported cross-event premise, not a claim that an update or payment already occurred. The matching question repeats the same premise and is counted once."
+        }
+      ],
+      "additional_omissions": [],
+      "suggestions_review": "The possible avoided overbooking effect is marked hypothetical and is not counted as a factual cause. Its expense-confirmation question and the receipt-update proposal nevertheless carry the review away from the supplied booking outcome. Cleanup is bundled with C04/C05 restorations; the latter contains the recorded unsupported premise. Date/initials questions are resolved with C01/C03 rather than charged separately. The failed expense event shows no accepted proposal or raw factual claim.",
+      "failure_review": "The booking event is available but no complete unit meets all required field/date distinctions: two are partial, acknowledgement is displaced, and impact/closure are source-only. All five expense units require reconstruction from its failed group. Ten linked unit repairs are recorded."
+    },
+    "C": {
+      "claim_results": [
+        {
+          "claim_id": "dev-v3-admin-13-C01",
+          "status": "failed_group",
+          "rationale": "The booking event failed with no accepted factual entries. Both the original request and later acknowledgement/closure remain in source for this unit: At 09:11 on 12 September 2026 UTC, BOOK-44 showed three Elm-workshop seats; NS said only two were needed at 09:16."
+        },
+        {
+          "claim_id": "dev-v3-admin-13-C02",
+          "status": "failed_group",
+          "rationale": "The booking event failed with no accepted factual entries. Both the original request and later acknowledgement/closure remain in source for this unit: At 09:22 the author amended the request to two seats and sent NS confirmation."
+        },
+        {
+          "claim_id": "dev-v3-admin-13-C03",
+          "status": "failed_group",
+          "rationale": "The booking event failed with no accepted factual entries. Both the original request and later acknowledgement/closure remain in source for this unit: NS acknowledged the amended two-seat booking at 09:31, superseding the earlier waiting-for-reply status."
+        },
+        {
+          "claim_id": "dev-v3-admin-13-C04",
+          "status": "failed_group",
+          "rationale": "The booking event failed with no accepted factual entries. Both the original request and later acknowledgement/closure remain in source for this unit: The organizer said the change caused no attendance problem."
+        },
+        {
+          "claim_id": "dev-v3-admin-13-C05",
+          "status": "failed_group",
+          "rationale": "The booking event failed with no accepted factual entries. Both the original request and later acknowledgement/closure remain in source for this unit: The booking question is closed; this does not close the expense question."
+        },
+        {
+          "claim_id": "dev-v3-admin-13-C06",
+          "status": "partial",
+          "rationale": "The receipt request is in SITUATION without 09:14, and AGENCIES CONTACTED contains only Accounts Desk (GG). The complete timed request remains source-only."
+        },
+        {
+          "claim_id": "dev-v3-admin-13-C07",
+          "status": "placed_supported",
+          "rationale": "Receipt SITUATION preserves that only the first page was available in the shared folder, without claiming the second page was lost everywhere."
+        },
+        {
+          "claim_id": "dev-v3-admin-13-C08",
+          "status": "placed_supported",
+          "rationale": "SITUATION attributes to GG the documentation-request classification and explicitly denies a reimbursement-rejection notice."
+        },
+        {
+          "claim_id": "dev-v3-admin-13-C09",
+          "status": "placed_supported",
+          "rationale": "ACTION retains the 09:25 first-page forwarding, incomplete marking and request to the submitter, without claiming the missing page was obtained."
+        },
+        {
+          "claim_id": "dev-v3-admin-13-C10",
+          "status": "evidence_or_unassigned_only",
+          "rationale": "No-response/no-payment-date status survives in suggestion basis but is absent from factual PLAN."
+        }
+      ],
+      "edits": [
+        {
+          "edit_id": "E01",
+          "categories": [
+            "place_missing_unit"
+          ],
+          "claim_ids": [
+            "dev-v3-admin-13-C01"
+          ],
+          "detail": "Restore this distinct source-retained unit to Visitor booking correction / SITUATION: At 09:11 on 12 September 2026 UTC, BOOK-44 showed three Elm-workshop seats; NS said only two were needed at 09:16. Preserve: Distinguish the original count from the requested correction."
+        },
+        {
+          "edit_id": "E02",
+          "categories": [
+            "place_missing_unit"
+          ],
+          "claim_ids": [
+            "dev-v3-admin-13-C02"
+          ],
+          "detail": "Restore this distinct source-retained unit to Visitor booking correction / ACTION: At 09:22 the author amended the request to two seats and sent NS confirmation. Preserve: The change is completed; acknowledgement occurs later."
+        },
+        {
+          "edit_id": "E03",
+          "categories": [
+            "place_missing_unit"
+          ],
+          "claim_ids": [
+            "dev-v3-admin-13-C03"
+          ],
+          "detail": "Restore this distinct source-retained unit to Visitor booking correction / AGENCIES_CONTACTED: NS acknowledged the amended two-seat booking at 09:31, superseding the earlier waiting-for-reply status. Preserve: Do not retain no reply as current or propose obtaining an already received acknowledgement."
+        },
+        {
+          "edit_id": "E04",
+          "categories": [
+            "place_missing_unit"
+          ],
+          "claim_ids": [
+            "dev-v3-admin-13-C04"
+          ],
+          "detail": "Restore this distinct source-retained unit to Visitor booking correction / IMPACT: The organizer said the change caused no attendance problem. Preserve: This is the organizer's booking-specific report, not an expense outcome."
+        },
+        {
+          "edit_id": "E05",
+          "categories": [
+            "place_missing_unit"
+          ],
+          "claim_ids": [
+            "dev-v3-admin-13-C05"
+          ],
+          "detail": "Restore this distinct source-retained unit to Visitor booking correction / PLAN: The booking question is closed; this does not close the expense question. Preserve: No further booking reply is outstanding; do not transfer closure to the receipt."
+        },
+        {
+          "edit_id": "E06",
+          "categories": [
+            "place_missing_unit",
+            "move_supported_unit"
+          ],
+          "claim_ids": [
+            "dev-v3-admin-13-C06"
+          ],
+          "detail": "Complete and place Accounts Desk (GG)'s 09:14 request for RECEIPT-804's second page in AGENCIES CONTACTED using the retained timed source. Resolve the question about already supplied event times as part of this repair."
+        },
+        {
+          "edit_id": "E07",
+          "categories": [
+            "place_missing_unit"
+          ],
+          "claim_ids": [
+            "dev-v3-admin-13-C10"
+          ],
+          "detail": "Restore this distinct source-retained unit to Expense receipt attachment / PLAN: No response or payment date is available for the expense receipt. Preserve: No invented payment schedule, rejection, or named agreement to supply the page."
+        }
+      ],
+      "correctness_errors": [],
+      "additional_omissions": [],
+      "suggestions_review": "A possible delay to documentation or reimbursement review is explicitly conditional and does not assert rejection or a payment decision. Proposing a person/review point to confirm the missing page fills an unagreed follow-up detail; it does not claim the submitter accepted an obligation or invent a date. These optional proposals can remain once the source's unavailable response/payment date is restored. The timing question is handled by C06, not an extra edit.",
+      "failure_review": "The failed booking group retains all five units for reconstruction. The separate receipt event remains available with three fully placed units, a partial timed contact and source-only unresolved status. Seven distinct unit repairs are required; source retention is not placement."
+    }
+  },
+  "case_assessment": "A places two units but has a current no-response summary contradicted by the later acknowledgement. B retains more booking chronology but places no complete checklist unit in every required field/date context, loses the expense group and introduces a receipt/seat-count premise. C loses the booking group while placing three receipt units. Related advice cleanup is included within the corresponding fact/boundary restoration, and optional suggestions with qualified, source-compatible premises remain. These masked case judgments do not select a model or measure review time."
+}

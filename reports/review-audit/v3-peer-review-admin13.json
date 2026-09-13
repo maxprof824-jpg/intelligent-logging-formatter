@@ -1,0 +1,79 @@
+{
+  "case_id": "dev-v3-admin-13",
+  "reviewer": "AI-assisted masked peer check; prior formatter familiarity disclosed.",
+  "scope": "Two reported critical findings only; original review preserved. This note qualifies what the source establishes rather than broadening the frozen placement fields.",
+  "input_sha256": {
+    "packet": "c40f4a2805f509e6f0f5f135c76f28e2e098c59209bca1766c705be76309b996",
+    "original_review": "033ce583bc89c3786e96b9de988bb7e761982a8f83f4f9452acc0d52fc07c635",
+    "review_instructions": "03378fdc6d8f0fe9f7df2186bb6f7dd17f04b33236b2f1b60ff2b97cf1a4fe1f"
+  },
+  "access_disclosure": "This check viewed only source_text, embedded checklist, original review entries, and allowlisted accepted factual text/suggestion text/confirmation questions/displayed questions for A/B. No raw fields, model-label map, full comparison report or reserved notes were inspected.",
+  "findings": [
+    {
+      "variant": "A",
+      "review_error_id": "R01",
+      "related_edit_id": "E02",
+      "source_quotes": [
+        "At 09:22 I changed the request to two and sent NS the confirmation. I have not received a reply confirming they saw it.",
+        "At 09:31 NS acknowledged the amended two-seat booking.",
+        "That closes the booking question; it says nothing about the expense receipt."
+      ],
+      "output_quotes": [
+        "The booking note does not establish whether the receipt is affected by the change; the note does not record the response to the confirmation email.",
+        "At 09:31 NS acknowledged the amended two-seat booking.",
+        "At 09:22 I changed the request to two and sent NS the confirmation. I have not received a reply confirming they saw it."
+      ],
+      "established": "NS acknowledged the amended booking at 09:31 and the booking question is closed. The accepted acknowledgement is in the wrong factual field. The note should not leave a further booking acknowledgement outstanding.",
+      "not_established": "The source does not call the earlier confirmation an email, give the acknowledgement channel, or expressly say NS replied to that particular message. Booking acknowledgement does not prove a distinct email reply/read receipt. The retained 09:22 no-reply wording can be historical when clearly qualified.",
+      "assessment": "Keep the existing substantive correction: place the accepted acknowledgement under AGENCIES CONTACTED and remove or qualify the misleading current no-response summary, including its unsupported email specificity. However, describe the problem without asserting that 09:31 proves an email reply. A critical stale-status finding based specifically on absence of an email response is less certain than a direct claim that no booking acknowledgement occurred. Correct acknowledgement elsewhere does not cancel an incorrect summary, but it also does not establish the omitted communication channel.",
+      "proposed_correction": {
+        "type": "other_meaning_error",
+        "critical": false,
+        "retain_existing_repair": true,
+        "suggested_claim_status_if_adopted": {
+          "claim_id": "dev-v3-admin-13-C03",
+          "status": "present_wrong_field_or_event"
+        },
+        "rationale": "The accepted 09:31 booking acknowledgement is complete but misplaced. Its accompanying summary introduces unsupported email specificity and misleading unresolved-response wording; a particular email-reply reversal is not established."
+      },
+      "qualified_severity": "Recommend retaining one noncritical meaning correction rather than claiming a proven critical email-reply reversal. If root retains critical stale_status under the frozen latest-booking-status distinction, its rationale should be limited to leaving the closed booking acknowledgement unresolved, explicitly not proof of an email response.",
+      "count_effect_if_adopted": {
+        "substantive_repairs_delta": 0,
+        "correctness_errors_delta": 0,
+        "critical_errors_delta": -1,
+        "placed_units_delta": 0
+      }
+    },
+    {
+      "variant": "B",
+      "review_error_id": "R01",
+      "related_edit_id": "E05",
+      "source_quotes": [
+        "At 09:22 I changed the request to two and sent NS the confirmation.",
+        "At 09:14 Accounts Desk (GG) asked for the second page of RECEIPT-804.",
+        "GG explicitly said this was a documentation request, not notice that reimbursement had been rejected.",
+        "That closes the booking question; it says nothing about the expense receipt."
+      ],
+      "output_quotes": [
+        "Verify with NS whether the expense receipt was updated to reflect the two-seat booking.",
+        "Has the expense receipt been updated to reflect the two-seat booking?"
+      ],
+      "established": "The booking change concerns BOOK-44 and NS; the separate receipt task concerns missing documentation for RECEIPT-804 requested by GG. No supplied fact makes that receipt reflect the seat count or makes NS its update contact.",
+      "assessment": "Retain one critical cross_event_attribution finding. Whether qualifies completion of a specifically described update; it does not qualify the assumed relevance of changing this receipt to reflect the two-seat booking. This is stronger than asking whether the events have any relationship. It imports a concrete booking attribute into the separate receipt task and directs the check to the booking organizer without source support. The matching question repeats that same premise and is not a second error.",
+      "proposed_correction": {
+        "type": "cross_event_attribution",
+        "critical": true,
+        "retain_existing_repair": true,
+        "claim_status_changes": []
+      },
+      "qualified_severity": "The error is the unsupported cross-event update premise, not a false claim that a receipt update, reimbursement decision or payment has already occurred. Keep its correction bundled with the existing C05 boundary/closure restoration rather than charging another repair.",
+      "count_effect_if_adopted": {
+        "substantive_repairs_delta": 0,
+        "correctness_errors_delta": 0,
+        "critical_errors_delta": 0,
+        "placed_units_delta": 0
+      }
+    }
+  ],
+  "limitations": "Root adjudicates severity consistently across cases. No model selection, accuracy percentage or measured editing benefit is inferred; this note does not alter the canonical review or frozen criteria."
+}

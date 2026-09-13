@@ -1,0 +1,319 @@
+{
+  "case_id": "dev-v3-it-07",
+  "checklist_sha256": "08546bda79a20f037aae552455f6c38758e54617d533c1865b9d5328f4705533",
+  "reviewer": "AI-assisted review; model labels withheld; prior familiarity with the formatter and earlier released-output discussions disclosed. Only this anonymized packet, source-only checklist and frozen review instructions were used; no key, full comparison, raw generations or reserved notes were read.",
+  "variants": {
+    "A": {
+      "claim_results": [
+        {
+          "claim_id": "dev-v3-it-07-C01",
+          "status": "evidence_or_unassigned_only",
+          "rationale": "Upload SITUATION is empty. The complete corrected-time history and event date/zone survives only in retained source."
+        },
+        {
+          "claim_id": "dev-v3-it-07-C02",
+          "status": "evidence_or_unassigned_only",
+          "rationale": "Upload SITUATION is empty. The complete 14:16 one-retry test-file success survives only in retained source."
+        },
+        {
+          "claim_id": "dev-v3-it-07-C03",
+          "status": "placed_supported",
+          "rationale": "IMPACT preserves the one successful test upload and the unexamined, unknown outcomes for other users."
+        },
+        {
+          "claim_id": "dev-v3-it-07-C04",
+          "status": "placed_supported",
+          "rationale": "AGENCIES CONTACTED retains Help Desk (RV), 14:09, the stated investigation and absence of a provided cause."
+        },
+        {
+          "claim_id": "dev-v3-it-07-C05",
+          "status": "placed_supported",
+          "rationale": "ACTION retains saved UPLOAD-76 and the corrected timestamp sent to RV at 14:22."
+        },
+        {
+          "claim_id": "dev-v3-it-07-C06",
+          "status": "placed_supported",
+          "rationale": "PLAN preserves the direction from author to RV when the result is available and explicitly denies RV promising to send the result back."
+        },
+        {
+          "claim_id": "dev-v3-it-07-C07",
+          "status": "placed_supported",
+          "rationale": "The separate chat SITUATION retains 12 September UTC, 14:12 and the author's optional sound being muted."
+        },
+        {
+          "claim_id": "dev-v3-it-07-C08",
+          "status": "placed_supported",
+          "rationale": "Chat IMPACT preserves reading the messages on screen and no missed messages during that interval, without applying this outcome to uploads."
+        },
+        {
+          "claim_id": "dev-v3-it-07-C09",
+          "status": "placed_supported",
+          "rationale": "Chat ACTION states that the author recorded the muted setting while changing no setting."
+        },
+        {
+          "claim_id": "dev-v3-it-07-C10",
+          "status": "placed_supported",
+          "rationale": "Chat PLAN preserves the absence of any agreed follow-up."
+        }
+      ],
+      "edits": [
+        {
+          "edit_id": "E01",
+          "categories": [
+            "place_missing_unit"
+          ],
+          "claim_ids": [
+            "dev-v3-it-07-C01"
+          ],
+          "detail": "Restore this source-retained unit to Training registration upload / SITUATION: The first failed upload occurred at the corrected time 14:04 UTC on 12 September, not the original 14:40 entry. Preserve: Retain the correction and distinguish source evidence time from the superseded entry."
+        },
+        {
+          "edit_id": "E02",
+          "categories": [
+            "place_missing_unit"
+          ],
+          "claim_ids": [
+            "dev-v3-it-07-C02"
+          ],
+          "detail": "Restore this source-retained unit to Training registration upload / SITUATION: The author retried once at 14:16 and that test-file upload completed. Preserve: A test-file success is not restoration for every user."
+        }
+      ],
+      "correctness_errors": [],
+      "additional_omissions": [],
+      "suggestions_review": "No separate proposals are displayed. The upload SITUATION question asks for supplied but withheld chronology, resolved by the two linked restorations. Asking about the still-unknown wider impact is reasonable. The chat contact field is unsupplied; its clarification does not assert that a contact occurred.",
+      "failure_review": "Neither event is marked incomplete. The two upload SITUATION units are retained outside factual fields; eight other units are fully placed. Repeated correction excerpts are consolidated when restoring their unit, not counted as extra omissions."
+    },
+    "B": {
+      "claim_results": [
+        {
+          "claim_id": "dev-v3-it-07-C01",
+          "status": "placed_supported",
+          "rationale": "SITUATION explicitly distinguishes the superseded 14:40 entry from the accepted 14:04 UTC correction, dated 12 September and supported by UPLOAD-76."
+        },
+        {
+          "claim_id": "dev-v3-it-07-C02",
+          "status": "placed_supported",
+          "rationale": "SITUATION retains the author's single 14:16 retry and completed test-file upload without claiming recovery for others."
+        },
+        {
+          "claim_id": "dev-v3-it-07-C03",
+          "status": "placed_supported",
+          "rationale": "IMPACT preserves the one successful test upload and the unexamined, unknown outcomes for other users."
+        },
+        {
+          "claim_id": "dev-v3-it-07-C04",
+          "status": "placed_supported",
+          "rationale": "AGENCIES CONTACTED retains Help Desk (RV), 14:09, the stated investigation and absence of a provided cause."
+        },
+        {
+          "claim_id": "dev-v3-it-07-C05",
+          "status": "placed_supported",
+          "rationale": "ACTION retains saved UPLOAD-76 and the corrected timestamp sent to RV at 14:22."
+        },
+        {
+          "claim_id": "dev-v3-it-07-C06",
+          "status": "placed_supported",
+          "rationale": "PLAN preserves the direction from author to RV when the result is available and explicitly denies RV promising to send the result back."
+        },
+        {
+          "claim_id": "dev-v3-it-07-C07",
+          "status": "evidence_or_unassigned_only",
+          "rationale": "Chat SITUATION is empty; the date/UTC context and 14:12 muted-sound observation survive in retained excerpts."
+        },
+        {
+          "claim_id": "dev-v3-it-07-C08",
+          "status": "placed_supported",
+          "rationale": "Chat IMPACT preserves reading the messages on screen and no missed messages during that interval, without applying this outcome to uploads."
+        },
+        {
+          "claim_id": "dev-v3-it-07-C09",
+          "status": "placed_supported",
+          "rationale": "Chat ACTION states that the author recorded the muted setting while changing no setting."
+        },
+        {
+          "claim_id": "dev-v3-it-07-C10",
+          "status": "placed_supported",
+          "rationale": "Chat PLAN preserves the absence of any agreed follow-up."
+        }
+      ],
+      "edits": [
+        {
+          "edit_id": "E01",
+          "categories": [
+            "place_missing_unit"
+          ],
+          "claim_ids": [
+            "dev-v3-it-07-C07"
+          ],
+          "detail": "Restore this source-retained unit to Office chat notification / SITUATION: At 14:12 the author noticed their optional chat sound was muted. Preserve: Do not infer failed chat delivery or associate this with the upload cause."
+        },
+        {
+          "edit_id": "E02",
+          "categories": [
+            "correct_meaning"
+          ],
+          "claim_ids": [
+            "dev-v3-it-07-C06"
+          ],
+          "detail": "Remove the unsupported 'promised' premise from the proposed follow-up and its matching question. Frame any proposed response point around the author's pending check result being sent to RV, without inventing a promise, reversal of direction or already agreed deadline. This corrects one suggestion premise while leaving the supported factual PLAN unchanged."
+        }
+      ],
+      "correctness_errors": [
+        {
+          "error_id": "R01",
+          "type": "unsupported_fact",
+          "critical": true,
+          "claim_ids": [
+            "dev-v3-it-07-C06"
+          ],
+          "output_quote": "Proposed follow-up: confirm a response point for the promised other-user check result.",
+          "detail": "The source says RV asked the author for a result when available; it establishes no promise to provide that result and expressly denies a promise from RV to the author. The labeled proposal presupposes a promised check result. Its matching question repeats the same unsupported commitment and is not a second error. The wording does not identify who allegedly promised it, so no separate actor-direction reversal is claimed; the factual PLAN itself keeps the correct direction."
+        }
+      ],
+      "additional_omissions": [],
+      "suggestions_review": "The possible wider upload effect remains conditional and the requested actual outcomes are a reasonable next check. The response-point proposal could be useful if it kept the source's pending author-to-RV request, but its promised-result premise requires the recorded correction. The empty chat SITUATION is restored once; its generic chronology question does not create another repair. The chat contact question asks about an unsupplied field without inventing contact.",
+      "failure_review": "Neither group is incomplete. All six upload units and three chat units are placed. One chat situation restoration and one correction of a separate proposal premise are needed; the suggestion error does not erase the correct factual PLAN placement."
+    },
+    "C": {
+      "claim_results": [
+        {
+          "claim_id": "dev-v3-it-07-C01",
+          "status": "failed_group",
+          "rationale": "The upload event failed with no accepted factual entries. This separate source-retained unit requires reconstruction: The first failed upload occurred at the corrected time 14:04 UTC on 12 September, not the original 14:40 entry."
+        },
+        {
+          "claim_id": "dev-v3-it-07-C02",
+          "status": "failed_group",
+          "rationale": "The upload event failed with no accepted factual entries. This separate source-retained unit requires reconstruction: The author retried once at 14:16 and that test-file upload completed."
+        },
+        {
+          "claim_id": "dev-v3-it-07-C03",
+          "status": "failed_group",
+          "rationale": "The upload event failed with no accepted factual entries. This separate source-retained unit requires reconstruction: One test upload succeeded; other users' current file outcomes remain unknown."
+        },
+        {
+          "claim_id": "dev-v3-it-07-C04",
+          "status": "failed_group",
+          "rationale": "The upload event failed with no accepted factual entries. This separate source-retained unit requires reconstruction: Help Desk (RV) was contacted at 14:09 and said the team would investigate without supplying a cause."
+        },
+        {
+          "claim_id": "dev-v3-it-07-C05",
+          "status": "failed_group",
+          "rationale": "The upload event failed with no accepted factual entries. This separate source-retained unit requires reconstruction: The author saved UPLOAD-76 and sent RV the corrected timestamp at 14:22."
+        },
+        {
+          "claim_id": "dev-v3-it-07-C06",
+          "status": "failed_group",
+          "rationale": "The upload event failed with no accepted factual entries. This separate source-retained unit requires reconstruction: RV asked the author to send the other-user check result when available; RV did not promise to send it to the author."
+        },
+        {
+          "claim_id": "dev-v3-it-07-C07",
+          "status": "evidence_or_unassigned_only",
+          "rationale": "The available chat event has empty SITUATION; the supplied date/UTC context and 14:12 muted-sound observation remain only in retained excerpts."
+        },
+        {
+          "claim_id": "dev-v3-it-07-C08",
+          "status": "placed_supported",
+          "rationale": "Chat IMPACT preserves reading the messages on screen and no missed messages during that interval, without applying this outcome to uploads."
+        },
+        {
+          "claim_id": "dev-v3-it-07-C09",
+          "status": "placed_supported",
+          "rationale": "Chat ACTION states that the author recorded the muted setting while changing no setting."
+        },
+        {
+          "claim_id": "dev-v3-it-07-C10",
+          "status": "placed_supported",
+          "rationale": "Chat PLAN preserves the absence of any agreed follow-up."
+        }
+      ],
+      "edits": [
+        {
+          "edit_id": "E01",
+          "categories": [
+            "place_missing_unit"
+          ],
+          "claim_ids": [
+            "dev-v3-it-07-C01"
+          ],
+          "detail": "Restore this source-retained unit to Training registration upload / SITUATION: The first failed upload occurred at the corrected time 14:04 UTC on 12 September, not the original 14:40 entry. Preserve: Retain the correction and distinguish source evidence time from the superseded entry."
+        },
+        {
+          "edit_id": "E02",
+          "categories": [
+            "place_missing_unit"
+          ],
+          "claim_ids": [
+            "dev-v3-it-07-C02"
+          ],
+          "detail": "Restore this source-retained unit to Training registration upload / SITUATION: The author retried once at 14:16 and that test-file upload completed. Preserve: A test-file success is not restoration for every user."
+        },
+        {
+          "edit_id": "E03",
+          "categories": [
+            "place_missing_unit"
+          ],
+          "claim_ids": [
+            "dev-v3-it-07-C03"
+          ],
+          "detail": "Restore this source-retained unit to Training registration upload / IMPACT: One test upload succeeded; other users' current file outcomes remain unknown. Preserve: Preserve unknown wider effects rather than claiming no impact."
+        },
+        {
+          "edit_id": "E04",
+          "categories": [
+            "place_missing_unit"
+          ],
+          "claim_ids": [
+            "dev-v3-it-07-C04"
+          ],
+          "detail": "Restore this source-retained unit to Training registration upload / AGENCIES_CONTACTED: Help Desk (RV) was contacted at 14:09 and said the team would investigate without supplying a cause. Preserve: A promised investigation is not a found cause or completed repair."
+        },
+        {
+          "edit_id": "E05",
+          "categories": [
+            "place_missing_unit"
+          ],
+          "claim_ids": [
+            "dev-v3-it-07-C05"
+          ],
+          "detail": "Restore this source-retained unit to Training registration upload / ACTION: The author saved UPLOAD-76 and sent RV the corrected timestamp at 14:22. Preserve: 14:22 is the notification time, not the first failure."
+        },
+        {
+          "edit_id": "E06",
+          "categories": [
+            "place_missing_unit"
+          ],
+          "claim_ids": [
+            "dev-v3-it-07-C06"
+          ],
+          "detail": "Restore this source-retained unit to Training registration upload / PLAN: RV asked the author to send the other-user check result when available; RV did not promise to send it to the author. Preserve: Keep information-flow direction; do not treat the check as completed or agreed by RV."
+        },
+        {
+          "edit_id": "E07",
+          "categories": [
+            "place_missing_unit"
+          ],
+          "claim_ids": [
+            "dev-v3-it-07-C07"
+          ],
+          "detail": "Restore this source-retained unit to Office chat notification / SITUATION: At 14:12 the author noticed their optional chat sound was muted. Preserve: Do not infer failed chat delivery or associate this with the upload cause."
+        },
+        {
+          "edit_id": "E08",
+          "categories": [
+            "remove_unnecessary_advice"
+          ],
+          "claim_ids": [
+            "dev-v3-it-07-C09"
+          ],
+          "detail": "Remove the extra proposal and matching question about documenting the muted state in a shared/system or more structured log. The author already recorded this no-missed-message, unchanged-setting observation, and the formatter is structuring it here. No support or audit requirement is supplied; this adds documentation work without resolving a source gap. Do not describe the optional proposal as an already agreed follow-up."
+        }
+      ],
+      "correctness_errors": [],
+      "additional_omissions": [],
+      "suggestions_review": "The chat proposal for another structured/shared record remains optional and does not falsely assert that such documentation occurred. It is unnecessary additional recording for an observation already documented with no missed messages and no changed setting, so one advice cleanup is counted. The matching question is part of that same cleanup. Other questions about chronology are handled by the linked restoration; a contact clarification concerns an unsupplied field.",
+      "failure_review": "The upload event is explicitly incomplete and retains all six units only as source. The chat event remains available with three correctly placed units; its situation must be restored. Six upload restorations, one chat restoration and one unnecessary-advice cleanup are recorded. Rejected raw outputs were not reviewed as accepted facts."
+    }
+  },
+  "case_assessment": "A places eight units and needs two chronology restorations. B places nine units but adds a promised-result assumption in a separate proposal; one situation restoration and one premise correction are needed. C retains the failed upload source, places three chat units and needs seven factual restorations plus one unnecessary-documentation cleanup. The wrong promise is distinguished from the correctly preserved information-flow direction. These are masked case-specific review counts, not a model decision or measured review time."
+}

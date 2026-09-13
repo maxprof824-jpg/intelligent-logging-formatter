@@ -1,0 +1,39 @@
+{
+  "case_id": "dev-v3-it-05",
+  "created_utc": "2026-09-13T04:25:01.047587+00:00",
+  "adjudication": "Root accepts the original reviewer focused masked repair-count addendum.",
+  "original_review": {
+    "file": "work/v3-review-audit/original-dev-v3-it-05.json",
+    "sha256": "1be1fc4cfe6a8917878fc86c48325eef785f55d026f28e4a60800015bdd99dbc",
+    "bytes_preserved": true
+  },
+  "updated_review": {
+    "file": "work/v3-case-reviews/dev-v3-it-05.json",
+    "sha256": "7310932cf6e284bd1868f5652574ba48a6d7c33d650cf3bc7167e379f4ccf525"
+  },
+  "peer_review": {
+    "file": "work/v3-peer-review-it05-advice.json",
+    "sha256": "b86c1eb099622c05a7f4ee19c81295d70be8f4b00bf1e5b25f29d4af7c25f332"
+  },
+  "packet": {
+    "file": "work/v3-review-packets/dev-v3-it-05.json",
+    "sha256": "3fbbc9e3f533ae31353fdde8936bf5404bccf8b156c2b863794dd511554ce943"
+  },
+  "change": "Merge B-E22 owner-question cleanup into B-E18 FR follow-up restoration; keep B-E23 as a separate redundant initials-question repair.",
+  "repair_counts_before": {
+    "A": 24,
+    "B": 23,
+    "C": 20
+  },
+  "repair_counts_after": {
+    "A": 24,
+    "B": 22,
+    "C": 20
+  },
+  "invariants": {
+    "A_and_C_unchanged": true,
+    "all_placement_and_errors_unchanged": true,
+    "no_model_unmasking_or_protocol_change": true
+  },
+  "validation": "Exact claim coverage, restoration links, categories and surfaced error quotes passed."
+}

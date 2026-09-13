@@ -1,0 +1,10 @@
+{
+  "case_id": "dev-v3-shift-17",
+  "reviewer": "Root follow-up using supplied courier source and allowlisted B suggestions/questions; model identity not opened.",
+  "canonical_review_sha256": "2dccb84488118352cf3fcf297a783c2ad2d0379903c1520acf88c5db85940fde",
+  "decision": "Retain the existing masked review and counts, including no critical correctness error for B's conditional receipt-check suggestion.",
+  "output_quote": "Possible impact: the caller may need to check the dispatch receipt and obtain a confirmed collection status.",
+  "reason": "The 16:03 source reports the caller's corrected receipt reference, so the advice needs cleanup alongside restoration of that correction. However, the proposal says may need and does not assert that the receipt has never been checked or that the corrected number is unconfirmed. Treating it as a definite false status would exceed the displayed text. The collection status itself remains unresolved.",
+  "repair_accounting": "Keep receipt-advice cleanup bundled with C20 restoration. The final-status follow-up likewise does not create an additional repair beyond restoring the latest supplied state. No new critical error or extra repair is added.",
+  "limits": "This distinguishes redundant conditional advice from a categorical claim undoing a source correction. Judgment is AI-assisted and is not measured user effort or independent validation."
+}

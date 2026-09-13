@@ -1,0 +1,76 @@
+{
+  "case_id": "dev-v3-it-05",
+  "variant": "B",
+  "review_type": "Focused masked repair-count addendum by the original reviewer",
+  "original_review_sha256": "1be1fc4cfe6a8917878fc86c48325eef785f55d026f28e4a60800015bdd99dbc",
+  "masked_packet_sha256": "3fbbc9e3f533ae31353fdde8936bf5404bccf8b156c2b863794dd511554ce943",
+  "scope": "Rechecked only the two advice repairs and their linked factual-unit repairs. Parsed the packet to project source and accepted fields; nested raw generation bodies were not displayed or inspected. No model key, full comparison or reserved notes were accessed. No original review, factual placement status or correctness-error judgment was changed.",
+  "assessments": [
+    {
+      "original_edit_id": "E22",
+      "linked_claim_id": "dev-v3-it-05-C18",
+      "recommendation": "combine_with_E18",
+      "source_quotes": [
+        "At 12:52 Incoming Desk (FR) acknowledged that the handover note was readable. FR agreed to watch for PK's investigation update and to add it to ACCESS-208 when received. FR did not agree to change permissions or contact all eight attendees."
+      ],
+      "output_evidence": [
+        {
+          "json_pointer": "/variants/B/result/event_results/0/result/sections/agencies_contacted/0/text",
+          "quote": "The Incoming Desk (FR) acknowledged the handover note and agreed to watch for the update and add it when received. FR did not agree to change permissions or contact all eight attendees."
+        },
+        {
+          "json_pointer": "/variants/B/result/event_results/0/result/suggestions/1/text",
+          "quote": "Proposed refinement: identify who will confirm the update and when the handover will be reviewed."
+        },
+        {
+          "json_pointer": "/variants/B/result/event_results/0/result/suggestions/1/confirm",
+          "quote": "Who will confirm the update, and when will the handover be reviewed?"
+        }
+      ],
+      "rationale": "E18 already repairs the C18 documentation-follow-up unit by placing FR's agreed responsibility, PK's update and ACCESS-208 in PLAN. Revising the proposal/question so that it acknowledges that restored owner addresses the same information unit. The question would not disappear automatically after inserting a PLAN entry, but the frozen proxy counts logical substantive repairs rather than separate keystrokes in each rendering. Consistently with other restorations that also resolve questions about supplied information, the owner-question cleanup should be included in E18 rather than charged again as E22. A still-unagreed handover review point may remain an optional clarification; it is not an existing commitment.",
+      "proposed_combined_edit": {
+        "edit_id": "E18",
+        "categories": ["place_missing_unit", "move_supported_unit", "remove_unnecessary_advice"],
+        "claim_ids": ["dev-v3-it-05-C18"],
+        "detail": "Complete and place FR's documentation-follow-up agreement in PLAN with PK's investigation update and ACCESS-208. In the same unit repair, revise the associated proposal and question to acknowledge FR's already accepted role rather than asking to identify that owner again. Keep any genuinely unagreed review-time clarification optional, and preserve the limits on FR's responsibility."
+      },
+      "edit_count_delta": -1
+    },
+    {
+      "original_edit_id": "E23",
+      "linked_claim_id": "dev-v3-it-05-C21",
+      "recommendation": "retain_as_separate_advice_cleanup",
+      "source_quotes": [
+        "I checked the printed card against the current directory and asked Directory Desk (HU) to confirm the extension at 10:40.",
+        "HU confirmed the directory entry at 10:47."
+      ],
+      "output_evidence": [
+        {
+          "json_pointer": "/variants/B/result/event_results/1/result/sections/agencies_contacted/0/text",
+          "quote": "Asked Directory Desk (HU) to confirm the extension at 10:40."
+        },
+        {
+          "json_pointer": "/variants/B/result/event_results/1/result/sections/agencies_contacted/1/text",
+          "quote": "HU confirmed the directory entry at 10:47."
+        },
+        {
+          "json_pointer": "/variants/B/result/event_results/1/result/questions/1",
+          "quote": "What initials belong with each contacted agency?"
+        }
+      ],
+      "rationale": "C21 is already fully placed in AGENCIES CONTACTED, including Directory Desk (HU), its request and confirmation. This variant has no C21 contact restoration or relocation into which the supplied-initials question can be combined. Removing that redundant question therefore remains one separate advice repair. The card's other repairs concern impact scope and completed-replacement wording in PLAN, not missing contact initials; combining unrelated fixes merely because they share an event would be inconsistent.",
+      "edit_count_delta": 0
+    }
+  ],
+  "proposed_count_effect": {
+    "original_B_edit_count": 23,
+    "proposed_B_edit_count": 22,
+    "placed_unit_count_changed": false,
+    "correctness_errors_changed": false,
+    "A_or_C_review_changed": false,
+    "implementation": "If accepted by the coordinating reviewer, merge E22 into E18, remove the separate E22 entry and renumber remaining edit IDs. Preserve the original review in the adjudication audit."
+  },
+  "original_review_preserved": true,
+  "promotion_criteria_changed": false,
+  "identity_unmasking_performed": false
+}

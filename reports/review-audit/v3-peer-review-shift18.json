@@ -1,0 +1,91 @@
+{
+  "case_id": "dev-v3-shift-18",
+  "review_type": "independent second AI-assisted review of masked A R01 and repair accounting",
+  "reviewer": "A different AI review role from the original Shift18 author; model identities remain withheld. This is a peer consistency check, not an independent human or timed study.",
+  "scope": "Only source, frozen source checklist, accepted A sections/questions, retained source excerpts and canonical A review were inspected. Full packet JSON bytes were parsed to project allowlisted fields; nested raw generation bodies were not displayed or semantically inspected. No key, full comparison, B/C output, or reserved material was accessed.",
+  "packet_sha256": "eb9e6e6caeed425bf3f304ef232b01fda16bf358041e37fc0e6ab56b2ac7fba8",
+  "canonical_review_sha256_before": "c49e6c84f4d259860ae545ca02b820aaedf1dd74a0382661bfc4cd9bc6295e52",
+  "checklist_sha256": "70b29cbcc62e29c1c2a39b16cc5999bc8cd621d41ed7bba6d3ed4aa01fd38b0e",
+  "finding": {
+    "error_id": "R01",
+    "recommendation": "retain",
+    "type": "actor_change",
+    "critical": true,
+    "claim_ids": [
+      "dev-v3-shift-18-C07"
+    ],
+    "rationale": "The source establishes SF as the actor for a future request: SF will ask the next desk worker. The authoritative PLAN instead states future identification by the next desk worker and removes the request step and its owner. The original source does not establish that the request has been made, accepted, or will produce identification. This changes the supplied allocation/status of future work, rather than merely shortening the same established task.",
+    "narrow_interpretation": "The next desk worker already appears in the source as the intended recipient, so the output does not invent that person or a literal quoted promise. The supported critical distinction is omission of SF as requester plus promotion of a planned request into asserted future performance by its recipient. Wording such as commits a different actor should be understood as that change in the draft, not evidence that a real agreement was spoken.",
+    "counter_reading_considered": "A PLAN can describe intended future work without guaranteeing success. Even on that reading, the source states whose next step is planned: SF must ask. Replacing it with the recipient will identify asserts a task assignment/performance not established by that planned request alone. This is a substantive requester/future-work change under the frozen protocol.",
+    "not_false_completion": "Both source and output are future tense. Neither identification nor a delivery is claimed to have been completed. Do not classify this as false completion, a completed request, or a second unsupported-delivery error.",
+    "proposed_canonical_change": "No count, severity, type or placement change. Optional rationale precision only: say drops SF as requester and upgrades the intended request to stated next-worker identification, without implying an explicit accepted promise."
+  },
+  "exact_evidence": [
+    {
+      "kind": "source",
+      "pointer": "/source_text",
+      "quote": "SF will ask the next desk worker to identify the papers."
+    },
+    {
+      "kind": "output",
+      "pointer": "/variants/A/result/sections/plan/0/text",
+      "quote": "The next desk worker will identify the papers."
+    },
+    {
+      "kind": "source",
+      "pointer": "/source_text",
+      "quote": "I have not checked the delivery register."
+    },
+    {
+      "kind": "output",
+      "pointer": "/variants/A/result/sections/plan/0/text",
+      "quote": "The author has not checked the delivery register."
+    }
+  ],
+  "repair_accounting": {
+    "recommendation": "unchanged",
+    "source_unit_repair_map": [
+      {
+        "claim_id": "dev-v3-shift-18-C01",
+        "repair_id": "E01"
+      },
+      {
+        "claim_id": "dev-v3-shift-18-C02",
+        "repair_id": "E02"
+      },
+      {
+        "claim_id": "dev-v3-shift-18-C03",
+        "repair_id": "E03"
+      },
+      {
+        "claim_id": "dev-v3-shift-18-C04",
+        "repair_id": "E04"
+      },
+      {
+        "claim_id": "dev-v3-shift-18-C05",
+        "repair_id": "E05"
+      },
+      {
+        "claim_id": "dev-v3-shift-18-C06",
+        "repair_id": "E06"
+      },
+      {
+        "claim_id": "dev-v3-shift-18-C07",
+        "repair_id": "E07"
+      }
+    ],
+    "restoration_count": 5,
+    "relocation_count": 1,
+    "meaning_correction_count": 1,
+    "rationale": "C01-C05 are five distinct missing checklist units with separate chronology, ambiguous notebook record, badge observation, paper handover and limited tray acknowledgement. C06 is a supported negative action in the wrong field and requires one relocation. C07 needs one PLAN meaning correction. C06 and C07 share an output paragraph but represent distinct source units; moving the register-check statement does not restore SF as requester. R01 and repeated aggregate/group rendering are not additional repairs. Generic chronology/action/contact questions are already absorbed into E01/E04/E05. No extra repair is charged for the reasonable unknown-impact question or the generic plan clarification.",
+    "duplicate_repairs_found": false,
+    "recommended_A_counts": {
+      "placed_supported": 0,
+      "logical_repairs": 7,
+      "correctness_errors": 1,
+      "critical_correctness_errors": 1
+    }
+  },
+  "canonical_review_modified": false,
+  "adjudication": "Recommendation for root to adjudicate before model unmasking; canonical review remains unchanged."
+}

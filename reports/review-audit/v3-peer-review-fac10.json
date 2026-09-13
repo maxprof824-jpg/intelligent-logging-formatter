@@ -1,0 +1,12 @@
+{
+  "case_id": "dev-v3-fac-10",
+  "scope": "Root focused masked check of B-R01 after reading the complete source/checklist and authoritative B fields, suggestions and questions through an allowlisted viewer.",
+  "review_sha256_at_check": "0313cb08d47d2431980483f293912167f77149c2909e6f996b78e7b9575d4145",
+  "source_quote": "At 16:18 UTC Reception (OL) said they would ask the induction organizer for the room number.",
+  "output_quote": "Reception (OL) was contacted at 16:18 UTC to request clarification on the room number.",
+  "verdict": "agree",
+  "critical": true,
+  "rationale": "Communication with Reception and its topic are supported. The accepted agency entry adds a completed clarification request directed to Reception, whereas the supplied fact is Reception's statement of its intended inquiry to the organizer. That added past request is not established by the source. It is an unsupported action/purpose, not proof that no conversation took place. The correctly retained intention elsewhere does not remove the separate added request.",
+  "changes_to_original_judgments_or_counts": false,
+  "limits": "AI-assisted focused second review, not an independent or timed evaluation. Model identity key, full comparison and raw generations were not inspected in this check."
+}

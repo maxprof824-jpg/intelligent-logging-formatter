@@ -1,0 +1,410 @@
+{
+  "case_id": "dev-v3-fac-09",
+  "checklist_sha256": "08546bda79a20f037aae552455f6c38758e54617d533c1865b9d5328f4705533",
+  "reviewer": "AI-assisted review; A/B/C model labels withheld; prior familiarity with the historical v2.5 Facilities 09 comparison disclosed. This review used the allowlisted surfaced-field viewer, not raw generations or the model-label map.",
+  "variants": {
+    "A": {
+      "claim_results": [
+        {
+          "claim_id": "dev-v3-fac-09-C01",
+          "status": "placed_supported",
+          "rationale": "SITUATION preserves the date, local 07:40 time, previous-day notice and room identity."
+        },
+        {
+          "claim_id": "dev-v3-fac-09-C02",
+          "status": "partial",
+          "rationale": "SITUATION retains the doorway observation but omits that the author did not enter or assess cleaning completion."
+        },
+        {
+          "claim_id": "dev-v3-fac-09-C03",
+          "status": "partial",
+          "rationale": "AGENCIES CONTACTED names DM and the notice subject only. DM's actual reply and lack of room check are in SITUATION; 07:48 is only in evidence/excerpts."
+        },
+        {
+          "claim_id": "dev-v3-fac-09-C04",
+          "status": "placed_supported",
+          "rationale": "ACTION records photographing the notice under ROOM-62; passive wording does not substitute another actor or notice removal."
+        },
+        {
+          "claim_id": "dev-v3-fac-09-C05",
+          "status": "evidence_or_unassigned_only",
+          "rationale": "The explicit unknown booking-impact fact remains in source excerpts; IMPACT is empty. Its appearance within a proposed impact does not place the factual unit."
+        },
+        {
+          "claim_id": "dev-v3-fac-09-C06",
+          "status": "evidence_or_unassigned_only",
+          "rationale": "The timed DM request, Reception recipient and permission limit remain in excerpts. PLAN is empty; the proposed retention policy does not replace the recorded request."
+        },
+        {
+          "claim_id": "dev-v3-fac-09-C07",
+          "status": "failed_group",
+          "rationale": "The sign group is incomplete with empty factual fields; delivery/date/time/reference survive only in retained source."
+        },
+        {
+          "claim_id": "dev-v3-fac-09-C08",
+          "status": "failed_group",
+          "rationale": "The author's timed replacement after wording confirmation must be reconstructed from the failed group's source."
+        },
+        {
+          "claim_id": "dev-v3-fac-09-C09",
+          "status": "failed_group",
+          "rationale": "The event-specific open-reception/no-wait outcome is not placed in the failed group."
+        },
+        {
+          "claim_id": "dev-v3-fac-09-C10",
+          "status": "failed_group",
+          "rationale": "The recycling action is only retained source in the failed sign group."
+        }
+      ],
+      "edits": [
+        {
+          "edit_id": "E01",
+          "categories": [
+            "place_missing_unit"
+          ],
+          "claim_ids": [
+            "dev-v3-fac-09-C02"
+          ],
+          "detail": "Add the explicit no-entry/no-cleaning-assessment limit to the doorway observation."
+        },
+        {
+          "edit_id": "E02",
+          "categories": [
+            "place_missing_unit",
+            "move_supported_unit"
+          ],
+          "claim_ids": [
+            "dev-v3-fac-09-C03"
+          ],
+          "detail": "Complete the agency entry with the 07:48 reply and DM's lack of a room check, drawing its supported substance from SITUATION."
+        },
+        {
+          "edit_id": "E03",
+          "categories": [
+            "place_missing_unit"
+          ],
+          "claim_ids": [
+            "dev-v3-fac-09-C05"
+          ],
+          "detail": "Place the organizer-specific unknown booking impact in IMPACT."
+        },
+        {
+          "edit_id": "E04",
+          "categories": [
+            "place_missing_unit"
+          ],
+          "claim_ids": [
+            "dev-v3-fac-09-C06"
+          ],
+          "detail": "Restore the 08:05 request to Reception and its permission limit in PLAN."
+        },
+        {
+          "edit_id": "E05",
+          "categories": [
+            "place_missing_unit"
+          ],
+          "claim_ids": [
+            "dev-v3-fac-09-C07"
+          ],
+          "detail": "Reconstruct the dated 07:43 Stores/EP SIGN-11 delivery in the sign SITUATION."
+        },
+        {
+          "edit_id": "E06",
+          "categories": [
+            "place_missing_unit"
+          ],
+          "claim_ids": [
+            "dev-v3-fac-09-C08"
+          ],
+          "detail": "Reconstruct the author's 07:51 replacement after Reception confirmed wording in ACTION."
+        },
+        {
+          "edit_id": "E07",
+          "categories": [
+            "place_missing_unit"
+          ],
+          "claim_ids": [
+            "dev-v3-fac-09-C09"
+          ],
+          "detail": "Reconstruct the sign-specific reception/no-wait outcome in IMPACT."
+        },
+        {
+          "edit_id": "E08",
+          "categories": [
+            "place_missing_unit"
+          ],
+          "claim_ids": [
+            "dev-v3-fac-09-C10"
+          ],
+          "detail": "Reconstruct disposal of the old reception sign in ACTION."
+        },
+        {
+          "edit_id": "E09",
+          "categories": [
+            "remove_unnecessary_advice"
+          ],
+          "claim_ids": [],
+          "detail": "Remove the suggestion and matching question about whether a room-check protocol exists; it diverts this record from the concrete unknown room status and booking impact."
+        },
+        {
+          "edit_id": "E10",
+          "categories": [
+            "remove_unnecessary_advice"
+          ],
+          "claim_ids": [
+            "dev-v3-fac-09-C06"
+          ],
+          "detail": "Remove the proposed audit/until-further-notice retention instruction and formal-policy question. The source already provides the narrower instruction to keep the photograph available."
+        }
+      ],
+      "correctness_errors": [],
+      "additional_omissions": [],
+      "suggestions_review": "The possible confusion impact is explicitly tentative and the organizer follow-up/time-zone question are relevant. The protocol-existence inquiry and extra audit/retention-policy proposal add unrequested administrative work. Conditional hypotheses were not scored as established factual assertions. Generic uncertainty prompts are broad but were not separately charged as substantive repairs.",
+      "failure_review": "Reception sign replacement is incomplete and all factual fields are empty; source excerpts remain available. The meeting-room group retains accepted facts and is reviewed on those facts, rather than classifying the entire case as failed."
+    },
+    "B": {
+      "claim_results": [
+        {
+          "claim_id": "dev-v3-fac-09-C01",
+          "status": "partial",
+          "rationale": "Date, local time, room and visible notice are placed, but the previous-day/stale-notice detail is omitted from factual text."
+        },
+        {
+          "claim_id": "dev-v3-fac-09-C02",
+          "status": "placed_supported",
+          "rationale": "SITUATION preserves the empty-looking doorway observation and explicitly states no entry or assessment."
+        },
+        {
+          "claim_id": "dev-v3-fac-09-C03",
+          "status": "partial",
+          "rationale": "AGENCIES CONTACTED has DM and 07:48; the reply and no-room-check limitation are placed only in SITUATION."
+        },
+        {
+          "claim_id": "dev-v3-fac-09-C04",
+          "status": "placed_supported",
+          "rationale": "ACTION records the notice photograph and ROOM-62."
+        },
+        {
+          "claim_id": "dev-v3-fac-09-C05",
+          "status": "placed_supported",
+          "rationale": "IMPACT correctly says no organizer has supplied whether a booking was affected."
+        },
+        {
+          "claim_id": "dev-v3-fac-09-C06",
+          "status": "partial",
+          "rationale": "PLAN preserves 08:05, DM, the record request and permission limit, but omits Reception as the recipient."
+        },
+        {
+          "claim_id": "dev-v3-fac-09-C07",
+          "status": "placed_supported",
+          "rationale": "Sign SITUATION includes the event date/local context, 07:43, Stores/EP and SIGN-11."
+        },
+        {
+          "claim_id": "dev-v3-fac-09-C08",
+          "status": "placed_supported",
+          "rationale": "ACTION retains 07:51 replacement after Reception's wording confirmation; the same event SITUATION explicitly identifies the author."
+        },
+        {
+          "claim_id": "dev-v3-fac-09-C09",
+          "status": "placed_supported",
+          "rationale": "Sign IMPACT preserves open reception and the sign-change-specific absence of waiting."
+        },
+        {
+          "claim_id": "dev-v3-fac-09-C10",
+          "status": "placed_supported",
+          "rationale": "Sign ACTION states the old sign was placed in the recycling tray."
+        }
+      ],
+      "edits": [
+        {
+          "edit_id": "E01",
+          "categories": [
+            "place_missing_unit"
+          ],
+          "claim_ids": [
+            "dev-v3-fac-09-C01"
+          ],
+          "detail": "Restore that the notice was yesterday's notice, not merely a notice visible at 07:40."
+        },
+        {
+          "edit_id": "E02",
+          "categories": [
+            "move_supported_unit"
+          ],
+          "claim_ids": [
+            "dev-v3-fac-09-C03"
+          ],
+          "detail": "Move or copy the supported timed DM reply and no-check limitation into the agency entry so that entry is complete."
+        },
+        {
+          "edit_id": "E03",
+          "categories": [
+            "place_missing_unit"
+          ],
+          "claim_ids": [
+            "dev-v3-fac-09-C06"
+          ],
+          "detail": "Name Reception as the recipient of DM's 08:05 instruction."
+        },
+        {
+          "edit_id": "E04",
+          "categories": [
+            "remove_unnecessary_advice"
+          ],
+          "claim_ids": [
+            "dev-v3-fac-09-C05"
+          ],
+          "detail": "Remove/rewrite the proposed unconfirmed-booking impact; the known gap is whether the notice affected a booking, not whether the booking itself is confirmed."
+        },
+        {
+          "edit_id": "E05",
+          "categories": [
+            "remove_unnecessary_advice"
+          ],
+          "claim_ids": [
+            "dev-v3-fac-09-C05"
+          ],
+          "detail": "Refocus the proposed follow-up and matching question on notice impact/room availability, removing the unsupported need to establish booking status."
+        },
+        {
+          "edit_id": "E06",
+          "categories": [
+            "remove_unnecessary_advice"
+          ],
+          "claim_ids": [],
+          "detail": "Remove the request for an actual reception zone: the source's missing zone is a time zone. Any request for exact sign wording can remain separately targeted."
+        },
+        {
+          "edit_id": "E07",
+          "categories": [
+            "remove_unnecessary_advice"
+          ],
+          "claim_ids": [],
+          "detail": "Remove the new sign-display review assignment/question; replacement after wording confirmation is complete and no remaining display concern is supplied."
+        }
+      ],
+      "correctness_errors": [],
+      "additional_omissions": [],
+      "suggestions_review": "The unknown booking impact and missing time zone merit clarification. The impact/follow-up suggestions shift attention to unconfirmed booking status, and the reception-zone wording appears to mistake temporal context for a location gap. The proposed new sign review adds an obligation without a supplied remaining problem. These are marked possibilities/proposals, so they are counted as advice repairs rather than false completed facts. Narrative overlap with factual fields is verbose but does not require separate substantive repairs here.",
+      "failure_review": "Both groups return accepted factual sections; no incomplete group is displayed. Structural acceptance does not cure missing stale-notice/recipient details or field-placement issues."
+    },
+    "C": {
+      "claim_results": [
+        {
+          "claim_id": "dev-v3-fac-09-C01",
+          "status": "placed_supported",
+          "rationale": "Meeting-room SITUATION preserves the full dated local-time stale-notice observation."
+        },
+        {
+          "claim_id": "dev-v3-fac-09-C02",
+          "status": "placed_supported",
+          "rationale": "SITUATION explicitly preserves no entry or cleaning assessment alongside the doorway observation."
+        },
+        {
+          "claim_id": "dev-v3-fac-09-C03",
+          "status": "placed_supported",
+          "rationale": "AGENCIES CONTACTED retains 07:48, Building Services/DM, the collection statement and lack of a room check."
+        },
+        {
+          "claim_id": "dev-v3-fac-09-C04",
+          "status": "evidence_or_unassigned_only",
+          "rationale": "The ROOM-62 photography action remains only in review excerpts; ACTION is empty."
+        },
+        {
+          "claim_id": "dev-v3-fac-09-C05",
+          "status": "placed_supported",
+          "rationale": "IMPACT preserves the organizer-specific uncertainty about booking impact."
+        },
+        {
+          "claim_id": "dev-v3-fac-09-C06",
+          "status": "placed_supported",
+          "rationale": "PLAN retains 08:05, DM's request to Reception, and the explicit limit on permission."
+        },
+        {
+          "claim_id": "dev-v3-fac-09-C07",
+          "status": "present_wrong_field_or_event",
+          "rationale": "Delivery, Stores/EP, 07:43 and SIGN-11 are in ACTION rather than SITUATION; the event date/local context is already in SITUATION."
+        },
+        {
+          "claim_id": "dev-v3-fac-09-C08",
+          "status": "placed_supported",
+          "rationale": "ACTION preserves the author's 07:51 replacement after Reception confirmed wording."
+        },
+        {
+          "claim_id": "dev-v3-fac-09-C09",
+          "status": "placed_supported",
+          "rationale": "IMPACT preserves the sign-specific open-reception/no-wait outcome."
+        },
+        {
+          "claim_id": "dev-v3-fac-09-C10",
+          "status": "present_wrong_field_or_event",
+          "rationale": "The recycling action is attached to IMPACT instead of ACTION."
+        }
+      ],
+      "edits": [
+        {
+          "edit_id": "E01",
+          "categories": [
+            "place_missing_unit"
+          ],
+          "claim_ids": [
+            "dev-v3-fac-09-C04"
+          ],
+          "detail": "Restore the ROOM-62 photography action from its excerpt into ACTION."
+        },
+        {
+          "edit_id": "E02",
+          "categories": [
+            "move_supported_unit"
+          ],
+          "claim_ids": [
+            "dev-v3-fac-09-C07"
+          ],
+          "detail": "Move the 07:43 Stores/EP SIGN-11 delivery into the sign SITUATION beside its date/context."
+        },
+        {
+          "edit_id": "E03",
+          "categories": [
+            "move_supported_unit"
+          ],
+          "claim_ids": [
+            "dev-v3-fac-09-C10"
+          ],
+          "detail": "Move disposal of the old sign from IMPACT into ACTION."
+        },
+        {
+          "edit_id": "E04",
+          "categories": [
+            "remove_unnecessary_advice"
+          ],
+          "claim_ids": [],
+          "detail": "Remove the proposal/question about agreeing to review the cleaning-notice record; the supplied pending issues concern actual room/booking status, and DM has already specified retaining the photograph."
+        },
+        {
+          "edit_id": "E05",
+          "categories": [
+            "remove_unnecessary_advice"
+          ],
+          "claim_ids": [],
+          "detail": "Remove the new reception-signage record reviewer assignment/question; no remaining issue with the completed sign replacement is supplied."
+        },
+        {
+          "edit_id": "E06",
+          "categories": [
+            "remove_unnecessary_advice"
+          ],
+          "claim_ids": [
+            "dev-v3-fac-09-C07",
+            "dev-v3-fac-09-C08"
+          ],
+          "detail": "Remove the generic question asking the times of individual sign events: 07:43 and 07:51 are already supplied and retained, albeit partly in the wrong field."
+        }
+      ],
+      "correctness_errors": [],
+      "additional_omissions": [],
+      "suggestions_review": "The booking-impact follow-up is useful; the waiting-meeting impact remains explicitly tentative rather than asserted. Asking for the individual who confirmed wording can clarify the missing initials beyond the known Reception role. Record-review assignments add unnecessary follow-up to both events, and the sign-event time question asks for details already present. Time-zone questions remain appropriate.",
+      "failure_review": "Both groups return accepted fields. The missing photograph action is available as an excerpt but is not placed; sign delivery and disposal survive in incorrect fields rather than being lost."
+    }
+  },
+  "case_assessment": "The explicit event groups keep the meeting-room uncertainty separate from the sign's no-wait outcome in all surfaced drafts; A nevertheless loses the whole sign draft. B and C retain both groups with different omissions/field-placement repairs. No surfaced established factual assertion was judged unsupported or falsely completed in this case; several conditional suggestions were unhelpfully directed or unnecessary. Counts concern the ten frozen review units and assessed repair operations, not semantic accuracy or timed human effort."
+}
