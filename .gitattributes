@@ -1,0 +1,2 @@
+# Evaluation checks fingerprint exact dataset bytes on every platform.
+evaluation-v3/*.jsonl text eol=lf

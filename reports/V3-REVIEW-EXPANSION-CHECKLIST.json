@@ -1,0 +1,1595 @@
+{
+  "schema_version": "1.0",
+  "title": "V3 pre-authored development review expansion checklist",
+  "status": "frozen_before_matched_output_review",
+  "purpose": "AI-authored source-only review units for the remaining 12 development cases, prepared before inspecting matched outputs. This is not an additional fixed promotion sample or an exhaustive accuracy benchmark.",
+  "activation_rule": "Use when a new failure or apparent regression triggers expansion under the frozen candidate protocol, or clearly disclose a broader all-case review. Do not silently pool these units into the fixed eight-case gate or alter that gate. Record activated case IDs and the reason for each.",
+  "provenance": {
+    "dataset": "evaluation-v3/development.jsonl",
+    "dataset_sha256": "2dea24c5016a739076b0d4e30829b3385e9c1097f55e00ef9b40c898dcd5672a",
+    "protocol": "reports/V3-CANDIDATE-PROTOCOL.md",
+    "protocol_sha256": "f0c341bdf1fa8928ce734af99265ae2f5d1464e712712159f64a2fc2ed9bca9e",
+    "fixed_checklist": "reports/V3-REVIEW-CHECKLIST.json",
+    "fixed_checklist_sha256": "08546bda79a20f037aae552455f6c38758e54617d533c1865b9d5328f4705533",
+    "construction_inputs": "The remaining development cases' source_text and expectations, plus the fixed checklist method. No saved model outputs, training examples, or reserved notes were read during this construction.",
+    "quote_validation": "Every exact quotation was programmatically found in an original source segment belonging to the same event label. Repeated headings join one event; unlabeled notes use event_label null."
+  },
+  "method": {
+    "unit": "One stable claim_id is one review unit. Some units bundle a related chronology or attribution distinction. Count the unit once only when its stated factual requirements and critical meaning distinctions are preserved; do not award separate points for its clauses or repeated renderings.",
+    "placed_supported": "Allow faithful paraphrases. The unit must appear in the correct event and an acceptable factual field with required speaker, time, status, scope and references. A date/time zone stated once for that event may provide shared context. A temporal history may retain an earlier state only if clearly superseded by the supplied correction/update.",
+    "distinction_rules": "Critical meaning distinctions constrain what the output may assert; they do not require repeating every source denial when a concise claim preserves the meaning. Explicit uncertainty or correction included in factual_claim is part of the required unit. Do not infer a missing claim from a mere reference or quote match.",
+    "not_placed": "Source quotations, evidence tables, unassigned excerpts, questions, or suggestions alone do not count as correctly placed factual claims. A partial unit is recorded as partial, without fractional credit. An empty/failed group is not a correct result.",
+    "placement_statuses": [
+      "placed_supported",
+      "partial",
+      "present_wrong_field_or_event",
+      "evidence_or_unassigned_only",
+      "absent",
+      "meaning_error",
+      "failed_group"
+    ],
+    "field_rules": "All units currently name one intended/acceptable field. If future checklist revisions permit alternatives, they must state a source-based rationale before outputs are reviewed. Do not broaden acceptable fields retrospectively to raise a result.",
+    "critical_errors": "Review the entire returned draft and suggestions, including text outside this checklist. Independently record invented facts/approvals, actor or time changes, reversed negation, unsupported impact certainty, stale corrected status, false completion, and material cross-event attribution. Matching quotes or checklist fragments does not establish support.",
+    "substantive_edit_proxy": {
+      "categories": {
+        "correct_meaning": "Correct one distinct factual claim's attribution, time, negation, status, scope, or reference; include unsupported factual assertions inside suggestions.",
+        "remove_unsupported_claim": "Remove one unsupported claim that cannot be repaired into a supported statement; includes claims outside the checklist.",
+        "place_missing_unit": "Insert or reconstruct one checklist unit from source/evidence/unassigned material into its correct event/field, including failed groups.",
+        "move_supported_unit": "Move one already supported unit from the wrong event/field into the correct location.",
+        "remove_unnecessary_advice": "Remove one redundant, contradictory, or unjustified suggestion/question, treating a suggestion and its matching confirmation question as one unit.",
+        "remove_duplicate": "Remove a materially redundant repeated claim or excerpt requiring substantive cleanup; ignore cosmetic formatting."
+      },
+      "counting": "Record each needed repair with linked claim_ids and categories, then count unique substantive repair operations. One operation may fix several linked units: count it once, not once per linked ID or category. Distinct repairs remain separate. Use correct_meaning before relocation when the same statement requires both; annotate relocation without double-counting. Record restoration of a failed group by the missing review units that must be reconstructed, not zero work.",
+      "limits": "This is an AI-assisted editing-burden proxy, not elapsed review time, user preference, or measured productivity. Store rationale so a human can challenge repair grouping; apply the same grouping rule to every variant."
+    },
+    "reporting": "Report placed units, missing/partial units, critical errors, failures, and edit operations per case and domain. Raw pooled counts are descriptive; do not let longer cases or repeated clauses conceal a domain regression. Use the frozen promotion protocol, not a new composite score or an accuracy percentage.",
+    "scope_limits": "Omitted source details can still be important and must be recorded separately. This small deliberate sample does not cover every logging task. Assistance-off cases should not generate proposed impacts/actions/plans; ordinary clarification questions are assessed for relevance under the same runtime contract.",
+    "failure_expansion": "The protocol also requires review of new failures/regressions outside these eight cases. Their review needs a separately identified source-only checklist prepared without tuning this fixed checklist to improve scores. Preserve this file's hash and disclose the expansion."
+  },
+  "counts": {
+    "cases": 12,
+    "claims": 92,
+    "per_case": {
+      "dev-v3-maint-03": 10,
+      "dev-v3-maint-04": 7,
+      "dev-v3-it-06": 8,
+      "dev-v3-it-08": 7,
+      "dev-v3-fac-10": 7,
+      "dev-v3-fac-11": 10,
+      "dev-v3-admin-14": 7,
+      "dev-v3-admin-15": 9,
+      "dev-v3-admin-16": 6,
+      "dev-v3-shift-18": 7,
+      "dev-v3-shift-19": 8,
+      "dev-v3-shift-20": 6
+    }
+  },
+  "cases": [
+    {
+      "case_id": "dev-v3-maint-03",
+      "domain": "maintenance_paperwork",
+      "mode": "review",
+      "assist": true,
+      "source_sha256": "ece753783f2953cc91810c6727172e5c31df69eae8c2af0f54643473053419e6",
+      "event_labels": [
+        "Annual office chair inspection paperwork",
+        "Shredder visit invoice"
+      ],
+      "claims": [
+        {
+          "claim_id": "dev-v3-maint-03-C01",
+          "event_label": "Annual office chair inspection paperwork",
+          "factual_claim": "At 13:00Z on 12 September 2026, the draft count of sixteen was corrected to the returned cover sheet's six; this was not a new inspection.",
+          "source_quotes": [
+            "SITUATION: 13:00Z, 12 September 2026. The draft says sixteen chairs were inspected, but the returned cover sheet actually says six. This is a correction to my draft count, not a new inspection."
+          ],
+          "intended_field": "situation",
+          "acceptable_fields": [
+            "situation"
+          ],
+          "critical_meaning_distinctions": [
+            "Preserve the source of the count; do not treat sixteen as current or certify an independently observed inspection."
+          ]
+        },
+        {
+          "claim_id": "dev-v3-maint-03-C02",
+          "event_label": "Annual office chair inspection paperwork",
+          "factual_claim": "INSPECT-602 lacks its second-page attachment.",
+          "source_quotes": [
+            "INSPECT-602 has no second-page attachment."
+          ],
+          "intended_field": "situation",
+          "acceptable_fields": [
+            "situation"
+          ],
+          "critical_meaning_distinctions": [
+            "Do not infer the attachment's contents or a completed record."
+          ]
+        },
+        {
+          "claim_id": "dev-v3-maint-03-C03",
+          "event_label": "Annual office chair inspection paperwork",
+          "factual_claim": "The training room remained available, while inspection-record completeness was unknown.",
+          "source_quotes": [
+            "IMPACT: The training room remained available; whether the inspection record is complete is unknown."
+          ],
+          "intended_field": "impact",
+          "acceptable_fields": [
+            "impact"
+          ],
+          "critical_meaning_distinctions": [
+            "Room availability does not establish complete paperwork."
+          ]
+        },
+        {
+          "claim_id": "dev-v3-maint-03-C04",
+          "event_label": "Annual office chair inspection paperwork",
+          "factual_claim": "The author corrected the draft count to six and requested the missing attachment.",
+          "source_quotes": [
+            "ACTION: I corrected my draft count to six and requested the missing attachment."
+          ],
+          "intended_field": "action",
+          "acceptable_fields": [
+            "action"
+          ],
+          "critical_meaning_distinctions": [
+            "Draft editing and a request are completed; obtaining the attachment is not."
+          ]
+        },
+        {
+          "claim_id": "dev-v3-maint-03-C05",
+          "event_label": "Annual office chair inspection paperwork",
+          "factual_claim": "AB said this inspection-paperwork record remained open without promising to find the attachment today.",
+          "source_quotes": [
+            "AGENCIES CONTACTED: Documentation Office (AB) at 13:14Z.",
+            "PLAN: AB said, \"Record remains open.\" AB has not promised to find the attachment today."
+          ],
+          "intended_field": "plan",
+          "acceptable_fields": [
+            "plan"
+          ],
+          "critical_meaning_distinctions": [
+            "AB's open-record statement belongs to chair paperwork, not the invoice or JK's Monday check."
+          ]
+        },
+        {
+          "claim_id": "dev-v3-maint-03-C06",
+          "event_label": "Shredder visit invoice",
+          "factual_claim": "INV-223 arrived at 13:07Z on 12 September 2026 for a scheduled vendor visit.",
+          "source_quotes": [
+            "12 September 2026, UTC.",
+            "SITUATION: 13:07Z INV-223 arrived for a scheduled vendor visit."
+          ],
+          "intended_field": "situation",
+          "acceptable_fields": [
+            "situation"
+          ],
+          "critical_meaning_distinctions": [
+            "An invoice for scheduled work is not proof of completed service or payment approval."
+          ]
+        },
+        {
+          "claim_id": "dev-v3-maint-03-C07",
+          "event_label": "Shredder visit invoice",
+          "factual_claim": "The routine invoice query caused no delay to office work.",
+          "source_quotes": [
+            "IMPACT: The routine invoice query caused no delay to office work."
+          ],
+          "intended_field": "impact",
+          "acceptable_fields": [
+            "impact"
+          ],
+          "critical_meaning_distinctions": [
+            "Keep the outcome with the invoice; do not infer complete chair paperwork."
+          ]
+        },
+        {
+          "claim_id": "dev-v3-maint-03-C08",
+          "event_label": "Shredder visit invoice",
+          "factual_claim": "Accounts Office (JK) was contacted at 13:18Z.",
+          "source_quotes": [
+            "AGENCIES CONTACTED: Accounts Office (JK) at 13:18Z."
+          ],
+          "intended_field": "agencies_contacted",
+          "acceptable_fields": [
+            "agencies_contacted"
+          ],
+          "critical_meaning_distinctions": [
+            "JK is separate from Documentation Office (AB)."
+          ]
+        },
+        {
+          "claim_id": "dev-v3-maint-03-C09",
+          "event_label": "Shredder visit invoice",
+          "factual_claim": "The author forwarded the invoice number, not an invoice copy.",
+          "source_quotes": [
+            "ACTION: I forwarded the invoice number, not a copy of the invoice."
+          ],
+          "intended_field": "action",
+          "acceptable_fields": [
+            "action"
+          ],
+          "critical_meaning_distinctions": [
+            "Do not expand the transmitted material from a number to the document."
+          ]
+        },
+        {
+          "claim_id": "dev-v3-maint-03-C10",
+          "event_label": "Shredder visit invoice",
+          "factual_claim": "JK said the invoice record remained open and would check the purchase reference on Monday; payment was not approved.",
+          "source_quotes": [
+            "PLAN: JK said, \"Record remains open.\" JK will check the purchase reference on Monday; payment has not been approved."
+          ],
+          "intended_field": "plan",
+          "acceptable_fields": [
+            "plan"
+          ],
+          "critical_meaning_distinctions": [
+            "The repeated quote must keep its speaker/event; Monday is an intended reference check, not payment approval."
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "dev-v3-maint-04",
+      "domain": "maintenance_paperwork",
+      "mode": "review",
+      "assist": false,
+      "source_sha256": "3f8f5b25e983da3d9f65803cb405b608e27064660b5b7bc5b47c658df2d2f05b",
+      "event_labels": [
+        "Routine service form filing"
+      ],
+      "claims": [
+        {
+          "claim_id": "dev-v3-maint-04-C01",
+          "event_label": "Routine service form filing",
+          "factual_claim": "At 10:10 UTC on 12 September 2026, signed form FILE-804 arrived from the contractor's documentation team.",
+          "source_quotes": [
+            "SITUATION: 12 September 2026, UTC. At 10:10 the signed service form FILE-804 arrived from the contractor's documentation team."
+          ],
+          "intended_field": "situation",
+          "acceptable_fields": [
+            "situation"
+          ],
+          "critical_meaning_distinctions": [
+            "Receipt of a signed form does not certify underlying service."
+          ]
+        },
+        {
+          "claim_id": "dev-v3-maint-04-C02",
+          "event_label": "Routine service form filing",
+          "factual_claim": "The filing record was available before the 11:00 internal paperwork review, and no review was delayed.",
+          "source_quotes": [
+            "IMPACT: The required filing record was available before the 11:00 internal paperwork review; no review was delayed."
+          ],
+          "intended_field": "impact",
+          "acceptable_fields": [
+            "impact"
+          ],
+          "critical_meaning_distinctions": [
+            "The no-delay finding concerns the paperwork review."
+          ]
+        },
+        {
+          "claim_id": "dev-v3-maint-04-C03",
+          "event_label": "Routine service form filing",
+          "factual_claim": "Records Office (HL) acknowledged the author's message at 10:14.",
+          "source_quotes": [
+            "AGENCIES CONTACTED: At 10:14 Records Office (HL) acknowledged receipt of my message."
+          ],
+          "intended_field": "agencies_contacted",
+          "acceptable_fields": [
+            "agencies_contacted"
+          ],
+          "critical_meaning_distinctions": [
+            "An acknowledgement is already supplied; no fabricated contact details."
+          ]
+        },
+        {
+          "claim_id": "dev-v3-maint-04-C04",
+          "event_label": "Routine service form filing",
+          "factual_claim": "The author matched the form number, saved the PDF, and recorded its file location.",
+          "source_quotes": [
+            "ACTION: I matched the form number to the existing request, saved the PDF in the service-record folder, and entered the saved-file location in the register."
+          ],
+          "intended_field": "action",
+          "acceptable_fields": [
+            "action"
+          ],
+          "critical_meaning_distinctions": [
+            "Preserve completed filing and the author's role."
+          ]
+        },
+        {
+          "claim_id": "dev-v3-maint-04-C05",
+          "event_label": "Routine service form filing",
+          "factual_claim": "HL confirmed the copy was readable at 10:17.",
+          "source_quotes": [
+            "At 10:17 HL confirmed the copy was readable."
+          ],
+          "intended_field": "action",
+          "acceptable_fields": [
+            "action"
+          ],
+          "critical_meaning_distinctions": [
+            "HL verified readability, not service performance."
+          ]
+        },
+        {
+          "claim_id": "dev-v3-maint-04-C06",
+          "event_label": "Routine service form filing",
+          "factual_claim": "After HL said the documentation request could close, the author closed it at 10:20.",
+          "source_quotes": [
+            "PLAN: HL said the documentation request could be closed, and I marked that request closed at 10:20."
+          ],
+          "intended_field": "action",
+          "acceptable_fields": [
+            "action"
+          ],
+          "critical_meaning_distinctions": [
+            "Closure applies to documentation, not an unverified maintenance/service request."
+          ]
+        },
+        {
+          "claim_id": "dev-v3-maint-04-C07",
+          "event_label": "Routine service form filing",
+          "factual_claim": "No additional paperwork follow-up was agreed or needed; the entry does not certify the underlying service.",
+          "source_quotes": [
+            "No additional paperwork follow-up was agreed or needed. This records the handling of the form; it does not certify the underlying service work."
+          ],
+          "intended_field": "plan",
+          "acceptable_fields": [
+            "plan"
+          ],
+          "critical_meaning_distinctions": [
+            "Do not reopen completed paperwork or turn record handling into certification."
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "dev-v3-it-06",
+      "domain": "it_support",
+      "mode": "draft",
+      "assist": false,
+      "source_sha256": "2de00c94e2530a3b1d852370c28ee5fe5d741dd6506feff33b0e0a7d9fa327c6",
+      "event_labels": [],
+      "claims": [
+        {
+          "claim_id": "dev-v3-it-06-C01",
+          "event_label": null,
+          "factual_claim": "At 10:02Z Morgan reported two colleagues unable to find the new shared-folder shortcut.",
+          "source_quotes": [
+            "10:02Z Morgan reported that two colleagues could not find the new shared-folder shortcut."
+          ],
+          "intended_field": "situation",
+          "acceptable_fields": [
+            "situation"
+          ],
+          "critical_meaning_distinctions": [
+            "This is Morgan's report about two people, not three independently confirmed users or an outage."
+          ]
+        },
+        {
+          "claim_id": "dev-v3-it-06-C02",
+          "event_label": null,
+          "factual_claim": "The author checked only their own desktop and found the shortcut present.",
+          "source_quotes": [
+            "I personally checked only my own desktop and the shortcut was present."
+          ],
+          "intended_field": "situation",
+          "acceptable_fields": [
+            "situation"
+          ],
+          "critical_meaning_distinctions": [
+            "Do not generalize the author's result to colleagues."
+          ]
+        },
+        {
+          "claim_id": "dev-v3-it-06-C03",
+          "event_label": null,
+          "factual_claim": "The chat's same-here comment had no associated name.",
+          "source_quotes": [
+            "The chat then said \"same here\" with no name next to it."
+          ],
+          "intended_field": "situation",
+          "acceptable_fields": [
+            "situation"
+          ],
+          "critical_meaning_distinctions": [
+            "Do not identify its speaker or count it as an additional verified affected user."
+          ]
+        },
+        {
+          "claim_id": "dev-v3-it-06-C04",
+          "event_label": null,
+          "factual_claim": "An old-address welcome-page report may concern the shortcut or a separate web page; the relationship is unclear.",
+          "source_quotes": [
+            "Another note says the welcome-page link opens an old address. It is unclear whether that comment describes the shortcut or a separate web page."
+          ],
+          "intended_field": "situation",
+          "acceptable_fields": [
+            "situation"
+          ],
+          "critical_meaning_distinctions": [
+            "Keep one unseparated ambiguous group; no established incident split or common cause."
+          ]
+        },
+        {
+          "claim_id": "dev-v3-it-06-C05",
+          "event_label": null,
+          "factual_claim": "The author saved the two screenshots separately as CAP-41 and CAP-42.",
+          "source_quotes": [
+            "I saved the two screenshots separately as CAP-41 and CAP-42."
+          ],
+          "intended_field": "action",
+          "acceptable_fields": [
+            "action"
+          ],
+          "critical_meaning_distinctions": [
+            "Preserve both references without inferring a shared cause."
+          ]
+        },
+        {
+          "claim_id": "dev-v3-it-06-C06",
+          "event_label": null,
+          "factual_claim": "At 10:18Z the author sent both screenshots to Service Desk (PF), who asked which users were affected.",
+          "source_quotes": [
+            "At 10:18Z I sent both to Service Desk (PF); PF asked which users were affected."
+          ],
+          "intended_field": "agencies_contacted",
+          "acceptable_fields": [
+            "agencies_contacted"
+          ],
+          "critical_meaning_distinctions": [
+            "PF requested information, not confirmation of a repair."
+          ]
+        },
+        {
+          "claim_id": "dev-v3-it-06-C07",
+          "event_label": null,
+          "factual_claim": "The requested user list has not been collected.",
+          "source_quotes": [
+            "I have not collected the user list."
+          ],
+          "intended_field": "plan",
+          "acceptable_fields": [
+            "plan"
+          ],
+          "critical_meaning_distinctions": [
+            "Do not claim it was sent or that PF agreed to produce it."
+          ]
+        },
+        {
+          "claim_id": "dev-v3-it-06-C08",
+          "event_label": null,
+          "factual_claim": "No outage, shared cause, or completed fix has been established.",
+          "source_quotes": [
+            "No one has established an outage, a shared cause, or a completed fix."
+          ],
+          "intended_field": "situation",
+          "acceptable_fields": [
+            "situation"
+          ],
+          "critical_meaning_distinctions": [
+            "Preserve uncertainty instead of manufacturing a completed troubleshooting sequence."
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "dev-v3-it-08",
+      "domain": "it_support",
+      "mode": "review",
+      "assist": false,
+      "source_sha256": "9377adf127f919225cfeb6d115c80e6e1665d851df443aba5709f9edf2dbd0ed",
+      "event_labels": [
+        "Shared office address-book entry"
+      ],
+      "claims": [
+        {
+          "claim_id": "dev-v3-it-08-C01",
+          "event_label": "Shared office address-book entry",
+          "factual_claim": "At 11:03 UTC on 2026-09-12, the address book showed an outdated meeting-room booking-desk extension.",
+          "source_quotes": [
+            "SITUATION: 2026-09-12 11:03 UTC: the office address book displayed an outdated extension for the meeting-room booking desk."
+          ],
+          "intended_field": "situation",
+          "acceptable_fields": [
+            "situation"
+          ],
+          "critical_meaning_distinctions": [
+            "The issue concerns a directory entry, not an unavailable booking desk."
+          ]
+        },
+        {
+          "claim_id": "dev-v3-it-08-C02",
+          "event_label": "Shared office address-book entry",
+          "factual_claim": "One call reached the old extension and was redirected; the caller confirmed booking completion without missing the meeting.",
+          "source_quotes": [
+            "IMPACT: One internal call reached the old extension and was redirected; the caller confirmed the booking was completed without missing the meeting."
+          ],
+          "intended_field": "impact",
+          "acceptable_fields": [
+            "impact"
+          ],
+          "critical_meaning_distinctions": [
+            "Retain the initial inconvenience and the caller's limited successful outcome."
+          ]
+        },
+        {
+          "claim_id": "dev-v3-it-08-C03",
+          "event_label": "Shared office address-book entry",
+          "factual_claim": "Directory Team (WS) acknowledged DIR-909 at 11:09 UTC.",
+          "source_quotes": [
+            "AGENCIES CONTACTED: Directory Team (WS) acknowledged DIR-909 at 11:09 UTC."
+          ],
+          "intended_field": "agencies_contacted",
+          "acceptable_fields": [
+            "agencies_contacted"
+          ],
+          "critical_meaning_distinctions": [
+            "WS is the directory contact; no new agency attribution."
+          ]
+        },
+        {
+          "claim_id": "dev-v3-it-08-C04",
+          "event_label": "Shared office address-book entry",
+          "factual_claim": "The author sent the current-directory extension; WS reported updating the entry at 11:18 UTC.",
+          "source_quotes": [
+            "ACTION: I sent the correct desk extension from the current staff directory. WS reported the address-book entry updated at 11:18 UTC."
+          ],
+          "intended_field": "action",
+          "acceptable_fields": [
+            "action"
+          ],
+          "critical_meaning_distinctions": [
+            "The author supplied information; do not claim the author performed WS's update."
+          ]
+        },
+        {
+          "claim_id": "dev-v3-it-08-C05",
+          "event_label": "Shared office address-book entry",
+          "factual_claim": "At 11:22 UTC the author checked the display and called the entry; the booking desk answered.",
+          "source_quotes": [
+            "At 11:22 UTC I checked the displayed entry and called it; the booking desk answered."
+          ],
+          "intended_field": "action",
+          "acceptable_fields": [
+            "action"
+          ],
+          "critical_meaning_distinctions": [
+            "The entry was tested already; this is separate from WS's earlier reported update."
+          ]
+        },
+        {
+          "claim_id": "dev-v3-it-08-C06",
+          "event_label": "Shared office address-book entry",
+          "factual_claim": "WS and the author agreed on closure after the check, and the author closed the ticket at 11:25 UTC.",
+          "source_quotes": [
+            "PLAN: WS and I agreed DIR-909 could close after that check. I closed the tracking ticket at 11:25 UTC."
+          ],
+          "intended_field": "action",
+          "acceptable_fields": [
+            "action"
+          ],
+          "critical_meaning_distinctions": [
+            "Closure follows the completed check; do not present it as still awaiting confirmation."
+          ]
+        },
+        {
+          "claim_id": "dev-v3-it-08-C07",
+          "event_label": "Shared office address-book entry",
+          "factual_claim": "No additional directory follow-up is required.",
+          "source_quotes": [
+            "No additional directory follow-up is required."
+          ],
+          "intended_field": "plan",
+          "acceptable_fields": [
+            "plan"
+          ],
+          "critical_meaning_distinctions": [
+            "Do not invent further checking or an agreed task."
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "dev-v3-fac-10",
+      "domain": "facilities",
+      "mode": "draft",
+      "assist": false,
+      "source_sha256": "84d72128bdb4d44fd48d64330b2ffeaec850669befcc2e984fe0f989ed8b97e0",
+      "event_labels": [],
+      "claims": [
+        {
+          "claim_id": "dev-v3-fac-10-C01",
+          "event_label": null,
+          "factual_claim": "At 16:05 UTC the west-corridor noticeboard showed two room numbers for tomorrow's induction.",
+          "source_quotes": [
+            "At 16:05 UTC the west corridor notice board had two different room numbers for tomorrow's induction."
+          ],
+          "intended_field": "situation",
+          "acceptable_fields": [
+            "situation"
+          ],
+          "critical_meaning_distinctions": [
+            "No correct room number is established; do not invent an absolute date."
+          ]
+        },
+        {
+          "claim_id": "dev-v3-fac-10-C02",
+          "event_label": null,
+          "factual_claim": "A driver reported difficulty finding the side entrance without identifying which signs were used.",
+          "source_quotes": [
+            "I also received a message that the delivery driver could not find the side entrance.",
+            "The driver's message does not say which signs they used or whether the room notices mattered."
+          ],
+          "intended_field": "situation",
+          "acceptable_fields": [
+            "situation"
+          ],
+          "critical_meaning_distinctions": [
+            "No causal link to induction room notices is established."
+          ]
+        },
+        {
+          "claim_id": "dev-v3-fac-10-C03",
+          "event_label": null,
+          "factual_claim": "The two reports have not been linked.",
+          "source_quotes": [
+            "No one has linked the two reports."
+          ],
+          "intended_field": "situation",
+          "acceptable_fields": [
+            "situation"
+          ],
+          "critical_meaning_distinctions": [
+            "Keep the unlabeled ambiguity; do not infer separate established incidents or one shared cause."
+          ]
+        },
+        {
+          "claim_id": "dev-v3-fac-10-C04",
+          "event_label": null,
+          "factual_claim": "The author copied both reports into the facilities notebook.",
+          "source_quotes": [
+            "I copied both items into today's facilities notebook."
+          ],
+          "intended_field": "action",
+          "acceptable_fields": [
+            "action"
+          ],
+          "critical_meaning_distinctions": [
+            "Recording reports is not correcting signs or completing delivery."
+          ]
+        },
+        {
+          "claim_id": "dev-v3-fac-10-C05",
+          "event_label": null,
+          "factual_claim": "At 16:18 UTC Reception (OL) said they would ask the induction organizer for the room number.",
+          "source_quotes": [
+            "At 16:18 UTC Reception (OL) said they would ask the induction organizer for the room number."
+          ],
+          "intended_field": "plan",
+          "acceptable_fields": [
+            "plan"
+          ],
+          "critical_meaning_distinctions": [
+            "The room-number inquiry is intended, not a received confirmation."
+          ]
+        },
+        {
+          "claim_id": "dev-v3-fac-10-C06",
+          "event_label": null,
+          "factual_claim": "The author did not contact the driver.",
+          "source_quotes": [
+            "I did not contact the driver."
+          ],
+          "intended_field": "agencies_contacted",
+          "acceptable_fields": [
+            "agencies_contacted"
+          ],
+          "critical_meaning_distinctions": [
+            "A received message is not author-initiated driver contact."
+          ]
+        },
+        {
+          "claim_id": "dev-v3-fac-10-C07",
+          "event_label": null,
+          "factual_claim": "At 16:23 UTC the driver wrote that they found someone, without confirming a completed delivery.",
+          "source_quotes": [
+            "The driver later wrote \"found someone\" at 16:23 UTC, which does not confirm a completed delivery."
+          ],
+          "intended_field": "situation",
+          "acceptable_fields": [
+            "situation"
+          ],
+          "critical_meaning_distinctions": [
+            "Do not convert the later message into delivery success or resolution."
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "dev-v3-fac-11",
+      "domain": "facilities",
+      "mode": "review",
+      "assist": true,
+      "source_sha256": "646d714da3b98730256002156b0fea031a1fec9306dfdffaaddaef58dac3a788",
+      "event_labels": [
+        "Locker label query",
+        "Visitor-chair layout"
+      ],
+      "claims": [
+        {
+          "claim_id": "dev-v3-fac-11-C01",
+          "event_label": "Locker label query",
+          "factual_claim": "At 08:10Z on 12 September 2026, LOCKER-17 had two removable labels and the current one was unknown.",
+          "source_quotes": [
+            "SITUATION: 08:10Z on 12 September 2026, LOCKER-17 had two removable name labels. I cannot tell which one is current."
+          ],
+          "intended_field": "situation",
+          "acceptable_fields": [
+            "situation"
+          ],
+          "critical_meaning_distinctions": [
+            "Do not identify an owner or current label."
+          ]
+        },
+        {
+          "claim_id": "dev-v3-fac-11-C02",
+          "event_label": "Locker label query",
+          "factual_claim": "No access loss was reported, but inconvenience had not been checked.",
+          "source_quotes": [
+            "IMPACT: No loss of access was reported, but I have not checked whether anyone was inconvenienced."
+          ],
+          "intended_field": "impact",
+          "acceptable_fields": [
+            "impact"
+          ],
+          "critical_meaning_distinctions": [
+            "No reported access loss does not establish no inconvenience."
+          ]
+        },
+        {
+          "claim_id": "dev-v3-fac-11-C03",
+          "event_label": "Locker label query",
+          "factual_claim": "The locker record states that nobody was contacted.",
+          "source_quotes": [
+            "AGENCIES CONTACTED: Nobody was contacted."
+          ],
+          "intended_field": "agencies_contacted",
+          "acceptable_fields": [
+            "agencies_contacted"
+          ],
+          "critical_meaning_distinctions": [
+            "Do not invent an agency, initials, or contact."
+          ]
+        },
+        {
+          "claim_id": "dev-v3-fac-11-C04",
+          "event_label": "Locker label query",
+          "factual_claim": "The author recorded both printed names locally without changing either locker label.",
+          "source_quotes": [
+            "ACTION: I noted both printed names in the private local worksheet without changing either label."
+          ],
+          "intended_field": "action",
+          "acceptable_fields": [
+            "action"
+          ],
+          "critical_meaning_distinctions": [
+            "Recording labels is not selecting or replacing one."
+          ]
+        },
+        {
+          "claim_id": "dev-v3-fac-11-C05",
+          "event_label": "Locker label query",
+          "factual_claim": "No locker action was agreed, and the labels remained unresolved when the note was checked at 09:00Z.",
+          "source_quotes": [
+            "PLAN: No action was agreed.",
+            "09:00Z I checked my note again. The labels are still unresolved."
+          ],
+          "intended_field": "plan",
+          "acceptable_fields": [
+            "plan"
+          ],
+          "critical_meaning_distinctions": [
+            "The repeated no-action wording does not merge this event with the chairs."
+          ]
+        },
+        {
+          "claim_id": "dev-v3-fac-11-C06",
+          "event_label": "Visitor-chair layout",
+          "factual_claim": "At 08:25Z the visitor chairs remained in yesterday's workshop arrangement.",
+          "source_quotes": [
+            "SITUATION: 08:25Z I found the visitor chairs in yesterday's workshop arrangement."
+          ],
+          "intended_field": "situation",
+          "acceptable_fields": [
+            "situation"
+          ],
+          "critical_meaning_distinctions": [
+            "The observed arrangement is not a completed rearrangement."
+          ]
+        },
+        {
+          "claim_id": "dev-v3-fac-11-C07",
+          "event_label": "Visitor-chair layout",
+          "factual_claim": "Reception confirmed the area was usable and no visitors were delayed.",
+          "source_quotes": [
+            "IMPACT: Reception confirmed the area remained usable and no visitors were delayed."
+          ],
+          "intended_field": "impact",
+          "acceptable_fields": [
+            "impact"
+          ],
+          "critical_meaning_distinctions": [
+            "This reported outcome belongs to the chairs, not unresolved locker inconvenience."
+          ]
+        },
+        {
+          "claim_id": "dev-v3-fac-11-C08",
+          "event_label": "Visitor-chair layout",
+          "factual_claim": "The chair record states nobody was contacted while citing Reception's in-person observation.",
+          "source_quotes": [
+            "AGENCIES CONTACTED: Nobody was contacted.",
+            "ACTION: I recorded Reception's in-person observation; I did not move the chairs."
+          ],
+          "intended_field": "agencies_contacted",
+          "acceptable_fields": [
+            "agencies_contacted"
+          ],
+          "critical_meaning_distinctions": [
+            "Preserve the source's distinction between no stated outreach and a received observation; flag ambiguity instead of inventing a formal contact or initials."
+          ]
+        },
+        {
+          "claim_id": "dev-v3-fac-11-C09",
+          "event_label": "Visitor-chair layout",
+          "factual_claim": "The author recorded Reception's observation without moving the chairs.",
+          "source_quotes": [
+            "ACTION: I recorded Reception's in-person observation; I did not move the chairs."
+          ],
+          "intended_field": "action",
+          "acceptable_fields": [
+            "action"
+          ],
+          "critical_meaning_distinctions": [
+            "Do not turn observation recording into rearranging furniture."
+          ]
+        },
+        {
+          "claim_id": "dev-v3-fac-11-C10",
+          "event_label": "Visitor-chair layout",
+          "factual_claim": "No chair-layout action was agreed.",
+          "source_quotes": [
+            "PLAN: No action was agreed."
+          ],
+          "intended_field": "plan",
+          "acceptable_fields": [
+            "plan"
+          ],
+          "critical_meaning_distinctions": [
+            "Do not attach the locker's later unresolved status or a new plan to this event."
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "dev-v3-admin-14",
+      "domain": "administrative_tracking",
+      "mode": "draft",
+      "assist": false,
+      "source_sha256": "70e25d725d71fc2c60146b2bbceb64cdb55d1c7446e8d7f58cadaaf16bb411fc",
+      "event_labels": [],
+      "claims": [
+        {
+          "claim_id": "dev-v3-admin-14-C01",
+          "event_label": null,
+          "factual_claim": "Two Updated-request emails lack reference numbers; the 13:02Z Travel Desk email asks for an attendee's middle initial.",
+          "source_quotes": [
+            "The desk inbox has two emails with the subject \"Updated request\" and neither quotes a reference number.",
+            "One arrived at 13:02Z from Travel Desk and asks for the attendee's middle initial."
+          ],
+          "intended_field": "situation",
+          "acceptable_fields": [
+            "situation"
+          ],
+          "critical_meaning_distinctions": [
+            "No request identity or missing initial has been resolved."
+          ]
+        },
+        {
+          "claim_id": "dev-v3-admin-14-C02",
+          "event_label": null,
+          "factual_claim": "At 13:06Z Course Records said its attachment could not be opened.",
+          "source_quotes": [
+            "The other arrived at 13:06Z from Course Records and says the attachment cannot be opened."
+          ],
+          "intended_field": "situation",
+          "acceptable_fields": [
+            "situation"
+          ],
+          "critical_meaning_distinctions": [
+            "Keep its sender/time separate from Travel Desk; do not assume the same document."
+          ]
+        },
+        {
+          "claim_id": "dev-v3-admin-14-C03",
+          "event_label": null,
+          "factual_claim": "The sent-again 13:10 slip has no sender, destination, or document name.",
+          "source_quotes": [
+            "A handwritten slip next to the keyboard reads \"sent again 13:10\" but has no sender, destination, or document name."
+          ],
+          "intended_field": "situation",
+          "acceptable_fields": [
+            "situation"
+          ],
+          "critical_meaning_distinctions": [
+            "Do not assign a resend to the author or Course Records."
+          ]
+        },
+        {
+          "claim_id": "dev-v3-admin-14-C04",
+          "event_label": null,
+          "factual_claim": "The author has not established that the emails concern the same person.",
+          "source_quotes": [
+            "I have not established whether the emails concern the same person."
+          ],
+          "intended_field": "situation",
+          "acceptable_fields": [
+            "situation"
+          ],
+          "critical_meaning_distinctions": [
+            "Keep the unlabeled relationship ambiguous; do not merge identities."
+          ]
+        },
+        {
+          "claim_id": "dev-v3-admin-14-C05",
+          "event_label": null,
+          "factual_claim": "At 13:18Z the author asked Travel Desk (CB) which request was meant.",
+          "source_quotes": [
+            "At 13:18Z I asked Travel Desk (CB) which request they meant."
+          ],
+          "intended_field": "agencies_contacted",
+          "acceptable_fields": [
+            "agencies_contacted"
+          ],
+          "critical_meaning_distinctions": [
+            "CB is the only named contact; no Course Records acknowledgement is given."
+          ]
+        },
+        {
+          "claim_id": "dev-v3-admin-14-C06",
+          "event_label": null,
+          "factual_claim": "The author saved the messages in separate temporary folders and left the slip beside the inbox worksheet.",
+          "source_quotes": [
+            "I saved the messages in separate temporary folders and left the handwritten slip beside the inbox worksheet."
+          ],
+          "intended_field": "action",
+          "acceptable_fields": [
+            "action"
+          ],
+          "critical_meaning_distinctions": [
+            "Saving messages is not resending an attachment or confirming an identity."
+          ]
+        },
+        {
+          "claim_id": "dev-v3-admin-14-C07",
+          "event_label": null,
+          "factual_claim": "CB has not replied to the identification question.",
+          "source_quotes": [
+            "CB has not replied."
+          ],
+          "intended_field": "plan",
+          "acceptable_fields": [
+            "plan"
+          ],
+          "critical_meaning_distinctions": [
+            "No agreed response, confirmed middle initial, or resolved request identity."
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "dev-v3-admin-15",
+      "domain": "administrative_tracking",
+      "mode": "review",
+      "assist": true,
+      "source_sha256": "01a37c0a2c4af296b04d2d0824508a404ad2b2134d035318a89336c569f400ea",
+      "event_labels": [
+        "Room request acknowledgement",
+        "Course certificate query"
+      ],
+      "claims": [
+        {
+          "claim_id": "dev-v3-admin-15-C01",
+          "event_label": "Room request acknowledgement",
+          "factual_claim": "On 2026-09-12 UTC the acknowledgement time was corrected from 15:20 to the mailbox-stamped 15:02.",
+          "source_quotes": [
+            "SITUATION: Draft correction, 2026-09-12 UTC. I previously wrote the acknowledgement time as 15:20. The mailbox stamp is 15:02, and the correct recorded acknowledgement time is 15:02."
+          ],
+          "intended_field": "situation",
+          "acceptable_fields": [
+            "situation"
+          ],
+          "critical_meaning_distinctions": [
+            "15:20 is superseded, not a second acknowledgement."
+          ]
+        },
+        {
+          "claim_id": "dev-v3-admin-15-C02",
+          "event_label": "Room request acknowledgement",
+          "factual_claim": "ROOMREQ-93 is a room request for next week, not a confirmed reservation.",
+          "source_quotes": [
+            "ROOMREQ-93 concerns a room request for next week, not a confirmed reservation."
+          ],
+          "intended_field": "situation",
+          "acceptable_fields": [
+            "situation"
+          ],
+          "critical_meaning_distinctions": [
+            "Acknowledgement does not constitute reservation approval."
+          ]
+        },
+        {
+          "claim_id": "dev-v3-admin-15-C03",
+          "event_label": "Room request acknowledgement",
+          "factual_claim": "Scheduling (FD) acknowledged the request.",
+          "source_quotes": [
+            "AGENCIES CONTACTED: Scheduling (FD) acknowledged the request."
+          ],
+          "intended_field": "agencies_contacted",
+          "acceptable_fields": [
+            "agencies_contacted"
+          ],
+          "critical_meaning_distinctions": [
+            "Do not substitute UA from the certificate event."
+          ]
+        },
+        {
+          "claim_id": "dev-v3-admin-15-C04",
+          "event_label": "Room request acknowledgement",
+          "factual_claim": "The author corrected the draft time and saved the acknowledgement.",
+          "source_quotes": [
+            "ACTION: I corrected the time in this draft and saved the acknowledgement."
+          ],
+          "intended_field": "action",
+          "acceptable_fields": [
+            "action"
+          ],
+          "critical_meaning_distinctions": [
+            "Document editing is completed; it does not complete a reservation."
+          ]
+        },
+        {
+          "claim_id": "dev-v3-admin-15-C05",
+          "event_label": "Room request acknowledgement",
+          "factual_claim": "The author owes FD a headcount by Friday; FD has not agreed to send one to the author.",
+          "source_quotes": [
+            "PLAN: FD expects me to send the headcount by Friday. FD has not agreed to send a headcount to me."
+          ],
+          "intended_field": "plan",
+          "acceptable_fields": [
+            "plan"
+          ],
+          "critical_meaning_distinctions": [
+            "Preserve direction and deadline without inventing an exact calendar date."
+          ]
+        },
+        {
+          "claim_id": "dev-v3-admin-15-C06",
+          "event_label": "Course certificate query",
+          "factual_claim": "At 15:10 Records (UA) asked whether CERT-61 had been collected.",
+          "source_quotes": [
+            "SITUATION: At 15:10 Records (UA) asked whether CERT-61 had been collected."
+          ],
+          "intended_field": "agencies_contacted",
+          "acceptable_fields": [
+            "agencies_contacted"
+          ],
+          "critical_meaning_distinctions": [
+            "This is a collection inquiry, not a disputed course-completion record."
+          ]
+        },
+        {
+          "claim_id": "dev-v3-admin-15-C07",
+          "event_label": "Course certificate query",
+          "factual_claim": "Certificate collection is unknown, while course completion itself is not disputed.",
+          "source_quotes": [
+            "IMPACT: Collection status is unknown; the course completion itself is not disputed."
+          ],
+          "intended_field": "impact",
+          "acceptable_fields": [
+            "impact"
+          ],
+          "critical_meaning_distinctions": [
+            "Do not conflate document collection with course completion."
+          ]
+        },
+        {
+          "claim_id": "dev-v3-admin-15-C08",
+          "event_label": "Course certificate query",
+          "factual_claim": "The author checked the collection book at 15:24 and found a blank entry, which does not prove non-collection.",
+          "source_quotes": [
+            "ACTION: I checked the collection book at 15:24. The entry was blank, which does not prove that nobody collected the certificate."
+          ],
+          "intended_field": "action",
+          "acceptable_fields": [
+            "action"
+          ],
+          "critical_meaning_distinctions": [
+            "A missing book entry is not a confirmed absence of collection."
+          ]
+        },
+        {
+          "claim_id": "dev-v3-admin-15-C09",
+          "event_label": "Course certificate query",
+          "factual_claim": "UA will ask the issuing clerk and send a status update tomorrow.",
+          "source_quotes": [
+            "PLAN: UA will ask the issuing clerk and send a status update tomorrow."
+          ],
+          "intended_field": "plan",
+          "acceptable_fields": [
+            "plan"
+          ],
+          "critical_meaning_distinctions": [
+            "This is UA's future update, not FD's headcount or a completed clerk check."
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "dev-v3-admin-16",
+      "domain": "administrative_tracking",
+      "mode": "review",
+      "assist": false,
+      "source_sha256": "2dea3aafaf7dc0a5917d7dc03a620bf683b5177acd0c4fd47820410099d561bb",
+      "event_labels": [
+        "Monthly sign-in sheet transfer"
+      ],
+      "claims": [
+        {
+          "claim_id": "dev-v3-admin-16-C01",
+          "event_label": "Monthly sign-in sheet transfer",
+          "factual_claim": "At 16:01 UTC on 2026-09-12, the author received scanned September packet SIGNIN-58 from the workshop coordinator.",
+          "source_quotes": [
+            "SITUATION: 2026-09-12, UTC. At 16:01 I received the scanned September sign-in packet SIGNIN-58 from the workshop coordinator."
+          ],
+          "intended_field": "situation",
+          "acceptable_fields": [
+            "situation"
+          ],
+          "critical_meaning_distinctions": [
+            "Receiving a packet is not completed attendance counting."
+          ]
+        },
+        {
+          "claim_id": "dev-v3-admin-16-C02",
+          "event_label": "Monthly sign-in sheet transfer",
+          "factual_claim": "Five expected pages were readable, enabling the records clerk's scheduled 16:15 count.",
+          "source_quotes": [
+            "IMPACT: All five expected pages were readable, allowing the records clerk to begin the scheduled count at 16:15."
+          ],
+          "intended_field": "impact",
+          "acceptable_fields": [
+            "impact"
+          ],
+          "critical_meaning_distinctions": [
+            "Do not assert a completed count or a counted attendance total."
+          ]
+        },
+        {
+          "claim_id": "dev-v3-admin-16-C03",
+          "event_label": "Monthly sign-in sheet transfer",
+          "factual_claim": "Records (AT) confirmed receipt at 16:08.",
+          "source_quotes": [
+            "AGENCIES CONTACTED: Records (AT) confirmed receipt at 16:08."
+          ],
+          "intended_field": "agencies_contacted",
+          "acceptable_fields": [
+            "agencies_contacted"
+          ],
+          "critical_meaning_distinctions": [
+            "Keep AT acknowledgement distinct from the author's filing actions."
+          ]
+        },
+        {
+          "claim_id": "dev-v3-admin-16-C04",
+          "event_label": "Monthly sign-in sheet transfer",
+          "factual_claim": "The author checked five pages, saved the packet, and sent AT the file location.",
+          "source_quotes": [
+            "ACTION: I checked that there were five pages, saved the packet in the month folder, and sent AT the file location."
+          ],
+          "intended_field": "action",
+          "acceptable_fields": [
+            "action"
+          ],
+          "critical_meaning_distinctions": [
+            "The author saved the file; do not assign that action to AT."
+          ]
+        },
+        {
+          "claim_id": "dev-v3-admin-16-C05",
+          "event_label": "Monthly sign-in sheet transfer",
+          "factual_claim": "AT checked that same file and confirmed readability.",
+          "source_quotes": [
+            "AT checked the same file and confirmed readability."
+          ],
+          "intended_field": "action",
+          "acceptable_fields": [
+            "action"
+          ],
+          "critical_meaning_distinctions": [
+            "Readability checking does not complete attendance counting."
+          ]
+        },
+        {
+          "claim_id": "dev-v3-admin-16-C06",
+          "event_label": "Monthly sign-in sheet transfer",
+          "factual_claim": "Transfer closed at 16:10 with no further follow-up; AT's scheduled attendance count remained a separate task, not reported complete.",
+          "source_quotes": [
+            "PLAN: The transfer task was closed at 16:10. Counting attendance is AT's separate scheduled task; this entry does not report the count as completed. No further transfer follow-up was requested."
+          ],
+          "intended_field": "plan",
+          "acceptable_fields": [
+            "plan"
+          ],
+          "critical_meaning_distinctions": [
+            "Only the transfer is closed; do not turn downstream scheduled work into a completed result."
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "dev-v3-shift-18",
+      "domain": "shift_handover",
+      "mode": "draft",
+      "assist": false,
+      "source_sha256": "797a744e9e8f8670f4d1a0cebe6af221a79a3ca9ad915debc75c1cc7d813af9b",
+      "event_labels": [],
+      "claims": [
+        {
+          "claim_id": "dev-v3-shift-18-C01",
+          "event_label": null,
+          "factual_claim": "At 18:00Z on 12 September 2026 a delivery query remained open; Riley reported a courier after lunch but did not take the package.",
+          "source_quotes": [
+            "Outgoing desk notes, 18:00Z on 12 September 2026: a delivery query is still open. Riley says a courier came through reception sometime after lunch; Riley did not take the package."
+          ],
+          "intended_field": "situation",
+          "acceptable_fields": [
+            "situation"
+          ],
+          "critical_meaning_distinctions": [
+            "Riley's report does not establish a package recipient or completed delivery."
+          ]
+        },
+        {
+          "claim_id": "dev-v3-shift-18-C02",
+          "event_label": null,
+          "factual_claim": "The colleague's left-with-evening-desk notebook fragment identifies neither an item nor a time.",
+          "source_quotes": [
+            "My colleague's notebook says \"left with evening desk\" but does not name an item or time."
+          ],
+          "intended_field": "situation",
+          "acceptable_fields": [
+            "situation"
+          ],
+          "critical_meaning_distinctions": [
+            "Do not attach the fragment to a specific package or infer a verified transfer."
+          ]
+        },
+        {
+          "claim_id": "dev-v3-shift-18-C03",
+          "event_label": null,
+          "factual_claim": "A visitor-badge envelope is beside the phone without a return count.",
+          "source_quotes": [
+            "The visitor badge envelope is also beside the phone, with no return count."
+          ],
+          "intended_field": "situation",
+          "acceptable_fields": [
+            "situation"
+          ],
+          "critical_meaning_distinctions": [
+            "No verified badge total or established link to the delivery query."
+          ]
+        },
+        {
+          "claim_id": "dev-v3-shift-18-C04",
+          "event_label": null,
+          "factual_claim": "The author put both papers in the handover tray without linking them to a single delivery.",
+          "source_quotes": [
+            "I put both papers in the handover tray without connecting them to a single delivery."
+          ],
+          "intended_field": "action",
+          "acceptable_fields": [
+            "action"
+          ],
+          "critical_meaning_distinctions": [
+            "Paper handover is not package transfer or badge counting."
+          ]
+        },
+        {
+          "claim_id": "dev-v3-shift-18-C05",
+          "event_label": null,
+          "factual_claim": "At 18:12Z Evening Desk (SF) acknowledged the tray, not a package or verified badge count.",
+          "source_quotes": [
+            "At 18:12Z Evening Desk (SF) acknowledged receiving the tray, not a package or a verified badge count."
+          ],
+          "intended_field": "agencies_contacted",
+          "acceptable_fields": [
+            "agencies_contacted"
+          ],
+          "critical_meaning_distinctions": [
+            "Limit what SF acknowledged receiving."
+          ]
+        },
+        {
+          "claim_id": "dev-v3-shift-18-C06",
+          "event_label": null,
+          "factual_claim": "The author has not checked the delivery register.",
+          "source_quotes": [
+            "I have not checked the delivery register."
+          ],
+          "intended_field": "action",
+          "acceptable_fields": [
+            "action"
+          ],
+          "critical_meaning_distinctions": [
+            "Do not invent a completed register check."
+          ]
+        },
+        {
+          "claim_id": "dev-v3-shift-18-C07",
+          "event_label": null,
+          "factual_claim": "SF will ask the next desk worker to identify the papers.",
+          "source_quotes": [
+            "SF will ask the next desk worker to identify the papers."
+          ],
+          "intended_field": "plan",
+          "acceptable_fields": [
+            "plan"
+          ],
+          "critical_meaning_distinctions": [
+            "The intended task is identifying records, not confirming delivery completion."
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "dev-v3-shift-19",
+      "domain": "shift_handover",
+      "mode": "review",
+      "assist": true,
+      "source_sha256": "f11787eddcb3e4ea9b5f42346ce56c4bcb1155499abdc88e3954c9c6bd437b4c",
+      "event_labels": [
+        "Overnight message return",
+        "Loan folder return"
+      ],
+      "claims": [
+        {
+          "claim_id": "dev-v3-shift-19-C01",
+          "event_label": "Overnight message return",
+          "factual_claim": "At 23:46Z on 12 September 2026 the author received a missing-course-email message; the caller's possible BT initials remain unconfirmed.",
+          "source_quotes": [
+            "SITUATION: 23:46Z on 12 September 2026, I received a caller's message about a missing course-information email. I think the caller gave initials BT, but the line broke up and those initials are unconfirmed."
+          ],
+          "intended_field": "situation",
+          "acceptable_fields": [
+            "situation"
+          ],
+          "critical_meaning_distinctions": [
+            "Do not confirm or silently discard the tentative initials."
+          ]
+        },
+        {
+          "claim_id": "dev-v3-shift-19-C02",
+          "event_label": "Overnight message return",
+          "factual_claim": "The caller said they could attend, but whether they lacked other instructions was unknown.",
+          "source_quotes": [
+            "IMPACT: The caller said they could still attend. Whether they lacked other instructions is unknown."
+          ],
+          "intended_field": "impact",
+          "acceptable_fields": [
+            "impact"
+          ],
+          "critical_meaning_distinctions": [
+            "Attendance intent is not no information impact."
+          ]
+        },
+        {
+          "claim_id": "dev-v3-shift-19-C03",
+          "event_label": "Overnight message return",
+          "factual_claim": "The author wrote the callback number locally and had not made a return call.",
+          "source_quotes": [
+            "ACTION: I wrote down the callback number in the local desk book. No return call has been made."
+          ],
+          "intended_field": "action",
+          "acceptable_fields": [
+            "action"
+          ],
+          "critical_meaning_distinctions": [
+            "Recording a number is not a completed conversation."
+          ]
+        },
+        {
+          "claim_id": "dev-v3-shift-19-C04",
+          "event_label": "Overnight message return",
+          "factual_claim": "At 00:03Z on 13 September Incoming Desk (CD) agreed to check the message record.",
+          "source_quotes": [
+            "PLAN: At 00:03Z on 13 September, Incoming Desk (CD) said, \"I will check the record.\""
+          ],
+          "intended_field": "plan",
+          "acceptable_fields": [
+            "plan"
+          ],
+          "critical_meaning_distinctions": [
+            "Preserve the midnight date rollover and CD's message role, not EF's loan check."
+          ]
+        },
+        {
+          "claim_id": "dev-v3-shift-19-C05",
+          "event_label": "Loan folder return",
+          "factual_claim": "At 23:51Z on 12 September the tracker listed two outstanding folders; one visible tray folder had not been label-checked.",
+          "source_quotes": [
+            "SITUATION: 23:51Z on 12 September, the loan-folder tracker listed two folders outstanding. I could personally see one returned folder in the tray; I did not inspect its label."
+          ],
+          "intended_field": "situation",
+          "acceptable_fields": [
+            "situation"
+          ],
+          "critical_meaning_distinctions": [
+            "Do not reconcile the counts without identity evidence or assert both returned."
+          ]
+        },
+        {
+          "claim_id": "dev-v3-shift-19-C06",
+          "event_label": "Loan folder return",
+          "factual_claim": "No information about missed work was supplied.",
+          "source_quotes": [
+            "IMPACT: No information about missed work was supplied."
+          ],
+          "intended_field": "impact",
+          "acceptable_fields": [
+            "impact"
+          ],
+          "critical_meaning_distinctions": [
+            "Missing impact information is not a confirmed no-impact outcome."
+          ]
+        },
+        {
+          "claim_id": "dev-v3-shift-19-C07",
+          "event_label": "Loan folder return",
+          "factual_claim": "The author left the loan tracker unchanged.",
+          "source_quotes": [
+            "ACTION: I left the tracker unchanged."
+          ],
+          "intended_field": "action",
+          "acceptable_fields": [
+            "action"
+          ],
+          "critical_meaning_distinctions": [
+            "Do not invent a return entry or folder verification."
+          ]
+        },
+        {
+          "claim_id": "dev-v3-shift-19-C08",
+          "event_label": "Loan folder return",
+          "factual_claim": "At 00:07Z on 13 September Incoming Desk (EF) agreed to check the loan tracker, not the caller's message.",
+          "source_quotes": [
+            "PLAN: At 00:07Z on 13 September, Incoming Desk (EF) said, \"I will check the record.\" EF was referring to the loan tracker, not the caller's message."
+          ],
+          "intended_field": "plan",
+          "acceptable_fields": [
+            "plan"
+          ],
+          "critical_meaning_distinctions": [
+            "The identical quote keeps EF's speaker/event and the date rollover; do not substitute CD."
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "dev-v3-shift-20",
+      "domain": "shift_handover",
+      "mode": "review",
+      "assist": false,
+      "source_sha256": "535790c944ee7d78076d26f426b704372edcdee7a14d4a067a7aa5619818f761",
+      "event_labels": [
+        "End-of-day message book handover"
+      ],
+      "claims": [
+        {
+          "claim_id": "dev-v3-shift-20-C01",
+          "event_label": "End-of-day message book handover",
+          "factual_claim": "At 20:00 UTC on 12 September 2026 outgoing and incoming reception staff reviewed MESSAGEBOOK-15 together.",
+          "source_quotes": [
+            "SITUATION: 12 September 2026, UTC. At 20:00 outgoing and incoming reception staff reviewed MESSAGEBOOK-15 together."
+          ],
+          "intended_field": "situation",
+          "acceptable_fields": [
+            "situation"
+          ],
+          "critical_meaning_distinctions": [
+            "This is an information handover, not completion of the listed calls."
+          ]
+        },
+        {
+          "claim_id": "dev-v3-shift-20-C02",
+          "event_label": "End-of-day message book handover",
+          "factual_claim": "Both staff confirmed two outstanding callbacks were clearly identified locally and no entry required clarification.",
+          "source_quotes": [
+            "IMPACT: Both staff confirmed the two outstanding routine callbacks were clearly identified with their numbers in the local book; no entry needed clarification."
+          ],
+          "intended_field": "impact",
+          "acceptable_fields": [
+            "impact"
+          ],
+          "critical_meaning_distinctions": [
+            "Clear information does not mean the callbacks were made."
+          ]
+        },
+        {
+          "claim_id": "dev-v3-shift-20-C03",
+          "event_label": "End-of-day message book handover",
+          "factual_claim": "Incoming Reception (YP) acknowledged handover at 20:06.",
+          "source_quotes": [
+            "AGENCIES CONTACTED: Incoming Reception (YP) acknowledged the handover at 20:06."
+          ],
+          "intended_field": "agencies_contacted",
+          "acceptable_fields": [
+            "agencies_contacted"
+          ],
+          "critical_meaning_distinctions": [
+            "YP is the incoming contact/owner, not the outgoing author."
+          ]
+        },
+        {
+          "claim_id": "dev-v3-shift-20-C04",
+          "event_label": "End-of-day message book handover",
+          "factual_claim": "The author read both open entries, YP found them, and both signed the handover at 20:08.",
+          "source_quotes": [
+            "ACTION: I read the two open entries aloud, YP located both written entries, and we signed the handover box at 20:08. The handover includes information transfer only."
+          ],
+          "intended_field": "action",
+          "acceptable_fields": [
+            "action"
+          ],
+          "critical_meaning_distinctions": [
+            "Preserve each actor's action and information-transfer scope."
+          ]
+        },
+        {
+          "claim_id": "dev-v3-shift-20-C05",
+          "event_label": "End-of-day message book handover",
+          "factual_claim": "YP accepted the two callbacks for the incoming shift, and neither call is reported complete.",
+          "source_quotes": [
+            "PLAN: YP accepted responsibility for the two callbacks during the incoming shift. Neither callback is reported as completed."
+          ],
+          "intended_field": "plan",
+          "acceptable_fields": [
+            "plan"
+          ],
+          "critical_meaning_distinctions": [
+            "Accepted future responsibility is not a completed call or outgoing-staff ownership."
+          ]
+        },
+        {
+          "claim_id": "dev-v3-shift-20-C06",
+          "event_label": "End-of-day message book handover",
+          "factual_claim": "The handover was complete at 20:08 and no additional handover review was requested.",
+          "source_quotes": [
+            "The handover itself was complete at 20:08, and no additional handover review was requested."
+          ],
+          "intended_field": "plan",
+          "acceptable_fields": [
+            "plan"
+          ],
+          "critical_meaning_distinctions": [
+            "Do not reopen handover because the separately assigned callbacks remain outstanding."
+          ]
+        }
+      ]
+    }
+  ]
+}

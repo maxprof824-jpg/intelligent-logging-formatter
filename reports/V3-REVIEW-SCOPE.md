@@ -1,0 +1,5 @@
+# Development review scope
+
+Before any matched candidate inference, the review scope was extended to all 20 development cases. The original eight cases and 103 source-based review units remain the fixed sample used by the [promotion protocol](V3-CANDIDATE-PROTOCOL.md). The [separate expansion checklist](V3-REVIEW-EXPANSION-CHECKLIST.json) adds the other 12 cases and 92 units to look for regressions across the full development set. Supplemental gains do not replace the fixed-sample gate or excuse a correctness regression.
+
+Both checklists were prepared from development sources and expectations before viewing new model outputs. Their 243 exact quotations were checked against the same event's original source. Reviews use anonymized A/B/C packets where practical, with model identity restored after the recorded assessments. Reviewers have prior familiarity with some released-model findings; this is AI-assisted review, not an independent evaluation or a timed user study. The ten reserved cases remain outside this review.
